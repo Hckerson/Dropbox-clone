@@ -4,17 +4,17 @@ import clsx from "clsx";
 import Link from "next/link";
 
 const lLink = [
-  { name: "Products", href: "/products", icon: ChevronDownIcon },
-  { name: "Solution", href: "/solution", icon: ChevronDownIcon },
-  { name: "Enterprise", href: "/enterprise" },
-  { name: "Pricing", href: "/pricing" },
+  { name: "Products", href: "/nav/products", icon: ChevronDownIcon },
+  { name: "Solution", href: "/nav/solution", icon: ChevronDownIcon },
+  { name: "Enterprise", href: "/nav/enterprise" },
+  { name: "Pricing", href: "/nav/pricing" },
 ];
 
 const rLink = [
-  { name: "Contact sales", href: "/contact_sales" },
-  { name: "Get app", href: "/get_app", icon: ChevronDownIcon },
-  { name: "Sign up", href: "/sign_up" },
-  { name: "Log in", href: "/log_in" },
+  { name: "Contact sales", href: "/nav/contact_sales" },
+  { name: "Get app", href: "/nav/get_app", icon: ChevronDownIcon },
+  { name: "Sign up", href: "/nav/sign_up" },
+  { name: "Log in", href: "/nav/log_in" },
 ];
 
 export function Leftlink() {
@@ -23,9 +23,9 @@ export function Leftlink() {
       {lLink.map((link) => {
         const LinkIcon = link.icon;
         return (
-          <Link key={link.name} href={link.href} className={clsx('px-3 py-3 font-medium text-white hover:text-blue-400 flex space-x-1')}>
+          <Link key={link.name} href={link.href} className={clsx('px-3 py-3 font-medium text-white hover:text-blue-500 transition-colors  ease-in-out hidden  xl:flex space-x-1 group ')}>
             <p>{link.name}</p>
-            {LinkIcon && <LinkIcon className="w-4" />} 
+            {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
           </Link>
         )
       })}
@@ -33,18 +33,27 @@ export function Leftlink() {
   );
 }
 
-export function Rightlink() {
+export function Rightlink() {  
   return (
     <>
-      {rLink.map((link) => {
+      {rLink.map((link, index) => {
         const LinkIcon = link.icon;
+        const hide = index === 0 || index ===1 ? 'xl:flex hidden' : null;
         return (
-          <Link key={link.name} href={link.href} className={clsx('px-2 py-3 font-normal text-white hover:text-blue-400 flex space-x-1')}>
+          <Link key={link.name} href={link.href} className={clsx('px-2 py-3 font-normal text-white hover:text-blue-500 transition-colors ease-in-out  flex space-x-1 group', hide)}>
             <p>{link.name}</p>
-            {LinkIcon && <LinkIcon className="w-4" />} 
+            {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
           </Link>
         )
       })}
     </>
   );
+}
+
+export function MobileNav(){
+  return(
+    <>
+    
+    </>
+  )
 }

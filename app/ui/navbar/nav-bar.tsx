@@ -2,7 +2,7 @@ import { Leftlink } from "./nav-link";
 import { Rightlink } from "./nav-link";
 import { GetStarted } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
-
+import { Mainmenu } from "./buttons";
 export default function Navbar() {
   return (
     <div>
@@ -46,6 +46,7 @@ export default function Navbar() {
               <GlobeAltIcon className="w-6 h-6 text-white" />
               <Rightlink/>
               <GetStarted/>
+              <Mainmenu/>
             </div>
           </div>
         </div>
