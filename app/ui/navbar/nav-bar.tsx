@@ -1,14 +1,46 @@
+'use client'
+import { useEffect, useState } from "react";
 import { Leftlink } from "./nav-link";
 import { Rightlink } from "./nav-link";
 import { GetStarted } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Mainmenu } from "./buttons";
+
 export default function Navbar() {
+  const [height, setHeight] = useState(95);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const shrinkStart = 50;
+      const shrinkEnd = 300; 
+      const maxHeight = 95;
+      const minHeight = maxHeight * 0.75; 
+
+      if (scrollTop >= shrinkEnd) {
+        setHeight(minHeight); // Set the height to minimum (75%)
+      } else if (scrollTop >= shrinkStart) {
+
+        const heightValue =
+          maxHeight - ((scrollTop - shrinkStart) * (maxHeight - minHeight)) / (shrinkEnd - shrinkStart);
+        setHeight(heightValue);
+      } else {
+        setHeight(maxHeight); 
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
     <div>
       <nav className="bg-black ">
         <div className="mx-auto  px-2 sm:px-5 lg:px-6">
-          <div className="relative flex h-[95px] items-center justify-between">
+          <div style={{ height: `${height}px` }} className="relative flex items-center justify-between">
             <div className="flex flex-1 items-center justify-start  ">
               <div className="flex flex-shrink-0 items-center bg-blue-500">
                 <svg

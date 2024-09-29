@@ -23,9 +23,11 @@ export function Leftlink() {
       {lLink.map((link) => {
         const LinkIcon = link.icon;
         return (
-          <Link key={link.name} href={link.href} className={clsx('px-3 py-3 font-medium text-white hover:text-blue-500 transition-colors  ease-in-out hidden  xl:flex space-x-1 group ')}>
-            <p>{link.name}</p>
-            {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
+          <Link key={link.name} href={link.href} className={clsx('px-3 py-3 h-full items-center font-medium text-white hover:text-blue-500 transition-colors  ease-in-out hidden  xl:flex space-x-1 group ')}>
+            <div className='flex items-center h-10'>
+              {link.name}
+              {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
+            </div>
           </Link>
         )
       })}
@@ -40,9 +42,11 @@ export function Rightlink() {
         const LinkIcon = link.icon;
         const hide = index === 0 || index ===1 ? 'xl:flex hidden' : null;
         return (
-          <Link key={link.name} href={link.href} className={clsx('px-2 py-3 font-normal text-white hover:text-blue-500 transition-colors ease-in-out  flex space-x-1 group', hide)}>
-            <p>{link.name}</p>
-            {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
+          <Link key={link.name} href={link.href} className={clsx('px-2 py-3 font-normal h-full items-center text-white hover:text-blue-500 transition-colors ease-in-out  flex space-x-1 group', hide)}>
+            <div className='flex items-center h-10'>
+              {link.name}
+              {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
+            </div>
           </Link>
         )
       })}
