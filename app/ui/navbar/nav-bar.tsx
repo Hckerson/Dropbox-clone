@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 'use client'
 import { useEffect, useState } from "react";
 import { Leftlink } from "./nav-link";
@@ -5,6 +6,17 @@ import { Rightlink } from "./nav-link";
 import { GetStarted } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Mainmenu } from "./buttons";
+import {
+  productLInkL,
+  productLInkR,
+  team,
+  industries,
+  useCase,
+  app,
+} from "./links";
+import NavMenu from "./nav-menu";
+import Link from "next/link";
+import clsx from "clsx";
 
 export default function Navbar() {
   const [height, setHeight] = useState(95);
@@ -15,10 +27,10 @@ export default function Navbar() {
       const shrinkStart = 50;
       const shrinkEnd = 300; 
       const maxHeight = 95;
-      const minHeight = maxHeight * 0.75; 
+      const minHeight = maxHeight * 0.60; 
 
       if (scrollTop >= shrinkEnd) {
-        setHeight(minHeight); // Set the height to minimum (75%)
+        setHeight(minHeight);
       } else if (scrollTop >= shrinkStart) {
 
         const heightValue =
@@ -38,10 +50,10 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="bg-black ">
+      <nav className="bg-black z-50">
         <div className="mx-auto  px-2 sm:px-5 lg:px-6">
           <div style={{ height: `${height}px` }} className="relative flex items-center justify-between">
-            <div className="flex flex-1 items-center justify-start  ">
+            <div className="flex flex-1 items-center justify-start  h-full">
               <div className="flex flex-shrink-0 items-center bg-blue-500">
                 <svg
                   width="40"
@@ -74,13 +86,14 @@ export default function Navbar() {
               </p>
               <Leftlink/>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center  sm:static sm:inset-auto sm:ml-6  space-x-2">
+            <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6  space-x-2">
               <GlobeAltIcon className="w-6 h-6 text-white" />
               <Rightlink/>
               <GetStarted/>
               <Mainmenu/>
             </div>
           </div>
+          <NavMenu/>
         </div>
         <div className="hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">

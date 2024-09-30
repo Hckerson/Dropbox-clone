@@ -5,13 +5,15 @@ import { VideoLeft, VideoRight } from "./ui/landing-page/video";
 export default function Page() {
   return (
     <main className="min-h-screen ">
-      <div className="fixed w-full top-0">
+      <div className="fixed w-full top-0 bg-black">
         <Navbar />
         <About />
       </div>
-      <div className="flex justify-between mt-[620px]">
-        <VideoLeft/>
-        <VideoRight/>
+      <div className="mt-[590px] w-full">
+        <div className="flex justify-between">
+          <VideoLeft/>
+          <VideoRight/>
+        </div>
       </div>
     </main>
   );
