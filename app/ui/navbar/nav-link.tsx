@@ -1,63 +1,127 @@
-'use client';
-import { ChevronDownIcon } from '@heroicons/react/24/outline';
+"use client";
 import clsx from "clsx";
 import Link from "next/link";
-
-const lLink = [
-  { name: "Products", href: "/nav/products", icon: ChevronDownIcon },
-  { name: "Solution", href: "/nav/solution", icon: ChevronDownIcon },
-  { name: "Enterprise", href: "/nav/enterprise" },
-  { name: "Pricing", href: "/nav/pricing" },
-];
-
-const rLink = [
-  { name: "Contact sales", href: "/nav/contact_sales" },
-  { name: "Get app", href: "/nav/get_app", icon: ChevronDownIcon },
-  { name: "Sign up", href: "/nav/sign_up" },
-  { name: "Log in", href: "/nav/log_in" },
-];
+import { useState } from "react";
+import { lLink, rLink } from "./links";
 
 export function Leftlink() {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const handleMouseEnter = (linkName: string) => {
+    setActiveDropdown(linkName); // Show dropdown on hover
+  };
+
+  const handleMouseLeave = (linkName: string) => {
+    if (activeDropdown === linkName) {
+      setActiveDropdown(null); // Hide dropdown if not hovering on the dropdown
+    }
+  };
   return (
     <>
       {lLink.map((link) => {
         const LinkIcon = link.icon;
+        const DropdownComponent = link.dropdown;
         return (
-          <Link key={link.name} href={link.href} className={clsx('px-3 py-3 h-full items-center font-medium text-white hover:text-blue-500 transition-colors  ease-in-out hidden  xl:flex space-x-1 group ')}>
-            <div className='flex items-center h-10'>
-              {link.name}
-              {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
-            </div>
-          </Link>
-        )
+          <div
+            key={link.name}
+            onMouseEnter={() => handleMouseEnter(link.name)}
+            onMouseLeave={() => handleMouseLeave(link.name)}
+            className="relative group h-full"
+          >
+            <Link
+              key={link.name}
+              href={link.href}
+              className={clsx(
+                "px-3 py-3 h-full items-center font-medium transition-colors  ease-in-out hidden  xl:flex space-x-1  ", activeDropdown === link.name ? 'text-blue-500' : 'text-white'
+              )}
+            >
+              <div className="flex items-center h-10">
+                {link.name}
+                {LinkIcon && (
+                  <LinkIcon className="w-4 transition group-hover:translate-y-1 " />
+                )}
+              </div>
+            </Link>
+            {DropdownComponent && activeDropdown === link.name && (
+              <div
+                className={clsx(
+                  "absolute overflow-hidden transition-all duration-1000 ease-in-out",
+                  activeDropdown === link.name ? "max-h-[500px] " : "max-h-0 "
+                )}
+                style={{
+                  transitionProperty: "max-height",
+                }}
+              >
+                <DropdownComponent />
+              </div>
+            )}
+          </div>
+        );
       })}
     </>
   );
 }
 
-export function Rightlink() {  
+export function Rightlink() {
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+
+  const handleMouseEnter = (linkName: string) => {
+    setActiveDropdown(linkName); // Show dropdown on hover
+  };
+
+  const handleMouseLeave = (linkName: string) => {
+    if (activeDropdown === linkName) {
+      setActiveDropdown(null); // Hide dropdown if not hovering on the dropdown
+    }
+  };
   return (
     <>
       {rLink.map((link, index) => {
         const LinkIcon = link.icon;
-        const hide = index === 0 || index ===1 ? 'xl:flex hidden' : null;
+        const DropdownComponent = link.dropdown;
+        const hide = index === 0 || index === 1 ? "xl:flex hidden" : null;
         return (
-          <Link key={link.name} href={link.href} className={clsx('px-2 py-3 font-normal h-full items-center text-white hover:text-blue-500 transition-colors ease-in-out  flex space-x-1 group', hide)}>
-            <div className='flex items-center h-10'>
-              {link.name}
-              {LinkIcon && <LinkIcon className="w-4 transition group-hover:translate-y-1 " />} 
+          <div
+            key={link.name}
+            onMouseEnter={() => handleMouseEnter(link.name)}
+            onMouseLeave={() => handleMouseLeave(link.name)}
+            className="relative group h-full"
+          >
+            <Link
+              key={link.name}
+              href={link.href}
+              className={clsx(
+                "px-2 py-3 font-normal h-full items-center  transition-colors ease-in-out  flex space-x-1 ", 
+                hide, activeDropdown === link.name ? 'text-blue-500' : 'text-white'
+              )}
+            >
+              <div className="flex items-center h-10">
+                {link.name}
+                {LinkIcon && (
+                  <LinkIcon className="w-4 transition group-hover:translate-y-1 " />
+                )}
+              </div>
+            </Link>
+            {DropdownComponent && activeDropdown === link.name && (
+              <div
+              className={clsx(
+                "absolute overflow-hidden transition-all duration-1000 ease-in-out",
+                activeDropdown === link.name ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+              )}
+              style={{
+                transitionProperty: "max-height, opacity",
+              }}
+            >
+              <DropdownComponent />
             </div>
-          </Link>
-        )
+            )}
+          </div>
+        );
       })}
     </>
   );
 }
 
-export function MobileNav(){
-  return(
-    <>
-    
-    </>
-  )
+export function MobileNav() {
+  return <></>;
 }

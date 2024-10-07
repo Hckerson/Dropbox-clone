@@ -1,25 +1,43 @@
 export function VideoLeft() {
   return (
-    <>
-      <video controls width="250"  height={400} >
+    <div className="relative z-20">
+      <video
+
+        muted
+        autoPlay
+        loop
+        playsInline
+        style={{ objectFit: "cover" }} // Ensures the video covers the container appropriately
+        className="w-[380px] h-[400px]"
+      >
         <source
-          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flowe.mp4"
+          src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/test/homepageredesign2024/hero/GettyImages-1423693942_compressed.mp4"
           type="video/mp4"
         />
+        Your browser does not support the video tag.
       </video>
-    </>
+    </div>
   );
 }
 
 export function VideoRight() {
   return (
-    <>
-      <video controls width="250"  height={400} >
+    <div className="relative z-20">
+      <video
+
+        muted
+        autoPlay
+        loop
+        playsInline
+        style={{ objectFit: "cover" }} // Ensures the video covers the container appropriately
+        className="w-[380px] h-[400px]"
+      >
         <source
-          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flowe.mp4"
+          src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/test/homepageredesign2024/hero/GettyImages-1316864226_compressed.mp4"
           type="video/mp4"
         />
+        Your browser does not support the video tag.
       </video>
-    </>
+    </div>
   );
 }

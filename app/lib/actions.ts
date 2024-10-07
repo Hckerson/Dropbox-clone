@@ -29,7 +29,7 @@ export type State = {
  
 const CreateInvoice = FormSchema.omit({ id: true, date: true });
  
-export async function createInvoice(formData: FormData) {
+export async function createInvoice(prevState: State, formData: FormData) {
   // Validate form using Zod
   const validatedFields = CreateInvoice.safeParse({
     customerId: formData.get('customerId'),

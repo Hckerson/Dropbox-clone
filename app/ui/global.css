@@ -16,3 +16,8 @@ input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+.scroll-text {
+  will-change: background-position;
+  transition: background-position 0.3s ease-in-out;
+}

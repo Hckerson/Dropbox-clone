@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 'use client'
 import { useEffect, useState } from "react";
 import { Leftlink } from "./nav-link";
@@ -6,39 +5,28 @@ import { Rightlink } from "./nav-link";
 import { GetStarted } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Mainmenu } from "./buttons";
-import {
-  productLInkL,
-  productLInkR,
-  team,
-  industries,
-  useCase,
-  app,
-} from "./links";
-import NavMenu from "./nav-menu";
-import Link from "next/link";
-import clsx from "clsx";
 
 export default function Navbar() {
   const [height, setHeight] = useState(95);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const shrinkStart = 50;
-      const shrinkEnd = 300; 
+      const shrinkEnd = 300;
       const maxHeight = 95;
-      const minHeight = maxHeight * 0.60; 
+      const minHeight = maxHeight * 0.60;
 
-      if (scrollTop >= shrinkEnd) {
+      if (scrollTop < lastScrollTop) {
+        setHeight(maxHeight);
+      } else if (scrollTop >= shrinkEnd) {
         setHeight(minHeight);
-      } else if (scrollTop >= shrinkStart) {
-
-        const heightValue =
-          maxHeight - ((scrollTop - shrinkStart) * (maxHeight - minHeight)) / (shrinkEnd - shrinkStart);
+      } else if (scrollTop >= shrinkStart && scrollTop < shrinkEnd) {
+        const heightValue = maxHeight - ((scrollTop - shrinkStart) * (maxHeight - minHeight)) / (shrinkEnd - shrinkStart);
         setHeight(heightValue);
-      } else {
-        setHeight(maxHeight); 
       }
+      setLastScrollTop(scrollTop);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -46,13 +34,13 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [lastScrollTop]);
 
   return (
     <div>
-      <nav className="bg-black z-50">
+      <nav className="bg-black relative">
         <div className="mx-auto  px-2 sm:px-5 lg:px-6">
-          <div style={{ height: `${height}px` }} className="relative flex items-center justify-between">
+          <div style={{ height: `${height}px`, transition: "height 0.3s ease-in-out" }} className="relative flex items-center justify-between">
             <div className="flex flex-1 items-center justify-start  h-full">
               <div className="flex flex-shrink-0 items-center bg-blue-500">
                 <svg
@@ -93,7 +81,6 @@ export default function Navbar() {
               <Mainmenu/>
             </div>
           </div>
-          <NavMenu/>
         </div>
         <div className="hidden" id="mobile-menu">
           <div className="space-y-1 px-2 pb-3 pt-2">
