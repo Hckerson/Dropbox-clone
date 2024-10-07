@@ -38,7 +38,7 @@ export default function Navbar() {
 
   return (
     <div>
-      <nav className="bg-black relative">
+      <nav className="bg-black relative ">
         <div className="mx-auto  px-2 sm:px-5 lg:px-6">
           <div style={{ height: `${height}px`, transition: "height 0.3s ease-in-out" }} className="relative flex items-center justify-between">
             <div className="flex flex-1 items-center justify-start  h-full">

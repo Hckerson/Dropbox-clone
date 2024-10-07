@@ -1,11 +1,11 @@
 "use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { lLink, rLink } from "./links";
 
 export function Leftlink() {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null); '#1e1919'
 
   const handleMouseEnter = (linkName: string) => {
     setActiveDropdown(linkName); // Show dropdown on hover
@@ -16,6 +16,13 @@ export function Leftlink() {
       setActiveDropdown(null); // Hide dropdown if not hovering on the dropdown
     }
   };
+
+  useEffect(() => {
+    // Reset the hover effect when the component unmounts
+    return () => {
+      setActiveDropdown(null);
+    };
+  }, []); 
   return (
     <>
       {lLink.map((link) => {
@@ -26,13 +33,13 @@ export function Leftlink() {
             key={link.name}
             onMouseEnter={() => handleMouseEnter(link.name)}
             onMouseLeave={() => handleMouseLeave(link.name)}
-            className="relative group h-full"
+            className="relative group h-full box-border"
           >
             <Link
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-3 py-3 h-full items-center font-medium transition-colors  ease-in-out hidden  xl:flex space-x-1  ", activeDropdown === link.name ? 'text-blue-500' : 'text-white'
+                "px-3 py-3 h-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 items-center font-medium transition-colors  ease-in-out hidden  xl:flex space-x-1  ", activeDropdown === link.name ? 'text-blue-500' : 'text-white'
               )}
             >
               <div className="flex items-center h-10">
@@ -74,6 +81,13 @@ export function Rightlink() {
       setActiveDropdown(null); // Hide dropdown if not hovering on the dropdown
     }
   };
+
+  useEffect(() => {
+    // Reset the hover effect when the component unmounts
+    return () => {
+      setActiveDropdown(null);
+    };
+  }, []); 
   return (
     <>
       {rLink.map((link, index) => {
@@ -85,13 +99,13 @@ export function Rightlink() {
             key={link.name}
             onMouseEnter={() => handleMouseEnter(link.name)}
             onMouseLeave={() => handleMouseLeave(link.name)}
-            className="relative group h-full"
+            className="relative group h-full box-border"
           >
             <Link
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-2 py-3 font-normal h-full items-center  transition-colors ease-in-out  flex space-x-1 ", 
+                "px-2 py-3 font-normal h-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
                 hide, activeDropdown === link.name ? 'text-blue-500' : 'text-white'
               )}
             >

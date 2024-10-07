@@ -1,11 +1,11 @@
 "use client";
 import Navbar from "./ui/navbar/nav-bar";
-import Image from "next/image";
 import About from "./ui/landing-page/about";
-import { Suspense, useState, useEffect } from "react";
+import {  useState, useEffect } from "react";
 import { VideoLeft, VideoRight } from "./ui/landing-page/video";
 import { ImgLayout, MiniImg } from "./ui/landing-page/img-layout";
 import CustomLetter from "./ui/landing-page/customized-lettering";
+import Content from "./ui/landing-page/content";
 
 export default function Page() {
   const [opacity, setOpacity] = useState(1);
@@ -17,18 +17,24 @@ export default function Page() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const fadeStart = 10;
-      const fadeEnd = 400;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      const scrollPercentage = scrollTop / (documentHeight - windowHeight);
+      const fadeStartPercent = 0.02;
+      const fadeEndPercent = 0.18;
       const maxOpacity = 1;
       const minOpacity = 0;
 
-      if (scrollTop >= fadeEnd) {
+      if (scrollPercentage >= fadeEndPercent) {
         setOpacity(minOpacity);
         setMt(50);
         setPosition("relative");
-      } else if (scrollTop >= fadeStart) {
+      } else if (scrollPercentage >= fadeStartPercent) {
         const opacityValue =
-          maxOpacity - (scrollTop - fadeStart) / (fadeEnd - fadeStart);
+          maxOpacity -
+          (scrollPercentage - fadeStartPercent) /
+            (fadeEndPercent - fadeStartPercent);
         setOpacity(opacityValue);
         setPosition("fixed");
         setMt(626);
@@ -38,6 +44,7 @@ export default function Page() {
         setMt(626);
       }
     };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {
@@ -62,27 +69,9 @@ export default function Page() {
           className="flex justify-between  mb-[205px] "
           style={{ backgroundColor: "rgb(247, 245, 242)" }}
         >
-          <Suspense
-            fallback={
-              <div className="image-container">
-                <Image
-                  src="/left-fallback.png" // The base image URL
-                  alt="Description"
-                  width={1920} // The largest image size
-                  height={1080}
-                  sizes="(min-width: 1920px) 37vw, (min-width: 1440px) 32vw, (min-width: 1280px) 25vw, 100vw"
-                  priority // Optional: loads the image quickly, used for critical images
-                  className="your-classes"
-                />
-              </div>
-            }
-          >
-            <div
-              style={{ opacity: opacity, transition: "opacity  ease-in-out" }}
-            >
-              <VideoLeft />
-            </div>
-          </Suspense>
+          <div style={{ opacity: opacity, transition: "opacity  ease-in-out" }}>
+            <VideoLeft />
+          </div>
 
           <div className="relative flex">
             <ImgLayout />
@@ -94,13 +83,11 @@ export default function Page() {
             <VideoRight />
           </div>
         </div>
-      </div>
-      <div className="z-10">
-      <CustomLetter />
-      </div>
-      <div className=" relative z-30 bg-white h-screen">
-        <div className="mt">
-
+        <div className="z-10">
+          <CustomLetter />
+        </div>
+        <div className=" relative z-30 bg-white h-screen">
+          <Content />
         </div>
       </div>
     </main>

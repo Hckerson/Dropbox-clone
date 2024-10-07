@@ -13,30 +13,34 @@ export default function About() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
-      const fadeStart = 10;
-      const fadeEnd = 400;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+
+      const scrollPercentage = scrollTop / (documentHeight - windowHeight);
+      const fadeStartPercent = 0.04; 
+      const fadeEndPercent = 0.17;  
       const maxOpacity = 1;
       const minOpacity = 0;
       const maxScale = 1;
       const minScale = 0.7;
 
-      if (scrollTop >= fadeEnd) {
+      if (scrollPercentage >= fadeEndPercent) {
         setOpacity(minOpacity);
         setBgColor("rgb(247, 245, 242)");
         setText1Color("rgb(247, 245, 242)");
         setText2Color("rgb(247, 245, 242)");
         setScale(minScale);
-      } else if (scrollTop >= fadeStart) {
+      } else if (scrollPercentage >= fadeStartPercent) {
         const colorValue =
-          ((scrollTop - fadeStart) / (fadeEnd - fadeStart)) * 255;
+          ((scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 255;
         const txtValue =
-          ((scrollTop + 200 - fadeStart) / (fadeEnd - fadeStart)) * 255;
+          ((scrollPercentage + 0.07 - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 255;
         const bgColorValue = `rgb(${colorValue}, ${colorValue}, ${colorValue})`; // Transition from black (0,0,0) to white (255,255,255)
         const txtColorValue = `rgb(${txtValue}, ${txtValue}, ${txtValue})`;
         const opacityValue =
-          maxOpacity - (scrollTop - fadeStart) / (fadeEnd - fadeStart);
+          maxOpacity - (scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent);
         const scaleValue =
-          maxScale - ((scrollTop - fadeStart) / (fadeEnd - fadeStart)) * 0.1;
+          maxScale - ((scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 0.1;
         setScale(scaleValue);
         setOpacity(opacityValue);
         setBgColor(bgColorValue);
@@ -68,7 +72,7 @@ export default function About() {
           <h2 className={`${dmSans.className} text-6xl font-semibold text-white`}>
             Get to work, with a lot less work
           </h2>
-          <p className="text-lg text-center" style={{ color: txt1Color }}>
+          <p className="text-lg text-center font-medium" style={{ color: txt1Color }}>
             Dropbox delivers tools that help you move your work forward faster,
             keep it safe, and <br /> let you collaborate with ease.
           </p>

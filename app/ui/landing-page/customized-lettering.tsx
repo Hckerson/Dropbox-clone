@@ -9,18 +9,21 @@ export default function CustomLetter() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY || document.documentElement.scrollTop;
-      const Start = 1020;
-      const End = 1180;
+      const scrollTop = window.scrollY;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
+      const scrollPercentage = scrollTop / (documentHeight - windowHeight);
+      const fadeStartPercent = 0.49; 
+      const fadeEndPercent = 0.62;  
 
 
-      if (scrollTop >= End) {
+      if (scrollPercentage >= fadeEndPercent) {
         setPosition("fixed");
         setTop(230);
-      } else if (scrollTop >= Start) {
+      } else if (scrollPercentage >= fadeStartPercent) {
         setPosition("absolute");
         const scrollValue =
-          380 - ((scrollTop - Start) / (End - Start)) * 380 * 0.5517241379;
+          380 - ((scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 380 * 0.5517241379;
         setTop(scrollValue);
       } else {
         setPosition("absolute");
@@ -29,9 +32,10 @@ export default function CustomLetter() {
 
       const scrollHeight =
         document.documentElement.scrollHeight - window.innerHeight;
-      const scrollProgress = scrollTop / scrollHeight;
+      const scrollProgress = scrollPercentage / scrollHeight;
       setScrollPosition(scrollProgress);
       console.log(scrollProgress)
+
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -45,14 +49,14 @@ export default function CustomLetter() {
     const start = lineNumber * progressPerLine;
     const end = (lineNumber + 1) * progressPerLine;
 
-    if (scrollPosition - 0.39 < start) return 0;
-    if (scrollPosition - 0.39  > end) return 1;
-    return (scrollPosition - 0.39 - start) / (end - start);
+    if (scrollPosition * 1000 - 0.39 < start) return 0;
+    if (scrollPosition * 1000 - 0.39  > end) return 1;
+    return (scrollPosition * 1000 - 0.39 - start) / (end - start);
   };
 
   return ( 
     <main
-      className="h-[2000px] max-w-screen  flex justify-center relative"
+      className="h-[500px] max-w-screen  flex justify-center relative"
       style={{ backgroundColor: "#f7f5f2" }}
     >
       <div

@@ -6,7 +6,8 @@ export  function ImgLayout() {
       alt="Description"
       width={900} // The largest image size
       height={800}
-      className="-translate-y-7 h-[480px] shadow-2xl rounded-2xl"
+      className="-translate-y-7 h-[480px] w-auto shadow-2xl rounded-2xl"
+      priority
     />
   );
 }
@@ -19,7 +20,7 @@ export  function MiniImg() {
       alt="Description"
       width={200} // The largest image size
       height={800}
-      className=" h-[420px] rounded-2xl shadow-2xl"
+      className=" h-[420px] w-auto rounded-2xl shadow-2xl"
     />
   );
 }
