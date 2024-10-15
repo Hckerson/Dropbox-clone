@@ -22,7 +22,7 @@ export function PDD() {
                       href={each.href}
                       className="hover:text-blue-500 text-neutral-200 transition-colors "
                     >
-                      <div className="w-full flex space-x-5 p-4 rounded-lg hover:bg-stone-800">
+                      <div className="w-full flex space-x-5 p-4 rounded-lg hover:bg-stone-900">
                         <div className="shrink-0">
                           <img src={each.src} className="size-8" alt="image" />
                         </div>
@@ -46,7 +46,7 @@ export function PDD() {
                       href={each.href}
                       className="hover:text-blue-500 text-neutral-200 transition-colors "
                     >
-                      <div className="w-full flex space-x-5 p-4 rounded-lg hover:bg-stone-800">
+                      <div className="w-full flex space-x-5 p-4 rounded-lg hover:bg-stone-900">
                         <div className="shrink-0">
                           <img src={each.src} className="size-8" alt="image" />
                         </div>
@@ -80,7 +80,7 @@ export function SDD() {
               return (
                 <li className="inline" key={each.label}>
                   <Link href={each.href} key={each.label}>
-                    <p className="p-2  w-full hover:bg-stone-800 transition-colors rounded-lg text-neutral-200">
+                    <p className="p-2  w-full hover:bg-stone-900 transition-colors rounded-lg text-neutral-200">
                       {each.label}
                     </p>
                   </Link>
@@ -97,7 +97,7 @@ export function SDD() {
                     href={each.href}
                     className=" text-neutral-200 transition-colors "
                   >
-                    <p className="p-2  w-full hover:bg-stone-800 rounded-lg">
+                    <p className="p-2  w-full hover:bg-stone-900 rounded-lg">
                       {each.label}
                     </p>
                   </Link>
@@ -114,7 +114,7 @@ export function SDD() {
                     href={each.href}
                     className=" text-neutral-200 transition-colors "
                   >
-                    <p className="p-2  w-full hover:bg-stone-800 rounded-lg">
+                    <p className="p-2  w-full hover:bg-stone-900 rounded-lg">
                       {each.label}
                     </p>
                   </Link>
@@ -141,7 +141,7 @@ export function GDD() {
                     href={each.href}
                     className=" text-neutral-200 transition-colors "
                   >
-                    <p className="p-2  w-full hover:bg-stone-800 rounded-lg">
+                    <p className="p-2  w-full hover:bg-stone-900 rounded-lg">
                       {each.label}
                     </p>
                   </Link>

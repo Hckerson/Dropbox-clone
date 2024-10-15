@@ -71,3 +71,76 @@ export const rLink = [
   { name: "Sign up", href: "/nav/sign_up" },
   { name: "Log in", href: "/nav/log_in" },
 ];
+
+export const dropbox = [
+  {label : 'Desktop app', href :  '/' },
+  {label : 'Mobile app', href :  '/' },
+  {label : 'Integration', href :  '/' },
+  {label : 'Features', href :  '/' },
+  {label : 'Solutions', href :  '/' },
+  {label : 'Security', href :  '/' },
+  {label : 'Early access', href :  '/' },
+  {label : 'Templates', href :  '/' },
+  {label : 'Free tools', href :  '/' },
+]
+
+export const products = [
+  {label : 'Plus', href :  '/' },
+  {label : 'Professional', href :  '/' },
+  {label : 'Business', href :  '/' },
+  {label : 'Enterprise', href :  '/' },
+  {label : 'Dash (beta)', href :  '/' },
+  {label : 'Dropbox Sign', href :  '/' },
+  {label : 'DocSend', href :  '/' },
+  {label : 'Plans', href :  '/' },
+  {label : 'TProduct Updates', href :  '/' },
+
+]
+
+export const features = [
+  {label : 'Send large files', href :  '/' },
+  {label : 'Send long videos', href :  '/' },
+  {label : 'Cloud photo storage', href :  '/' },
+  {label : 'Secure file transfer', href :  '/' },
+  {label : 'Password manager', href :  '/' },
+  {label : 'Cloud backup', href :  '/' },
+  {label : 'Edit PDFs', href :  '/' },
+  {label : 'Electronic signatures', href :  '/' },
+  {label : 'Screen recorder', href :  '/' },
+  {label : 'Convert to PDF', href :  '/' },
+]
+
+export const supports = [
+  {label : 'Help center ', href :  '/' },
+  {label : 'Contact us', href :  '/' },
+  {label : 'Privacy & terms', href :  '/' },
+  {label : 'Cookie policy', href :  '/' },
+  {label : 'Cookies & CCPA preferences', href :  '/' },
+  {label : 'AI principles', href :  '/' },
+  {label : 'Sitemap', href :  '/' },
+  {label : 'Learning resources', href :  '/' },
+]
+
+export const resources = [
+  {label : 'Blog', href :  '/' },
+  {label : 'Customer stories', href :  '/' },
+  {label : 'Resources library', href :  '/' },
+  {label : 'Developers', href :  '/' },
+  {label : 'Community forums', href :  '/' },
+  {label : 'Referrals', href :  '/' },
+  {label : 'Resellers partners', href :  '/' },
+  {label : 'Integration partners', href :  '/' },
+  {label : 'Find a partner', href :  '/' },
+]
+
+export const company = [
+  {label : 'About us ', href :  '/' },
+  {label : 'Jobs', href :  '/' },
+  {label : 'Investor relations', href :  '/' },
+  {label : 'ESG', href :  '/' },
+]
+
+
+
+
+

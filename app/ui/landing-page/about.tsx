@@ -17,8 +17,8 @@ export default function About() {
       const documentHeight = document.documentElement.scrollHeight;
 
       const scrollPercentage = scrollTop / (documentHeight - windowHeight);
-      const fadeStartPercent = 0.04; 
-      const fadeEndPercent = 0.17;  
+      const fadeStartPercent = 0.04;
+      const fadeEndPercent = 0.17;
       const maxOpacity = 1;
       const minOpacity = 0;
       const maxScale = 1;
@@ -32,15 +32,24 @@ export default function About() {
         setScale(minScale);
       } else if (scrollPercentage >= fadeStartPercent) {
         const colorValue =
-          ((scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 255;
+          ((scrollPercentage - fadeStartPercent) /
+            (fadeEndPercent - fadeStartPercent)) *
+          255;
         const txtValue =
-          ((scrollPercentage + 0.07 - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 255;
+          ((scrollPercentage + 0.07 - fadeStartPercent) /
+            (fadeEndPercent - fadeStartPercent)) *
+          255;
         const bgColorValue = `rgb(${colorValue}, ${colorValue}, ${colorValue})`; // Transition from black (0,0,0) to white (255,255,255)
         const txtColorValue = `rgb(${txtValue}, ${txtValue}, ${txtValue})`;
         const opacityValue =
-          maxOpacity - (scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent);
+          maxOpacity -
+          (scrollPercentage - fadeStartPercent) /
+            (fadeEndPercent - fadeStartPercent);
         const scaleValue =
-          maxScale - ((scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 0.1;
+          maxScale -
+          ((scrollPercentage - fadeStartPercent) /
+            (fadeEndPercent - fadeStartPercent)) *
+            0.1;
         setScale(scaleValue);
         setOpacity(opacityValue);
         setBgColor(bgColorValue);
@@ -64,26 +73,32 @@ export default function About() {
 
   return (
     <div
-      className="w-full flex items-center justify-center py-36 transition-opacity"
+      className=" flex items-center z-0 justify-center py-28 xs:pb-40 sm:pt-48 transition-opacity px-0 xs:px-12 md:px-0"
       style={{ backgroundColor: bgColor }}
     >
-      <div style={{ transform: `scale(${scale})` }}>
-        <div className="w-full flex items-center justify-center flex-col space-y-6">
-          <h2 className={`${dmSans.className} text-6xl font-semibold text-white`}>
+      <div style={{ transform: `scale(${scale})`, willChange: "transform", marginLeft : 50, marginRight : 50 }} className="box-border">
+        <div className="box-border justify-center items-center flex flex-wrap space-y-5 flex-col">
+          <h2
+            className={`${dmSans.className} text-balance sm:text-wrap text-4xl md:text-6xl font-semibold text-white text-center box-border `}
+          >
             Get to work, with a lot less work
           </h2>
-          <p className="text-lg text-center font-medium" style={{ color: txt1Color }}>
+          <p
+            className=" text-base sm:text-lg text-center font-medium text-wrap box-border"
+            style={{ color: txt1Color, textWrap : 'wrap' }}
+          >
             Dropbox delivers tools that help you move your work forward faster,
-            keep it safe, and <br /> let you collaborate with ease.
+            keep it safe, and let you collaborate with ease.
           </p>
-
-          <div className="flex space-x-9 py-3">
+        </div>
+        <div className="w-full flex items-center justify-center flex-col space-y-6">
+          <div className="flex flex-col md:flex-row space-x-9 py-4">
             <div
               className="flex flex-col space-y-3 "
-              style={{ opacity: opacity }}
+              style={{ opacity: opacity, willChange: "opacity" }}
             >
               <Link
-                className="text-base font-medium px-5 py-6 group rounded-2xl bg-blue-500 flex items-center transition-transform duration-300"
+                className="text-base font-medium px-5 py-7 group rounded-2xl bg-blue-500 flex items-center transition-transform duration-300"
                 href="/login"
               >
                 Sign up for free

@@ -21,3 +21,24 @@ input[type='number']::-webkit-outer-spin-button {
   will-change: background-position;
   transition: background-position 0.3s ease-in-out;
 }
+
+#content{
+  aspect-ratio: 1.2;
+}
+
+#bottle{
+right : min(calc(50% + -100px),calc(100% - 500px));
+}
+
+#drop-vid{
+  left: min(calc(50% + -180px), calc(100% - 460px));
+}
+
+@media(min-width : 1280px){
+  #content{
+    aspect-ratio: 1.8;
+  }
+  #big-box{
+    background-image: linear-gradient(to top, #f7f5f2 50px, transparent 50px);
+  }
+}

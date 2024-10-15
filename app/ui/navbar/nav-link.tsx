@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { lLink, rLink } from "./links";
 
 export function Leftlink() {
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null); '#1e1919'
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const handleMouseEnter = (linkName: string) => {
     setActiveDropdown(linkName); // Show dropdown on hover
@@ -105,7 +105,7 @@ export function Rightlink() {
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-2 py-3 font-normal h-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
+                "px-2 py-3 font-normal h-full focus:outline-none focus:ring-2 text-sm xs:text-base focus:ring-blue-500 focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
                 hide, activeDropdown === link.name ? 'text-blue-500' : 'text-white'
               )}
             >

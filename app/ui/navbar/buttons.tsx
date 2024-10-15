@@ -8,7 +8,7 @@ export function GetStarted() {
     <div>
       <Link
         href="/nav/plans"
-        className="bg-white rounded-md px-2 py-3 text-black font-semibold "
+        className="bg-white rounded-xl px-4 py-3 text-black font-semibold hidden sm:block"
       >
         Get Started
       </Link>
@@ -23,10 +23,10 @@ export function Mainmenu() {
   };
 
   return (
-    <div>
+    <div style={{marginRight : 10}}>
       {!menuOpen && (
         <Bars3Icon
-          className="text-white h-6 xl:hidden cursor-pointer"
+          className="text-white h-6 xl:hidden cursor-pointer "
           onClick={handleMenuToggle}
         />
       )}

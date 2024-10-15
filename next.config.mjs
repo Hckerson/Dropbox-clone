@@ -1,7 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['fjord.dropboxstatic.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fjord.dropboxstatic.com',
+        port: '',
+        pathname: '/**', 
+      },
+    ],
   },
 };
 

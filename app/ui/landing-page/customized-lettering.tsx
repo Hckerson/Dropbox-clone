@@ -18,7 +18,7 @@ export default function CustomLetter() {
 
 
       if (scrollPercentage >= fadeEndPercent) {
-        setPosition("fixed");
+        setPosition("absolute"); {'change back to fix and work on scroll timing after last page element'}
         setTop(230);
       } else if (scrollPercentage >= fadeStartPercent) {
         setPosition("absolute");
@@ -34,7 +34,6 @@ export default function CustomLetter() {
         document.documentElement.scrollHeight - window.innerHeight;
       const scrollProgress = scrollPercentage / scrollHeight;
       setScrollPosition(scrollProgress);
-      console.log(scrollProgress)
 
     };
     window.addEventListener("scroll", handleScroll);
@@ -56,12 +55,12 @@ export default function CustomLetter() {
 
   return ( 
     <main
-      className="h-[500px] max-w-screen  flex justify-center relative"
-      style={{ backgroundColor: "#f7f5f2" }}
+      className="flex justify-center relative"
+      style={{ backgroundColor: "#f7f5f2", height: '150vh' }}
     >
       <div
         style={{ position: position, top: top, fontWeight: 550 }}
-        className="p-2 text-4xl  space-y-1 flex flex-col  max-h-max "
+        className="p-2 px-8 text-lg sm:text-2xl  md:text-3xl lg:text-4xl  space-y-1 flex flex-col  max-h-max "
       >
         <p
           className="inline"
@@ -83,9 +82,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="size-12"
-                width="24"
-                height="24"
+                className="md:size-12 size-8"
                 role="presentation"
                 focusable="false"
               >
@@ -121,9 +118,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="size-12"
-                width="24"
-                height="24"
+                className="md:size-12 size-8"
                 role="presentation"
                 focusable="false"
                 style={{ verticalAlign: "middle" }}
@@ -164,9 +159,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="size-12"
-                width="24"
-                height="24"
+                className="md:size-12 size-8"
                 role="presentation"
                 focusable="false"
               >
@@ -200,9 +193,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="size-12"
-                width="24"
-                height="24"
+                className="md:size-12 size-8"
                 role="presentation"
                 focusable="false"
               >

@@ -9,14 +9,28 @@ import { Mainmenu } from "./buttons";
 export default function Navbar() {
   const [height, setHeight] = useState(95);
   const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [isSmallScreen, setIsSmallScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const smallScreen = window.matchMedia("(max-width: 640px)").matches;
+      setIsSmallScreen(smallScreen);
+      setHeight(smallScreen ? 48 : 95); // Adjust default height
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Run on component mount
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const shrinkStart = 50;
       const shrinkEnd = 300;
-      const maxHeight = 95;
-      const minHeight = maxHeight * 0.60;
+      const maxHeight = isSmallScreen ? 48 : 95;
+      const minHeight = isSmallScreen ? 48 : maxHeight * 0.65;
 
       if (scrollTop < lastScrollTop) {
         setHeight(maxHeight);
@@ -34,22 +48,22 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [lastScrollTop]);
+  }, [lastScrollTop, isSmallScreen]);
 
   return (
-    <div>
+    <div className="z-50">
       <nav className="bg-black relative ">
-        <div className="mx-auto  px-2 sm:px-5 lg:px-6">
+        <div className="mx-auto  p-0 sm:px-5 lg:px-6">
           <div style={{ height: `${height}px`, transition: "height 0.3s ease-in-out" }} className="relative flex items-center justify-between">
             <div className="flex flex-1 items-center justify-start  h-full">
               <div className="flex flex-shrink-0 items-center bg-blue-500">
                 <svg
-                  width="40"
-                  height="40"
+                  height='48'
+                  width='48'
                   viewBox="0 0 30 25"
                   fill="blue"
                   xmlns="http://www.w3.org/2000/svg"
-                  className="p-1"
+                  className="p-2 "
                 >
                   <path
                     d="M7.70076 0.320312L0.478516 4.91332L7.70076 9.50633L14.9242 4.91332L22.1465 9.50633L29.3687 4.91332L22.1465 0.320312L14.9242 4.91332L7.70076 0.320312Z"
@@ -69,13 +83,13 @@ export default function Navbar() {
                   ></path>
                 </svg>
               </div>
-              <p className="text-2xl ml-2 mr-6 font-semibold text-white hidden sm:block mb-1">
+              <p className="text-2xl ml-2 mr-6 font-semibold text-white hidden xs:block mb-1">
                 Dropbox
               </p>
               <Leftlink/>
             </div>
-            <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6  space-x-2">
-              <GlobeAltIcon className="w-6 h-6 text-white" />
+            <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6 space-x-1 sm:space-x-2">
+              <GlobeAltIcon className=" size-5 sm:size-6 text-white hidden xs:block" />
               <Rightlink/>
               <GetStarted/>
               <Mainmenu/>
