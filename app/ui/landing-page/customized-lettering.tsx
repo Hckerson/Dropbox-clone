@@ -5,7 +5,6 @@ export default function CustomLetter() {
   const [position, setPosition] = useState<"relative" | "sticky" | "static">(
     "sticky"
   );
-  const [top, setTop] = useState('30%');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,26 +12,22 @@ export default function CustomLetter() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollPercentage = scrollTop / (documentHeight - windowHeight);
-      const fadeStartPercent = 0.49; 
-      const fadeEndPercent = 0.62;  
+      const fadeStartPercent = 0.076; 
+      const fadeEndPercent = 0.5;  
 
 
       if (scrollPercentage >= fadeEndPercent) {
-        setPosition("static"); 
-
+        setPosition("static");
       } else if (scrollPercentage >= fadeStartPercent) {
-        setPosition("sticky");
-
+        setPosition("sticky")
       } else {
         setPosition("sticky");
- 
       }
 
       const scrollHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const scrollProgress = scrollPercentage / scrollHeight;
       setScrollPosition(scrollProgress);
-
     };
     window.addEventListener("scroll", handleScroll);
 
@@ -46,19 +41,19 @@ export default function CustomLetter() {
     const start = lineNumber * progressPerLine;
     const end = (lineNumber + 1) * progressPerLine;
 
-    if (scrollPosition * 1000 - 0.39 < start) return 0;
-    if (scrollPosition * 1000 - 0.39  > end) return 1;
-    return (scrollPosition * 1000 - 0.39 - start) / (end - start);
+    if (scrollPosition * 100000 - 0.75 < start) return 0;
+    if (scrollPosition * 100000 - 0.75  > end) return 1;
+    return (scrollPosition * 100000 - 0.75 - start) / (end - start);
   };
 
   return ( 
     <main
-      className="flex justify-center relative pt-[300px]"
-      style={{ backgroundColor: "#f7f5f2", height: '150vh' }}
+      className="flex justify-center relative pt-[400px] xl:pt[250px] h-[200vh] xl:h-[180vh] "
+      style={{ backgroundColor: "#f7f5f2" }}
     >
       <div
-        style={{ position: position, top: top, fontWeight: 550 }}
-        className="p-2 px-8 text-lg sm:text-2xl  md:text-3xl lg:text-4xl  space-y-1 flex flex-col  max-h-max "
+        style={{ position: position, top: '40%', fontWeight: 550 }}
+        className="px-2 xs:px-6 text-sm xs:text-lg sm:text-2xl  md:text-3xl lg:text-4xl  space-y-1 flex flex-col  max-h-max "
       >
         <p
           className="inline"
@@ -67,7 +62,8 @@ export default function CustomLetter() {
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
-            willChange: "background-position",
+            willChange: "background-image",
+            transition : 'background-image 2s ease-out'
           }}
         >
           With Dropbox you can{" "}
@@ -80,7 +76,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="md:size-12 size-8"
+                className="md:size-12 xs:size-6 size-4"
                 role="presentation"
                 focusable="false"
               >
@@ -103,7 +99,8 @@ export default function CustomLetter() {
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
-            willChange: "background-position",
+            willChange: "background-image",
+            transition : 'background-image 1s ease-out'
           }}
         >
           documents,
@@ -116,7 +113,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="md:size-12 size-8"
+                className="md:size-12 xs:size-6 size-4"
                 role="presentation"
                 focusable="false"
                 style={{ verticalAlign: "middle" }}
@@ -145,7 +142,8 @@ export default function CustomLetter() {
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
-            willChange: "background-position",
+            willChange: "background-image",
+            transition : 'background-image 1s ease-out'
           }}
         >
           <span style={{ color: "#78286e" }}>
@@ -157,7 +155,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="md:size-12 size-8"
+                className="md:size-12 xs:size-6 size-4"
                 role="presentation"
                 focusable="false"
               >
@@ -169,7 +167,7 @@ export default function CustomLetter() {
               </svg>
             </span>{" "}
           </span>
-          across all your apps, and it happens <br />
+          across all your apps, and it is in
         </p>
         <p
           className="inline"
@@ -178,10 +176,11 @@ export default function CustomLetter() {
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
-            willChange: "background-position",
+            willChange: "background-image",
+            transition : 'background-image 1s ease-out'
           }}
         >
-          in the same place you{" "}
+          the same place you{" "}
           <span style={{ color: "#cd2f7b" }}>
             securely store{" "}
             <span
@@ -191,7 +190,7 @@ export default function CustomLetter() {
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="md:size-12 size-8"
+                className="md:size-12 xs:size-6 size-4"
                 role="presentation"
                 focusable="false"
               >
@@ -217,7 +216,8 @@ export default function CustomLetter() {
             backgroundClip: "text",
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
-            willChange: "background-position",
+            willChange: "background-image",
+            transition : 'background-image 1s ease-out'
           }}
         >
           content. {"it's that simple"}

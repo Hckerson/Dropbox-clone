@@ -20,8 +20,11 @@ export default function Home() {
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
 
-      const scrollPercentage = scrollTop / (documentHeight - windowHeight);
+      const scrollPercentage = Math.min(scrollTop / (documentHeight - windowHeight), 1);
       console.log(scrollPercentage)
+
+      document.documentElement.style.setProperty("--element-scroll-progress",`${scrollPercentage}`);
+
       const fadeStartPercent = 0.05;
       const fadeEndPercent = 0.1;
 
@@ -58,9 +61,9 @@ export default function Home() {
       <div className="w-full h-auto">
         <CustomLetter />
       </div>
-      <div className="w-full flex flex-col">
-        <div className="box-border ">
-          <Content />
+      <div className="w-full flex flex-col -translate-y-[275px] bg-white">
+        <div className="box-border flex ">
+          <Content/>
         </div>
         <div className="box-border flex  ">
           <Document />
@@ -69,7 +72,7 @@ export default function Home() {
           <Faster />
         </div>
       </div>
-      <div className="w-full border-box lg:px-10 mt-60">
+      <div className="w-full  border-box lg:px-10 ">
         <Container />
       </div>
       <div className="w-full box-border  h-full my-20">

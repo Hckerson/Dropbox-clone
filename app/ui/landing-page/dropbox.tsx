@@ -57,7 +57,7 @@ export default function Dropbox() {
           </div>
         </div>
         <div
-          className=" max-w-[900px] relative min-w-0 w-full box-border h-full scroll-mt-6 md:scroll-mt-12"
+          className=" max-w-[900px] relative min-w-0 w-full box-border h-auto scroll-mt-6 md:scroll-mt-12"
           style={{ aspectRatio: 16 / 9, flexGrow: 1 }}
         >
           <div className="absolute bottom-0 top-0 left-0 h-full z-30 box-border hidden  md:block  md:w-11/12">
@@ -65,7 +65,7 @@ export default function Dropbox() {
             <ImgLayout />{" "}
           </div>
           <div
-            style={{ marginBottom: "auto", marginTop: "auto" }}
+            style={{ marginBottom: "auto", marginTop: "auto"  }}
             className="md:max-w-[197px] md:absolute md:top-0 right-0 md:bottom-0 md:z-30 md:h-[85%] box-border"
           >
             {" "}

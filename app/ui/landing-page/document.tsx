@@ -4,19 +4,21 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Document() {
   return (
-    <div className="flex flex-col space-y-6 items-center pt-24 md:pt-52 w-full px-6 xl:px-0  flex-grow box-border  ">
-      <div className="max-w-4xl box-border mx-auto flex flex-col items-center space-y-8 ">
-        <div className="flex flex-col text-center items-center space-y-6 w-full">
-          <p
-            className="p-1 text-white rounded-2xl max-w-max"
-            style={{ backgroundColor: "#78286e" }}
-          >
-            <ChartBarSquareIcon className="size-5 inline-flex" /> Document
-            analytics
-          </p>
-          <span className={`${dmSans.className} font-medium text-3xl`}>
-            instant, actionable insights
-          </span>
+    <div className="flex flex-col space-y-12 items-center pt-24  w-full px-6 xl:px-0  flex-grow box-border  ">
+      <div className="max-w-4xl box-border mx-auto flex flex-col items-center space-y-7 ">
+        <div className="flex flex-col text-center items-center space-y-3 w-full">
+          <div className=" flex flex-col items-center space-y-4">
+            <p
+              className="p-1 text-white rounded-2xl max-w-max"
+              style={{ backgroundColor: "#78286e" }}
+            >
+              <ChartBarSquareIcon className="size-5 inline-flex" /> Document
+              analytics
+            </p>
+            <span className={`${dmSans.className} font-medium text-3xl`}>
+              instant, actionable insights
+            </span>
+          </div>
           <span className="text-base">
             With Dropbox DocSend, page-by-page analytics and permission controls
             track file use in real-time, so <br />
@@ -101,8 +103,18 @@ export default function Document() {
             />
           </div>
         </div>
-        <div style={{filter : 'drop-shadow(0 16px 32px rgba(0,0,0,.3))', aspectRatio : 1.6}} className="relative lg:absolute w-full lg:h-auto lg:w-[700px] lg:max-h-full box-border  " id="cobalt">
-          <div style={{overflow : 'unset', aspectRatio : 1.6}} className="w-full h-auto flex relative items-center max-h-full max-w-full box-border">
+        <div
+          style={{
+            filter: "drop-shadow(0 16px 32px rgba(0,0,0,.3))",
+            aspectRatio: 1.6,
+          }}
+          className="relative lg:absolute w-full lg:h-auto lg:w-[700px] lg:max-h-full box-border  "
+          id="cobalt"
+        >
+          <div
+            style={{ overflow: "unset", aspectRatio: 1.6 }}
+            className="w-full h-auto flex relative items-center max-h-full max-w-full box-border"
+          >
             <video
               className="absolute w-full object-contain"
               aria-hidden="false"

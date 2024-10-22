@@ -3,45 +3,48 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Faster() {
   return (
-    <div className="flex flex-col space-y-6 items-center pt-24 md:pt-52 w-full px-6 xl:px-0  flex-grow box-border  ">
-      <div className="max-w-4xl box-border mx-auto flex flex-col items-center space-y-8 ">
-        <div className="flex flex-col text-center items-center space-y-6 w-full">
-          <p
-            className="p-1 text-white rounded-2xl max-w-max"
-            style={{ backgroundColor: "#007891" }}
-          >
-            <svg
-              viewBox="0 0 24 24"
-              fill="none"
-              className="inline-flex"
-              width="24"
-              height="24"
-              role="presentation"
-              focusable="false"
+    <div className="flex flex-col space-y-12 items-center pt-24  w-full px-6 xl:px-0  flex-grow box-border  ">
+      <div className="max-w-4xl box-border mx-auto flex flex-col items-center space-y-7 ">
+        <div className="flex flex-col text-center items-center space-y-3 w-full">
+          <div className=" flex flex-col items-center space-y-4">
+            <p
+              className="p-1 text-white rounded-2xl max-w-max"
+              style={{ backgroundColor: "#007891" }}
             >
-              <path
-                d="m13.964 10-3.928 2.5v-5l3.928 2.5Z"
-                fill="currentColor"
-                vectorEffect="non-scaling-stroke"
-              ></path>
-              <path
-                fillRule="evenodd"
-                clipRule="evenodd"
-                d="M4 4h16v12H4V4Zm1.5 1.5h13v9h-13v-9Z"
-                fill="currentColor"
-                vectorEffect="non-scaling-stroke"
-              ></path>
-              <path
-                d="M8 19.5H6V18h2v-.5h1.5v.5H18v1.5H9.5v.5H8v-.5Z"
-                fill="currentColor"
-                vectorEffect="non-scaling-stroke"
-              ></path>
-            </svg>
-            Faster Feedback
-          </p>
-          <span className={`${dmSans.className} font-medium text-3xl`}>
-            Reduce the chaos
-          </span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="inline-flex"
+                width="24"
+                height="24"
+                role="presentation"
+                focusable="false"
+              >
+                <path
+                  d="m13.964 10-3.928 2.5v-5l3.928 2.5Z"
+                  fill="currentColor"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+                <path
+                  fillRule="evenodd"
+                  clipRule="evenodd"
+                  d="M4 4h16v12H4V4Zm1.5 1.5h13v9h-13v-9Z"
+                  fill="currentColor"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+                <path
+                  d="M8 19.5H6V18h2v-.5h1.5v.5H18v1.5H9.5v.5H8v-.5Z"
+                  fill="currentColor"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+              </svg>
+              Faster Feedback
+            </p>
+            <span className={`${dmSans.className} font-medium text-3xl`}>
+              Reduce the chaos
+            </span>
+          </div>
+
           <span className="text-base">
             Dropbox Replay reduces ‌feedback back-and-forth. Collect video,
             image, and audio feedback all in one place, so you can get to final
