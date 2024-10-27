@@ -1,8 +1,8 @@
 
 export default function page(){
   return (
-    <main>
-
+    <main className="box-border w-full mt-24">
+      
     </main>
   )
 }

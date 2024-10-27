@@ -1,5 +1,6 @@
 import { ChevronDownIcon} from "@heroicons/react/24/outline"
 import { PDD, SDD, GDD } from "./test"
+import { PDDs, SDDs, GDDs } from "./test 2.0"
 
 export const productLInkL = [
   {label : 'Dropbox', href :  '/nav/products/dropbox' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Dropbox-logo-nav.svg?id=d587e174-e284-42e8-a18c-85c0d8e57e9e', body : 'Store, share and access files across devices'},
@@ -46,15 +47,29 @@ export const app = [
 ]
 
 export const lLink = [
-  { name: "Products", href: "/", icon: ChevronDownIcon, dropdown: PDD },
-  { name: "Solutions", href: "/", icon: ChevronDownIcon, dropdown : SDD },
+  { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDD },
+  { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDD },
   { name: "Enterprise", href: "/nav/enterprise" },
   { name: "Pricing", href: "/plans" },
 ];
 
 export const rLink = [
   { name: "Contact sales", href: "/nav/contact" },
-  { name: "Get app", href: "/", icon: ChevronDownIcon, dropdown : GDD },
+  { name: "Get app", href: "", icon: ChevronDownIcon, dropdown : GDD },
+  { name: "Sign up", href: "/nav/register" },
+  { name: "Log in", href: "/nav/login" },
+];
+
+export const L = [
+  { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDDs },
+  { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDDs },
+  { name: "Enterprise", href: "/nav/enterprise" },
+  { name: "Pricing", href: "/plans" },
+];
+
+export const R = [
+  { name: "Contact sales", href: "/nav/contact" },
+  { name: "Get app", href: "/", icon: ChevronDownIcon, dropdown : GDDs },
   { name: "Sign up", href: "/nav/register" },
   { name: "Log in", href: "/nav/login" },
 ];

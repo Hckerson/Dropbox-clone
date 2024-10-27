@@ -13,7 +13,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleResize = () => {
-      const smallScreen = window.matchMedia("(max-width: 640px)").matches;
+      const smallScreen = window.matchMedia("(max-width: 767px)").matches;
       setIsSmallScreen(smallScreen);
       setHeight(smallScreen ? 48 : 95);
     };
@@ -91,13 +91,21 @@ export default function Navbar() {
             <p className="text-2xl ml-2 mr-6 font-semibold text-white hidden xs:block mb-1">
               Dropbox
             </p>
-            <Leftlink />
+            <div className="text-white flex">
+              <Leftlink />
+            </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6 space-x-1 sm:space-x-2">
             <GlobeAltIcon className=" size-5 sm:size-6 text-white hidden xs:block" />
-            <Rightlink />
-            <GetStarted />
-            <Mainmenu />
+            <div className="text-white flex">
+              <Rightlink />
+            </div>
+            <div className="rounded-xl px-4 py-3 bg-white hidden md:block ">
+              <GetStarted />
+            </div>
+            <div className="text-white">
+              <Mainmenu />
+            </div>
           </div>
         </div>
       </div>

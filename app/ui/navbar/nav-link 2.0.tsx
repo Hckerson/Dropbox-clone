@@ -2,7 +2,7 @@
 import clsx from "clsx";
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { lLink, rLink } from "./links";
+import { L, R } from "./links";
 
 export function Leftlink() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
@@ -37,7 +37,7 @@ export function Leftlink() {
   }, [timeoutId]);
   return (
     <>
-      {lLink.map((link) => {
+      {L.map((link) => {
         const LinkIcon = link.icon;
         const DropdownComponent = link.dropdown;
         return (
@@ -51,7 +51,7 @@ export function Leftlink() {
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-3 py-3 h-full focus:outline-none  focus:ring-offset-0 items-center font-medium transition-colors  ease-in-out hidden  xl:flex space-x-1  ", activeDropdown === link.name ? 'text-blue-500' : ''
+                "px-3 py-3 h-full focus:outline-none  focus:ring-offset-0 items-center font-semibold transition-colors text-sm  ease-in-out hidden  xl:flex space-x-1  ", activeDropdown === link.name ? 'text-blue-600' : ''
               )}
             >
               <div className="flex items-center h-10">
@@ -120,7 +120,7 @@ export function Rightlink() {
   }, []); 
   return (
     <>
-      {rLink.map((link, index) => {
+      {R.map((link, index) => {
         const LinkIcon = link.icon;
         const DropdownComponent = link.dropdown;
         const hide = index === 0 || index === 1 ? "xl:flex hidden" : null;
@@ -135,8 +135,8 @@ export function Rightlink() {
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-2 py-3 font-normal h-full focus:outline-none text-sm xs:text-base  focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
-                hide, activeDropdown === link.name ? 'text-blue-500' : ''
+                "px-2 py-3 font-light h-full focus:outline-none text-sm   focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
+                hide, activeDropdown === link.name ? 'text-blue-600' : ''
               )}
             >
               <div className="flex items-center h-10">

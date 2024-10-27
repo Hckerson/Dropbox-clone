@@ -8,7 +8,7 @@ export function GetStarted() {
     <div>
       <Link
         href="/nav/plans"
-        className="bg-white rounded-xl px-4 py-3 text-black font-semibold hidden sm:block"
+        className=" rounded-xl  font-semibold "
       >
         Get Started
       </Link>
@@ -26,13 +26,13 @@ export function Mainmenu() {
     <div style={{marginRight : 10}}>
       {!menuOpen && (
         <Bars3Icon
-          className="text-white h-6 xl:hidden cursor-pointer "
+          className=" h-6 xl:hidden cursor-pointer "
           onClick={handleMenuToggle}
         />
       )}
       {menuOpen && (
         <XMarkIcon
-          className="text-white h-6 xl:hidden cursor-pointer"
+          className=" h-6 xl:hidden cursor-pointer"
           onClick={handleMenuToggle}
         />
       )}

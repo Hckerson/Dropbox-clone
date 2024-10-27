@@ -21,7 +21,7 @@ export default function Cards({id, src, about, note} : Cardprops){
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.5,rootMargin: "0px" }
+      { threshold: 0.4,rootMargin: "0px" }
     );
 
     if (target) observer.observe(target);

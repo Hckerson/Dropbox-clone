@@ -48,22 +48,22 @@ export default function Home() {
   return (
     <main className="flex flex-col min-h-screen ">
       <Blur/>
-      <div className="w-full fixed top-0 z-40">
+      <div className="w-full fixed top-0 z-50">
         <Navbar />
       </div>
       <div
-        style={{ position: position }}
+        style={{ position: position, zIndex: 0}}
         className="w-full    top-0 items-center"
       >
         <About />
       </div>
-      <div style={{ backgroundColor: "#f7f5f2", zIndex: 30 }} className="flex ">
+      <div style={{ backgroundColor: "#f7f5f2", zIndex : 1 }} className="flex ">
         <Dropbox />
       </div>
-      <div className="w-full h-auto">
+      <div  className="w-full h-auto">
         <CustomLetter />
       </div>
-      <div className="w-full flex flex-col lg:-translate-y-[275px] bg-white">
+      <div className="w-full flex flex-col z-10 lg:-translate-y-[275px] bg-white">
         <div className="box-border flex ">
           <Content/>
         </div>

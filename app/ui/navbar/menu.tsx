@@ -21,7 +21,7 @@ export default function Menu() {
   return (
     <div
       style={{ maxHeight: "100vh" }}
-      className="fixed h-full  inset-x-0  bg-black bg-opacity-95  w-full box-border overflow-scroll  -z-10  justify-center"
+      className="fixed h-full  inset-x-0 block xl:hidden bg-black bg-opacity-95  w-full box-border overflow-scroll  -z-10  justify-center"
     >
       <div className="py-10 w-full box-border ">
         <ul className="space-y-14 relative box-border z-50">
@@ -320,7 +320,7 @@ export default function Menu() {
                   openMenu === "contact sales" ? "text-blue-500" : "text-white"
                 )}
               >
-                <Link href="/"> Contact sales</Link>
+                <Link href="/nav/contact"> Contact sales</Link>
               </span>
             </div>
           </li>
