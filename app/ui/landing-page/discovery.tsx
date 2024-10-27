@@ -1,5 +1,8 @@
+"use client"; // For Next.js App Router (if applicable)
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import clsx from "clsx";
 const articles = [
   {
     id: 1,
@@ -26,6 +29,25 @@ const articles = [
   },
 ];
 export default function Discovery() {
+  const elementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const target = elementRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.5,rootMargin: "50px" }
+    );
+
+    if (target) observer.observe(target);
+
+    return () => {
+      if (target) observer.unobserve(target);
+    };
+  }, []); 
   return (
     <div
       style={{ backgroundColor: "#f7f5f2" }}
@@ -56,7 +78,8 @@ export default function Discovery() {
                   return (
                     <div
                       key={article.id}
-                      className=" relative box-border"
+                      ref={elementRef}
+                      className={clsx('relative box-border transition-all duration-500', isVisible ? 'opacity-100 scale-100 blur-0' : 'lg:opacity-0  lg:scale-75 lg:blur-3xl')}
                     >
                       <div className="lg:w-full xs:min-w-[293px] xs:w-full  w-[230px] h-full box-border">
                         <div style={{gridAutoFlow : 'row', gridTemplateRows : 'max-content', backgroundColor : '#fff'}} className="rounded-2xl select-none overflow-hidden p-0 m-0 justify-stretch h-full grid items-start box-border">

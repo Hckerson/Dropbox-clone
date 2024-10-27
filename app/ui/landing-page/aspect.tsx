@@ -1,58 +1,32 @@
+"use client"; // For Next.js App Router (if applicable)
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-const aspects = [
-  {
-    href: "",
-    id: 1,
-    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/construction/construction-hero@2x.jpg?id=dbfc08de-234c-40af-949d-7e176ad7d582&width=1920&output_type=jpg",
-    name: "Construction",
-    about:
-      "with Dropboxs for teams, you can store, access, preview, edit and transfer CAD, BIM, PDF and visual content files form anywhere",
-  },
-  {
-    href: "",
-    id: 2,
-    pic: " https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/creative-tools/The-Luupe-Genya-Oneall.jpg?id=bc0d3114-b68a-41e7-837b-262d86f2d472&output_type=jpg",
-    name: "Construction",
-    about:
-      "with Dropboxs for teams, you can store, access, preview, edit and transfer CAD, BIM, PDF and visual content files form anywhere",
-  },
-  {
-    href: "",
-    id: 4,
-    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/technology/GettyImages-1139238082.jpg?id=7e97fb44-2356-46b7-8f3d-621a5f98072e&width=3840&output_type=jpg",
-    name: "Construction",
-    about:
-      "with Dropboxs for teams, you can store, access, preview, edit and transfer CAD, BIM, PDF and visual content files form anywhere",
-  },
-  {
-    href: "",
-    id: 3,
-    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/manufacturing/GettyImages-900253108.jpg?id=560cbf20-b4fc-4ec9-8769-8a5e9ad1b223&width=3840&output_type=jpg",
-    name: "Construction",
-    about:
-      "with Dropboxs for teams, you can store, access, preview, edit and transfer CAD, BIM, PDF and visual content files form anywhere",
-  },
-
-  {
-    href: "",
-    id: 5,
-    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/professional-services/etgcNMmB.jpeg?id=e7016484-98bf-4757-acad-25618e33788e&width=3840&output_type=jpg",
-    name: "Construction",
-    about:
-      "with Dropboxs for teams, you can store, access, preview, edit and transfer CAD, BIM, PDF and visual content files form anywhere",
-  },
-  {
-    href: "",
-    id: 6,
-    pic: " https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/education/education-hero@2x.jpg?id=40129999-5c0d-45fc-800e-134eecfd175e&width=1920&output_type=jpg",
-    name: "Construction",
-    about:
-      "with Dropboxs for teams, you can store, access, preview, edit and transfer CAD, BIM, PDF and visual content files form anywhere",
-  },
-];
+import clsx from "clsx";
+import { aspects } from "../navbar/links";
 
 export default function Aspect() {
+  const elementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const target = elementRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.5,rootMargin: "600px" }
+    );
+
+    if (target) observer.observe(target);
+
+    return () => {
+      if (target) observer.unobserve(target);
+    };
+  }, []); 
+  
   return (
     <div className="w-full box-border flex flex-col items-center">
       <div
@@ -71,14 +45,18 @@ export default function Aspect() {
               <div
                 key={aspect.id}
                 style={{ backgroundColor: "#f7f5f2" }}
-                className="box-border h-full overflow-hidden relative rounded-2xl"
+                ref={elementRef}
+                className={clsx('box-border h-full overflow-hidden relative rounded-2xl group animate__animated transition-all duration-500', isVisible ? 'opacity-100 scale-100 blur-0' : 'md:opacity-0  md:scale-75 md:blur-3xl')} 
               >
                 <div
                   className="p-0 m-0 h-full grid justify-start items-center box-border"
                   id="pic"
                 >
                   <div className="md:w-[186px] h-full md:block hidden box-border">
-                    <div style={{aspectRatio : 1.7}} className="w-full h-full flex overflow-hidden relative max-h-full max-w-full box-border items-center">
+                    <div
+                      style={{ aspectRatio: 1.7 }}
+                      className="w-full h-full flex overflow-hidden relative max-h-full max-w-full box-border items-center"
+                    >
                       <Image
                         src={aspect.pic}
                         alt="girl"
@@ -96,11 +74,11 @@ export default function Aspect() {
                       <div className="w-full text-base font-semibold">
                         {aspect.name}
                       </div>
-                      <span>{aspect.about}</span>
+                      <span className="font-light text-sm text-stone-600">{aspect.about}</span>
                     </div>
                     <>
                       <p className="inline underline underline-offset-2 decoration-1 decoration-stone-300">
-                        <Link href={'#'}>Learn more</Link>
+                        <Link href={aspect.href}>Learn more</Link>
                       </p>{" "}
                       <span className="group-hover:translate-x-2 transition-transform ease-in duration-300">
                         <svg

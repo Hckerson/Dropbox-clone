@@ -97,7 +97,7 @@ export default function About() {
             keep it safe, and let you collaborate with ease.
           </p>
         </div>
-        <div className="w-full flex items-center justify-center flex-col space-y-6">
+        <div className="w-full flex items-center justify-center flex-col z-50 relative space-y-6">
           <div className="flex flex-col md:flex-row space-x-9 py-4">
             <div
               className="flex flex-col space-y-3 "
@@ -133,7 +133,7 @@ export default function About() {
             <div className="">
               <Link
                 className="text-sm text-white underline flex mt-5 mb-1 px-3 group"
-                href="/login"
+                href="/nav/plans"
               >
                 <p className="inline-flex items-center text-base">
                   Find your plan

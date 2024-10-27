@@ -40,7 +40,7 @@ export default function Security() {
 
       <div className="w-full text-center text-white box-border flex flex-col space-y-6 md:space-y-0 md:flex-row space-x-12 justify-center items-center">
         <Link
-          href="#"
+          href="/nav/register"
           className="py-3 px-5 inline-block rounded-xl ring-2 ring-white group"
         >
           Get started free{" "}
@@ -63,7 +63,7 @@ export default function Security() {
           </svg>
         </Link>
         <Link
-          href="#"
+          href="/features/security"
           className="group"
         >
           <p className="inline underline underline-offset-2 decoration-1 decoration-stone-300">Learn more</p> {" "}

@@ -1,7 +1,10 @@
+"use client"; // For Next.js App Router (if applicable)
+import { useEffect, useRef, useState } from "react";
 import Security from "./security";
 import Image from "next/image";
 import Cards from "./cards";
 import Carousels from "./carousels";
+import clsx from "clsx";
 
 const cards = [
   {
@@ -25,15 +28,45 @@ const cards = [
 ];
 
 export default function Container() {
+  const elementRef = useRef(null);
+  const secRef = useRef(null)
+  const [isVisible, setIsVisible] = useState(false);
+  const [isLarge, setisLarge] = useState(false)
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const target = elementRef.current;
+    const objective = secRef.current
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.5, rootMargin: "100px" }
+    );
+
+    const mechanic = new IntersectionObserver(
+      ([entry]) => setisLarge(entry.isIntersecting),
+      { threshold: 0.3, rootMargin: "340px" }
+    )
+
+    if (target) observer.observe(target);
+    if (objective) mechanic.observe(objective)
+
+    return () => {
+      if (target) observer.unobserve(target);
+      if (objective) mechanic.unobserve(objective)
+    };
+  }, []);
   return (
     <main className="relative  w-full flex flex-col box-border">
       <div className="box-border h-full py-28">
         <div
-          className="absolute top-0 left-0 flex flex-col items-center w-full h-full lg:rounded-3xl"
+          className={clsx('absolute top-0 left-0 flex flex-col items-center w-full h-full lg:rounded-3xl transition-transform duration-500', isLarge ? " scale-100 " : "lg:scale-[.8]")}
           style={{
             backgroundImage: "linear-gradient(180deg, #292c31, #000)",
             zIndex: -1,
           }}
+          ref={secRef}
         ></div>
         <div className="relative px-6 md:px-8 w-full   flex flex-col items-center space-y-20 box-border">
           <Security />
@@ -50,7 +83,11 @@ export default function Container() {
                   width={618}
                   height={786} // Adjust this as needed
                   quality={80}
-                  className="object-cover  absolute h-full inset-0 box-border max-h-full max-w-full"
+                  ref={elementRef}
+                  className={clsx(
+                    "object-cover  absolute h-full transition-transform duration-500 inset-0 box-border max-h-full max-w-full",
+                    isVisible ? " scale-100 " : "scale-[.2] "
+                  )}
                 />
               </div>
               <div
@@ -64,7 +101,11 @@ export default function Container() {
                   width={486}
                   height={501} // Adjust this as needed
                   quality={80}
-                  className="object-cover  absolute h-full inset-0 box-border max-h-full max-w-full"
+                  ref={elementRef}
+                  className={clsx(
+                    "object-cover  absolute h-full transition-transform duration-500 inset-0 box-border max-h-full max-w-full",
+                    isVisible ? " scale-100 " : "scale-[.2]"
+                  )}
                 />
               </div>
               <div
@@ -78,7 +119,11 @@ export default function Container() {
                   width={1026}
                   height={1296} // Adjust this as needed
                   quality={80}
-                  className="object-cover  absolute h-full inset-0 box-border max-h-full max-w-full"
+                  ref={elementRef}
+                  className={clsx(
+                    "object-cover  absolute h-full transition-transform duration-500 inset-0 box-border max-h-full max-w-full",
+                    isVisible ? " scale-100 " : "scale-[.2]"
+                  )}
                 />
               </div>
             </div>
@@ -126,8 +171,18 @@ export default function Container() {
         </div>
         <div className="mt-16 w-full box-border">
           <div className="w-full box-border">
-            <h3 style={{overflowWrap : 'break-word', color : 'hsla(36, 24%, 96%, .6)', lineHeight : '150%', width : 'fit-content'}} className="box-border hyphens-manual text-center text-base font-normal m-auto p-0 px-6">Trusted by the biggest companies in the world</h3>
-            <Carousels/>
+            <h3
+              style={{
+                overflowWrap: "break-word",
+                color: "hsla(36, 24%, 96%, .6)",
+                lineHeight: "150%",
+                width: "fit-content",
+              }}
+              className="box-border hyphens-manual text-center text-base font-normal m-auto p-0 px-6"
+            >
+              Trusted by the biggest companies in the world
+            </h3>
+            <Carousels />
           </div>
         </div>
       </div>

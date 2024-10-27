@@ -19,17 +19,20 @@ export default function Menu() {
     setMenuOpen(openMenu === menu ? null : menu);
   };
   return (
-    <div className="fixed inset-0 mt-9  bg-black bg-opacity-90  -z-50  justify-center">
-      <div className="py-20 w-full">
-        <ul className="space-y-14">
-          <li>
+    <div
+      style={{ maxHeight: "100vh" }}
+      className="fixed h-full  inset-x-0  bg-black bg-opacity-95  w-full box-border overflow-scroll  -z-10  justify-center"
+    >
+      <div className="py-10 w-full box-border ">
+        <ul className="space-y-14 relative box-border z-50">
+          <li className="flex flex-col relative  items-center box-border ">
             <div
-              className="cursor-pointer flex space-x-2 items-center"
+              className="cursor-pointer w-full box-border py-3 flex space-x-2 items-center"
               onClick={() => toggleMenu("products")}
             >
               <span
                 className={clsx(
-                  " text-2xl font-semibold pl-12 peer transition-colors ease-in-out",
+                  " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
                   openMenu === "products" ? "text-blue-600" : "text-white"
                 )}
               >
@@ -53,98 +56,101 @@ export default function Menu() {
             </div>
             <div
               className={clsx(
-                "overflow-hidden transition-all duration-300 ease-in-out",
-                openMenu === "products"
-                  ? "max-h-max opacity-100"
-                  : "max-h-0 opacity-0"
+                "transition-all w-full box-border duration-300 ease-in-out",
+                openMenu === "products" ? "h-auto opacity-100" : "h-0 opacity-0"
               )}
             >
-              <ul className="mt-2  inset-x-0 bg- p-12 bg-stone-900 flex justify-between space-x-3">
-                <div className="w-1/2  flex flex-col space-y-8">
-                  {productLInkL.map((each) => {
-                    return (
-                      <li className="" key={each.label}>
-                        <Link
-                          href={each.href}
-                          className="hover:text-blue-500 text-white transition-colors "
-                        >
-                          <div className="w-full flex space-x-5">
-                            <div className="shrink-0">
-                              <img
-                                src={each.src}
-                                className="size-10"
-                                alt="image"
-                              />
+              <ul className="w-full box-border p-6 md:p-12 bg-stone-900 flex justify-between space-x-3 overflow-scroll">
+                <div
+                  id="products"
+                  className="grid box-border gap-y-6 md:gap-x-6 w-full"
+                >
+                  <div className="w-full  flex flex-col space-y-8">
+                    {productLInkL.map((each) => {
+                      return (
+                        <li className="" key={each.label}>
+                          <Link
+                            href={each.href}
+                            className="hover:text-blue-500 text-white transition-colors "
+                          >
+                            <div className="w-full flex space-x-5">
+                              <div className="shrink-0">
+                                <img
+                                  src={each.src}
+                                  className="size-10"
+                                  alt="image"
+                                />
+                              </div>
+                              <div className="flex  flex-col">
+                                <p
+                                  className={clsx(
+                                    "transition-opacity duration-500 ease-in-out text-xl font-semibold",
+                                    openMenu === "products"
+                                      ? "opacity-100 "
+                                      : "opacity-0"
+                                  )}
+                                >
+                                  {each.label}
+                                </p>
+                                <p className="text-sm text-stone-400">
+                                  {each.body}
+                                </p>
+                              </div>
                             </div>
-                            <div className="flex  flex-col">
-                              <p
-                                className={clsx(
-                                  "transition-opacity duration-500 ease-in-out text-xl font-semibold",
-                                  openMenu === "products"
-                                    ? "opacity-100 delay-300"
-                                    : "opacity-0"
-                                )}
-                              >
-                                {each.label}
-                              </p>
-                              <p className="text-sm text-stone-400">
-                                {each.body}
-                              </p>
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </div>
+                  <div className="w-full flex flex-col space-y-8">
+                    {productLInkR.map((each) => {
+                      return (
+                        <li className="" key={each.label}>
+                          <Link
+                            href={each.href}
+                            className="hover:text-blue-500 text-white transition-colors "
+                          >
+                            <div className="w-full flex space-x-5">
+                              <div className="shrink-0">
+                                <img
+                                  src={each.src}
+                                  className="size-10"
+                                  alt="image"
+                                />
+                              </div>
+                              <div className="flex  flex-col">
+                                <p
+                                  className={clsx(
+                                    "transition-opacity duration-500 ease-in-out text-xl font-semibold",
+                                    openMenu === "products"
+                                      ? "opacity-100 "
+                                      : "opacity-0"
+                                  )}
+                                >
+                                  {each.label}
+                                </p>
+                                <p className="text-sm text-stone-400">
+                                  {each.body}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        </Link>
-                      </li>
-                    );
-                  })}
-                </div>
-                <div className="w-1/2 flex flex-col space-y-8">
-                  {productLInkR.map((each) => {
-                    return (
-                      <li className="" key={each.label}>
-                        <Link
-                          href={each.href}
-                          className="hover:text-blue-500 text-white transition-colors "
-                        >
-                          <div className="w-full flex space-x-5">
-                            <div className="shrink-0">
-                              <img
-                                src={each.src}
-                                className="size-10"
-                                alt="image"
-                              />
-                            </div>
-                            <div className="flex  flex-col">
-                              <p
-                                className={clsx(
-                                  "transition-opacity duration-500 ease-in-out text-xl font-semibold",
-                                  openMenu === "products"
-                                    ? "opacity-100 delay-300"
-                                    : "opacity-0"
-                                )}
-                              >
-                                {each.label}
-                              </p>
-                              <p className="text-sm text-stone-400">
-                                {each.body}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </li>
-                    );
-                  })}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </div>
                 </div>
               </ul>
             </div>
           </li>
-          <li>
+          <li className="flex flex-col relative  items-center box-border ">
             <div
-              className="cursor-pointer flex space-x-2 items-center"
+              className="cursor-pointer w-full box-border py-3 flex space-x-2 items-center"
               onClick={() => toggleMenu("solutions")}
             >
               <span
                 className={clsx(
-                  " text-2xl font-semibold pl-12 peer transition-colors ease-in-out",
+                  " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
                   openMenu === "solutions" ? "text-blue-500" : "text-white"
                 )}
               >
@@ -168,47 +174,82 @@ export default function Menu() {
             </div>
             <div
               className={clsx(
-                "overflow-hidden transition-all duration-300 ease-in-out",
+                "overflow-hidden w-full transition-all duration-300 ease-in-out",
                 openMenu === "solutions"
-                  ? "max-h-max opacity-100"
-                  : "max-h-0 opacity-0"
+                  ? "h-auto opacity-100"
+                  : "h-0 opacity-0"
               )}
             >
-              <ul className="  inset-x-0  p-12 bg-stone-900 flex justify-between space-x-3">
-                <div className="w-1/2  flex flex-col space-y-8">
-                  <div className="flex flex-col space-y-6">
-                    <legend className="text-base text-stone-400">Team</legend>
-                    {team.map((each) => {
-                      return (
-                        <li className="" key={each.label}>
-                          <Link
-                            href={each.href}
-                            className="hover:text-blue-500 text-white transition-colors "
-                          >
-                            <div className="w-full flex space-x-5">
-                              <div className="flex  flex-col">
-                                <p
-                                  className={clsx(
-                                    "transition-opacity duration-500 ease-in-out text-xl font-semibold",
-                                    openMenu === "solutions"
-                                      ? "opacity-100 delay-300"
-                                      : "opacity-0"
-                                  )}
-                                >
-                                  {each.label}
-                                </p>
+              <ul className="w-full box-border p-6 md:p-12 bg-stone-900 flex justify-between space-x-3 overflow-scroll">
+                <div
+                  id="solutions"
+                  className="grid box-border gap-y-6 md:gap-x-6 w-full"
+                >
+                  <div className="w-full box-border  flex flex-col space-y-8">
+                    <div className="flex flex-col space-y-6">
+                      <legend className="text-base text-stone-400">Team</legend>
+                      {team.map((each) => {
+                        return (
+                          <li className="" key={each.label}>
+                            <Link
+                              href={each.href}
+                              className="hover:text-blue-500 text-white transition-colors "
+                            >
+                              <div className="w-full flex space-x-5">
+                                <div className="flex  flex-col">
+                                  <p
+                                    className={clsx(
+                                      "transition-opacity duration-500 ease-in-out text-xl font-semibold",
+                                      openMenu === "solutions"
+                                        ? "opacity-100 "
+                                        : "opacity-0"
+                                    )}
+                                  >
+                                    {each.label}
+                                  </p>
+                                </div>
                               </div>
-                            </div>
-                          </Link>
-                        </li>
-                      );
-                    })}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </div>
+                    <div className="flex flex-col space-y-6">
+                      <legend className="text-base text-stone-400">
+                        Industries
+                      </legend>
+                      {industries.map((each) => {
+                        return (
+                          <li className="" key={each.label}>
+                            <Link
+                              href={each.href}
+                              className="hover:text-blue-500 text-white transition-colors "
+                            >
+                              <div className="w-full flex space-x-5">
+                                <div className="flex  flex-col">
+                                  <p
+                                    className={clsx(
+                                      "transition-opacity duration-500 ease-in-out text-xl font-semibold",
+                                      openMenu === "solutions"
+                                        ? "opacity-100 "
+                                        : "opacity-0"
+                                    )}
+                                  >
+                                    {each.label}
+                                  </p>
+                                </div>
+                              </div>
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </div>
                   </div>
-                  <div className="flex flex-col space-y-6">
+                  <div className="w-full box-border flex flex-col space-y-6">
                     <legend className="text-base text-stone-400">
-                      Industries
+                      Use cases
                     </legend>
-                    {industries.map((each) => {
+                    {useCase.map((each) => {
                       return (
                         <li className="" key={each.label}>
                           <Link
@@ -221,7 +262,7 @@ export default function Menu() {
                                   className={clsx(
                                     "transition-opacity duration-500 ease-in-out text-xl font-semibold",
                                     openMenu === "solutions"
-                                      ? "opacity-100 delay-300"
+                                      ? "opacity-100 "
                                       : "opacity-0"
                                   )}
                                 >
@@ -234,94 +275,63 @@ export default function Menu() {
                       );
                     })}
                   </div>
-                </div>
-                <div className="w-1/2 flex flex-col space-y-6">
-                  <legend className="text-base text-stone-400">
-                    Use cases
-                  </legend>
-                  {useCase.map((each) => {
-                    return (
-                      <li className="" key={each.label}>
-                        <Link
-                          href={each.href}
-                          className="hover:text-blue-500 text-white transition-colors "
-                        >
-                          <div className="w-full flex space-x-5">
-                            <div className="flex  flex-col">
-                              <p
-                                className={clsx(
-                                  "transition-opacity duration-500 ease-in-out text-xl font-semibold",
-                                  openMenu === "solutions"
-                                    ? "opacity-100 delay-300"
-                                    : "opacity-0"
-                                )}
-                              >
-                                {each.label}
-                              </p>
-                            </div>
-                          </div>
-                        </Link>
-                      </li>
-                    );
-                  })}
                 </div>
               </ul>
             </div>
           </li>
-          <li>
+          <li className="flex flex-col relative  items-start box-border ">
             <div
               className="cursor-pointer flex space-x-2 items-center"
               onClick={() => toggleMenu("enterprise")}
             >
               <span
                 className={clsx(
-                  "text-2xl font-semibold pl-12 peer transition-colors ease-in-out",
+                  "text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
                   openMenu === "enterprise" ? "text-blue-500" : "text-white"
                 )}
               >
-                Enterprise
+                <Link href="/nav/enterprise">Enterprise</Link>
               </span>
             </div>
           </li>
-
-          <li>
+          <li className="flex flex-col relative  items-start box-border ">
             <div
               className="cursor-pointer flex space-x-2 items-center"
               onClick={() => toggleMenu("pricing")}
             >
               <span
                 className={clsx(
-                  " text-2xl font-semibold pl-12 peer transition-colors ease-in-out",
+                  " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
                   openMenu === "pricing" ? "text-blue-500" : "text-white"
                 )}
               >
-                Pricing
+                <Link href="/nav/plans"> Pricing</Link>
               </span>
             </div>
           </li>
-          <li>
+          <li className="flex flex-col relative  items-start box-border ">
             <div
               className="cursor-pointer flex space-x-2 items-center"
               onClick={() => toggleMenu("contact sales")}
             >
               <span
                 className={clsx(
-                  " text-2xl font-semibold pl-12 peer transition-colors ease-in-out",
+                  " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
                   openMenu === "contact sales" ? "text-blue-500" : "text-white"
                 )}
               >
-                Contact sales
+                <Link href="/"> Contact sales</Link>
               </span>
             </div>
           </li>
-          <li>
+          <li className="flex flex-col relative  items-center box-border ">
             <div
-              className="cursor-pointer flex space-x-2 items-center"
+              className="cursor-pointer w-full box-border py-3 flex space-x-2 items-center"
               onClick={() => toggleMenu("get app")}
             >
               <span
                 className={clsx(
-                  " text-2xl font-semibold pl-12 peer transition-colors ease-in-out",
+                  " text-2xl font-semibold pl-6  md:pl-12 peer transition-colors ease-in-out",
                   openMenu === "get app" ? "text-blue-500" : "text-white"
                 )}
               >
@@ -345,40 +355,39 @@ export default function Menu() {
             </div>
             <div
               className={clsx(
-                "overflow-hidden transition-all duration-300 ease-in-out",
-                openMenu === "get app"
-                  ? "max-h-max opacity-100"
-                  : "max-h-0 opacity-0"
+                "transition-all w-full box-border duration-300 ease-in-out",
+                openMenu === "get app" ? "h-auto opacity-100" : "h-0 opacity-0"
               )}
             >
-              <ul className=" w-full  inset-x-0 bg- p-12 bg-stone-900 ">
-                <div className=" flex flex-col space-y-8">
-                  {app.map((each) => {
-                    return (
-                      <li className="" key={each.label}>
-                        <Link
-                          href={each.href}
-                          className="hover:text-blue-500 text-white transition-colors "
-                        >
-                          <div className="w-full flex space-x-5">
-                            <div className="flex  flex-col">
-                              <p
-                                className={clsx(
-                                  "transition-opacity duration-500 ease-in-out text-xl font-semibold",
-                                  openMenu === "get app"
-                                    ? "opacity-100 delay-300"
-                                    : "opacity-0"
-                                )}
-                              >
-                                {each.label}
-                              </p>
-
+              <ul className="w-full box-border p-6 md:p-12 bg-stone-900 flex justify-between space-x-3 overflow-scroll">
+                <div className="grid box-border gap-y-6 md:gap-x-6 w-full">
+                  <div className=" flex flex-col space-y-8">
+                    {app.map((each) => {
+                      return (
+                        <li className="" key={each.label}>
+                          <Link
+                            href={each.href}
+                            className="hover:text-blue-500 text-white transition-colors "
+                          >
+                            <div className="w-full flex space-x-5">
+                              <div className="flex  flex-col">
+                                <p
+                                  className={clsx(
+                                    "transition-opacity duration-500 ease-in-out text-xl font-semibold",
+                                    openMenu === "get app"
+                                      ? "opacity-100 "
+                                      : "opacity-0"
+                                  )}
+                                >
+                                  {each.label}
+                                </p>
+                              </div>
                             </div>
-                          </div>
-                        </Link>
-                      </li>
-                    );
-                  })}
+                          </Link>
+                        </li>
+                      );
+                    })}
+                  </div>
                 </div>
               </ul>
             </div>

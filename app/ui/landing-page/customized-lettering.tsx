@@ -48,8 +48,8 @@ export default function CustomLetter() {
 
   return ( 
     <main
-      className="flex justify-center relative pt-[400px] xl:pt[250px] h-[200vh] xl:h-[180vh] "
-      style={{ backgroundColor: "#f7f5f2" }}
+      className="hidden justify-center relative pt-[400px] xl:pt[250px] lg:flex  "
+      style={{ backgroundColor: "#f7f5f2", height : '200vh' }}
     >
       <div
         style={{ position: position, top: '40%', fontWeight: 550 }}

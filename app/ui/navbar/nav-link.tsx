@@ -6,23 +6,35 @@ import { lLink, rLink } from "./links";
 
 export function Leftlink() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  let timeoutId: NodeJS.Timeout | null = null;
 
   const handleMouseEnter = (linkName: string) => {
+    if (timeoutId) clearTimeout(timeoutId);
     setActiveDropdown(linkName); // Show dropdown on hover
+    const item = document.getElementById('blur')
+    if (item){
+      item.style.inset  = '0'
+    }
   };
 
   const handleMouseLeave = (linkName: string) => {
     if (activeDropdown === linkName) {
-      setActiveDropdown(null); // Hide dropdown if not hovering on the dropdown
+      timeoutId = setTimeout(() => {
+        setActiveDropdown(null); // Hide dropdown
+      }, 200); // Hide dropdown if not hovering on the dropdown
+    }
+    const item = document.getElementById('blur')
+    if (item){
+      item.style.inset  = ''
     }
   };
 
   useEffect(() => {
-    // Reset the hover effect when the component unmounts
     return () => {
+      if (timeoutId) clearTimeout(timeoutId);
       setActiveDropdown(null);
     };
-  }, []); 
+  }, [timeoutId]);
   return (
     <>
       {lLink.map((link) => {
@@ -31,15 +43,15 @@ export function Leftlink() {
         return (
           <div
             key={link.name}
-            onMouseEnter={() => handleMouseEnter(link.name)}
-            onMouseLeave={() => handleMouseLeave(link.name)}
+            onPointerEnter={() => handleMouseEnter(link.name)}
+            onPointerLeave={() => handleMouseLeave(link.name)}
             className="relative group h-full box-border"
           >
             <Link
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-3 py-3 h-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-0 items-center font-medium transition-colors  ease-in-out hidden  xl:flex space-x-1  ", activeDropdown === link.name ? 'text-blue-500' : 'text-white'
+                "px-3 py-3 h-full focus:outline-none  focus:ring-offset-0 items-center font-medium transition-colors  ease-in-out hidden  xl:flex space-x-1  ", activeDropdown === link.name ? 'text-blue-500' : 'text-white'
               )}
             >
               <div className="flex items-center h-10">
@@ -69,16 +81,34 @@ export function Leftlink() {
   );
 }
 
+export function Blur() {
+  return (
+    <div
+      className=" fixed z-10 bg-black bg-opacity-30"
+      style={{ filter: "blur(50%)" }}
+      id="blur"
+    ></div>
+  );
+}
+
 export function Rightlink() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const handleMouseEnter = (linkName: string) => {
     setActiveDropdown(linkName); // Show dropdown on hover
+    const item = document.getElementById('blur')
+    if (item){
+      item.style.inset  = '0'
+    }
   };
 
   const handleMouseLeave = (linkName: string) => {
     if (activeDropdown === linkName) {
       setActiveDropdown(null); // Hide dropdown if not hovering on the dropdown
+    }
+    const item = document.getElementById('blur')
+    if (item){
+      item.style.inset  = ''
     }
   };
 
@@ -97,15 +127,15 @@ export function Rightlink() {
         return (
           <div
             key={link.name}
-            onMouseEnter={() => handleMouseEnter(link.name)}
-            onMouseLeave={() => handleMouseLeave(link.name)}
+            onPointerEnter={() => handleMouseEnter(link.name)}
+            onPointerLeave={() => handleMouseLeave(link.name)}
             className="relative group h-full box-border"
           >
             <Link
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-2 py-3 font-normal h-full focus:outline-none focus:ring-2 text-sm xs:text-base focus:ring-blue-500 focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
+                "px-2 py-3 font-normal h-full focus:outline-none text-sm xs:text-base  focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
                 hide, activeDropdown === link.name ? 'text-blue-500' : 'text-white'
               )}
             >
@@ -136,6 +166,3 @@ export function Rightlink() {
   );
 }
 
-export function MobileNav() {
-  return <></>;
-}

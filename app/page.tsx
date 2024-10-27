@@ -11,6 +11,7 @@ import Container from "./ui/landing-page/container";
 import Aspect from "./ui/landing-page/aspect";
 import Discovery from "./ui/landing-page/discovery";
 import Footer from "./ui/landing-page/footer";
+import { Blur } from "./ui/navbar/nav-link";
 export default function Home() {
   const [position, setPosition] = useState<"sticky" | "static">('sticky')
 
@@ -46,22 +47,23 @@ export default function Home() {
 
   return (
     <main className="flex flex-col min-h-screen ">
+      <Blur/>
       <div className="w-full fixed top-0 z-40">
         <Navbar />
       </div>
       <div
-        style={{ zIndex: -1, position: position }}
+        style={{ position: position }}
         className="w-full    top-0 items-center"
       >
         <About />
       </div>
-      <div style={{ backgroundColor: "#f7f5f2" }} className="flex ">
+      <div style={{ backgroundColor: "#f7f5f2", zIndex: 30 }} className="flex ">
         <Dropbox />
       </div>
       <div className="w-full h-auto">
         <CustomLetter />
       </div>
-      <div className="w-full flex flex-col -translate-y-[275px] bg-white">
+      <div className="w-full flex flex-col lg:-translate-y-[275px] bg-white">
         <div className="box-border flex ">
           <Content/>
         </div>

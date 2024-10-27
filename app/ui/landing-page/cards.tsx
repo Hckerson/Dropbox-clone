@@ -1,4 +1,7 @@
+"use client"; // For Next.js App Router (if applicable)
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image"
+import clsx from "clsx";
 
 type Cardprops = {
   id : number;
@@ -8,10 +11,30 @@ type Cardprops = {
 }
 
 export default function Cards({id, src, about, note} : Cardprops){
+  const elementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const target = elementRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.5,rootMargin: "0px" }
+    );
+
+    if (target) observer.observe(target);
+
+    return () => {
+      if (target) observer.unobserve(target);
+    };
+  }, []); 
   return(
     <div
     style={{ backgroundColor: "#1c1d21", cursor: "pointer" }}
-    className="grid items-center rounded-2xl justify-center"
+    ref={elementRef}
+    className={clsx('grid items-center rounded-2xl justify-center transition-all duration-500', isVisible ? 'opacity-100 scale-100 blur-0' : 'opacity-0  scale-75 blur-3xl')}
     id="card"
     key={id}
   >

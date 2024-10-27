@@ -26,7 +26,7 @@ export default function Footer() {
                   return (
                     <li className="inline" key={each.label}>
                       <Link href={each.href}>
-                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-base font-light tracking-tight">
+                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-sm font-light tracking-tight">
                           {each.label}
                         </p>
                       </Link>
@@ -42,7 +42,7 @@ export default function Footer() {
                   return (
                     <li className="inline" key={each.label}>
                       <Link href={each.href}>
-                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-base font-light tracking-tight">
+                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-sm font-light tracking-tight">
                           {each.label}
                         </p>
                       </Link>
@@ -58,7 +58,7 @@ export default function Footer() {
                   return (
                     <li className="inline" key={each.label}>
                       <Link href={each.href}>
-                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-base font-light tracking-tight">
+                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-sm font-light tracking-tight">
                           {each.label}
                         </p>
                       </Link>
@@ -74,7 +74,7 @@ export default function Footer() {
                   return (
                     <li className="inline" key={each.label}>
                       <Link href={each.href}>
-                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-base font-light tracking-tight">
+                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-sm font-light tracking-tight">
                           {each.label}
                         </p>
                       </Link>
@@ -90,7 +90,7 @@ export default function Footer() {
                   return (
                     <li className="inline" key={each.label}>
                       <Link href={each.href}>
-                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-base font-light tracking-tight">
+                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-sm font-light tracking-tight">
                           {each.label}
                         </p>
                       </Link>
@@ -106,7 +106,7 @@ export default function Footer() {
                   return (
                     <li className="inline" key={each.label}>
                       <Link href={each.href}>
-                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-base font-light tracking-tight">
+                        <p className="p-2  w-full  transition-colors rounded-lg text-stone-200 text-sm font-light tracking-tight">
                           {each.label}
                         </p>
                       </Link>

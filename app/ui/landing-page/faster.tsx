@@ -76,7 +76,7 @@ export default function Faster() {
               ></path>
             </svg>
           </Link>
-          <Link href="#" className="group">
+          <Link href="/nav/products/replay" className="group">
             <p className="inline underline underline-offset-2 decoration-1 decoration-stone-300">
               Learn more
             </p>{" "}
