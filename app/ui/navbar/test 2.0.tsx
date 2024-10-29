@@ -10,7 +10,7 @@ import {
 } from "./links";
 export function PDDs() {
   return (
-    <div className="bg-white inset-x-0 fixed border-t  border-opacity-20">
+    <div className="bg-white inset-x-0 fixed border-t z-50 border-opacity-20">
       <div className="pl-[194px] ">
         <div className="py-1  bg-white">
           <div className="flex  space-x-8 ">

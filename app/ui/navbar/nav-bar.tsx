@@ -52,7 +52,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-black relative z-50  ">
-      <div className="mx-auto  p-0 sm:px-5 lg:px-6">
+      <div className="mx-auto  px-0 md:px-5 lg:px-6">
         <div
           style={{
             height: `${height}px`,
@@ -91,16 +91,16 @@ export default function Navbar() {
             <p className="text-2xl ml-2 mr-6 font-semibold text-white hidden xs:block mb-1">
               Dropbox
             </p>
-            <div className="text-white flex">
+            <div className="flex text-white">
               <Leftlink />
             </div>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6 space-x-1 sm:space-x-2">
-            <GlobeAltIcon className=" size-5 sm:size-6 text-white hidden xs:block" />
+            <GlobeAltIcon className=" size-4 sm:size-5 text-white hidden xs:block" />
             <div className="text-white flex">
               <Rightlink />
             </div>
-            <div className="rounded-xl px-4 py-3 bg-white hidden md:block ">
+            <div className="rounded-xl px-4 py-2  bg-white hidden md:block ">
               <GetStarted />
             </div>
             <div className="text-white">

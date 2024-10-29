@@ -13,7 +13,7 @@ import {
 } from "./links";
 
 import clsx from "clsx";
-export default function Menu() {
+export default function Whitemenu() {
   const [openMenu, setMenuOpen] = useState<string | null>(null);
   const toggleMenu = (menu: string) => {
     setMenuOpen(openMenu === menu ? null : menu);
@@ -21,10 +21,10 @@ export default function Menu() {
   return (
     <div
       style={{ maxHeight: "100vh" }}
-      className="fixed h-full  inset-x-0 block xl:hidden bg-black bg-opacity-95  w-full box-border overflow-scroll pt-7 -z-10  justify-center"
+      className="fixed h-full  inset-x-0 block xl:hidden  bg-opacity-95  w-full box-border overflow-scroll mt-7  -z-10  justify-center"
     >
       <div className="py-10 w-full box-border ">
-        <ul className="space-y-14 relative box-border z-50">
+        <ul className="space-y-10 relative box-border z-50">
           <li className="flex flex-col relative  items-center box-border ">
             <div
               className="cursor-pointer w-full box-border py-3 flex space-x-2 items-center"
@@ -33,7 +33,7 @@ export default function Menu() {
               <span
                 className={clsx(
                   " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
-                  openMenu === "products" ? "text-blue-600" : "text-white"
+                  openMenu === "products" ? "text-blue-600" : "text-black"
                 )}
               >
                 Products
@@ -42,25 +42,27 @@ export default function Menu() {
                 <ChevronDownIcon
                   className={clsx(
                     "w-4 h-4 transition-colors ease-in-out",
-                    openMenu === "products" ? "text-blue-500" : "text-white"
+                    openMenu === "products" ? "text-blue-500" : "text-black"
                   )}
                 />
               ) : (
                 <ChevronUpIcon
                   className={clsx(
                     "w-4 h-4  transition-colors ease-in-out",
-                    openMenu === "products" ? "text-blue-500" : "text-white"
+                    openMenu === "products" ? "text-blue-500" : "text-black"
                   )}
                 />
               )}
             </div>
             <div
               className={clsx(
-                "transition-all w-full box-border duration-300 ease-in-out",
-                openMenu === "products" ? "h-auto opacity-100" : "h-0 opacity-0"
+                "overflow-hidden w-full transition-all duration-300 ease-in-out",
+                openMenu === "products"
+                  ? "h-auto opacity-100"
+                  : "h-0 opacity-0"
               )}
             >
-              <ul className="w-full box-border p-6 md:p-12 bg-stone-900 flex justify-between space-x-3 overflow-scroll">
+              <ul className="w-full box-border p-6 md:p-12 bg-stone-100 flex justify-between space-x-3 overflow-scroll">
                 <div
                   id="products"
                   className="grid box-border gap-y-6 md:gap-x-6 w-full"
@@ -71,7 +73,7 @@ export default function Menu() {
                         <li className="" key={each.label}>
                           <Link
                             href={each.href}
-                            className="hover:text-blue-500 text-white transition-colors "
+                            className="hover:text-blue-500 text-black transition-colors "
                           >
                             <div className="w-full flex space-x-5">
                               <div className="shrink-0">
@@ -92,7 +94,7 @@ export default function Menu() {
                                 >
                                   {each.label}
                                 </p>
-                                <p className="text-sm text-stone-400">
+                                <p className="text-sm text-stone-500 font-normal">
                                   {each.body}
                                 </p>
                               </div>
@@ -108,13 +110,13 @@ export default function Menu() {
                         <li className="" key={each.label}>
                           <Link
                             href={each.href}
-                            className="hover:text-blue-500 text-white transition-colors "
+                            className="hover:text-blue-500 text-black transition-colors "
                           >
                             <div className="w-full flex space-x-5">
                               <div className="shrink-0">
                                 <img
                                   src={each.src}
-                                  className="size-8 bg-white rounded-md"
+                                  className="size-10"
                                   alt="image"
                                 />
                               </div>
@@ -129,7 +131,7 @@ export default function Menu() {
                                 >
                                   {each.label}
                                 </p>
-                                <p className="text-sm text-stone-400">
+                                <p className="text-sm text-stone-500 font-normal">
                                   {each.body}
                                 </p>
                               </div>
@@ -151,7 +153,7 @@ export default function Menu() {
               <span
                 className={clsx(
                   " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
-                  openMenu === "solutions" ? "text-blue-500" : "text-white"
+                  openMenu === "solutions" ? "text-blue-500" : "text-black"
                 )}
               >
                 Solutions
@@ -160,14 +162,14 @@ export default function Menu() {
                 <ChevronDownIcon
                   className={clsx(
                     "w-4 h-4 transition-colors ease-in-out",
-                    openMenu === "solutions" ? "text-blue-500" : "text-white"
+                    openMenu === "solutions" ? "text-blue-500" : "text-black"
                   )}
                 />
               ) : (
                 <ChevronUpIcon
                   className={clsx(
                     "w-4 h-4 transition-colors ease-in-out",
-                    openMenu === "solutions" ? "text-blue-500" : "text-white"
+                    openMenu === "solutions" ? "text-blue-500" : "text-black"
                   )}
                 />
               )}
@@ -180,20 +182,20 @@ export default function Menu() {
                   : "h-0 opacity-0"
               )}
             >
-              <ul className="w-full box-border p-6 md:p-12 bg-stone-900 flex justify-between space-x-3 overflow-scroll">
+              <ul className="w-full box-border p-6 md:p-12 bg-stone-100 flex justify-between space-x-3 overflow-scroll">
                 <div
                   id="solutions"
                   className="grid box-border gap-y-6 md:gap-x-6 w-full"
                 >
                   <div className="w-full box-border  flex flex-col space-y-8">
                     <div className="flex flex-col space-y-6">
-                      <legend className="text-base text-stone-400">Team</legend>
+                      <legend className="text-base text-stone-500 font-medium">Team</legend>
                       {team.map((each) => {
                         return (
                           <li className="" key={each.label}>
                             <Link
                               href={each.href}
-                              className="hover:text-blue-500 text-white transition-colors "
+                              className="hover:text-blue-500 text-black transition-colors "
                             >
                               <div className="w-full flex space-x-5">
                                 <div className="flex  flex-col">
@@ -215,7 +217,7 @@ export default function Menu() {
                       })}
                     </div>
                     <div className="flex flex-col space-y-6">
-                      <legend className="text-base text-stone-400">
+                      <legend className="text-base text-stone-500 font-medium">
                         Industries
                       </legend>
                       {industries.map((each) => {
@@ -223,7 +225,7 @@ export default function Menu() {
                           <li className="" key={each.label}>
                             <Link
                               href={each.href}
-                              className="hover:text-blue-500 text-white transition-colors "
+                              className="hover:text-blue-500 text-black transition-colors "
                             >
                               <div className="w-full flex space-x-5">
                                 <div className="flex  flex-col">
@@ -246,7 +248,7 @@ export default function Menu() {
                     </div>
                   </div>
                   <div className="w-full box-border flex flex-col space-y-6">
-                    <legend className="text-base text-stone-400">
+                    <legend className="text-base text-stone-500 font-medium">
                       Use cases
                     </legend>
                     {useCase.map((each) => {
@@ -254,7 +256,7 @@ export default function Menu() {
                         <li className="" key={each.label}>
                           <Link
                             href={each.href}
-                            className="hover:text-blue-500 text-white transition-colors "
+                            className="hover:text-blue-500 text-black transition-colors "
                           >
                             <div className="w-full flex space-x-5">
                               <div className="flex  flex-col">
@@ -287,7 +289,7 @@ export default function Menu() {
               <span
                 className={clsx(
                   "text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
-                  openMenu === "enterprise" ? "text-blue-500" : "text-white"
+                  openMenu === "enterprise" ? "text-blue-500" : "text-black"
                 )}
               >
                 <Link href="/nav/enterprise">Enterprise</Link>
@@ -302,7 +304,7 @@ export default function Menu() {
               <span
                 className={clsx(
                   " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
-                  openMenu === "pricing" ? "text-blue-500" : "text-white"
+                  openMenu === "pricing" ? "text-blue-500" : "text-black"
                 )}
               >
                 <Link href="/nav/plans"> Pricing</Link>
@@ -317,7 +319,7 @@ export default function Menu() {
               <span
                 className={clsx(
                   " text-2xl font-semibold pl-6 md:pl-12 peer transition-colors ease-in-out",
-                  openMenu === "contact sales" ? "text-blue-500" : "text-white"
+                  openMenu === "contact sales" ? "text-blue-500" : "text-black"
                 )}
               >
                 <Link href="/nav/contact"> Contact sales</Link>
@@ -332,7 +334,7 @@ export default function Menu() {
               <span
                 className={clsx(
                   " text-2xl font-semibold pl-6  md:pl-12 peer transition-colors ease-in-out",
-                  openMenu === "get app" ? "text-blue-500" : "text-white"
+                  openMenu === "get app" ? "text-blue-500" : "text-black"
                 )}
               >
                 Get app
@@ -341,14 +343,14 @@ export default function Menu() {
                 <ChevronDownIcon
                   className={clsx(
                     "w-4 h-4  transition-colors ease-in-out",
-                    openMenu === "get app" ? "text-blue-500" : "text-white"
+                    openMenu === "get app" ? "text-blue-500" : "text-black"
                   )}
                 />
               ) : (
                 <ChevronUpIcon
                   className={clsx(
                     "w-4 h-4 transition-colors ease-in-out",
-                    openMenu === "get app" ? "text-blue-500" : "text-white"
+                    openMenu === "get app" ? "text-blue-500" : "text-black"
                   )}
                 />
               )}
@@ -359,7 +361,7 @@ export default function Menu() {
                 openMenu === "get app" ? "h-auto opacity-100" : "h-0 opacity-0"
               )}
             >
-              <ul className="w-full box-border p-6 md:p-12 bg-stone-900 flex justify-between space-x-3 overflow-scroll">
+              <ul className="w-full box-border p-6 md:p-12 bg-stone-100 flex justify-between space-x-3 overflow-scroll">
                 <div className="grid box-border gap-y-6 md:gap-x-6 w-full">
                   <div className=" flex flex-col space-y-8">
                     {app.map((each) => {
@@ -367,7 +369,7 @@ export default function Menu() {
                         <li className="" key={each.label}>
                           <Link
                             href={each.href}
-                            className="hover:text-blue-500 text-white transition-colors "
+                            className="hover:text-blue-500 text-black transition-colors "
                           >
                             <div className="w-full flex space-x-5">
                               <div className="flex  flex-col">

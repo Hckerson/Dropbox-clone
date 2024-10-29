@@ -2,25 +2,24 @@ import { Leftlink } from "./nav-link 2.0";
 import { Rightlink } from "./nav-link 2.0";
 import { GetStarted } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
-import { Mainmenu } from "./buttons";
+import { Replmenu } from "./buttons";
 
 export default function Navbar() {
   return (
-    <nav className="bg-white relative z-50  ">
+    <nav className="bg-white relative z-50 ">
       <div className="mx-auto  p-0 sm:px-5 lg:px-6">
         <div
-          style={{
-            transition: "height 0.3s ease-in-out",
-          }}
-          className="relative flex  md:h-20 transition-transform text-black duration-200 ease-in items-center justify-between"
+          className="relative flex  items-center justify-between h-[48px] md:h-[80px]"
         >
           <div className="flex flex-1 items-center justify-start  h-full">
             <div className="flex flex-shrink-0 items-center bg-blue-500">
               <svg
                 viewBox="0 0 30 25"
+                height='48'
+                width='48'
                 fill="blue"
                 xmlns="http://www.w3.org/2000/svg"
-                className="p-2 size-12 lg:size-10"
+                className="p-2 "
               >
                 <path
                   d="M7.70076 0.320312L0.478516 4.91332L7.70076 9.50633L14.9242 4.91332L22.1465 9.50633L29.3687 4.91332L22.1465 0.320312L14.9242 4.91332L7.70076 0.320312Z"
@@ -51,7 +50,7 @@ export default function Navbar() {
             <div className="rounded-xl px-4 py-2 text-white bg-blue-600 hidden md:block ">
               <GetStarted />
             </div>
-            <Mainmenu />
+            <Replmenu />
           </div>
         </div>
       </div>
