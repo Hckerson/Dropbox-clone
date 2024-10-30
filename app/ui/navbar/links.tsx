@@ -69,7 +69,7 @@ export const L = [
 
 export const R = [
   { name: "Contact sales", href: "/nav/contact" },
-  { name: "Get app", href: "/", icon: ChevronDownIcon, dropdown : GDDs },
+  { name: "Download app", href: "/nav/mobile" },
   { name: "Sign up", href: "/nav/register" },
   { name: "Log in", href: "/nav/login" },
 ];

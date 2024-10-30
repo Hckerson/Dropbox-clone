@@ -37,8 +37,7 @@ export default function Dropbox() {
     <>
       <div
         className="flex w-full lg:px-0  xs:px-6 justify-center  flex-grow items-center bg-transparent -translate-y-[53px] box-border "
-        id="big-box"
-        style={{ flexGrow: 1 }}
+
       >
         <div
           style={{

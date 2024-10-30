@@ -11,9 +11,11 @@ export function Leftlink() {
   const handleMouseEnter = (linkName: string) => {
     if (timeoutId) clearTimeout(timeoutId);
     setActiveDropdown(linkName); // Show dropdown on hover
-    const item = document.getElementById('blur')
-    if (item){
-      item.style.inset  = '0'
+    if(['Products', 'Solutions'].includes(linkName)){
+      const item = document.getElementById('blur')
+      if (item){
+        item.style.inset  = '0'
+      }
     }
   };
 
@@ -96,9 +98,11 @@ export function Rightlink() {
 
   const handleMouseEnter = (linkName: string) => {
     setActiveDropdown(linkName); // Show dropdown on hover
-    const item = document.getElementById('blur')
-    if (item){
-      item.style.inset  = '0'
+    if(['Get app'].includes(linkName)){
+      const item = document.getElementById('blur')
+      if (item){
+        item.style.inset  = '0'
+      }
     }
   };
 

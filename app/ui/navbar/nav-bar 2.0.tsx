@@ -1,6 +1,6 @@
 import { Leftlink } from "./nav-link 2.0";
 import { Rightlink } from "./nav-link 2.0";
-import { GetStarted } from "./buttons";
+import { Started } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Replmenu } from "./buttons";
 
@@ -47,8 +47,8 @@ export default function Navbar() {
           <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6 space-x-1 sm:space-x-2">
             <GlobeAltIcon className=" size-4 sm:size-5  hidden xs:block" />
             <Rightlink />
-            <div className="rounded-xl px-4 py-2 text-white bg-blue-600 hidden md:block ">
-              <GetStarted />
+            <div className="rounded-xl  text-white bg-blue-600 hidden md:block ">
+              <Started />
             </div>
             <Replmenu />
           </div>

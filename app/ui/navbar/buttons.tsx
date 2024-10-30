@@ -9,13 +9,27 @@ export function GetStarted() {
     <div>
       <Link
         href="/nav/plans"
-        className=" rounded-xl w-full font-semibold "
+        className=" rounded-xl px-4 py-2  bg-white w-full font-semibold "
       >
         Get Started
       </Link>
     </div>
   );
 }
+
+export function Started() {
+  return (
+    <div>
+      <Link
+        href="/nav/plans"
+        className=" rounded-xl px-4 py-2  bg-blue-500 w-full font-semibold "
+      >
+        Get Started
+      </Link>
+    </div>
+  );
+}
+
 
 export function Mainmenu() {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -100,7 +100,7 @@ export default function Navbar() {
             <div className="text-white flex">
               <Rightlink />
             </div>
-            <div className="rounded-xl px-4 py-2  bg-white hidden md:block ">
+            <div className=" hidden md:block ">
               <GetStarted />
             </div>
             <div className="text-white">
