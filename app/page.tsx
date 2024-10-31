@@ -1,5 +1,4 @@
-'use client'
-import { useState, useEffect } from "react";
+"use client";
 import Navbar from "./ui/navbar/nav-bar";
 import About from "./ui/landing-page/about";
 import Dropbox from "./ui/landing-page/dropbox";
@@ -13,59 +12,24 @@ import Discovery from "./ui/landing-page/discovery";
 import Footer from "./ui/landing-page/footer";
 import { Blur } from "./ui/navbar/nav-link";
 export default function Home() {
-  const [position, setPosition] = useState<"sticky" | "static">('sticky')
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-
-      const scrollPercentage = Math.min(scrollTop / (documentHeight - windowHeight), 1);
-      console.log(scrollPercentage)
-
-      document.documentElement.style.setProperty("--element-scroll-progress",`${scrollPercentage}`);
-
-      const fadeStartPercent = 0.05;
-      const fadeEndPercent = 0.1;
-
-      if (scrollPercentage >= fadeEndPercent) {
-        setPosition('static')
-      } else if (scrollPercentage >= fadeStartPercent) {
-        setPosition('sticky')
-      } else {
-        setPosition('sticky')
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <main className="flex flex-col min-h-screen ">
-      <Blur/>
+      <Blur />
       <div className="w-full fixed top-0 z-50">
         <Navbar />
       </div>
-      <div
-        style={{ position: position, zIndex: 0}}
-        className="w-full    top-0 items-center"
-      >
+      <div className="w-full     items-center">
         <About />
       </div>
-      <div style={{ backgroundColor: "#f7f5f2", zIndex : 1 }} className="flex ">
+      <div style={{ backgroundColor: "#f7f5f2", zIndex: 1 }} className="flex ">
         <Dropbox />
       </div>
-      <div  className="w-full h-auto">
+      <div className="w-full h-auto">
         <CustomLetter />
       </div>
       <div className="w-full flex flex-col z-10 lg:-translate-y-[275px] bg-white">
         <div className="box-border flex ">
-          <Content/>
+          <Content />
         </div>
         <div className="box-border flex  ">
           <Document />

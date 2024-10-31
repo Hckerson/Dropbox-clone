@@ -1,5 +1,3 @@
-"use client";
-import { useEffect, useState } from "react";
 import { Leftlink } from "./nav-link";
 import { Rightlink } from "./nav-link";
 import { GetStarted } from "./buttons";
@@ -7,58 +5,13 @@ import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Mainmenu } from "./buttons";
 
 export default function Navbar() {
-  const [height, setHeight] = useState(95);
-  const [lastScrollTop, setLastScrollTop] = useState(0);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      const smallScreen = window.matchMedia("(max-width: 767px)").matches;
-      setIsSmallScreen(smallScreen);
-      setHeight(smallScreen ? 48 : 95);
-    };
-
-    window.addEventListener("resize", handleResize);
-    handleResize();
-
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const shrinkStart = 50;
-      const shrinkEnd = 300;
-      const maxHeight = isSmallScreen ? 48 : 95;
-      const minHeight = isSmallScreen ? 48 : 61;
-
-      if (scrollTop < lastScrollTop) {
-        setHeight(maxHeight);
-      } else if (scrollTop >= shrinkEnd) {
-        setHeight(minHeight);
-      } else if (scrollTop >= shrinkStart && scrollTop < shrinkEnd) {
-        const heightValue =
-          maxHeight -
-          ((scrollTop - shrinkStart) * (maxHeight - minHeight)) /
-            (shrinkEnd - shrinkStart);
-        setHeight(heightValue);
-      }
-      setLastScrollTop(scrollTop);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [lastScrollTop, isSmallScreen]);
+  
 
   return (
     <nav className="bg-black relative z-50  ">
       <div className="mx-auto  px-0 md:px-5 lg:px-6">
         <div
-          style={{
-            height: `${height}px`,
-            transition: "height 0.3s ease-in-out",
-          }}
-          className="relative flex transition-transform duration-200 ease-in items-center justify-between"
+          className="relative flex  items-center justify-between h-[48px] md:h-[80px]"
         >
           <div className="flex flex-1 items-center justify-start  h-full">
             <div className="flex flex-shrink-0 items-center bg-blue-500">
