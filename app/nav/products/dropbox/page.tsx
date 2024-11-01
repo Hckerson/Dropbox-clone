@@ -4,6 +4,7 @@ import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import Everything from "@/app/ui/components/everything";
 import How from "@/app/ui/components/how";
+import Saying from "@/app/ui/landing-page/saying";
 export default function page() {
   return (
     <main className="box-border w-full ">
@@ -27,6 +28,9 @@ export default function page() {
       <div style={{backgroundColor : '#f7f5f2'}} className="w-full box-border flex flex-col items-center">
         <Everything />
         <How/>
+      </div>
+      <div className="w-full box-border">
+          <Saying/>
       </div>
     </main>
   );

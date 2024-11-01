@@ -76,6 +76,9 @@ input[type="number"]::-webkit-outer-spin-button {
   aspect-ratio: 1.2;
 }
 
+#collections{
+  grid-auto-flow: column;
+}
 
 #faster {
   aspect-ratio: 1.2;
@@ -142,6 +145,10 @@ input[type="number"]::-webkit-outer-spin-button {
 @media (min-width: 1024px) {
   #aspect{
     grid-template-columns: 1fr 1fr;
+  }
+
+  #collections{
+    grid-auto-columns: 1050px;
   }
 
   #start{

@@ -5,27 +5,7 @@ import Image from "next/image";
 import Cards from "./cards";
 import Carousels from "./carousels";
 import clsx from "clsx";
-
-const cards = [
-  {
-    id: 1,
-    about: "“The security of knowing our information is safe.” ",
-    note: "Customer Bryan Chandler reveals how his team uses Dropbox to organize and share file successfully",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/security/interview-cards/BrianThumb.png?id=ad81b907-369a-439e-b7f7-1c52d1061618&output_type=png",
-  },
-  {
-    id: 2,
-    about: "“Seriously impressive security features.” ",
-    note: "Tech influencer Justin Tse discuss why he trusts Dropbox to keep his content safe",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/security/interview-cards/JustinThumb.png?id=9e7c8793-8282-4398-a9d0-b1f1a803f10a&output_type=png",
-  },
-  {
-    id: 3,
-    about: "“How to enhance security and keep productivity reasonable” ",
-    note: "Your company is sharing contents with collaborators all over the world. Are you in control?",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/security/interview-cards/SecurityThumb.png?id=9b20ffce-4e40-4d57-9ac1-6173cb71473e&output_type=png",
-  },
-];
+import { cards } from "../navbar/links";
 
 export default function Container() {
   const elementRef = useRef(null);

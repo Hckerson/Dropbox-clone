@@ -205,6 +205,86 @@ export const hows = [
   {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/teams-ui-1272x424.jpg?id=5576ba5e-cca2-4b39-8abd-c2119e398717&output_type=jpg',head : 'For personal use', body : `Keep everything  that's important to you sharable and safe in one place. Store files in the cloud, share photos and videos, and more`, link : '/nav/plans', name: 'Compare plans'},
 ]
 
+export const cards = [
+  {
+    id: 1,
+    about: "“The security of knowing our information is safe.” ",
+    note: "Customer Bryan Chandler reveals how his team uses Dropbox to organize and share file successfully",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/security/interview-cards/BrianThumb.png?id=ad81b907-369a-439e-b7f7-1c52d1061618&output_type=png",
+  },
+  {
+    id: 2,
+    about: "“Seriously impressive security features.” ",
+    note: "Tech influencer Justin Tse discuss why he trusts Dropbox to keep his content safe",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/security/interview-cards/JustinThumb.png?id=9e7c8793-8282-4398-a9d0-b1f1a803f10a&output_type=png",
+  },
+  {
+    id: 3,
+    about: "“How to enhance security and keep productivity reasonable” ",
+    note: "Your company is sharing contents with collaborators all over the world. Are you in control?",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/security/interview-cards/SecurityThumb.png?id=9b20ffce-4e40-4d57-9ac1-6173cb71473e&output_type=png",
+  },
+];
+
+export const customers = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_1.jpg?id=5c6a4d49-6d0f-4e50-a3a9-1899643dfc2e&width=2560&output_type=jpg",
+    body: "“Dropbox has been tremendously helpful for social media, I can hop on anytime and pull whatever photo is inspiring me to post”",
+    link: "/https://experience.dropbox.com/resources/bound-for-nowhere-customer-story",
+    name: "Mary Ashley Krough (MAK)",
+    role: "Illustrator and Graphic Designer",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_2.jpg?id=b1b754b5-244b-4a31-8a4f-76ec7666be19&width=2560&output_type=jpg",
+    body: `“Dropbox increased our team's  collaboration while working from home, which has increase our flexibility and could revolutionize our office culture”`,
+    link: "/https://experience.dropbox.com/resources/sundane-success-story",
+    name: "Adam Montgomery",
+    role: "Senior manager of Programming, Sundane Film Festival",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_3.jpg?id=d58ab911-5d3a-4edc-a129-68a5c164ca02&width=2560&output_type=jpg",
+    body: `“We are a grass-roots non-profit. When we use a tool that the rest of the design world uses, it helps professionalize our organization”`,
+    link: "/https://experience.dropbox.com/resources/creativity-explored-customer-story",
+    name: "Ann Kappes",
+    role: "Director of Art Partnerships at Creativity Explored",
+  },
+  {
+    id: 4,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_4.png?id=18161da0-3bc4-40c9-a89a-6685f6e0161f",
+    body: "“My sister and I store and share recipes and I use the app on my phone to look up ingredients while I’m at the grocery store. It’s very convenient and user friendly, without a lot of overhead.”",
+    link: "",
+    name: "Lynette Elliot",
+    role: "",
+  },
+  {
+    id: 5,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_5.jpg?id=e1c41b07-cb77-4a83-b521-5f5b99c52ed6&width=2560&output_type=jpg ",
+    body: "“Our team is working remotely—everyone’s in a different time zone. Dropbox is a great hub for us to all work at once and seamlessly share files.”",
+    link: "/https://experience.dropbox.com/drop-in-video-series/sophia-chang",
+    name: "Sophia Chang",
+    role: "Illustrator and Designer",
+  },
+  {
+    id: 6,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_6.jpg?id=48020aa4-2849-48be-9d8d-ccb6bbd51bce&width=2560&output_type=jpg",
+    body: "“Dropbox version control is very important. You may want to go back to an earlier version because there’s an idea in there that you really like.”",
+    link: "/https://experience.dropbox.com/drop-in-video-series/king-children",
+    name: "Sahir Zaveri",
+    role: "CEO of King Children",
+  },
+  {
+    id: 7,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_7.png?id=359adf0f-1fbf-4cb7-bc49-6373cda8b4be",
+    body: "“We store important photos and documents for our family on Dropbox. Not only do I know they are in a safe location, but I’m also able to access them from anywhere.”",
+    link: "",
+    name: "Sarah Shelton",
+    role: "",
+  },
+];
+
 
 
 

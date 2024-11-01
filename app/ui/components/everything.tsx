@@ -17,7 +17,7 @@ export default function Everything() {
             Keep everything at your fingertips
           </h2>
           <div className="w-full box-border">
-            <div style={{width : 'fit-content'}} id="everything" className="grid box-border px-6 md:px-12 lg:px-20 xl:px-0  ">
+            <div style={{width : 'fit-content'}} id="everything" className="grid gap-y-14 md:gap-y-0 box-border px-6 md:px-12 lg:px-20 xl:px-0  ">
               {every.map((one)=>{
                 return(
                   <div key={one.id} className="w-full relative box-border">

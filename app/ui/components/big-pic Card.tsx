@@ -6,7 +6,7 @@ type everyProps = {
 };
 export default function BigPicCard({ src, head, body }: everyProps) {
   return (
-    <div className="box-border w-full h-full md:px-6">
+    <div className="box-border w-full h-full px-3 lg:px-6">
       <div
         style={{
           gridAutoFlow: "row",
@@ -36,7 +36,7 @@ export default function BigPicCard({ src, head, body }: everyProps) {
         </div>
         <div className="box-border grid gap-y-4">
           <div className="text-xl font-semibold">{head}</div>
-          <div className="font-light text-lg ">{body}</div>
+          <div className="font-normal  text-base ">{body}</div>
         </div>
       </div>
     </div>
