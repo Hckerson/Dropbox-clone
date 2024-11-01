@@ -1,8 +1,8 @@
 import { golos } from "../fonts";
-import BigPicCard from "./big-pic Card";
-import { every } from "../navbar/links";
+import BigTopPicCard from "./big-top-pic Card";
+import { hows } from "../navbar/links";
 
-export default function Everything() {
+export default function How() {
   return (
     <div className="box-border w-full ">
       <div className="w-full flex flex-col items-center box-border">
@@ -14,14 +14,14 @@ export default function Everything() {
             style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
             className={`text-center p-0 mx-4 font-medium text-2xl md:text-4xl box-border hyphens-manual ${golos.className}`}
           >
-            Keep everything at your fingertips
+            How will you use Dropbox ?
           </h2>
           <div className="w-full box-border">
-            <div style={{width : 'fit-content'}} id="everything" className="grid box-border px-6 md:px-12 lg:px-20 xl:px-0  ">
-              {every.map((one)=>{
+            <div style={{width : 'fit-content'}} id="how" className="grid box-border px-6 md:px-12 lg:px-20 xl:px-0  ">
+              {hows.map((one)=>{
                 return(
                   <div key={one.id} className="w-full relative box-border">
-                      <BigPicCard key={one.id} {...one} />
+                      <BigTopPicCard key={one.id} {...one} />
                   </div>
                 )
               })}

@@ -50,7 +50,7 @@ export function PDDs() {
                         <div className="shrink-0">
                           <img
                             src={each.src}
-                            className="size-7 bg-white rounded-md"
+                            className="size-8 bg-white rounded-md"
                             alt="image"
                           />
                         </div>

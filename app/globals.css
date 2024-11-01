@@ -92,14 +92,26 @@ input[type="number"]::-webkit-outer-spin-button {
 }
 
 #everything{
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: minmax(0, max-content)
+  grid-auto-rows: minmax(0, max-content);
+  grid-auto-flow: row;
+}
+
+#how{
+  grid-auto-flow: row;
 }
 
 @media (min-width: 768px) {
   #scroll {
     grid-auto-columns: 720px;
     padding: 0 48px;
+  }
+
+  #everything{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #how{
+    grid-template-columns: 1fr 1fr ;
   }
 
   #start{

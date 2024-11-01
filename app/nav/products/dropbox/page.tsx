@@ -3,6 +3,7 @@ import Frame from "@/app/ui/components/picture-frame";
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import Everything from "@/app/ui/components/everything";
+import How from "@/app/ui/components/how";
 export default function page() {
   return (
     <main className="box-border w-full ">
@@ -23,8 +24,9 @@ export default function page() {
           <Frame />
         </div>
       </div>
-      <div className="w-full box-border">
+      <div style={{backgroundColor : '#f7f5f2'}} className="w-full box-border flex flex-col items-center">
         <Everything />
+        <How/>
       </div>
     </main>
   );

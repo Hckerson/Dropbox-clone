@@ -99,11 +99,21 @@ export function Rightlink() {
 
   const handleMouseEnter = (linkName: string) => {
     setActiveDropdown(linkName); // Show dropdown on hover
+    if(['Get app'].includes(linkName)){
+      const item = document.getElementById('blur')
+      if (item){
+        item.style.inset  = '0'
+      }
+    }
   };
 
   const handleMouseLeave = (linkName: string) => {
     if (activeDropdown === linkName) {
       setActiveDropdown(null); // Hide dropdown if not hovering on the dropdown
+    }
+    const item = document.getElementById('blur')
+    if (item){
+      item.style.inset  = ''
     }
   };
 
@@ -116,6 +126,8 @@ export function Rightlink() {
   return (
     <>
       {R.map((link, index) => {
+        const LinkIcon = link.icon;
+        const DropdownComponent = link.dropdown;
         const hide = index === 0 || index === 1 ? "xl:flex hidden" : null;
         return (
           <div
@@ -128,18 +140,33 @@ export function Rightlink() {
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-2 py-3 font-light h-full focus:outline-none text-sm   focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
-                hide, activeDropdown === link.name ? 'text-blue-600' : ''
+                "px-2 py-3 font-normal h-full focus:outline-none text-sm xs:text-base  focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
+                hide, activeDropdown === link.name ? 'text-blue-500' : ''
               )}
             >
               <div className="flex items-center h-10">
                 {link.name}
+                {LinkIcon && (
+                  <LinkIcon className="w-4 transition group-hover:translate-y-1 " />
+                )}
               </div>
             </Link>
+            {DropdownComponent && activeDropdown === link.name && (
+              <div
+              className={clsx(
+                "absolute overflow-hidden transition-all duration-1000 ease-in-out",
+                activeDropdown === link.name ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+              )}
+              style={{
+                transitionProperty: "max-height, opacity",
+              }}
+            >
+              <DropdownComponent />
+            </div>
+            )}
           </div>
         );
       })}
     </>
   );
 }
-
