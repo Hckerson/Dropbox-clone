@@ -1,6 +1,11 @@
+'use client'
+import { Swiper, SwiperSlide } from "swiper/react";
 import { golos } from "../fonts";
+import 'swiper/css';
+import { useState } from 'react';
 import Collection from "../components/frame";
 import { customers } from "../navbar/links";
+import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function Saying() {
   return (
@@ -18,7 +23,7 @@ export default function Saying() {
           </h2>
           <div
             style={{ zIndex: 1 }}
-            className=" box-border w-full flex flex-col justify-center items-center xl:max-w-[1350px]"
+            className=" box-border w-full flex flex-col space-y-5 justify-center items-center xl:max-w-[1350px]"
           >
             <div
               style={{ flexGrow: 1 }}
@@ -26,9 +31,16 @@ export default function Saying() {
             >
               <div
                 style={{ zIndex: 2, top: "30%" }}
-                className=" transition-all duration-1000 ease-in-out opacity-0 group-hover:opacity-100 group-hover:-translate-x-5 absolute w-24 h-24 left-5 flex "
+                className=" transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:-translate-x-5 absolute w-24 h-24 left-5 flex "
               >
-                <button style={{aspectRatio : 1, cursor :'pointer', overflow : 'unset'}} className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border">
+                <button
+                  style={{
+                    aspectRatio: 1,
+                    cursor: "pointer",
+                    overflow: "unset",
+                  }}
+                  className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border"
+                >
                   <span className="">
                     <svg
                       viewBox="0 0 24 24"
@@ -57,15 +69,23 @@ export default function Saying() {
                 }}
                 className="flex  min-w-full overflow-x-scroll box-border"
               >
+                
                 {customers.map((customer) => (
                   <Collection key={customer.id} {...customer} />
                 ))}
               </div>
               <div
                 style={{ zIndex: 2, top: "30%" }}
-                className=" transition-all duration-1000 ease-in-out opacity-0 group-hover:opacity-100 group-hover:translate-x-5 absolute right-5 w-24 h-24 flex"
+                className=" transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:translate-x-5 absolute right-5 w-24 h-24 flex"
               >
-                <button style={{aspectRatio : 1, cursor :'pointer', overflow : 'unset'}} className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border">
+                <button
+                  style={{
+                    aspectRatio: 1,
+                    cursor: "pointer",
+                    overflow: "unset",
+                  }}
+                  className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border"
+                >
                   <span className="">
                     <svg
                       viewBox="0 0 24 24"
@@ -88,7 +108,27 @@ export default function Saying() {
                 </button>
               </div>
             </div>
-            <div>controls</div>
+            <div className="flex box-border">
+              <button
+                style={{ aspectRatio: 1, cursor: "pointer", overflow: "unset" }}
+                className="m-0 inline-flex relative items-center justify-center p-2 hover:bg-stone-700 w-full box-border"
+              >
+                <span className="">
+                  <ChevronLeftIcon className="size-8 text-white"/>
+                </span>
+              </button>
+              <div>
+
+              </div>
+              <button
+                style={{ aspectRatio: 1, cursor: "pointer", overflow: "unset" }}
+                className="m-0 inline-flex relative items-center justify-center p-2 hover:bg-stone-700 w-full box-border"
+              >
+                <span className="">
+                  <ChevronRightIcon className="size-8 text-white"/>
+                </span>
+              </button>
+            </div>
           </div>
         </div>
       </div>
