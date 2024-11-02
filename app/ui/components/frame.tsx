@@ -9,7 +9,6 @@ type Cardprops = {
   role: string;
 };
 export default function Collection({
-  id,
   src,
   body,
   link,
