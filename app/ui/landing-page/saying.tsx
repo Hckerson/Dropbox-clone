@@ -1,13 +1,16 @@
-'use client'
+"use client";
+import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { golos } from "../fonts";
-import 'swiper/css';
-import { useState } from 'react';
+import "swiper/css";
+import { useState, useRef } from "react";
 import Collection from "../components/frame";
 import { customers } from "../navbar/links";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 
 export default function Saying() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const swiperRef = useRef<SwiperType | null>(null);
   return (
     <div style={{ backgroundColor: "#1e1919" }} className="w-full box-border ">
       <div className="flex flex-col items-center w-full box-border ">
@@ -29,39 +32,52 @@ export default function Saying() {
               style={{ flexGrow: 1 }}
               className="flex overflow-x-hidden relative w-full group  box-border"
             >
-              <div
-                style={{ zIndex: 2, top: "30%" }}
-                className=" transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:-translate-x-5 absolute w-24 h-24 left-5 flex "
-              >
-                <button
-                  style={{
-                    aspectRatio: 1,
-                    cursor: "pointer",
-                    overflow: "unset",
-                  }}
-                  className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border"
+              {currentSlide > 0 && (
+                <div
+                  style={{ zIndex: 2, top: "30%" }}
+                  className=" transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:-translate-x-5 absolute w-24 h-24 left-5 hidden xl:flex "
                 >
-                  <span className="">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="dig-PictogramIcon"
-                      width="64"
-                      height="64"
-                      focusable="false"
-                      role="presentation"
-                    >
-                      <path
-                        d="M19 11.75H7m5.25 6.5L6 11.75l6.25-6.5"
-                        stroke="white"
-                        strokeWidth="1.5"
-                        strokeMiterlimit="10"
-                        vectorEffect="non-scaling-stroke"
-                      ></path>
-                    </svg>
-                  </span>
-                </button>
-              </div>
+                  <button
+                    style={{
+                      aspectRatio: 1,
+                      cursor: "pointer",
+                      overflow: "unset",
+                    }}
+                    className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border"
+                    onClick={() => {
+                      if (swiperRef.current) {
+                        const newSlide =
+                          currentSlide > 0
+                            ? currentSlide - 1
+                            : customers.length - 1;
+                        swiperRef.current.slideTo(newSlide);
+                        setCurrentSlide(newSlide);
+                      }
+                    }}
+                  >
+                    <span className="">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="dig-PictogramIcon"
+                        width="64"
+                        height="64"
+                        focusable="false"
+                        role="presentation"
+                      >
+                        <path
+                          d="M19 11.75H7m5.25 6.5L6 11.75l6.25-6.5"
+                          stroke="white"
+                          strokeWidth="1.5"
+                          strokeMiterlimit="10"
+                          vectorEffect="non-scaling-stroke"
+                        ></path>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              )}
+
               <div
                 style={{
                   scrollSnapType: "x mandatory",
@@ -69,65 +85,119 @@ export default function Saying() {
                 }}
                 className="flex  min-w-full overflow-x-scroll box-border"
               >
-                
-                {customers.map((customer) => (
-                  <Collection key={customer.id} {...customer} />
-                ))}
+                <Swiper
+                  spaceBetween={0}
+                  slidesPerView={1}
+                  onSlideChange={(swiper) =>
+                    setCurrentSlide(swiper.activeIndex)
+                  }
+                  onSwiper={(swiper) => (swiperRef.current = swiper)}
+                >
+                  {customers.map((customer) => (
+                    <SwiperSlide key={customer.id}>
+                      <Collection {...customer} />
+                    </SwiperSlide>
+                  ))}
+                </Swiper>
               </div>
-              <div
-                style={{ zIndex: 2, top: "30%" }}
-                className=" transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:translate-x-5 absolute right-5 w-24 h-24 flex"
-              >
+
+              {currentSlide < customers.length - 1 && (
+                <div
+                  style={{ zIndex: 2, top: "30%" }}
+                  className=" transition-all duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:translate-x-5 absolute right-5 w-24 h-24 hidden xl:flex"
+                >
+                  <button
+                    style={{
+                      aspectRatio: 1,
+                      cursor: "pointer",
+                      overflow: "unset",
+                    }}
+                    className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border"
+                    onClick={() => {
+                      if (swiperRef.current) {
+                        const newSlide =
+                          currentSlide < customers.length - 1
+                            ? currentSlide + 1
+                            : 0;
+                        swiperRef.current.slideTo(newSlide);
+                        setCurrentSlide(newSlide);
+                      }
+                    }}
+                  >
+                    <span className="">
+                      <svg
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="dig-PictogramIcon"
+                        width="64"
+                        height="64"
+                        focusable="false"
+                        role="presentation"
+                      >
+                        <path
+                          d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                          stroke="white"
+                          strokeWidth="1.5"
+                          strokeMiterlimit="10"
+                          vectorEffect="non-scaling-stroke"
+                        ></path>
+                      </svg>
+                    </span>
+                  </button>
+                </div>
+              )}
+            </div>
+            <div className="flex box-border">
+              {currentSlide > 0 && (
                 <button
                   style={{
                     aspectRatio: 1,
                     cursor: "pointer",
                     overflow: "unset",
                   }}
-                  className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border"
+                  className="m-0 inline-flex relative items-center justify-center p-2 hover:bg-stone-700 w-full box-border"
+                  onClick={() => {
+                    const newSlide =
+                      currentSlide > 0
+                        ? currentSlide - 1
+                        : customers.length - 1;
+                    swiperRef.current?.slideTo(newSlide);
+                    setCurrentSlide(newSlide);
+                  }}
                 >
                   <span className="">
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="dig-PictogramIcon"
-                      width="64"
-                      height="64"
-                      focusable="false"
-                      role="presentation"
-                    >
-                      <path
-                        d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
-                        stroke="white"
-                        strokeWidth="1.5"
-                        strokeMiterlimit="10"
-                        vectorEffect="non-scaling-stroke"
-                      ></path>
-                    </svg>
+                    <ChevronLeftIcon className="size-8 text-white" />
                   </span>
                 </button>
-              </div>
-            </div>
-            <div className="flex box-border">
-              <button
-                style={{ aspectRatio: 1, cursor: "pointer", overflow: "unset" }}
-                className="m-0 inline-flex relative items-center justify-center p-2 hover:bg-stone-700 w-full box-border"
-              >
-                <span className="">
-                  <ChevronLeftIcon className="size-8 text-white"/>
-                </span>
-              </button>
-              <div>
+              )}
 
-              </div>
-              <button
-                style={{ aspectRatio: 1, cursor: "pointer", overflow: "unset" }}
-                className="m-0 inline-flex relative items-center justify-center p-2 hover:bg-stone-700 w-full box-border"
-              >
-                <span className="">
-                  <ChevronRightIcon className="size-8 text-white"/>
+              <div className="flex flex-col items-center justify-center">
+                <span className=" text-xl text-stone-400 px-2">
+                  {String(currentSlide + 1).padStart(2, "0")}/07
                 </span>
-              </button>
+              </div>
+              {currentSlide < customers.length - 1 && (
+                <button
+                  style={{
+                    aspectRatio: 1,
+                    cursor: "pointer",
+                    overflow: "unset",
+                  }}
+                  className="m-0 inline-flex relative items-center justify-center p-2 hover:bg-stone-700 w-full box-border"
+                  onClick={() => {
+                    const newSlide =
+                      currentSlide < customers.length - 1
+                        ? currentSlide + 1
+                        : 0;
+                    swiperRef.current?.slideTo(newSlide);
+                    setCurrentSlide(newSlide);
+                  }}
+                >
+                  <span className="">
+                    <ChevronRightIcon className="size-8 text-white" />
+                  </span>
+                </button>
+              )}
             </div>
           </div>
         </div>
