@@ -47,6 +47,10 @@ input[type="number"]::-webkit-outer-spin-button {
   aspect-ratio: 1.2;
 }
 
+#did{
+  aspect-ratio: 16/9;
+}
+
 #foot{
   grid-auto-flow:  row;
   grid-template-columns: repeat(2 , 1fr);
@@ -56,6 +60,11 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-flow: column;
   grid-template-columns: auto;
 }
+
+.people{
+  min-width: calc(100% + 2px);
+}
+
 
 #card {
   grid-auto-flow: row;
@@ -147,8 +156,8 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr;
   }
 
-  #collections{
-    grid-auto-columns: 1050px;
+  #did{
+    aspect-ratio: unset;
   }
 
   #start{
@@ -205,15 +214,36 @@ input[type="number"]::-webkit-outer-spin-button {
     aspect-ratio: 1.83;
   }
 
+  #note{
+    flex-basis: 50%;
+  }
+
   #faster {
     aspect-ratio: 1.83;
+  }
+
+  #did{
+    flex-basis: 50%;
+    min-height: auto;
   }
 }
 
 @media (min-width: 1280px) {
-
+  #left{
+    transform : translate(10%, -50%);
+    transition: opacity 1s ease-in-out;
+  }
   #content {
     aspect-ratio: 1.8;
+  }
+
+  #note{
+    flex-basis: 60%;
+  }
+
+  #did{
+    flex-basis: 40%;
+    min-height: auto;
   }
 
   #scroll {
@@ -230,6 +260,15 @@ input[type="number"]::-webkit-outer-spin-button {
   #drop{
     grid-template-columns: 1fr 2fr;
     grid-auto-flow: column;
+  }
+
+  #note{
+    flex-basis: 70%;
+  }
+
+  #did{
+    flex-basis: 30%;
+    min-height: auto;
   }
 }
 

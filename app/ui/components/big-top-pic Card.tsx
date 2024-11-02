@@ -43,15 +43,20 @@ export default function BigTopPicCard({
             </div>
           </div>
         </div>
-        <div className="box-border grid gap-y-8 bg-white px-6 py-12 md:p-12 ">
-          <div className="text-2xl font-medium">{head}</div>
-          <div className="font-normal text-stone-700 text-base ">{body}</div>
+        <div className="box-border flex justify-between flex-col gap-y-8 bg-white h-full px-6 py-12 md:p-12 ">
+          <div className=" grid gap-y-8">
+            <div className="text-2xl font-medium">{head}</div>
+            <div className="font-normal text-stone-700 text-base ">{body}</div>
+          </div>
+
           <div
-            style={{ width: "fit-content", }}
+            style={{ width: "fit-content" }}
             className="rounded-2xl py-4 px-5 group flex bg-blue-600 hover:bg-blue-700 space-x-3"
           >
             <Link href={link}></Link>
-            <p className="text-white text-sm xs:text-base font-semibold">{name}</p>
+            <p className="text-white text-sm xs:text-base font-semibold">
+              {name}
+            </p>
             <span className="group-hover:translate-x-1 transition-transform ease-out duration-300">
               <svg
                 viewBox="0 0 24 24"
