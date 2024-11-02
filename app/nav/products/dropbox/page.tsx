@@ -29,7 +29,7 @@ export default function page() {
         <Everything />
         <How/>
       </div>
-      <div className="w-full box-border hidden xl:block">
+      <div className="w-full box-border ">
           <Saying/>
       </div>
       

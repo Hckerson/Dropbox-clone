@@ -47,10 +47,6 @@ input[type="number"]::-webkit-outer-spin-button {
   aspect-ratio: 1.2;
 }
 
-#did{
-  aspect-ratio: 16/9;
-  min-height: auto;
-}
 
 #foot{
   grid-auto-flow:  row;
@@ -117,6 +113,10 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-flow: row;
 }
 
+#way{
+  grid-auto-flow: row;
+}
+
 @media (min-width: 768px) {
   #scroll {
     grid-auto-columns: 720px;
@@ -161,8 +161,9 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr;
   }
 
-  #did{
-    aspect-ratio: unset;
+  #way{
+    grid-auto-flow: column;
+    grid-template-columns: 2fr 1fr;
   }
 
   .inner{
@@ -223,19 +224,11 @@ input[type="number"]::-webkit-outer-spin-button {
     aspect-ratio: 1.83;
   }
 
-  #note{
-    flex-basis: 50%;
-  }
 
   #faster {
     aspect-ratio: 1.83;
   }
 
-  #did{
-    flex-basis: 50%;
-    min-height: auto;
-    max-width: 250px;
-  }
 }
 
 @media (min-width: 1280px) {
@@ -246,16 +239,6 @@ input[type="number"]::-webkit-outer-spin-button {
   
   #content {
     aspect-ratio: 1.8;
-  }
-
-  #note{
-    flex-basis: 60%;
-  }
-
-  #did{
-    flex-basis: 40%;
-    min-height: auto;
-    max-width: 350px;
   }
 
   #scroll {
@@ -274,14 +257,6 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-auto-flow: column;
   }
 
-  #note{
-    flex-basis: 70%;
-  }
-
-  #did{
-    flex-basis: 30%;
-    min-height: auto;
-  }
 }
 
 @keyframes swipe {
