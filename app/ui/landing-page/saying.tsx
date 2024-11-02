@@ -20,9 +20,15 @@ export default function Saying() {
             style={{ zIndex: 1 }}
             className=" box-border w-full flex flex-col justify-center items-center xl:max-w-[1350px]"
           >
-            <div style={{flexGrow : 1}} className="flex overflow-x-hidden relative w-full  box-border">
-              <div style={{zIndex : 2}} className=" transition-all duration-1000 absolute left-0">
-                <button className="" aria-label="Previous slide">
+            <div
+              style={{ flexGrow: 1 }}
+              className="flex overflow-x-hidden relative w-full  box-border"
+            >
+              <div
+                style={{ zIndex: 2, top: "30%" }}
+                className=" transition-all duration-1000 absolute w-24 h-24 left-0 flex "
+              >
+                <button style={{aspectRatio : 1, cursor :'pointer', overflow : 'unset'}} className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border">
                   <span className="">
                     <svg
                       viewBox="0 0 24 24"
@@ -44,13 +50,22 @@ export default function Saying() {
                   </span>
                 </button>
               </div>
-              <div style={{scrollSnapType : 'x mandatory', scrollbarWidth: "none"}} className="flex flex-nowrap min-w-full overflow-x-scroll box-border ">
+              <div
+                style={{
+                  scrollSnapType: "x mandatory",
+                  scrollbarWidth: "none",
+                }}
+                className="flex flex-nowrap min-w-full overflow-x-scroll box-border"
+              >
                 {customers.map((customer) => (
                   <Collection key={customer.id} {...customer} />
                 ))}
               </div>
-              <div  style={{zIndex : 2}} className=" transition-all duration-1000 absolute right-0">
-                <button className="" aria-label="Previous slide">
+              <div
+                style={{ zIndex: 2, top: "30%" }}
+                className=" transition-all duration-1000 absolute right-0 w-24 h-24 flex"
+              >
+                <button style={{aspectRatio : 1, cursor :'pointer', overflow : 'unset'}} className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border">
                   <span className="">
                     <svg
                       viewBox="0 0 24 24"

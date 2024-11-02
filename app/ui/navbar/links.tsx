@@ -254,7 +254,7 @@ export const customers = [
   {
     id: 4,
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_4.png?id=18161da0-3bc4-40c9-a89a-6685f6e0161f",
-    body: "“My sister and I store and share recipes and I use the app on my phone to look up ingredients while I’m at the grocery store. It’s very convenient and user friendly, without a lot of overhead.”",
+    body: `“We are a grass-roots non-profit. When we use a tool that the rest of the design world uses, it helps professionalize our organization”`,
     link: "",
     name: "Lynette Elliot",
     role: "",
@@ -278,7 +278,7 @@ export const customers = [
   {
     id: 7,
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_7.png?id=359adf0f-1fbf-4cb7-bc49-6373cda8b4be",
-    body: "“We store important photos and documents for our family on Dropbox. Not only do I know they are in a safe location, but I’m also able to access them from anywhere.”",
+    body: "“We store important photos and documents for our family on Dropbox. Not only do I know they are in a safe location, but I’m also able to access anywhere ”",
     link: "",
     name: "Sarah Shelton",
     role: "",

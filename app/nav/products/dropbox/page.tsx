@@ -29,9 +29,10 @@ export default function page() {
         <Everything />
         <How/>
       </div>
-      <div className="w-full box-border">
+      <div className="w-full box-border hidden xl:block">
           <Saying/>
       </div>
+      
     </main>
   );
 }
