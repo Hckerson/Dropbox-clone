@@ -113,6 +113,10 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-flow: row;
 }
 
+#way{
+  grid-auto-flow: row;
+}
+
 @media (min-width: 768px) {
   #scroll {
     grid-auto-columns: 720px;
@@ -157,6 +161,10 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr;
   }
 
+  #way{
+    grid-auto-flow: column;
+    grid-template-columns: 2fr 1fr;
+  }
 
   .inner{
     aspect-ratio: unset;

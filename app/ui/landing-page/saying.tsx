@@ -7,6 +7,7 @@ import { useState, useRef } from "react";
 import Collection from "../components/frame";
 import { customers } from "../navbar/links";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
+import Link from "next/link";
 
 export default function Saying() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -198,6 +199,39 @@ export default function Saying() {
                   </span>
                 </button>
               )}
+            </div>
+          </div>
+          <div id="way" className="w-full box-border pl-6 lg:pl-16 lg:gap-y-0 gap-y-6  grid">
+            <h2 className={`text-white text-2xl md:text-4xl lg:px-6 text-wrap ${golos.className}`}>
+              Discover a better way to work together
+            </h2>
+            <div
+              style={{ width: "fit-content", height : 'fit-content' }}
+              className="rounded-2xl py-4 px-5 group flex  bg-blue-600 hover:bg-blue-700 space-x-3"
+            >
+              <Link href="/overview/frompath=dropbox"></Link>
+              <p className="text-white text-sm xs:text-base font-semibold">
+                Learn about Dropbox
+              </p>
+              <span className="group-hover:translate-x-1  transition-transform ease-out duration-300">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  className="inline-flex transition-transform duration-300 "
+                  width="24"
+                  height="24"
+                  role="presentation"
+                  focusable="false"
+                >
+                  <path
+                    d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                    stroke="white"
+                    strokeWidth="1.5"
+                    strokeMiterlimit="10"
+                    vectorEffect="non-scaling-stroke"
+                  ></path>
+                </svg>
+              </span>
             </div>
           </div>
         </div>

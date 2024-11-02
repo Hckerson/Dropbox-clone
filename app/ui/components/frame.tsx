@@ -23,14 +23,14 @@ export default function Collection({
       aria-roledescription="slide"
     >
       <div className="flex flex-wrap box-border flex-row w-full">
-        <div className="box-content px-10 lg:px-24  w-full flex">
+        <div className="box-content px-6 lg:px-24  w-full flex">
           <div
             style={{ flexShrink: 1 }}
             className="flex snap-center people lg:flex-row flex-col box-border"
           >
             <div
               style={{ flexGrow: 0, flexShrink: 0, overflow: "unset" }}
-              className=" box-border lg:mr-20 mr-0 lg:mb-0 mb-6 justify-center   relative items-center"
+              className=" box-border lg:mr-16 mr-0 lg:mb-0 mb-6 justify-center   relative items-center"
             >
               <div
                 style={{ overflow: "unset" }}
