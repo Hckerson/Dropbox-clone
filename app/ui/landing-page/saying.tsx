@@ -22,11 +22,11 @@ export default function Saying() {
           >
             <div
               style={{ flexGrow: 1 }}
-              className="flex overflow-x-hidden relative w-full  box-border"
+              className="flex overflow-x-hidden relative w-full group  box-border"
             >
               <div
                 style={{ zIndex: 2, top: "30%" }}
-                className=" transition-all duration-1000 absolute w-24 h-24 left-0 flex "
+                className=" transition-all duration-1000 ease-in-out opacity-0 group-hover:opacity-100 group-hover:-translate-x-5 absolute w-24 h-24 left-5 flex "
               >
                 <button style={{aspectRatio : 1, cursor :'pointer', overflow : 'unset'}} className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border">
                   <span className="">
@@ -55,7 +55,7 @@ export default function Saying() {
                   scrollSnapType: "x mandatory",
                   scrollbarWidth: "none",
                 }}
-                className="flex flex-nowrap min-w-full overflow-x-scroll box-border"
+                className="flex  min-w-full overflow-x-scroll box-border"
               >
                 {customers.map((customer) => (
                   <Collection key={customer.id} {...customer} />
@@ -63,7 +63,7 @@ export default function Saying() {
               </div>
               <div
                 style={{ zIndex: 2, top: "30%" }}
-                className=" transition-all duration-1000 absolute right-0 w-24 h-24 flex"
+                className=" transition-all duration-1000 ease-in-out opacity-0 group-hover:opacity-100 group-hover:translate-x-5 absolute right-5 w-24 h-24 flex"
               >
                 <button style={{aspectRatio : 1, cursor :'pointer', overflow : 'unset'}} className="m-0 inline-flex relative items-center justify-center p-0 w-full box-border">
                   <span className="">

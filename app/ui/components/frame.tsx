@@ -9,7 +9,6 @@ type Cardprops = {
   role: string;
 };
 export default function Collection({
-  id,
   src,
   body,
   link,
@@ -26,32 +25,41 @@ export default function Collection({
       <div className="flex flex-wrap box-border flex-row w-full">
         <div className="box-content px-10 lg:px-24  w-full flex">
           <div
-            style={{ flexShrink: 0 }}
+            style={{ flexShrink: 1 }}
             className="flex snap-center people lg:flex-row flex-col box-border"
           >
             <div
               style={{ flexGrow: 0, flexShrink: 0, overflow: "unset" }}
-              className=" box-border lg:mr-20 mr-0 lg:mb-0 mb-6 justify-center flex relative items-center"
+              className=" box-border lg:mr-20 mr-0 lg:mb-0 mb-6 justify-center   relative items-center"
             >
-          <div
-            style={{
-              aspectRatio: 2.2,
-              overflow: "unset",
-            }}
-            className="w-full h-auto flex relative items-center max-h-full max-w-full box-border"
-          >
-            <Image
-              src={src}
-              alt="girl"
-              width={996}
-              height={1200} // Adjust this as needed
-              quality={80}
-              className="object-contain w-full absolute inset-0 h-full"
-            />
-          </div>
+              <div
+                style={{ overflow: "unset" }}
+                className="w-full h-full flex max-h-full max-w-full   relative box-border inner "
+              >
+                <div className="w-full relative flex box-border inner">
+                  <div className="w-full lg:static absolute flex lg:w-[350px] items-center max-h-full max-w-full box-border inner">
+                    <div
+                      style={{
+                        aspectRatio: 2.2,
+                        overflow: "unset",
+                        lineHeight: 0,
+                      }}
+                      className=" w-full h-full flex relative items-center max-h-full max-w-full"
+                    >
+                      <Image
+                        src={src}
+                        alt="girl"
+                        width={2560}
+                        height={1440}
+                        className="h-full object-cover w-full absolute inset-0 max-h-full max-w-full box-border"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div
-              style={{ flexGrow: "1" }}
+              style={{  flexGrow: 1, flexShrink : 1}}
               className="flex flex-col box-border"
             >
               <div
@@ -65,13 +73,13 @@ export default function Collection({
                   {body}
                 </div>
                 <div className=" mb-8 box-border">
-                  <Link href={link} className="group">
+                  <Link href={link} className="group/svg">
                     Read the full story{" "}
                     <span className="">
                       <svg
                         viewBox="0 0 24 24"
                         fill="none"
-                        className="inline-flex transition-transform duration-300 group-hover:translate-x-2  "
+                        className="inline-flex transition-transform duration-300 group-hover/svg:translate-x-2  "
                         width="24"
                         height="24"
                         role="presentation"
