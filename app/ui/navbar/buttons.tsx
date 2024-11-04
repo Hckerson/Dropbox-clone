@@ -9,7 +9,7 @@ export function GetStarted() {
     <div>
       <Link
         href="/nav/plans"
-        className=" rounded-xl px-4 py-2  bg-white w-full font-semibold "
+        className=" rounded-xl px-4 py-3  bg-white w-full font-semibold "
       >
         Get Started
       </Link>
@@ -22,14 +22,13 @@ export function Started() {
     <div>
       <Link
         href="/nav/plans"
-        className=" rounded-xl px-4 py-2  bg-blue-500 w-full font-semibold "
+        className=" rounded-xl px-4 py-3  bg-blue-600 w-full font-semibold "
       >
         Get Started
       </Link>
     </div>
   );
 }
-
 
 export function Mainmenu() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -38,7 +37,7 @@ export function Mainmenu() {
   };
 
   return (
-    <div style={{marginRight : 10}}>
+    <div style={{ marginRight: 10 }}>
       {!menuOpen && (
         <Bars3Icon
           className=" h-6 xl:hidden cursor-pointer "
@@ -63,7 +62,7 @@ export function Replmenu() {
   };
 
   return (
-    <div style={{marginRight : 10}}>
+    <div style={{ marginRight: 10 }}>
       {!menuOpen && (
         <Bars3Icon
           className=" h-6 xl:hidden cursor-pointer "

@@ -51,17 +51,17 @@ export default function BigTopPicCard({
 
           <div
             style={{ width: "fit-content" }}
-            className="rounded-2xl py-4 px-5 group flex bg-blue-600 hover:bg-blue-700 space-x-3"
+            className="rounded-2xl py-4 px-7 group flex bg-blue-600 hover:bg-blue-700 space-x-3"
           >
-            <Link href={link}></Link>
-            <p className="text-white text-sm xs:text-base font-semibold">
+            <Link
+              href={link}
+              className=" rounded-xl w-full text-white group flex space-x-3 font-semibold "
+            >
               {name}
-            </p>
-            <span className="group-hover:translate-x-1 transition-transform ease-out duration-300">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
-                className="inline-flex transition-transform duration-300 "
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
                 width="24"
                 height="24"
                 role="presentation"
@@ -69,13 +69,13 @@ export default function BigTopPicCard({
               >
                 <path
                   d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
-                  stroke="white"
+                  stroke="currentColor"
                   strokeWidth="1.5"
                   strokeMiterlimit="10"
                   vectorEffect="non-scaling-stroke"
                 ></path>
               </svg>
-            </span>
+            </Link>
           </div>
         </div>
       </div>
