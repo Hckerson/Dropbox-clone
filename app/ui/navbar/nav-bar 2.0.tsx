@@ -12,7 +12,7 @@ export default function Navbar() {
           className="relative flex  items-center justify-between h-[48px] md:h-[80px]"
         >
           <div className="flex flex-1 items-center justify-start  h-full">
-            <div className="flex flex-shrink-0 items-center bg-blue-500">
+            <div style={{backgroundColor : '#0061fe'}} className="flex flex-shrink-0 items-cent">
               <svg
                 viewBox="0 0 30 25"
                 height='48'
