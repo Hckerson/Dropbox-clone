@@ -63,7 +63,10 @@ export function Expresstwo() {
         <h5>Learn about third party integrations</h5>
       </div>
 
-      <div id="media" className="grid justify-center px-10 gap-y-20 md:gap-x-20 group">
+      <div
+        id="media"
+        className="grid justify-center px-10 gap-y-20 md:gap-x-20 group"
+      >
         <div
           style={{
             aspectRatio: 1,
@@ -111,6 +114,68 @@ export function Expresstwo() {
             quality={80}
             className="object-contain w-full absolute inset-0 h-full"
           />
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Expresstri() {
+  return (
+    <div className=" grid items-center text-white justify-center w-full gap-y-8 pb-16" id='pricing'>
+      <div
+        className="grid gap-y-6  text-center"
+        style={{
+          maxWidth: "80ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+      >
+        <h5 className="text-center">Dropbox Replay add-on</h5>
+        <h3
+          className={`${golos.className} text-3xl px-7 md:text-4xl font-normal `}
+        >
+          $10 / month per user (billed annually as $120 / year)
+        </h3>
+        <h5 className="text-center ">Or $12 / month per user billed monthly</h5>
+        <span className="text-wrap">
+          Dropbox Basic users must upgrade to a Plus or higher plan before
+          buying the Add-On. The Replay Add-On is not available to Dropbox
+          Family plan users. Learn more.
+        </span>
+      </div>
+
+      <div className="w-full flex items-center justify-center flex-col z-50 relative space-y-6">
+        <div className="flex  py-4">
+          <div
+            className="flex flex-col space-y-3 "
+            style={{ opacity: 1, willChange: "opacity" }}
+          >
+            <Link
+              className="text-base font-medium px-5 py-6 group rounded-2xl bg-blue-500 hover:bg-blue-600 flex space-x-8 items-center transition-transform duration-300"
+              href="/login"
+            >
+              <p className='text-black'>Buy the Replay Add-on</p>
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-2"
+                width="24"
+                height="24"
+                role="presentation"
+                focusable="false"
+              >
+                <path
+                  d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                  stroke="black"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+              </svg>
+            </Link>
+          </div>
         </div>
       </div>
     </div>

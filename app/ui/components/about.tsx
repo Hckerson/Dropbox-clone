@@ -49,7 +49,7 @@ export default function About() {
               style={{ opacity: 1, willChange: "opacity" }}
             >
               <Link
-                className="text-base font-medium px-5 py-6 group rounded-2xl bg-blue-500 flex space-x-8 items-center transition-transform duration-300"
+                className="text-base font-medium px-5 py-6 group rounded-2xl bg-blue-500 hover:bg-blue-600 flex space-x-8 items-center transition-transform duration-300"
                 href="/login"
               >
                 <p>Start Project</p>

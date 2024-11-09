@@ -104,7 +104,7 @@ export default function About() {
               style={{ opacity: opacity, willChange: "opacity" }}
             >
               <Link
-                className="text-base font-medium px-5 py-7 group rounded-2xl bg-blue-500 flex items-center transition-transform duration-300"
+                className="text-base font-medium px-5 py-7 group rounded-2xl bg-blue-500 hover:bg-blue-600 flex items-center transition-transform duration-300"
                 href="/login"
               >
                 Sign up for free

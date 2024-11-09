@@ -1,7 +1,7 @@
 import Navbar from "@/app/ui/components/stripped-nav";
 import About from "@/app/ui/components/about";
 import Frame, { Frametwo, FrameOne } from "@/app/ui/components/big-vid";
-import Expression, {Expresstwo} from "@/app/ui/components/expression";
+import Expression, {Expresstwo, Expresstri} from "@/app/ui/components/expression";
 import Righty, { Lefty } from "@/app/ui/components/rem";
 import { Frametri } from "@/app/ui/components/big-vid";
 export default function page() {
@@ -48,6 +48,9 @@ export default function page() {
         </div>
         <div className='w-full box-border'>
           <Frametri/>
+        </div>
+        <div className="w-full box-border">
+          <Expresstri/>
         </div>
       </div>
     </div>
