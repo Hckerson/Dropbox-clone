@@ -18,21 +18,23 @@ export default function page() {
         </div>
         <div
           style={{
-            backgroundColor : '#d8d3cb'
+            backgroundColor: "#d8d3cb",
           }}
           className="w-full h-full text-stone-400 box-border justify-center flex flex-col items-center"
         >
           <Frame />
         </div>
       </div>
-      <div style={{backgroundColor : '#f7f5f2'}} className="w-full box-border flex flex-col items-center">
+      <div
+        style={{ backgroundColor: "#f7f5f2" }}
+        className="w-full box-border flex flex-col items-center"
+      >
         <Everything />
-        <How/>
+        <How />
       </div>
       <div className="w-full box-border ">
-          <Saying/>
+        <Saying />
       </div>
-      
     </main>
   );
 }

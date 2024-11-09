@@ -142,7 +142,7 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-rows: minmax(0, max-content);
 }
 
-#replay{
+#dropbox{
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
@@ -159,7 +159,7 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr 1fr ;
   }
 
-  #replay{
+  #dropbox{
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr ;
   }

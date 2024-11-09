@@ -1,5 +1,7 @@
 import { golos } from "../fonts";
 import Image from "next/image";
+import { why } from "../navbar/links";
+import Replay from "../landing-page/saying2.0";
 
 const one = [
   { label: "Transcriptions and captions", id: 1 },
@@ -17,27 +19,6 @@ const two = [
 const tri = [
   { label: "Unlimited file uploads (up to your storage cap)", id: 1 },
   { label: "Free large file transfer (up to 250GB per transfer)", id: 2 },
-];
-
-const why = [
-  {
-    id: 1,
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/win-coconut.svg?id=395b8945-5c84-4b77-9916-4852b8bcddb3",
-    why: "Highly recommended",
-    fact: "9 out of 10 users would recommend Replay*",
-  },
-  {
-    id: 2,
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/activity-coconut.svg?id=0c4e8e85-6251-4714-86bc-d4479bbf7a6e",
-    why: "Production powerhouse",
-    fact: "Some users who reported a faster workflow said Replay reduced project time by as much as much as 50%*",
-  },
-  {
-    id: 3,
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/conversation-coconut.svg?id=8d7b5705-61a0-4b71-bb8c-fda4948a836a",
-    why: "Faster feedback",
-    fact: "72% of users who reported a faster workflow said Replay helped get a quicker response from their team*",
-  },
 ];
 
 export default function Why() {
@@ -118,7 +99,7 @@ export default function Why() {
           </h2>
           <div className="w-full box-border">
             <div
-              id="replay"
+              id="dropbox"
               className="grid box-border px-6 w-full lg:px-10 md:gap-y-0 gap-y-10   "
             >
               {why.map((each) => {
@@ -169,6 +150,9 @@ export default function Why() {
           >
             What Replay customers are saying
           </h2>
+          <div className="w-full box-border">
+            <Replay />
+          </div>
         </div>
       </div>
     </div>

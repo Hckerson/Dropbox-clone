@@ -8,12 +8,6 @@ export default function About() {
       className=" flex w-full items-center z-0 justify-center pt-48 transition-opacity px-0 xs:px-12 md:px-0" 
     >
       <div
-        style={{
-          transform: `scale(1)`,
-          willChange: "transform",
-          marginLeft: 50,
-          marginRight: 50,
-        }}
         className="box-border"
       >
         <div className="box-border justify-center items-center flex flex-wrap space-y-5 flex-col">
@@ -42,7 +36,7 @@ export default function About() {
             Replay.
           </p>
         </div>
-        <div className="w-full flex items-center justify-center flex-col z-50 relative space-y-6">
+        <div className="w-full flex items-center justify-center flex-col  relative space-y-6">
           <div className="flex  py-4">
             <div
               className="flex flex-col space-y-3 "

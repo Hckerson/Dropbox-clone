@@ -64,7 +64,19 @@ export default function page() {
           <Faq />
         </div>
         <div className="w-full box-border">
-          <Why/>
+          <Why />
+        </div>
+        <div className="w-full bg-white  py-20 flex items-center justify-center">
+          <span
+            className="text-base font-light  "
+            style={{
+              maxWidth: "70ch",
+              lineHeight: "1.2",
+            }}
+          >
+            *Based on a 2021 Dropbox research survey of registered Dropbox users
+            who have used Dropbox Replay.
+          </span>
         </div>
       </div>
     </div>

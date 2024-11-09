@@ -41,7 +41,7 @@ export default function Faq() {
   return (
     <div className="w-full box-border flex flex-col text-black py-20  items-center">
       <div className="xl:max-w-[1200px] box-border gap-y-20 md:p-14 lg:p-20 flex flex-col w-full mx-auto items-center">
-        <h3 className={`text-4xl font-medium text-center   ${golos.className}`}>
+        <h3 className={`md:text-4xl text-2xl font-medium text-center   ${golos.className}`}>
           Frequently asked questions
         </h3>
         <div className="w-full box-border">

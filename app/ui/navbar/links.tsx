@@ -239,6 +239,28 @@ export const hows = [
   {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/teams-ui-1272x424.jpg?id=5576ba5e-cca2-4b39-8abd-c2119e398717&output_type=jpg',head : 'For personal use', body : `Keep everything  that's important to you sharable and safe in one place. Store files in the cloud, share photos and videos, and more`, link : '/nav/plans', name: 'Compare plans'},
 ]
 
+export const why = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/win-coconut.svg?id=395b8945-5c84-4b77-9916-4852b8bcddb3",
+    why: "Highly recommended",
+    fact: "9 out of 10 users would recommend Replay*",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/activity-coconut.svg?id=0c4e8e85-6251-4714-86bc-d4479bbf7a6e",
+    why: "Production powerhouse",
+    fact: "Some users who reported a faster workflow said Replay reduced project time by as much as much as 50%*",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/conversation-coconut.svg?id=8d7b5705-61a0-4b71-bb8c-fda4948a836a",
+    why: "Faster feedback",
+    fact: "72% of users who reported a faster workflow said Replay helped get a quicker response from their team*",
+  },
+];
+
+
 export const cards = [
   {
     id: 1,
@@ -319,6 +341,63 @@ export const customers = [
   },
 ];
 
-
+export const customer = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/collaboration-review.svg?id=632fd2a2-6303-47da-8473-49f515b64268",
+    body: "“Per project, Dropbox Replay easily saves me a day of work over the course of a month. It saves a ton of time.”",
+    name: "Nicholas Gartner",
+    role: "Film Editor, A Thousand Cuts",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/rachel_jedwood.jpg?id=fac2e0bd-768a-4a56-b879-f44cdf408337&width=2560&output_type=jpg",
+    body: `“We use Replay for our content that requires lots of feedback and iterations, like campaigns with our players and commercial marketing materials. With Replay, we can share our feedback in one place, keep all the conversations documented in the comment threads, and have everything we need for edits and final delivery.”`,
+    name: "Rachel Jedwood",
+    role: "Production Officer, National Rugby League",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/video-stream.svg?id=c9c99a4f-990e-424d-bf31-2283ad490b34",
+    body: `“I'll really miss emails with bulleted lists of video edits – said no one ever! Consolidated, frame-accurate edit notes make revisions and approvals a breeze.”`,
+    name: "Sam Sullivan",
+    role: "Owner & Graphic Designer, Notion Design Goods",
+  },
+  {
+    id: 4,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/daniel_jackson.jpg?id=81fe1ea7-e18d-43bf-8eee-7e26089a2e85&width=2560&output_type=jpg",
+    body: `“Replay makes what I do easier and simpler. I can get feedback from everybody in one spot—and check off comments as resolved—without email threads going around and context getting lost.”`,
+    name: "Daniel Jackson",
+    role: "Founder & Owner, Embassy: Interactive",
+  },
+  {
+    id: 5,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/desk-laptop.svg?id=644389ee-53b3-41a3-95a3-77017b107e18 ",
+    body: "“Dropbox Replay works well with the rest of my workflow. Since my work-in-progress files are already in Dropbox, I can just click on the file and add it to Replay.”",
+    name: "Scott Lalonde",
+    role: "Filmmaker, scottlalonde.com",
+  },
+  {
+    id: 6,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/06_adam_nielsen.jpg?id=ed7c42d9-95d0-42c1-b075-4a4ad7c35faa&width=2560&output_type=jpg",
+    body: "“Now with Replay, we can keep feedback centralized and the number of files I need to process to a minimum. Replay's integration with Adobe Premiere Pro will also make it easy for our post-production team to implement changes. I'm a huge fan.”",
+    name: "Adam Nielson",
+    role: "Creative Director of Branded Experience, Kaleidoscope Pictures",
+  },
+  {
+    id: 7,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/conference-call.svg?id=7dac496c-c689-44ba-9ee4-989d8e2a36ec",
+    body: "“Dropbox Replay is a good selling tool for clients, and the tracking tools are super helpful. It looks super cool when clients get a Dropbox Replay link. It’s a professional way to send videos to my clients.”",
+    name: "Alan Novey",
+    role: "Owner, BIGCAT Media",
+  },
+  {
+    id: 8,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/07_william_herrington.jpg?id=99b3dd43-88a8-4252-9b98-cab4e5dccaa3&width=2560&output_type=jpg",
+    body: "“I manage a distributed team that produces hundreds of videos a year. It’s very time consuming to keep track of changes. But with Replay, we can watch the videos with our clients, capturing comments and tracking revisions in real-time. It’s an amazing tool for my team.”",
+    name: "Will Herrington",
+    role: "Owner & Creative Director, PhotoHouse Films/Herrington Studios",
+  },
+];
 
 
