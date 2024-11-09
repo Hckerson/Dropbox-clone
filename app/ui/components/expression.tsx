@@ -145,7 +145,7 @@ export function Expresstri() {
         </span>
       </div>
 
-      <div className="w-full flex items-center justify-center flex-col z-50 relative space-y-6">
+      <div className="w-full flex items-center justify-center flex-col relative space-y-6">
         <div className="flex  py-4">
           <div
             className="flex flex-col space-y-3 "
@@ -174,6 +174,7 @@ export function Expresstri() {
                   vectorEffect="non-scaling-stroke"
                 ></path>
               </svg>
+              
             </Link>
           </div>
         </div>

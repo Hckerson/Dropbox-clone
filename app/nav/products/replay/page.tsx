@@ -1,9 +1,14 @@
 import Navbar from "@/app/ui/components/stripped-nav";
 import About from "@/app/ui/components/about";
 import Frame, { Frametwo, FrameOne } from "@/app/ui/components/big-vid";
-import Expression, {Expresstwo, Expresstri} from "@/app/ui/components/expression";
+import Expression, {
+  Expresstwo,
+  Expresstri,
+} from "@/app/ui/components/expression";
 import Righty, { Lefty } from "@/app/ui/components/rem";
 import { Frametri } from "@/app/ui/components/big-vid";
+import Faq from "@/app/ui/components/FAQ";
+import Why from "@/app/ui/components/why-rep";
 export default function page() {
   return (
     <div className="box-border w-full ">
@@ -44,13 +49,22 @@ export default function page() {
           </div>
         </div>
         <div className="w-full box-border">
-          <Expresstwo/>
-        </div>
-        <div className='w-full box-border'>
-          <Frametri/>
+          <Expresstwo />
         </div>
         <div className="w-full box-border">
-          <Expresstri/>
+          <Frametri />
+        </div>
+        <div className="w-full box-border">
+          <Expresstri />
+        </div>
+        <div
+          style={{ backgroundColor: "#f7f5f2" }}
+          className="w-full box-border "
+        >
+          <Faq />
+        </div>
+        <div className="w-full box-border">
+          <Why/>
         </div>
       </div>
     </div>
