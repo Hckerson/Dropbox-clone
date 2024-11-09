@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { golos } from "../fonts";
 import "swiper/css";
 import { useState, useRef } from "react";
-import Collection from "../components/frame";
+import Collection from "../components/collection";
 import { customers } from "../navbar/links";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";

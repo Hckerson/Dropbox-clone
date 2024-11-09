@@ -21,7 +21,7 @@ export default function Menu() {
   return (
     <div
       style={{ maxHeight: "100vh" }}
-      className="fixed h-full  inset-x-0 block xl:hidden bg-black bg-opacity-95  w-full box-border overflow-scroll pt-7 -z-10  justify-center"
+      className="fixed h-full  inset-x-0 block xl:hidden bg-black  w-full box-border overflow-scroll mt-3 md:mt-7 z-30 justify-center"
     >
       <div className="py-10 w-full box-border ">
         <ul className="space-y-14 relative box-border z-50">

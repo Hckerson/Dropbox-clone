@@ -46,6 +46,14 @@ export const app = [
   {label : 'Mobile app', href :  '/nav/mobile' },
 ]
 
+export const sub = [
+  {label : 'Replay', href :  '/nav/products/replay' },
+  {label : 'Features', href :  '/nav/products/replay#features' },
+  {label : 'Integrations', href :  '/nav/products/replay#integrations' },
+  {label : 'Pricing', href :  '/nav/products/replay#pricing' },
+  {label : 'Why Replay?', href :  '/nav/products/replay#dropbox' },
+]
+
 export const lLink = [
   { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDD },
   { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDD },
@@ -141,6 +149,32 @@ export const company = [
   {label : 'Investor relations', href :  '/https://investors.dropbox.com' },
   {label : 'ESG', href :  '/aspect/esg' },
 ]
+
+export const articles = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/blog-cards/Asset-Distraction-Article.png?id=13349693-d080-4ae6-8498-7b58b46dfeb9&output_type=png",
+    href: "https://blog.dropbox.com/topics/work-culture/economist-impact-cost-of-lost-focus-research-study-2023",
+    about:
+      "Study: here is how many hours we lose to distraction—and how to get our focus back",
+    note: "For our study, Economist Impact included knowledge workers globally—and found that, no matter where people work, there’s a significant cost to lost focus around the world.",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/blog-cards/Asset-McLaren-Article.png?id=eb21f94b-ce63-462f-928a-e30761ba9321&output_type=png",
+    href: "https://www.dropbox.com/mclaren-f1",
+    about:
+      "Dropbox teams up with McLaren Racing as an Official Technology Partner of McLaren Formula 1 Team",
+    note: "Dropbox brings simplified sharing, collaboration, and organization to the McLaren Formula 1 Team.",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/blog-cards/Asset-Photo-Sharing-Article.png?id=3d76b7bb-6145-4f8d-87cf-d156eff5de2d&output_type=png",
+    href: "https://experience.dropbox.com/get-organized/best-way-to-share-photos",
+    about: "The best way to share photos with family and friends",
+    note: "Don’t lose precious photos. Save them and share them with loved ones—for free. Here’s an easy-to-follow guide to sharing and storing photos with Dropbox.",
+  },
+];
 
 export const aspects = [
   {

@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export function GetStarted() {
   return (
-    <div className="w-full p-6  bg-blue-500 rounded-2xl ">
+    <div className="w-full  bg-blue-500 rounded-2xl ">
       <Link
         href="/nav/plans"
-        className=" rounded-xl w-full text-black group flex justify-between font-semibold "
+        className=" rounded-xl w-full text-black group px-6 py-6 justify-between flex space-x-3 font-semibold "
       >
         Get Started now
         <svg

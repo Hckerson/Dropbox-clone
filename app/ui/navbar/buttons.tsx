@@ -37,7 +37,7 @@ export function Mainmenu() {
   };
 
   return (
-    <div style={{ marginRight: 10 }}>
+    <div className="mr-3 sm:mr-0" >
       {!menuOpen && (
         <Bars3Icon
           className=" h-6 xl:hidden cursor-pointer "
@@ -62,7 +62,32 @@ export function Replmenu() {
   };
 
   return (
-    <div style={{ marginRight: 10 }}>
+    <div className="mr-3 sm:mr-0">
+      {!menuOpen && (
+        <Bars3Icon
+          className=" h-6 xl:hidden cursor-pointer "
+          onClick={handleMenuToggle}
+        />
+      )}
+      {menuOpen && (
+        <XMarkIcon
+          className=" h-6 xl:hidden cursor-pointer"
+          onClick={handleMenuToggle}
+        />
+      )}
+      {menuOpen && <Whitemenu />}
+    </div>
+  );
+}
+
+export function Menue() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const handleMenuToggle = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  return (
+    <div className="mr-2 ">
       {!menuOpen && (
         <Bars3Icon
           className=" h-6 xl:hidden cursor-pointer "

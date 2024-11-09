@@ -1,15 +1,15 @@
 "use client";
 import clsx from "clsx";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { L, R } from "./links";
 
 export function Leftlink() {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  let timeoutId: NodeJS.Timeout | null = null;
+  const timeout = useRef<NodeJS.Timeout | null>(null)
 
   const handleMouseEnter = (linkName: string) => {
-    if (timeoutId) clearTimeout(timeoutId);
+    if (timeout.current) clearTimeout(timeout.current);
     setActiveDropdown(linkName); // Show dropdown on hover
 
     if(['Products', 'Solutions'].includes(linkName)){
@@ -22,7 +22,7 @@ export function Leftlink() {
 
   const handleMouseLeave = (linkName: string) => {
     if (activeDropdown === linkName) {
-      timeoutId = setTimeout(() => {
+        timeout.current = setTimeout(() => {
         setActiveDropdown(null); // Hide dropdown
       }, 200); // Hide dropdown if not hovering on the dropdown
     }
@@ -34,10 +34,10 @@ export function Leftlink() {
 
   useEffect(() => {
     return () => {
-      if (timeoutId) clearTimeout(timeoutId);
+      if (timeout.current) clearTimeout(timeout.current );
       setActiveDropdown(null);
     };
-  }, [timeoutId]);
+  }, [timeout]);
   return (
     <>
       {L.map((link) => {
@@ -140,7 +140,7 @@ export function Rightlink() {
               key={link.name}
               href={link.href}
               className={clsx(
-                "px-2 py-3 font-normal h-full focus:outline-none text-sm xs:text-base  focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
+                "px-2 py-3 font-light h-full focus:outline-none text-sm xs:text-base  focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 ", 
                 hide, activeDropdown === link.name ? 'text-blue-500' : ''
               )}
             >

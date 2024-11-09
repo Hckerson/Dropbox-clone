@@ -1,19 +1,16 @@
-import { Leftlink } from "./nav-link 2.0";
-import { Rightlink } from "./nav-link 2.0";
-import { Started } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
-import { Replmenu } from "./buttons";
+import { Menue } from "../navbar/buttons";
+import Link from "next/link";
+import clsx from "clsx";
+import { StartLink } from "./sublink";
 
 export default function Navbar() {
   return (
-    <nav className="bg-white relative z-50 ">
-      <div className="mx-auto  p-0 sm:px-5 lg:px-6">
+    <nav className="bg-white relative z-50 flex flex-col">
+      <div className="p-0 sm:px-5 lg:px-6">
         <div className="relative flex  items-center justify-between h-[48px] md:h-[80px]">
           <div className="flex flex-1 items-center justify-start  h-full">
-            <div
-              style={{ backgroundColor: "#0061fe" }}
-              className="flex flex-shrink-0 items-cent"
-            >
+            <div className="flex flex-shrink-0 items-center bg-blue-500">
               <svg
                 viewBox="0 0 30 25"
                 height="48"
@@ -43,19 +40,39 @@ export default function Navbar() {
             <p className="text-xl ml-2 mr-6 font-bold  hidden xs:block mb-1">
               Dropbox
             </p>
-            <Leftlink />
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6 space-x-1 sm:space-x-2">
             <GlobeAltIcon className=" size-4 sm:size-5  hidden xs:block" />
-            <Rightlink />
-            <div className="rounded-xl  text-white bg-blue-600 hidden md:block ">
-              <Started />
+            <div className="box-border hidden xl:flex flex-col items-center justify-center">
+              <Link
+                href="/nav/contact"
+                className={clsx(
+                  "px-2 py-3  h-full focus:outline-none hover:text-blue-600 text-sm xs:text-base font-light  focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 "
+                )}
+              >
+                <div className="flex items-center h-10">Contact Sales</div>
+              </Link>
+            </div>
+            <div className="box-border hidden md:flex flex-col items-center justify-center">
+              <Link
+                href="/https://replay.dropbox.com/?login=true"
+                className={clsx(
+                  "  h-full focus:outline-none  text-sm xs:text-base font-medium text-white   focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 "
+                )}
+              >
+                <div className="flex items-center px-4 py-3 rounded-xl bg-blue-600 h-10">
+                  Start Project
+                </div>
+              </Link>
             </div>
             <div>
-              <Replmenu />
+              <Menue />
             </div>
           </div>
         </div>
+      </div>
+      <div className="w-full box-border border z-20 border-t-stone-300 ">
+        <StartLink />
       </div>
     </nav>
   );

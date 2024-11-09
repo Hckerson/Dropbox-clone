@@ -20,8 +20,8 @@ export default function Whitemenu() {
   };
   return (
     <div
-      style={{ maxHeight: "100vh" }}
-      className="fixed h-full  inset-x-0 block xl:hidden  bg-opacity-95  w-full box-border overflow-scroll mt-7  -z-10  justify-center"
+      style={{ maxHeight: "100vh", backgroundColor : ' rgb(238, 233, 226)' }}
+      className="fixed h-full  inset-x-0 block xl:hidden  bg-opacity-95  w-full box-border overflow-scroll mt-3 md:mt-7  z-30  justify-center"
     >
       <div className="py-10 w-full box-border ">
         <ul className="space-y-10 relative box-border z-50">

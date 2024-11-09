@@ -56,7 +56,7 @@ export default function Navbar() {
             <div className=" hidden md:block ">
               <GetStarted />
             </div>
-            <div className="text-white">
+            <div className="text-white ">
               <Mainmenu />
             </div>
           </div>

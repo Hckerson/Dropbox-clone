@@ -209,7 +209,7 @@ export default function Footer() {
           </div>
           <div className="flex items-start space-y-10 w-full box-border px-7 pb-12 flex-col">
             <div className=" w-[115px]">
-              <hr className="opacity-30" />
+              <hr className="opacity-50" />
             </div>
             <div className="flex  ">
               <GlobeAltIcon className="w-6 h-6 text-white" />{" "}
