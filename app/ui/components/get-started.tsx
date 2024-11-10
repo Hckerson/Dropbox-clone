@@ -1,9 +1,10 @@
 "use client";
 import Link from "next/link";
+import { ArrowDownIcon } from "@heroicons/react/24/outline";
 
 export function GetStarted() {
   return (
-    <div className="w-full  bg-blue-500 rounded-2xl ">
+    <div className="w-full  bg-blue-500 hover:bg-blue-400 rounded-2xl ">
       <Link
         href="/nav/plans"
         className=" rounded-xl w-full text-black group px-6 py-6 justify-between flex space-x-3 font-semibold "
@@ -30,3 +31,18 @@ export function GetStarted() {
     </div>
   );
 }
+
+export function GetStartedv1() {
+  return (
+    <div className="w-full  bg-blue-500 hover:bg-blue-400 rounded-2xl ">
+      <Link
+        href="/nav/products/backup#dropbox-backup-plan"
+        className=" rounded-xl w-full text-black group px-6 py-6 justify-between flex space-x-3 font-semibold "
+      >
+        Get Backup with Dropbox
+        <ArrowDownIcon className="size-5"/>
+      </Link>
+    </div>
+  );
+}
+

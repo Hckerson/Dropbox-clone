@@ -121,6 +121,11 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-flow: row;
 }
 
+#plans{
+  grid-auto-rows: minmax(0, max-content);
+  grid-auto-flow: row;
+}
+
 .inner{
   aspect-ratio: 16/9;
 }
@@ -147,11 +152,19 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-rows: minmax(0, max-content);
 }
 
+.nine{
+  aspect-ratio: 1;
+}
+
 
 @media (min-width: 768px) {
   #scroll {
     grid-auto-columns: 720px;
     padding: 0 48px;
+  }
+
+  .nine{
+    aspect-ratio: 16/9;
   }
 
   #box{
@@ -169,6 +182,10 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   #everything{
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  #plans{
     grid-template-columns: 1fr 1fr 1fr;
   }
 

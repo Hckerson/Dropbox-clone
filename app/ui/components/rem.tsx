@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Righty() {
   return (
     <div className="grid items-center h-full p-4" id="one">
-      <div className=" box-border px-8 h-full flex items-center justify-center">
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
         <div className="grid  gap-y-6">
           <p className={`text-3xl text-white font-normal ${golos.className}`}>
             Bring everyone together
@@ -48,7 +48,7 @@ export function Lefty() {
   return (
     <div className="grid items-center h-full p-4" id="two">
       <div className="xl:flex hidden"></div>
-      <div className=" box-border px-8 h-full flex items-center justify-center">
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
         <div className="grid  gap-y-6">
           <p className={`text-3xl text-white font-normal ${golos.className}`}>
             Prioritize security

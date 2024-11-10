@@ -122,7 +122,10 @@ export function Expresstwo() {
 
 export function Expresstri() {
   return (
-    <div className=" grid items-center text-white justify-center w-full gap-y-8 pb-16" id='pricing'>
+    <div
+      className=" grid items-center text-white justify-center w-full gap-y-8 pb-16"
+      id="pricing"
+    >
       <div
         className="grid gap-y-6  text-center"
         style={{
@@ -155,7 +158,7 @@ export function Expresstri() {
               className="text-base font-medium px-5 py-6 group rounded-2xl bg-blue-500 hover:bg-blue-600 flex space-x-8 items-center transition-transform duration-300"
               href="/login"
             >
-              <p className='text-black'>Buy the Replay Add-on</p>
+              <p className="text-black">Buy the Replay Add-on</p>
 
               <svg
                 viewBox="0 0 24 24"
@@ -174,11 +177,33 @@ export function Expresstri() {
                   vectorEffect="non-scaling-stroke"
                 ></path>
               </svg>
-              
             </Link>
           </div>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function Expressionv1() {
+  return (
+    <div className=" grid items-center justify-center  w-full  gap-y-8">
+      <h3
+        className={`${golos.className} text-lg px-7 md:text-2xl text-center font-normal `}
+      >
+        Choose your Dropbox plan
+      </h3>
+      <h5
+        style={{
+          maxWidth: "70ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+        className="font-normal"
+      >
+        Get Backup, plus a robust set of organization and collaboration tools,
+        with any Dropbox plan.
+      </h5>
     </div>
   );
 }
