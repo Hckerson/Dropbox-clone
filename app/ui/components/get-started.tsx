@@ -40,9 +40,41 @@ export function GetStartedv1() {
         className=" rounded-xl w-full text-black group px-6 py-6 justify-between flex space-x-3 font-semibold "
       >
         Get Backup with Dropbox
-        <ArrowDownIcon className="size-5"/>
+        <ArrowDownIcon className="size-5" />
       </Link>
     </div>
   );
 }
 
+export function ReadyB({ link, name }: { link: string; name: string }) {
+  return (
+    <div
+      style={{ width: "fit-content" }}
+      className="rounded-2xl py-4 px-7 group flex bg-blue-600 hover:bg-blue-700 space-x-3"
+    >
+      <Link
+        href={link}
+        className=" rounded-xl w-full text-white group flex space-x-3 font-semibold "
+      >
+        {name}
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+          width="24"
+          height="24"
+          role="presentation"
+          focusable="false"
+        >
+          <path
+            d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeMiterlimit="10"
+            vectorEffect="non-scaling-stroke"
+          ></path>
+        </svg>
+      </Link>
+    </div>
+  );
+}
