@@ -1,6 +1,6 @@
 
 
-export default function Everything() {
+export default function Plans() {
   return (
     <div className="box-border w-full ">
       <div className="w-full flex flex-col items-center box-border">

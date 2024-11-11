@@ -48,7 +48,7 @@ export function PDD() {
                     >
                       <div className="w-full flex space-x-5 p-4 rounded-xl hover:bg-stone-900">
                         <div className="shrink-0">
-                          <img src={each.src} className="size-7 bg-white rounded-md"  alt="image" />
+                          <img src={each.src} className="size-8 rounded-md"  alt="image" />
                         </div>
                         <div className="flex  flex-col">
                           <p className="text-base font-semibold">

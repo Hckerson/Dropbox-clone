@@ -2,7 +2,7 @@ import { Informationv1 } from "@/app/ui/components/inform";
 import Frame from "@/app/ui/components/vid_frame";
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
-import Everything from "@/app/ui/components/everything";
+import Plans from "@/app/ui/components/plans";
 import Saying from "@/app/ui/landing-page/saying";
 import { Expressionv1 } from "@/app/ui/components/expression";
 export default function page() {
@@ -29,7 +29,7 @@ export default function page() {
         style={{ backgroundColor: "#f7f5f2" }}
         className="w-full box-border flex flex-col items-center"
       >
-        <Everything />
+        <Plans/>
       </div>
       <div className="w-full box-border ">
         <Saying />
