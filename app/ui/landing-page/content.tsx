@@ -1,42 +1,7 @@
 import { UsersIcon } from "@heroicons/react/24/outline";
 import { dmSans } from "../fonts";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 export default function Content() {
-  const [move1, setMove1] = useState(75)
-  const [move2, setMove2] = useState(150)
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const windowHeight = window.innerHeight;
-      const documentHeight = document.documentElement.scrollHeight;
-      const scrollPercentage = Math.min(scrollTop / (documentHeight - windowHeight), 1);
-      const fadestart = 0.23;
-      const fadeEnd = 0.28;
-
-
-      if (scrollPercentage >= fadeEnd) {
-
-      } else if (scrollPercentage >=fadestart ) {
-        const value1 = (1 - ((scrollPercentage - fadestart) / (fadeEnd - fadestart))) * 75 ;
-        const value2 = (1 - ((scrollPercentage - fadestart) / (fadeEnd - fadestart))) * 150 ;
-        setMove1(value1);
-        setMove2(value2)
-      } else {
-        setMove1(75)
-        setMove2(150)
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-
 
   return (
     <div className="flex flex-col space-y-12 items-center pt-56 w-full px-6 xl:px-0  flex-grow box-border ">
