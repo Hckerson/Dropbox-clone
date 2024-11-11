@@ -17,7 +17,7 @@ export default function Aspect() {
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.5,rootMargin: "600px" }
+      { threshold: 0.5,rootMargin: "450px" }
     );
 
     if (target) observer.observe(target);
