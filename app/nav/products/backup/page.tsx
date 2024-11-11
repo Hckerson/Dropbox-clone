@@ -17,7 +17,7 @@ export default function page() {
           <Informationv1 />
         </div>
         <div
-          className="w-full h-full bg-yellow-400 box-border justify-center flex flex-col items-center"
+          className="w-full h-full bg-yellow-500 box-border justify-center flex flex-col items-center"
         >
           <Frame />
         </div>
