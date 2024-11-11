@@ -235,7 +235,7 @@ export const every = [
 ]
 
 export const hows = [
-  {id : 1, src: ' https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/professionals-ui-1272x424.jpg?id=307eff00-8218-492a-8df5-659ca1fd4888&output_type=jpg ',head : 'For work', body : 'Work efficiently with teammates and clients, stay in sync on projects, and keep company data safe—all',link : '/overview?frompath=dropbox', name:'Try Dropbox'},
+  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/professionals-ui-1272x424.jpg?id=307eff00-8218-492a-8df5-659ca1fd4888&output_type=jpg',link : '/overview?frompath=dropbox', name:'Try Dropbox'},
   {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/teams-ui-1272x424.jpg?id=5576ba5e-cca2-4b39-8abd-c2119e398717&output_type=jpg',head : 'For personal use', body : `Keep everything  that's important to you sharable and safe in one place. Store files in the cloud, share photos and videos, and more`, link : '/nav/plans', name: 'Compare plans'},
 ]
 
