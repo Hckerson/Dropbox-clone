@@ -26,7 +26,6 @@ export default function page() {
         <Expressionv1/>
       </div>
       <div
-        style={{ backgroundColor: "#f7f5f2" }}
         className="w-full box-border flex flex-col items-center"
       >
         <Plans/>

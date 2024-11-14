@@ -1,21 +1,34 @@
 import { ReadyB } from "./get-started";
 import Link from "next/link";
-import Button from '@mui/material/Button';
+import { ChartBarSquareIcon } from "@heroicons/react/24/outline";
+import { golos } from "../fonts";
+import {
+  Radio,
+  RadioGroup,
+  FormControlLabel,
+  FormControl,
+  FormLabel,
+} from "@mui/material";
+import {
+  PermIdentity,
+  SendOutlined,
+  PieChartOutline,
+  ScheduleOutlined,
+  DrawOutlined,
+  PictureAsPdfOutlined,
+  OndemandVideoOutlined,
+} from "@mui/icons-material";
 
-
-const essential = [
-  {id : 1, label : '1 user', src : Button},
-  {id : 2, label : '1 user', src : Button},
-  {id : 3, label : '1 user', src : Button},
-  {id : 4, label : '1 user', src : Button},
-  {id : 5, label : '1 user', src : Button},
-  {id : 6, label : '1 user', src : Button},
-  {id : 7, label : '1 user', src : Button},
-  {id : 8, label : '1 user', src : Button},
-  {id : 9, label : '1 user', src : Button},
-  {id : 10, label : '1 user', src : Button},
-  
-]
+const essentials = [
+  { id: 1, label: "1 user", src: PermIdentity },
+  { id: 2, label: "3 TB of storage", src: PieChartOutline },
+  { id: 3, label: "Transfer files up to 100GB", src: SendOutlined },
+  { id: 4, label: "180 days to restore deleted files", src: ScheduleOutlined },
+  { id: 5, label: "Track file engagement", src: ChartBarSquareIcon },
+  { id: 6, label: "Unlimited signature request", src: DrawOutlined },
+  { id: 7, label: "PDF editing", src: PictureAsPdfOutlined },
+  { id: 8, label: "Record, review and edit video", src: OndemandVideoOutlined },
+];
 
 export default function Plans() {
   return (
@@ -23,19 +36,40 @@ export default function Plans() {
       <div className="w-full flex flex-col items-center box-border">
         <div
           style={{ flexGrow: 1 }}
-          className="xl:max-w-[1280px]  box-border flex flex-col items-center gap-y-20 w-full mx-auto py-20"
+          className="xl:max-w-[1280px]  box-border flex flex-col items-center  w-full mx-auto py-16"
         >
-          <div className="w-full box-border">
+          <div className="w-full box-border h-16 relative">
+            <FormControl className="absolute left-8">
+              <RadioGroup
+                aria-labelledby="demo-radio-buttons-group-label"
+                defaultValue="female"
+                name="radio-buttons-group"
+                className="flex flex-row space-x-4"
+              >
+                <FormControlLabel
+                  value="female"
+                  control={<Radio />}
+                  label="Billed monthly"
+                />
+                <FormControlLabel
+                  value="male"
+                  control={<Radio />}
+                  label="Billed yearly"
+                />
+              </RadioGroup>
+            </FormControl>
+          </div>
+          <div className="w-full box-border" >
             <div
               id="plans"
               className="grid gap-y-10 md:gap-y-0 box-border md:gap-x-6 gap-x-0 px-5 md:px-10 xl:px-5  "
             >
-              <div className="flex flex-col w-full box-border">
+              <div className="flex flex-col w-full box-border rounded-xl" >
                 <div className="min-h-8 w-full"></div>
-                <div className="py-6  grid gap-y-8 px-10 ">
+                <div className="py-6  grid gap-y-8 px-10 rounded-xl"         style={{ backgroundColor: "#f7f5f2" }}>
                   <div className="flex flex-col w-full box-border gap-y-4">
-                    <legend>For professionals</legend>
-                    <h2>Essentials</h2>
+                    <legend className="font-light text-sm text-stone-700">For professionals</legend>
+                    <h2 className={`text-3xl font-semibold ${golos.className}`}>Essentials</h2>
                     <span> / month</span>
                   </div>
                   <ReadyB link={"aspect/try/essentials"} />
@@ -65,37 +99,26 @@ export default function Plans() {
                       </Link>
                     </span>
                     <div className="w-full box-border">
-                      <ul className="w-full">
-                        <li className="inline " key={"each.label"}>
-                          <Link href={""}>
-                            <div className="w-full flex space-x-5">
-                              <div className="shrink-0 relative">
-                                <span className="">
-                                  <svg
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    className="dig-UIIcon dig-UIIcon--standard"
-                                    width="24"
-                                    height="24"
-                                    role="presentation"
-                                    focusable="false"
-                                  >
-                                    <path
-                                      d="M14.9 11.508A4.822 4.822 0 0 0 15.5 9c0-2.542-1.275-4-3.5-4S8.5 6.458 8.5 9a4.822 4.822 0 0 0 .6 2.508A4.25 4.25 0 0 0 5 15.75V19h14v-3.25a4.25 4.25 0 0 0-4.1-4.242ZM12 6.5c.931 0 2 .284 2 2.5s-1.069 2.5-2 2.5-2-.284-2-2.5 1.069-2.5 2-2.5Zm5.5 11h-11v-1.75A2.753 2.753 0 0 1 9.25 13h5.5a2.753 2.753 0 0 1 2.75 2.75v1.75Z"
-                                      fill="currentColor"
-                                      vectorEffect="non-scaling-stroke"
-                                    ></path>
-                                  </svg>
-                                </span>
-                              </div>
-                              <div className="flex  flex-col justify-center">
-                                <p className="text-xs text-stone-400">
-                                  {"each.body"}
-                                </p>
-                              </div>
-                            </div>
-                          </Link>
-                        </li>
+                      <ul className="w-full grid gap-y-4">
+                        {essentials.map((essential) => {
+                          const Icon = essential.src;
+                          return (
+                            <li className="inline " key={essential.id}>
+                              <Link href={""}>
+                                <div className="w-full flex space-x-5">
+                                  <div className="shrink-0 relative">
+                                    <Icon className="w-5 h-5" />
+                                  </div>
+                                  <div className="flex  flex-col justify-center">
+                                    <p className="text-base font-light ">
+                                      {essential.label}
+                                    </p>
+                                  </div>
+                                </div>
+                              </Link>
+                            </li>
+                          );
+                        })}
                       </ul>
                     </div>
                   </div>
