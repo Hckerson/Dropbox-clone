@@ -66,7 +66,7 @@ export default function page() {
         <div className="w-full box-border">
           <Why />
         </div>
-        <div className="w-full bg-white  py-20 flex items-center justify-center">
+        <div className="w-full bg-white px-4  py-20 flex items-center justify-center">
           <span
             className="text-base font-light  "
             style={{

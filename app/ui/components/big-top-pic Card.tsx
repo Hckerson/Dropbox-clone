@@ -51,11 +51,11 @@ export default function BigTopPicCard({
 
           <div
             style={{ width: "fit-content" }}
-            className="rounded-2xl py-4 px-7 group flex bg-blue-600 hover:bg-blue-700 space-x-3"
+            className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3"
           >
             <Link
               href={link}
-              className=" rounded-xl w-full text-white group flex space-x-3 font-semibold "
+              className=" rounded-xl py-4 px-7 w-full text-white group flex space-x-3 font-semibold "
             >
               {name}
               <svg

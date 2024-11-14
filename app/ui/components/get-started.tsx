@@ -46,17 +46,16 @@ export function GetStartedv1() {
   );
 }
 
-export function ReadyB({ link, name }: { link: string; name: string }) {
+export function ReadyB({ link }: { link: string }) {
   return (
     <div
-      style={{ width: "fit-content" }}
-      className="rounded-2xl py-4 px-7 group flex bg-blue-600 hover:bg-blue-700 space-x-3"
+      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3"
     >
       <Link
         href={link}
-        className=" rounded-xl w-full text-white group flex space-x-3 font-semibold "
+        className=" rounded-xl w-full py-4 px-7 text-white group flex justify-between font-semibold "
       >
-        {name}
+        Try for free
         <svg
           viewBox="0 0 24 24"
           fill="none"

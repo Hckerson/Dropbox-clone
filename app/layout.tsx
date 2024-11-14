@@ -16,6 +16,7 @@ export default function RootLayout({
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
         />
+        <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>

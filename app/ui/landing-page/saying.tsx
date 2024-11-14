@@ -212,11 +212,11 @@ export default function Saying() {
             </h2>
             <div
               style={{ width: "fit-content", height: "fit-content" }}
-              className="rounded-2xl py-4 px-5 group/move flex   bg-blue-600 hover:bg-blue-700 space-x-3"
+              className="rounded-2xl  group/move flex   bg-blue-600 hover:bg-blue-700 space-x-3"
             >
               <Link
                 href="/overview?frompath=dropbox"
-                className=" rounded-xl w-full text-white  flex justify-between font-semibold "
+                className=" rounded-xl w-full text-white py-4 px-5  flex justify-between font-semibold "
               >
                 Learn about Dropbox
                 <svg
