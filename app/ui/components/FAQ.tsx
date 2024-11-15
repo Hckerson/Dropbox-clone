@@ -42,7 +42,7 @@ export default function Faq() {
     <div className="w-full box-border flex flex-col text-black py-20  items-center">
       <div className="xl:max-w-[1200px] box-border gap-y-20 md:p-14 lg:p-20 flex flex-col w-full mx-auto items-center">
         <h3
-          className={`md:text-4xl text-3xl font-medium text-center   ${golos.className}`}
+          className={`md:text-4xl text-3xl font-medium text-center px-6  ${golos.className}`}
         >
           Frequently asked questions
         </h3>
