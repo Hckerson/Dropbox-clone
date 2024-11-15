@@ -38,7 +38,7 @@ export default function Everything() {
               lineHeight: "1.2",
               textAlign: "center",
             }}
-            className={`text-center p-0 mx-4 font-medium text-xl tracking-wide md:text-3xl box-border hyphens-manual ${golos.className}`}
+            className={`text-center p-0 mx-4 font-medium text-2xl tracking-wide md:text-3xl box-border hyphens-manual ${golos.className}`}
           >
             Automatic backup means quick recovery for your most important files
           </h2>

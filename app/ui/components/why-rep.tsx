@@ -93,7 +93,7 @@ export default function Why() {
           </div>
           <h2
             style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
-            className={`text-center px-4 m-0 font-medium text-2xl md:text-4xl box-border hyphens-manual ${golos.className}`}
+            className={`text-center px-4 m-0 font-medium text-3xl md:text-4xl box-border hyphens-manual ${golos.className}`}
           >
             More productions, fewer revisions*
           </h2>
@@ -144,12 +144,6 @@ export default function Why() {
               })}
             </div>
           </div>
-          <h2
-            style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
-            className={`text-center px-4 m-0 font-medium text-2xl md:text-4xl box-border hyphens-manual ${golos.className}`}
-          >
-            What Replay customers are saying
-          </h2>
           <div className="w-full box-border">
             <Replay />
           </div>

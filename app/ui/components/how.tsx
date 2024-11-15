@@ -13,7 +13,7 @@ export default function How() {
         >
           <h2
             style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
-            className={`text-center p-0 mx-4 font-medium text-2xl md:text-4xl box-border hyphens-manual ${golos.className}`}
+            className={`text-center p-0 mx-4 font-medium text-3xl md:text-4xl box-border hyphens-manual ${golos.className}`}
           >
             How will you use Dropbox ?
           </h2>

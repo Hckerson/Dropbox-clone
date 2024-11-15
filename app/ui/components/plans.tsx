@@ -113,7 +113,7 @@ export default function Plans() {
               className="grid gap-y-10 md:gap-y-0 box-border md:gap-x-7 gap-x-0 px-5 md:px-10 xl:px-5  "
             >
               <div className="flex  flex-col w-full box-border rounded-xl">
-                <div className="min-h-8 w-full"></div>
+                <div className="lg:min-h-8 w-full"></div>
                 <div
                   className="py-6 h-full  flex flex-col gap-y-8 px-10 rounded-xl "
                   style={{ backgroundColor: "#faf9f7" }}
@@ -263,7 +263,7 @@ export default function Plans() {
                 </div>
               </div>
               <div className="flex flex-col w-full box-border rounded-xl">
-                <div className="min-h-8 w-full"></div>
+                <div className="lg:min-h-8 w-full"></div>
                 <div
                   className="py-6  grid gap-y-8 px-10 rounded-xl"
                   style={{ backgroundColor: "#f2eee8" }}

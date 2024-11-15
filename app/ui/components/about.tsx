@@ -5,7 +5,7 @@ import { golos } from "../fonts";
 export default function About() {
   return (
     <div
-      className=" flex w-full items-center z-0 justify-center pt-48 transition-opacity px-0 xs:px-12 md:px-0" 
+      className=" flex w-full items-center z-0 justify-center pt-48 transition-opacity  px-6 xs:px-12 md:px-0" 
     >
       <div
         className="box-border"

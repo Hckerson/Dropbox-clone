@@ -17,6 +17,12 @@ export function StartLink() {
       return !prevValue;
     });
   };
+
+  const handleHide = ()=>{
+    setActivated((prevValue)=>{
+      return !prevValue
+    })
+  }
   return (
     <div className=" flex flex-col w-full">
       <div className="flex justify-between items-center">
@@ -78,7 +84,7 @@ export function StartLink() {
                 {sub.map((each, index) => {
                   const hide = index == 0 ? "hidden m-0 p-0" : null;
                   return (
-                    <li className={clsx("font-medium", hide)} key={each.label}>
+                    <li className={clsx("font-medium", hide)} key={each.label} onClick={handleHide}>
                       <Link href={each.href}>
                         <div className="flex  flex-col">
                           <p>{each.label}</p>
