@@ -41,7 +41,9 @@ export default function Faq() {
   return (
     <div className="w-full box-border flex flex-col text-black py-20  items-center">
       <div className="xl:max-w-[1200px] box-border gap-y-20 md:p-14 lg:p-20 flex flex-col w-full mx-auto items-center">
-        <h3 className={`md:text-4xl text-2xl font-medium text-center   ${golos.className}`}>
+        <h3
+          className={`md:text-4xl text-2xl font-medium text-center   ${golos.className}`}
+        >
           Frequently asked questions
         </h3>
         <div className="w-full box-border">
@@ -278,6 +280,252 @@ export default function Faq() {
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+  );
+}
+
+export function FaqV1() {
+  const [openMenu, setMenuOpen] = useState<string | null>(null);
+  const toggleMenu = (menu: string) => {
+    setMenuOpen(openMenu == menu ? null : menu);
+  };
+
+  return (
+    <div className="w-full box-border flex flex-col text-black   items-center">
+      <div className="w-full box-border">
+        <ul className="w-full box-border">
+          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border">
+            <div
+              className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
+              onClick={() => toggleMenu("one")}
+            >
+              <span
+                className={clsx(
+                  "text-base font-semibold peer transition-colors ease-in-out"
+                )}
+              >
+                {questions[0].topic}
+              </span>
+              <div className="p-3">
+                {openMenu === "one" ? (
+                  <ChevronUpIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                ) : (
+                  <ChevronDownIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                )}
+              </div>
+            </div>
+            <div
+              className={clsx(
+                "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
+                openMenu === "one"
+                  ? "max-h-[100px] opacity-100"
+                  : "max-h-0 opacity-0"
+              )}
+            >
+              <ul
+                style={{ scrollbarWidth: "none" }}
+                className="w-full box-border px-6 flex overflow-scroll"
+              >
+                <li className="w-full text-base font-light">
+                  {questions[0].baby}
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+            <div
+              className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
+              onClick={() => toggleMenu("two")}
+            >
+              <span
+                className={clsx(
+                  "text-base font-semibold peer transition-colors ease-in-out"
+                )}
+              >
+                {questions[1].topic}
+              </span>
+              <div className="p-3">
+                {openMenu === "two" ? (
+                  <ChevronUpIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                ) : (
+                  <ChevronDownIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                )}
+              </div>
+            </div>
+            <div
+              className={clsx(
+                "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
+                openMenu === "two"
+                  ? "max-h-[125px] opacity-100"
+                  : "max-h-0 opacity-0"
+              )}
+            >
+              <ul
+                style={{ scrollbarWidth: "none" }}
+                className="w-full box-border px-6 flex overflow-scroll"
+              >
+                <li className="w-full text-base font-light">
+                  {questions[1].baby}
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+            <div
+              className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
+              onClick={() => toggleMenu("three")}
+            >
+              <span
+                className={clsx(
+                  "text-base font-semibold peer transition-colors ease-in-out"
+                )}
+              >
+                {questions[2].topic}
+              </span>
+              <div className="p-3">
+                {openMenu === "three" ? (
+                  <ChevronUpIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                ) : (
+                  <ChevronDownIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                )}
+              </div>
+            </div>
+            <div
+              className={clsx(
+                "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
+                openMenu === "three"
+                  ? "max-h-[100px] opacity-100"
+                  : "max-h-0 opacity-0"
+              )}
+            >
+              <ul
+                style={{ scrollbarWidth: "none" }}
+                className="w-full box-border px-6 flex overflow-scroll"
+              >
+                <li className="w-full text-base font-light">
+                  {questions[2].baby}
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+            <div
+              className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
+              onClick={() => toggleMenu("four")}
+            >
+              <span
+                className={clsx(
+                  "text-base font-semibold peer transition-colors ease-in-out"
+                )}
+              >
+                {questions[3].topic}
+              </span>
+              <div className="p-3">
+                {openMenu === "four" ? (
+                  <ChevronUpIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                ) : (
+                  <ChevronDownIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                )}
+              </div>
+            </div>
+            <div
+              className={clsx(
+                "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
+                openMenu === "four"
+                  ? "max-h-[100px] opacity-100"
+                  : "max-h-0 opacity-0"
+              )}
+            >
+              <ul
+                style={{ scrollbarWidth: "none" }}
+                className="w-full box-border px-6 flex overflow-scroll"
+              >
+                <li className="w-full text-base font-light">
+                  {questions[3].baby}
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+            <div
+              className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
+              onClick={() => toggleMenu("five")}
+            >
+              <span
+                className={clsx(
+                  "text-base font-semibold peer transition-colors ease-in-out"
+                )}
+              >
+                {questions[4].topic}
+              </span>
+              <div className="p-3">
+                {openMenu === "five" ? (
+                  <ChevronUpIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                ) : (
+                  <ChevronDownIcon
+                    className={clsx(
+                      "size-6 transition-colors ease-in-out text-black "
+                    )}
+                  />
+                )}
+              </div>
+            </div>
+            <div
+              className={clsx(
+                "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
+                openMenu === "five"
+                  ? "max-h-[100px] opacity-100"
+                  : "max-h-0 opacity-0"
+              )}
+            >
+              <ul
+                style={{ scrollbarWidth: "none" }}
+                className="w-full box-border px-6 flex overflow-scroll"
+              >
+                <li className="w-full text-base font-light">
+                  {questions[4].baby}
+                </li>
+              </ul>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
   );

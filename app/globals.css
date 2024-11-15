@@ -185,10 +185,6 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  #plans{
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
   #how{
     grid-template-columns: 1fr 1fr ;
   }
@@ -216,11 +212,20 @@ input[type="number"]::-webkit-outer-spin-button {
     column-gap: 8px;
     grid-template-columns: 275px 1fr;
   }
+
+  #plans{
+    grid-template-columns: 1fr 1fr ;
+  }
 }
 
 @media (min-width: 1024px) {
   #aspect{
     grid-template-columns: 1fr 1fr;
+  }
+
+  #plans{
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
   }
 
   #way{

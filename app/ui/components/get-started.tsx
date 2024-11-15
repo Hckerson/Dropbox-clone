@@ -49,7 +49,7 @@ export function GetStartedv1() {
 export function ReadyB({ link }: { link: string }) {
   return (
     <div
-      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3"
+      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3" style={{height : 'fit-content'}}
     >
       <Link
         href={link}

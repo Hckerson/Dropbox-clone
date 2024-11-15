@@ -232,6 +232,12 @@ export const every = [
   {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/MultiblockCard1_840x816.jpg?id=cd74929b-c11a-45d0-aae4-1eac15984c30&output_type=jpg',head : 'Simple organization', body : 'Keep all your files in one place, and organize it just the way you want'},
   {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/MultiblockCard2_840x829.jpg?id=abd2c8cb-aab4-4287-8723-bef17297a6c0&output_type=jpg',head : 'Anytime access', body : 'Get to your files whenever and wherever you need them—on desktop, mobile or web '},
   {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/storage-watermark-ui-transparent-2560x2560.png?id=0a37ebad-1922-414f-9a5c-07bd331c55c3&width=2560&output_type=png',head : 'Seamless security', body : 'Be sure your content is protected accross all devices with industry-leading encrytion, automatic backup, and two factor authentication'},
+];
+
+export const easy = [
+  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/01_Backup_Simple-Computer-Backup_840x840.png?id=82281998-f695-4e27-80bc-54964274afab&output_type=png',head : 'Backup made simple', body : 'In just a few clicks, you can choose the files and folders you want Backup to keep safe, and we’ll take it from there.'},
+  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/03_Backup-External-Drive_840x840.png?id=5098b754-be53-4b5f-8f1c-72e2e3e7789a&output_type=png',head : 'An automated safety net', body : 'Automatic, always-on cloud backup saves you from accidental deletions, drive failures, and ransomware attacks.'},
+  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/02_Backup_Restoration_840x840.png?id=52ff9a9b-9e32-468b-8ee5-7ea6d9442fab&output_type=png',head : 'Fast file recovery', body : 'Restore files quickly, and they’ll show up right back where you had them—no need to reorganize.'},
 ]
 
 export const hows = [

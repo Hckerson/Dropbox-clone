@@ -21,7 +21,7 @@ export default function Saying() {
         >
           <h2
             style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
-            className={`text-center p-0 mx-4 font-medium text-2xl md:text-4xl text-white box-border hyphens-manual ${golos.className}`}
+            className="text-center p-0 mx-4 font-medium text-2xl md:text-4xl text-white box-border hyphens-manual"
           >
             What Dropbox customers are saying
           </h2>
