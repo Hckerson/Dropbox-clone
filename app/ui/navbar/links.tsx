@@ -224,7 +224,7 @@ export const aspects = [
   {
     href: "/education",
     id: 6,
-    pic: " https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/education/education-hero@2x.jpg?id=40129999-5c0d-45fc-800e-134eecfd175e&width=1920&output_type=jpg",
+    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/education/education-hero@2x.jpg?id=40129999-5c0d-45fc-800e-134eecfd175e&width=1920&output_type=jpg ",
     name: "Education",
     about:
       "Power student learning, faculty research, and staff operations on Dropbox Education’s secure cloud collaboration platform.",
