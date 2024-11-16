@@ -191,7 +191,7 @@ export const aspects = [
   {
     href: "/business/solutions/media",
     id: 2,
-    pic: " https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/creative-tools/The-Luupe-Genya-Oneall.jpg?id=bc0d3114-b68a-41e7-837b-262d86f2d472&output_type=jpg",
+    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/creative-tools/The-Luupe-Genya-Oneall.jpg?id=bc0d3114-b68a-41e7-837b-262d86f2d472&width=1280&output_type=jpg ",
     name: "Media",
     about:
       "Create a flexible media workspace that connects your teams, content, and tools together.",
