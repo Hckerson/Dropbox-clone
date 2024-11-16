@@ -13,7 +13,7 @@ export default function CustomLetter() {
 
     const observer = new IntersectionObserver(
       ([entry]) => setIsVisible(entry.isIntersecting),
-      { threshold: 0.5,rootMargin: "450px" }
+      { threshold: 0.5, rootMargin: "450px" }
     );
 
     if (target) observer.observe(target);
@@ -42,18 +42,21 @@ export default function CustomLetter() {
     const end = (lineNumber + 1) * progressPerLine;
 
     if (scrollPosition * 100000 - 0.75 < start) return 0;
-    if (scrollPosition * 100000 - 0.75  > end) return 1;
+    if (scrollPosition * 100000 - 0.75 > end) return 1;
     return (scrollPosition * 100000 - 0.75 - start) / (end - start);
   };
 
-  return ( 
+  return (
     <main
       className="hidden justify-center relative pt-[250px] xl:pt-[50px]  lg:flex  "
-      style={{ backgroundColor: "#f7f5f2", height : '200vh' }}
+      style={{ backgroundColor: "#f7f5f2", height: "200vh" }}
     >
       <div
-        style={{top: '40%', fontWeight: 550 }}
-        className={clsx("px-2 xs:px-6 text-sm xs:text-lg sm:text-2xl  md:text-3xl lg:text-4xl  space-y-1 flex flex-col  max-h-max ", isVisible ? 'sticky' : 'static')}
+        style={{ top: "40%", fontWeight: 550 }}
+        className={clsx(
+          "px-2 xs:px-6 text-sm xs:text-lg sm:text-2xl  md:text-3xl lg:text-4xl  space-y-1 flex flex-col  max-h-max ",
+          isVisible ? "sticky" : "static"
+        )}
         ref={elementRef}
       >
         <p
@@ -64,7 +67,7 @@ export default function CustomLetter() {
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
             willChange: "background-image",
-            transition : 'background-image 2s ease-out'
+            transition: "background-image 2s ease-out",
           }}
         >
           With Dropbox you can{" "}
@@ -101,7 +104,7 @@ export default function CustomLetter() {
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
             willChange: "background-image",
-            transition : 'background-image 1s ease-out'
+            transition: "background-image 1s ease-out",
           }}
         >
           documents,
@@ -144,7 +147,7 @@ export default function CustomLetter() {
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
             willChange: "background-image",
-            transition : 'background-image 1s ease-out'
+            transition: "background-image 1s ease-out",
           }}
         >
           <span style={{ color: "#78286e" }}>
@@ -178,7 +181,7 @@ export default function CustomLetter() {
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
             willChange: "background-image",
-            transition : 'background-image 1s ease-out'
+            transition: "background-image 1s ease-out",
           }}
         >
           the same place you{" "}
@@ -218,7 +221,7 @@ export default function CustomLetter() {
             WebkitBackgroundClip: "text",
             color: "rgba(0, 0, 0, 0.2)",
             willChange: "background-image",
-            transition : 'background-image 1s ease-out'
+            transition: "background-image 1s ease-out",
           }}
         >
           content. {"it's that simple"}

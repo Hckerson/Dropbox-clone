@@ -158,6 +158,7 @@ export const articles = [
     about:
       "Study: here is how many hours we lose to distraction—and how to get our focus back",
     note: "For our study, Economist Impact included knowledge workers globally—and found that, no matter where people work, there’s a significant cost to lost focus around the world.",
+    name : 'Blue face'
   },
   {
     id: 2,
@@ -166,6 +167,7 @@ export const articles = [
     about:
       "Dropbox teams up with McLaren Racing as an Official Technology Partner of McLaren Formula 1 Team",
     note: "Dropbox brings simplified sharing, collaboration, and organization to the McLaren Formula 1 Team.",
+    name : 'mclaren vehicle'
   },
   {
     id: 3,
@@ -173,6 +175,7 @@ export const articles = [
     href: "https://experience.dropbox.com/get-organized/best-way-to-share-photos",
     about: "The best way to share photos with family and friends",
     note: "Don’t lose precious photos. Save them and share them with loved ones—for free. Here’s an easy-to-follow guide to sharing and storing photos with Dropbox.",
+    name : 'a happy family'
   },
 ];
 

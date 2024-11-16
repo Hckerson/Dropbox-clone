@@ -68,7 +68,7 @@ export default function Discovery() {
                               <div className="w-full absolute inset-0 flex items-center box-border max-h-full max-w-full">
                                 <Image
                                   src={article.src}
-                                  alt="girl"
+                                  alt={article.name}
                                   width={662}
                                   height={300} // Adjust this as needed
                                   className="h-full w-full absolute inset-0 box-border max-h-full max-w-full"

@@ -37,7 +37,7 @@ export default function Aspect() {
           style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
           className="text-center p-0 m-0 font-medium text-3xl box-border hyphens-manual"
         >
-          Dropbox empowers accross industries
+          Dropbox empowers across industries
         </h2>
         <div id="aspect" className="grid gap-6 box-border">
           {aspects.map((aspect) => {
@@ -59,7 +59,7 @@ export default function Aspect() {
                     >
                       <Image
                         src={aspect.pic}
-                        alt="girl"
+                        alt={aspect.name}
                         width={1920}
                         height={1080} // Adjust this as needed
                         className="h-full object-cover w-full absolute inset-0 max-h-full max-w-full box-border"
