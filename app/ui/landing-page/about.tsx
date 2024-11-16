@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { dmSans } from "../fonts";
 
 export default function About() {
   const [opacity, setOpacity] = useState(1);
@@ -85,7 +84,7 @@ export default function About() {
       >
         <div className="box-border justify-center items-center flex flex-wrap space-y-5 flex-col">
           <h2
-            className={`${dmSans.className} text-balance sm:text-wrap text-4xl md:text-6xl font-semibold text-white text-center box-border `}
+            className="text-balance sm:text-wrap text-4xl md:text-6xl font-semibold text-white text-center box-border "
           >
             Get to work, with a lot less work
           </h2>

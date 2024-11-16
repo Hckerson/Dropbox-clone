@@ -1,29 +1,28 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
+import clsx from "clsx";
 export default function CustomLetter() {
   const [scrollPosition, setScrollPosition] = useState(0);
-  const [position, setPosition] = useState<"relative" | "sticky" | "static">(
-    "sticky"
-  );
+  const elementRef = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const target = elementRef.current;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.5,rootMargin: "450px" }
+    );
+
+    if (target) observer.observe(target);
+
     const handleScroll = () => {
       const scrollTop = window.scrollY;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
       const scrollPercentage = scrollTop / (documentHeight - windowHeight);
-      const fadeStartPercent = 0.076; 
-      const fadeEndPercent = 0.5;  
-
-
-      if (scrollPercentage >= fadeEndPercent) {
-        setPosition("static");
-      } else if (scrollPercentage >= fadeStartPercent) {
-        setPosition("sticky")
-      } else {
-        setPosition("sticky");
-      }
-
       const scrollHeight =
         document.documentElement.scrollHeight - window.innerHeight;
       const scrollProgress = scrollPercentage / scrollHeight;
@@ -33,6 +32,7 @@ export default function CustomLetter() {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (target) observer.unobserve(target);
     };
   }, []);
 
@@ -48,12 +48,13 @@ export default function CustomLetter() {
 
   return ( 
     <main
-      className="hidden justify-center relative pt-[400px] xl:pt[250px] lg:flex  "
+      className="hidden justify-center relative pt-[250px] xl:pt-[50px]  lg:flex  "
       style={{ backgroundColor: "#f7f5f2", height : '200vh' }}
     >
       <div
-        style={{ position: position, top: '40%', fontWeight: 550 }}
-        className="px-2 xs:px-6 text-sm xs:text-lg sm:text-2xl  md:text-3xl lg:text-4xl  space-y-1 flex flex-col  max-h-max "
+        style={{top: '40%', fontWeight: 550 }}
+        className={clsx("px-2 xs:px-6 text-sm xs:text-lg sm:text-2xl  md:text-3xl lg:text-4xl  space-y-1 flex flex-col  max-h-max ", isVisible ? 'sticky' : 'static')}
+        ref={elementRef}
       >
         <p
           className="inline"
