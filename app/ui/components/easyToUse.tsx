@@ -43,7 +43,7 @@ export default function Everything() {
             Automatic backup means quick recovery for your most important files
           </h2>
         </div>
-        <div className="w-full">
+        <div className="w-full bg-white">
           <FaqV1 />
         </div>
       </div>

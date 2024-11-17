@@ -110,7 +110,7 @@ export default function Plans() {
           <div className="w-full box-border">
             <div
               id="plans"
-              className="grid gap-y-10 md:gap-y-0 box-border md:gap-x-7 gap-x-0 px-5 md:px-10 xl:px-5  "
+              className="grid gap-y-7  box-border md:gap-x-7 gap-x-0 px-5 md:px-10 xl:px-5  "
             >
               <div className="flex  flex-col w-full box-border rounded-xl">
                 <div className="lg:min-h-8 w-full"></div>

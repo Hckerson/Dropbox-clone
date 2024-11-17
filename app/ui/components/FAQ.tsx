@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { golos } from "../fonts";
 import clsx from "clsx";
+import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
 const questions = [
   {
@@ -345,11 +346,14 @@ export function FaqV1() {
 
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
-      <div className="w-full box-border grid" id="faq">
-        <ul className="w-full box-border">
-          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border">
+      <div className="w-full box-border relative grid " id="faq">
+        <ul className="w-full box-border px-4 md:px-10 lg:px-14">
+          <li className="flex flex-col   border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border">
             <div
-              className={clsx('cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center', openMenu == 0 ? 'pb-0' : 'pb-6')}
+              className={clsx(
+                "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                openMenu == 0 ? "pb-0" : "pb-6"
+              )}
               onClick={() => toggleMenu(0)}
             >
               <span
@@ -361,17 +365,9 @@ export function FaqV1() {
               </span>
               <div className="p-3">
                 {openMenu === 0 ? (
-                  <ChevronUpIcon
-                    className={clsx(
-                      "size-6 transition-colors ease-in-out text-black "
-                    )}
-                  />
+                  <ChevronUpIcon className="size-6 transition-colors ease-in-out text-black " />
                 ) : (
-                  <ChevronDownIcon
-                    className={clsx(
-                      "size-6 transition-colors ease-in-out text-black "
-                    )}
-                  />
+                  <ChevronDownIcon className="size-6 transition-colors ease-in-out text-black " />
                 )}
               </div>
             </div>
@@ -379,23 +375,38 @@ export function FaqV1() {
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out ",
                 openMenu === 0
-                  ? "max-h-[100px] opacity-100 pb-6"
+                  ? "max-h-[450px] opacity-100 pb-6"
                   : "max-h-0 opacity-0 pb-0"
               )}
             >
               <ul
                 style={{ scrollbarWidth: "none" }}
-                className="w-full box-border px-6 flex overflow-scroll"
+                className="w-full box-border px-6 flex overflow-scroll flex-col"
               >
                 <li className="w-full text-base font-light">
                   {questionsV1[0].baby}
                 </li>
+                <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute relative lg:w-1/2 top-0 right-0 w-full h-full bg-[#fa551e] flex items-center justify-center">
+                  <div className="w-full h-auto flex items-center max-h-full max-w-full">
+                    <Image
+                      src={questionsV1[0].src}
+                      alt={""}
+                      width={2880}
+                      height={1368} // Adjust this as needed
+                      quality={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
               </ul>
             </div>
           </li>
-          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+          <li className="flex flex-col  border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
             <div
-              className={clsx('cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center', openMenu == 1 ? 'pb-0' : 'pb-6')}
+              className={clsx(
+                "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                openMenu == 1 ? "pb-0" : "pb-6"
+              )}
               onClick={() => toggleMenu(1)}
             >
               <span
@@ -425,23 +436,38 @@ export function FaqV1() {
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out ",
                 openMenu === 1
-                  ? "max-h-[125px] opacity-100 pb-6"
+                  ? "max-h-[450px] opacity-100 pb-6"
                   : "max-h-0 opacity-0 pb-0"
               )}
             >
               <ul
                 style={{ scrollbarWidth: "none" }}
-                className="w-full box-border px-6 flex overflow-scroll"
+                className="w-full box-border px-6 flex overflow-scroll flex-col"
               >
                 <li className="w-full text-base font-light">
                   {questionsV1[1].baby}
                 </li>
+                <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#c8aff0] flex items-center justify-center">
+                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                    <Image
+                      src={questionsV1[1].src}
+                      alt={""}
+                      width={2880}
+                      height={1368} // Adjust this as needed
+                      quality={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
               </ul>
             </div>
           </li>
-          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+          <li className="flex flex-col  border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
             <div
-              className={clsx('cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center', openMenu == 2 ? 'pb-0' : 'pb-6')}
+              className={clsx(
+                "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                openMenu == 2 ? "pb-0" : "pb-6"
+              )}
               onClick={() => toggleMenu(2)}
             >
               <span
@@ -471,23 +497,38 @@ export function FaqV1() {
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out ",
                 openMenu === 2
-                  ? "max-h-[100px] opacity-100 pb-6"
+                  ? "max-h-[450px] opacity-100 pb-6"
                   : "max-h-0 opacity-0 pb-0"
               )}
             >
               <ul
                 style={{ scrollbarWidth: "none" }}
-                className="w-full box-border px-6 flex overflow-scroll"
+                className="w-full box-border px-6 flex overflow-scroll flex-col"
               >
                 <li className="w-full text-base font-light">
                   {questionsV1[2].baby}
                 </li>
+                <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#14c8eb] flex items-center justify-center">
+                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                    <Image
+                      src={questionsV1[2].src}
+                      alt={""}
+                      width={2880}
+                      height={1368} // Adjust this as needed
+                      quality={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
               </ul>
             </div>
           </li>
-          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+          <li className="flex flex-col  border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
             <div
-              className={clsx('cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center', openMenu == 3 ? 'pb-0' : 'pb-6')}
+              className={clsx(
+                "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                openMenu == 3 ? "pb-0" : "pb-6"
+              )}
               onClick={() => toggleMenu(3)}
             >
               <span
@@ -517,23 +558,38 @@ export function FaqV1() {
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out ",
                 openMenu === 3
-                  ? "max-h-[100px] opacity-100 pb-6"
+                  ? "max-h-[450px] opacity-100 pb-6"
                   : "max-h-0 opacity-0 pb-0"
               )}
             >
               <ul
                 style={{ scrollbarWidth: "none" }}
-                className="w-full box-border px-6 flex overflow-scroll"
+                className="w-full box-border px-6 flex overflow-scroll flex-col"
               >
                 <li className="w-full text-base font-light">
                   {questionsV1[3].baby}
                 </li>
+                <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#fad24b] flex items-center justify-center">
+                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                    <Image
+                      src={questionsV1[3].src}
+                      alt={""}
+                      width={2880}
+                      height={1368} // Adjust this as needed
+                      quality={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
               </ul>
             </div>
           </li>
-          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+          <li className="flex flex-col  border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
             <div
-              className={clsx('cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center', openMenu == 4 ? 'pb-0' : 'pb-6')}
+              className={clsx(
+                "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                openMenu == 4 ? "pb-0" : "pb-6"
+              )}
               onClick={() => toggleMenu(4)}
             >
               <span
@@ -563,23 +619,38 @@ export function FaqV1() {
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out ",
                 openMenu === 4
-                  ? "max-h-[100px] opacity-100 pb-6"
+                  ? "max-h-[450px] opacity-100 pb-6"
                   : "max-h-0 opacity-0 pb-0"
               )}
             >
               <ul
                 style={{ scrollbarWidth: "none" }}
-                className="w-full box-border px-6 flex overflow-scroll"
+                className="w-full box-border px-6 flex overflow-scroll flex-col"
               >
                 <li className="w-full text-base font-light">
                   {questionsV1[4].baby}
                 </li>
+                <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#ffafa5] flex items-center justify-center">
+                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                    <Image
+                      src={questionsV1[4].src}
+                      alt={""}
+                      width={2880}
+                      height={1368} // Adjust this as needed
+                      quality={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
               </ul>
             </div>
           </li>
-          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+          <li className="flex flex-col  border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
             <div
-              className={clsx('cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center', openMenu == 5 ? 'pb-0' : 'pb-6')}
+              className={clsx(
+                "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                openMenu == 5 ? "pb-0" : "pb-6"
+              )}
               onClick={() => toggleMenu(5)}
             >
               <span
@@ -609,23 +680,38 @@ export function FaqV1() {
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out ",
                 openMenu === 5
-                  ? "max-h-[100px] opacity-100 pb-6"
+                  ? "max-h-[450px] opacity-100 pb-6"
                   : "max-h-0 opacity-0 pb-0"
               )}
             >
               <ul
                 style={{ scrollbarWidth: "none" }}
-                className="w-full box-border px-6 flex overflow-scroll"
+                className="w-full box-border px-6 flex overflow-scroll flex-col"
               >
                 <li className="w-full text-base font-light">
-                  {questionsV1[3].baby}
+                  {questionsV1[5].baby}
                 </li>
+                <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#14c8eb] flex items-center justify-center">
+                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                    <Image
+                      src={questionsV1[5].src}
+                      alt={""}
+                      width={2880}
+                      height={1368} // Adjust this as needed
+                      quality={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
               </ul>
             </div>
           </li>
-          <li className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
+          <li className="flex flex-col  border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-center box-border">
             <div
-              className={clsx('cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center', openMenu == 6 ? 'pb-0' : 'pb-6')}
+              className={clsx(
+                "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                openMenu == 6 ? "pb-0" : "pb-6"
+              )}
               onClick={() => toggleMenu(6)}
             >
               <span
@@ -655,22 +741,35 @@ export function FaqV1() {
               className={clsx(
                 "overflow-hidden transition-all duration-300 ease-in-out ",
                 openMenu === 6
-                  ? "max-h-[100px] opacity-100 pb-6"
+                  ? "max-h-[450px] opacity-100 pb-6"
                   : "max-h-0 opacity-0 pb-0"
               )}
             >
               <ul
                 style={{ scrollbarWidth: "none" }}
-                className="w-full box-border px-6 flex overflow-scroll"
+                className="w-full box-border px-6 flex overflow-scroll flex-col"
               >
                 <li className="w-full text-base font-light">
                   {questionsV1[6].baby}
                 </li>
+                <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#b4dc19] flex items-center justify-center">
+                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                    <Image
+                      src={questionsV1[6].src}
+                      alt={""}
+                      width={2880}
+                      height={1368} // Adjust this as needed
+                      quality={80}
+                      className="object-contain w-full h-full"
+                    />
+                  </div>
+                </div>
               </ul>
             </div>
           </li>
         </ul>
-        <div className="inset-0 flex items-center justify-center relative">
+        <div className="inset-0 hidden lg:flex items-center justify-center relative">
+
         </div>
       </div>
     </div>
