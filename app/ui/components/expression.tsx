@@ -222,13 +222,13 @@ export function Expressionv2() {
           lineHeight: "1.2",
           textAlign: "center",
         }}
-        className="font-light text-base"
+        className="font-light text-2xl md:text-base"
       >
         Dropbox Backup users ranked Dropbox Backup as more intuitive and easier
         to use than Backblaze and Carbonite in a recent study comparing top
         backup solutions.*
       </h5>
-      <h5 className="font-light text-base">
+      <h5 className="font-light text-2xl md:text-base">
         *Based on a 2021 Dropbox research survey of registered Dropbox users who
         have used Dropbox Backup
       </h5>
