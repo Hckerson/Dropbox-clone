@@ -156,6 +156,11 @@ input[type="number"]::-webkit-outer-spin-button {
   aspect-ratio: 1;
 }
 
+#faq{
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(0, max-content);
+}
+
 
 @media (min-width: 768px) {
   #scroll {
@@ -299,6 +304,11 @@ input[type="number"]::-webkit-outer-spin-button {
   #features{
     grid-auto-flow: column;
     grid-template-columns: 50% 50%  ;
+  }
+
+  #faq{
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr;
   }
 
 }

@@ -40,7 +40,7 @@ export default function Collection({ src, body, name, role }: Cardprops) {
                     >
                       <Image
                         src={src}
-                        alt="girl"
+                        alt={`picture of ${name}`}
                         width={2560}
                         height={1440}
                         className="h-full object-cover w-full absolute inset-0 max-h-full max-w-full box-border"
