@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { golos } from "../fonts";
+import { golos, dmSans } from "../fonts";
 import Image from "next/image";
 export default function Expression() {
   return (
@@ -203,6 +203,34 @@ export function Expressionv1() {
       >
         Get Backup, plus a robust set of organization and collaboration tools,
         with any Dropbox plan.
+      </h5>
+    </div>
+  );
+}
+
+export function Expressionv2() {
+  return (
+    <div className=" grid items-center justify-center  w-full  gap-y-5">
+      <h3
+        className={`${dmSans.className} text-lg px-7 md:text-4xl tracking-normal text-center font-normal `}
+      >
+        Easier than the competition
+      </h3>
+      <h5
+        style={{
+          maxWidth: "75ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+        className="font-light text-base"
+      >
+        Dropbox Backup users ranked Dropbox Backup as more intuitive and easier
+        to use than Backblaze and Carbonite in a recent study comparing top
+        backup solutions.*
+      </h5>
+      <h5 className="font-light text-base">
+        *Based on a 2021 Dropbox research survey of registered Dropbox users who
+        have used Dropbox Backup
       </h5>
     </div>
   );

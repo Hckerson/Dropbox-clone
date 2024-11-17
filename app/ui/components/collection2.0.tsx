@@ -4,9 +4,8 @@ type Cardprops = {
   src: string;
   body: string;
   name: string;
-  role: string;
 };
-export default function Collection({ src, body, name, role }: Cardprops) {
+export default function Collection({ src, body, name }: Cardprops) {
   return (
     <div
       className="flex box-border people"
@@ -66,7 +65,6 @@ export default function Collection({ src, body, name, role }: Cardprops) {
                 </div>
                 <span className="text-left p-0 m-0 font-medium text-base">
                   <p className="font-medium text-sm text-stone-200">{name}</p>
-                  <p className="text-stone-500 pt-3">{role}</p>
                 </span>
               </div>
             </div>

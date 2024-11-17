@@ -2,6 +2,8 @@ import { golos } from "../fonts";
 import BigPicCard from "./big-pic Card";
 import { easy } from "../navbar/links";
 import { FaqV1 } from "./FAQ";
+import { Expressionv2 } from "./expression";
+
 
 export default function Everything() {
   return (
@@ -45,6 +47,9 @@ export default function Everything() {
         </div>
         <div className="w-full bg-white">
           <FaqV1 />
+        </div>
+        <div className="w-full box-border p-14">
+          <Expressionv2/>
         </div>
       </div>
     </div>

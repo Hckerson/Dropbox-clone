@@ -3,7 +3,7 @@ import Frame from "@/app/ui/components/vid_frame";
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import Plans from "@/app/ui/components/plans";
-import Replay from "@/app/ui/landing-page/saying2.0";
+import { ReplayV1 } from "@/app/ui/landing-page/saying2.0";
 import { Expressionv1 } from "@/app/ui/components/expression";
 import Everything from "@/app/ui/components/easyToUse";
 export default function page() {
@@ -34,9 +34,7 @@ export default function page() {
       <div className="w-full box-border bg-[#f7f5f2]">
         <Everything/>
       </div>
-      <div className="w-full box-border ">
-        <Replay />
-      </div>
+      <ReplayV1/>
     </main>
   );
 }

@@ -410,3 +410,49 @@ export const customer = [
 ];
 
 
+export const customerV1 = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/ginaolson.png?id=78594a41-8a36-4ff9-bff2-b559f4baed14&width=1920&output_type=png",
+    body: "“Dropbox Backup calms my anxiety a bit. I've been using my work computer for a year now, but since it is from 2012 I know there's a possibility that it will freeze, fail, or die soon. But everything is backed up. That's a huge relief.”",
+    name: "Gina Olson, United States",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/peterferguson.png?id=9b134af0-8356-430d-a299-172b17e7c976&width=1920&output_type=png",
+    body: `“To me, Dropbox Backup is a good alternative to Carbon Copy Cloner, because I know it’s a complete identical index in the cloud, and it is integrated right into Dropbox with the rest of my files. For me it’s super important to have those external drives thoroughly indexed, safely backed up, and available wherever I am.”`,
+    name: "Peter Ferguson, Nashville, TN",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/work desk plant.svg?id=53aa7464-b6d5-47fb-a435-d07deb4cef66",
+    body: `“With Dropbox Backup, I don’t have to think about the last time my computer backed itself up. It’s seamless. It gets set up, it has a task to do and it does its job. I don’t have to think about it doing its job.”`,
+    name: "C. Gage, United States",
+  },
+  {
+    id: 4,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/work outside.svg?id=4d50dee2-98d5-48a4-b866-e8849adb47fe",
+    body: `“Replay makes what I do easier and simpler. I can get feedback from everybody in one spot—and check off comments as resolved—without email threads going around and context getting lost.”`,
+    name: "Arvin Velarde, United States",
+  },
+  {
+    id: 5,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Ekaterina-Borschov-Badano.png?id=95c4c069-53e0-464d-a058-78502f1487af&width=1920&output_type=png ",
+    body: "“Dropbox Backup has improved my productivity since I don't have to spend so much time backing up my work to portable hard drives or syncing files to Dropbox. It also made it very easy to transfer all my files when I bought a new computer!”",
+    name: "Ekaterina Borschov-Badano, United States",
+  },
+  {
+    id: 6,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/alexgeller.png?id=80a0a54e-ef04-46f8-b726-8905630385f9&width=1920&output_type=png",
+    body: "“With Dropbox Backup, you have a complete backup of information so if you were to lose it, you have an easy way to get it back and access it all in one spot.”",
+    name: "Alex Geller, United States",
+  },
+  {
+    id: 7,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/M-collins.png?id=0c2fddab-05ff-4ceb-9882-c2812c9712c8&width=1920&output_type=png",
+    body: "“Dropbox Backup has been great—I really like it. I was using another platform called CrashPlan and I didn’t really love it that much. With Dropbox Backup, it’s nice because it fits in with my workflow. I’m so used to using Dropbox for everything else and I prefer to have everything in one place anyway.”",
+    name: "M. Collins, United States",
+  },
+];
+
+
