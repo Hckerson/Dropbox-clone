@@ -212,7 +212,7 @@ export function Expressionv2() {
   return (
     <div className=" grid items-center justify-center  w-full  gap-y-5">
       <h3
-        className={`${dmSans.className} text-lg px-7 md:text-4xl tracking-normal text-center font-normal `}
+        className={`${dmSans.className}  px-7 text-2xl md:text-4xl tracking-normal text-center font-normal `}
       >
         Easier than the competition
       </h3>
@@ -222,13 +222,13 @@ export function Expressionv2() {
           lineHeight: "1.2",
           textAlign: "center",
         }}
-        className="font-light text-2xl md:text-base"
+        className="font-light text-lg md:text-base"
       >
         Dropbox Backup users ranked Dropbox Backup as more intuitive and easier
         to use than Backblaze and Carbonite in a recent study comparing top
         backup solutions.*
       </h5>
-      <h5 className="font-light text-2xl md:text-base">
+      <h5 className="font-light text-lg md:text-base text-center">
         *Based on a 2021 Dropbox research survey of registered Dropbox users who
         have used Dropbox Backup
       </h5>

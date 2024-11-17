@@ -432,7 +432,7 @@ export  function ReplayV1() {
           </div>
           <div
             id="way"
-            className="w-full box-border  justify-center lg:gap-y-0 gap-y-6  grid"
+            className="w-full box-border  justify-center lg:gap-y-0 gap-y-6 px-6  grid"
           >
             <h2
               className={`text-white text-2xl md:text-4xl w-full text-center lg:px-6 text-wrap ${golos.className}`}

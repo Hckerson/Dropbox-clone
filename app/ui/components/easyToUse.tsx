@@ -48,7 +48,7 @@ export default function Everything() {
         <div className="w-full bg-white">
           <FaqV1 />
         </div>
-        <div className="w-full box-border p-14">
+        <div className="w-full box-border p-6 md:p-14">
           <Expressionv2/>
         </div>
       </div>

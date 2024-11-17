@@ -347,7 +347,7 @@ export function FaqV1() {
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
       <div className="w-full box-border relative grid " id="faq">
-        <ul className="w-full box-border px-4 md:px-10 lg:px-14">
+        <ul className="w-full box-border  md:px-10 lg:px-14">
           <li className="flex flex-col   border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border">
             <div
               className={clsx(
@@ -387,7 +387,7 @@ export function FaqV1() {
                   {questionsV1[0].baby}
                 </li>
                 <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute relative lg:w-1/2 top-0 right-0 w-full h-full bg-[#fa551e] flex items-center justify-center">
-                  <div className="w-full h-auto flex items-center max-h-full max-w-full">
+                  <div  className="w-full h-auto flex items-center max-h-full max-w-full">
                     <Image
                       src={questionsV1[0].src}
                       alt={""}
@@ -448,7 +448,7 @@ export function FaqV1() {
                   {questionsV1[1].baby}
                 </li>
                 <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#c8aff0] flex items-center justify-center">
-                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                  <div  className="w-full h-full flex items-center max-h-full max-w-full">
                     <Image
                       src={questionsV1[1].src}
                       alt={""}
@@ -509,7 +509,7 @@ export function FaqV1() {
                   {questionsV1[2].baby}
                 </li>
                 <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#14c8eb] flex items-center justify-center">
-                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                  <div  className="w-full h-full flex items-center max-h-full max-w-full">
                     <Image
                       src={questionsV1[2].src}
                       alt={""}
@@ -570,7 +570,7 @@ export function FaqV1() {
                   {questionsV1[3].baby}
                 </li>
                 <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#fad24b] flex items-center justify-center">
-                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                  <div  className="w-full h-full flex items-center max-h-full max-w-full">
                     <Image
                       src={questionsV1[3].src}
                       alt={""}
@@ -631,7 +631,7 @@ export function FaqV1() {
                   {questionsV1[4].baby}
                 </li>
                 <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#ffafa5] flex items-center justify-center">
-                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                  <div  className="w-full h-full flex items-center max-h-full max-w-full">
                     <Image
                       src={questionsV1[4].src}
                       alt={""}
@@ -692,7 +692,7 @@ export function FaqV1() {
                   {questionsV1[5].baby}
                 </li>
                 <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#14c8eb] flex items-center justify-center">
-                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                  <div  className="w-full h-full flex items-center max-h-full max-w-full">
                     <Image
                       src={questionsV1[5].src}
                       alt={""}
@@ -753,7 +753,7 @@ export function FaqV1() {
                   {questionsV1[6].baby}
                 </li>
                 <div style={{aspectRatio : 16/9, overflow: 'unset'}} className="lg:absolute lg:w-1/2 top-0 right-0 w-full h-full bg-[#b4dc19] flex items-center justify-center">
-                  <div className="w-full h-full flex items-center max-h-full max-w-full">
+                  <div  className="w-full h-full flex items-center max-h-full max-w-full">
                     <Image
                       src={questionsV1[6].src}
                       alt={""}
