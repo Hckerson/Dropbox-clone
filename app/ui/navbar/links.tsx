@@ -237,6 +237,12 @@ export const every = [
   {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/storage-watermark-ui-transparent-2560x2560.png?id=0a37ebad-1922-414f-9a5c-07bd331c55c3&width=2560&output_type=png',head : 'Seamless security', body : 'Be sure your content is protected accross all devices with industry-leading encrytion, automatic backup, and two factor authentication'},
 ];
 
+export const everyV1 = [
+  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/02a_capture_tray_1440.png?id=764f26f5-f879-4186-987b-afe5a3b6058c&output_type=png',head : 'Be heard and stay engaged', body : 'Take screen recordings, screenshots, and GIFs with one click and share them easily with a link.'},
+  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/01b_capture_permissions_1920x1280.png?id=d6fbee0a-6d58-4ab4-95a6-7eebc8cd886e&width=1920&output_type=png',head : 'Quickly share updates with your team', body : 'Personalize and share your message with the right people at the right time using sharing links. '},
+  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/capture_sharedcollections_840xauto.png?id=3eb5fe46-2bfa-4df0-b389-2aec4c77aa72&output_type=png',head : 'Integrate seamlessly into the way you work', body : 'Use your existing keyboard shortcuts and work faster with content automatically stored in Dropbox.'},
+];
+
 export const easy = [
   {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/01_Backup_Simple-Computer-Backup_840x840.png?id=82281998-f695-4e27-80bc-54964274afab&output_type=png',head : 'Backup made simple', body : 'In just a few clicks, you can choose the files and folders you want Backup to keep safe, and we’ll take it from there.'},
   {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/03_Backup-External-Drive_840x840.png?id=5098b754-be53-4b5f-8f1c-72e2e3e7789a&output_type=png',head : 'An automated safety net', body : 'Automatic, always-on cloud backup saves you from accidental deletions, drive failures, and ransomware attacks.'},
@@ -456,3 +462,47 @@ export const customerV1 = [
 ];
 
 
+export const customersV1 = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/07_nick_smith.png?id=b9367a46-9518-4c68-86bb-0217c675f099&output_type=png",
+    body: "“When I get questions on, how do I do this?, it’s very easy to quickly record a video to capture that process and send it, rather than jumping on a video call or sending an email or writing a document. By viewing a one-minute video that resolves a problem, our employees can also take back time that would’ve been used to troubleshoot. Capture is a time saver.”",
+    name: "—Nick Smith",
+    role: "IT & Digital Operations Director, 1000heads",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/04_steve_lewis.png?id=5760b714-4ebb-4a25-beb2-af9374273664&output_type=png",
+    body: `“Capture has made communication more efficient and more on-point. If a picture is worth a thousand words, a video must be worth ten thousand. If I send someone an email about an issue we’re having with a website, for example, if I can include a video, I can much more quickly make my point and therefore operate at a higher level of efficiency.”`,
+    name: "—Steve Lewis",
+    role: "IT Manager, Lehigh University",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/02_jonathan_pleska.png?id=db6a09df-79a2-4f80-a0c2-4c9ba8b591eb&output_type=png",
+    body: `https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/02_jonathan_pleska.png?id=db6a09df-79a2-4f80-a0c2-4c9ba8b591eb&output_type=png`,
+    name: "—Jonathan Pleska",
+    role: "CEO, Geared Agency",
+  },
+  {
+    id: 4,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/01_aaron_weinstein.png?id=fd55af96-366d-44d3-ab69-6818d02d2f7b&output_type=png",
+    body: `“I can immediately deliver easy training to my team on a regular basis using Dropbox Capture. It’s a simple way to share ideas quickly and even cyclically.”`,
+    name: "—Aaron Weinstein",
+    role: "Digital Advertising Director, Chumney & Associates",
+  },
+  {
+    id: 5,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/03_mackenzie_davis.png?id=b1d1868b-9c2d-4974-a83c-ac0b2fef6968&output_type=png",
+    body: "“I often struggle with time zones at my company because we operate internationally. It’s hard to share ideas, because there’s only so much you can get across over-written messages. With Dropbox Capture, you can actually show the person what you're looking at, point things out, and convey it with your own voice.”",
+    name: "—Mackenzie Davis",
+    role: "Sr. Financial Operations Analyst, Consulting Industry",
+  },
+  {
+    id: 6,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/05_christopher_scordo.png?id=ba8ee39d-9865-4fce-b1cc-d28ed6a8fcc1&output_type=png",
+    body: "“There’s always a risk when you introduce new tools that you're going to derail existing processes or make things harder for your team, but Capture is a tool that’s so intuitive that you don’t need to do a deep dive on instructions. You can start using it immediately.”",
+    name: "—Christopher Scordo",
+    role: "Founder & Managing Director, PMTraining",
+  },
+];

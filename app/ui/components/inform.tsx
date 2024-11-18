@@ -1,4 +1,4 @@
-import { GetStartedv1, GetStarted } from "./get-started";
+import { GetStartedv1, GetStarted, ActionB } from "./get-started";
 import Link from "next/link";
 import { golos } from "../fonts";
 export default function Information() {
@@ -89,6 +89,63 @@ export function Informationv1() {
             {" "}
             <p className="inline-flex items-center text-base group  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
               Already have a dropbox account? Try Backup now{" "}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                width="24"
+                height="24"
+                role="presentation"
+                focusable="false"
+              >
+                <path
+                  d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+              </svg>
+            </p>
+          </Link>
+        </div>
+        <div className="lg:hidden md:block hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function Informationv2() {
+  return (
+    <div className="box-border w-full p-6 md:p-12 md:pb-14 grid">
+      <div className="w-full box-border grid gap-y-5">
+        <h1
+          style={{
+            overflowWrap: "anywhere",
+            textAlign: "unset",
+            lineHeight: "100%",
+          }}
+          className={`font-normal box-border hyphens-manual text-3xl text-wrap tracking-wide   md:text-5xl ${golos.className}`}
+        >
+          Give context to your content with Dropbox Capture
+        </h1>
+        <p className="font-normal text-wrap hyphens-manual text-base ">
+          Move work forward in less time, on your own time. Capture lets you
+          give and receive feedback on work, provide context to complicated
+          topics, and strike the right tone using screen recordings, voiceovers,
+          and screenshots. And with everything connected to Dropbox, you can
+          securely share your work without switching apps.
+        </p>
+      </div>
+      <div className="w-full box-border grid pt-7 gap-y-6" id="start">
+        <div className="w-full box-border grid  gap-y-6">
+          <div className="2xl:pr-6">
+            <ActionB text="Download for Windows" link="https://apps.microsoft.com/detail/9msmrxt381vp?hl=en-us&gl=US" />
+          </div>
+          <Link href="nav/login">
+            {" "}
+            <p className="inline-flex items-center text-base group  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+              Try Capture with a Dropbox plan{" "}
               <svg
                 viewBox="0 0 24 24"
                 fill="none"

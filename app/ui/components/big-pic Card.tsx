@@ -36,7 +36,7 @@ export default function BigPicCard({ src, head, body }: everyProps) {
         </div>
         <div className="box-border grid gap-y-4">
           <div className="text-xl font-semibold">{head}</div>
-          <div className="font-normal  text-lg text-stone-700 ">{body}</div>
+          <div className="font-light  text-lg  ">{body}</div>
         </div>
       </div>
     </div>

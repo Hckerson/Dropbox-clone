@@ -9,6 +9,7 @@ import { customers } from "../navbar/links";
 import { ChevronRightIcon, ChevronLeftIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 
+
 export default function Saying() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const swiperRef = useRef<SwiperType | null>(null);
