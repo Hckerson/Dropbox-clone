@@ -1,7 +1,6 @@
 import { golos } from "../fonts";
 import BigPicCard from "./big-pic Card";
 import { every, everyV1, everyV2 } from "../navbar/links";
-import Link from "next/link";
 
 export default function Everything() {
   return (
