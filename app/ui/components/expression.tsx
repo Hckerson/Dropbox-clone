@@ -235,3 +235,121 @@ export function Expressionv2() {
     </div>
   );
 }
+
+export function Expressionv3() {
+  return (
+    <div
+      style={{
+        maxWidth: "75ch",
+        lineHeight: "1.2",
+        textAlign: "center",
+      }}
+      className=" grid items-center justify-center  w-full  gap-y-8"
+    >
+      <h3
+        className={`${golos.className} text-lg px-7 md:text-2xl text-center font-normal `}
+      >
+        Share and track with Dropbox DocSend
+      </h3>
+      <h5 className="font-light text-lg">
+        Upgrade from traditional email attachments to DocSend links for enhanced
+        security and a more polished, professional presentation.
+      </h5>
+    </div>
+  );
+}
+
+export function ExpressV4() {
+  return (
+    <div className=" grid items-center justify-center py-10 w-full gap-y-8">
+      <div className=" grid items-center justify-center  w-full  gap-y-8">
+        <h5
+          style={{
+            maxWidth: "25ch",
+            lineHeight: "1.2",
+            textAlign: "center",
+          }}
+          className="font-normal text-4xl"
+        >
+          
+          DocSend is the easiest to setup, has the best ROI
+        </h5>
+        
+        <h5 className="underline underline-offset-1 text-lg text-center font-semibold text-stone-800">
+          <Link href={"https://www.g2.com/products/dropbox-docsend/reviews"}>
+            Check out our reviews
+          </Link>
+        </h5>
+      </div>
+      <div
+        id="media"
+        className="grid justify-center px-10 gap-y-20 md:gap-x-16 group"
+      >
+        <div
+          style={{
+            aspectRatio: 1,
+            overflow: "unset",
+          }}
+          className=" h-auto w-[150px]  flex relative items-center max-h-full max-w-full box-border"
+        >
+          <Image
+            src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/Cloud-Content-Collaboration-Leader.png?id=cfb4808a-bf10-43fd-8ee7-18ebfbe3740d&output_type=png"
+            alt="Leader emblem"
+            width={500}
+            height={500} // Adjust this as needed
+            quality={80}
+            className="object-contain w-full absolute inset-0 h-full"
+          />
+        </div>
+        <div
+          style={{
+            aspectRatio: 1,
+            overflow: "unset",
+          }}
+          className=" h-auto w-[150px] flex relative items-center max-h-full max-w-full box-border"
+        >
+          <Image
+            src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/Cloud-Content-Collaboration-EasiestSetup-EaseOfSetup.png?id=c007ebfe-1b5c-4b25-974f-9f35be1f1faa&output_type=png"
+            alt="Setup emblem"
+            width={500}
+            height={500} // Adjust this as needed
+            quality={80}
+            className="object-contain w-full absolute inset-0 h-full"
+          />
+        </div>
+        <div
+          style={{
+            aspectRatio: 1,
+            overflow: "unset",
+          }}
+          className=" h-auto w-[150px] flex relative items-center max-h-full max-w-full box-border"
+        >
+          <Image
+            src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/Sales-Enablement-BestEstimatedROI-Roi.png?id=ee143ba3-9f21-4602-b911-2783d53f649b&output_type=png"
+            alt="Best emblem"
+            width={500}
+            height={500} // Adjust this as needed
+            quality={80}
+            className="object-contain w-full absolute inset-0 h-full"
+          />
+        </div>
+        <div
+          style={{
+            aspectRatio: 1,
+            overflow: "unset",
+          }}
+          className=" h-auto w-[150px] lg:flex hidden relative items-center max-h-full max-w-full box-border"
+        >
+          <Image
+            src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/VirtualDataRoom(VDR)-FastestImplementation-Mid-Market-GoLiveTime.png?id=0dd2e2d4-8234-433a-8bb8-92ed962c177a&output_type=png"
+            alt="Fastest implemmtation emblem"
+            width={500}
+            height={500} // Adjust this as needed
+            quality={80}
+            className="object-contain w-full absolute inset-0 h-full"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}

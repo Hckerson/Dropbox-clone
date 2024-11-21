@@ -6,11 +6,11 @@ export const productLInkL = [
   {label : 'Dropbox', href :  '/nav/products/dropbox' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Dropbox-logo-nav.svg?id=d587e174-e284-42e8-a18c-85c0d8e57e9e', body : 'Store, share and access files across devices'},
   {label : 'Replay', href :  '/nav/products/replay' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/replay-logo-nav.svg?id=411f20bf-600b-42f8-a5a5-508c48fc55f7', body : 'Review and approve videos faster'},
   {label : 'Backup', href :  '/nav/products/backup' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Backup-logo-nav.svg?id=88a257c5-602b-48c0-bf49-e65aa2df21dd', body : 'Automatically back up your devices'},
-  {label : 'Capture', href :  '/nav/products/capture' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Capture-logo-nav.svg?id=c6fb8e66-f6a0-4286-a8e2-5039067bd74b', body : 'Create screen recordings and video messages'}
+  {label : 'Reclaim.ai', href :  'https://reclaim.ai/?utm_medium=referral&utm_source=dbx-header-referral&utm_campaign=dbx-header&utm_term=dbx-header' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/reclaim-dbx-waffle-32x32.svg?id=48ed6a4b-91be-43f0-a91e-0868a4380db7', body : 'Schedule habits, tasks and meeting with AI'}
 ]
 
 export const productLInkR = [
-  {label : 'Dash', href :  '/nav/products/dash' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/dash-logo-nav.svg?id=0eaff5fa-ffc5-41dd-bba1-4f05c5e32205', body : 'Find, organize and protect company content'},
+  {label : 'Dash', href :  'https://dash.dropbox.com' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/dash-logo-nav.svg?id=0eaff5fa-ffc5-41dd-bba1-4f05c5e32205', body : 'Find, organize and protect company content'},
   {label : 'Sign', href :  '/nav/products/sign' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/DocSend-logo-nav.svg?id=27f665ce-74c5-4746-8b8c-61cd9e34aadd', body : 'Send documant securely and track activity'},
   {label : 'DocSend', href :  '/nav/products/docsend' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/dropbox-sign-logo.svg?id=f9aee885-ea7b-4b1f-81fd-3e908dadc578', body : 'Request and add signatures to document'},
   {label : 'Early access', href :  '/nav/products/early_access' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/arrow_right.svg?id=e5339d6c-dcc7-477d-984b-7b2a039ca239', body : 'Preview new document experiences'}
@@ -504,5 +504,40 @@ export const customersV1 = [
     body: "“There’s always a risk when you introduce new tools that you're going to derail existing processes or make things harder for your team, but Capture is a tool that’s so intuitive that you don’t need to do a deep dive on instructions. You can start using it immediately.”",
     name: "—Christopher Scordo",
     role: "Founder & Managing Director, PMTraining",
+  },
+];
+
+export const customerV2 = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/quote_2560x1440_1.svg?id=f49d7eb3-bb64-45e3-9384-a4a401262c06",
+    body: "“DocSend shows us exactly which prospective clients are engaging with proposals and are interested in working with us. I love how the email notifications alert me when someone is reviewing a proposal in real-time, which helps me prioritize strategic follow-up and insight on any potential questions.”",
+    name: "Jon Cattivera",
+    role: "CEO and Creative Director, Sleepless Media",
+    link: 'https://www.docsend.com/customers/sleepless-media/'
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/quote_2560x1440_2.svg?id=f5583eb0-2c96-4303-854c-55fa2742b587",
+    body: `“DocSend’s NDA lets us share industry research with peers with a single click of a button. Fund managers and investors alike can access their signed NDAs after completion, making for an easy audit trail.”`,
+    name: "David Jud",
+    role: "Finance Manager, Aquamarine",
+    link : 'https://www.docsend.com/customers/aquamarine/'
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/quote_2560x1440_3.svg?id=90f1739e-a1ef-44ff-afc8-f76e564dd4b5",
+    body: `“I brought DocSend on to share presentations and financials with our board. It’s been helpful for me to see who has interacted with a document before a meeting. DocSend’s analytics let me know how to best prepare and tailor the meeting to our board members’ top interests.”`,
+    name: "David J. Whelan",
+    role: "CEO, BioscienceLA",
+    link : 'https://www.docsend.com/customers/biosciencela/'
+  },
+  {
+    id: 4,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/quote_2560x1440_4.svg?id=5bdee477-3896-4a69-90c0-2a6840e972b4",
+    body: `“Our decision to use DocSend’s data room for fundraising is largely driven by the idea of version control. Having the ability to control distribution and access to our information has been invaluable to us.”`,
+    name: "William Crowder",
+    role: "Founder and Managing Partner, Aperture Venture Capital",
+    link: 'https://www.docsend.com/customers/aperture-venture-capital/'
   },
 ];

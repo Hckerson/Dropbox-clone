@@ -86,7 +86,7 @@ export function ActionB({ link, text }: { link: string, text : string }) {
     >
       <Link
         href={link}
-        className=" rounded-xl w-full py-6 px-7 text-white group flex justify-between font-semibold "
+        className=" rounded-xl w-full py-6 px-7  group flex justify-between font-semibold "
       >
         {text}
         <svg

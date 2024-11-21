@@ -15,3 +15,12 @@ export type Saying = {
   name : string ;
   role : string
 }
+
+export type Collections = {
+  id : number;
+  src : string;
+  body : string;
+  name : string;
+  role : string;
+  link : string
+}

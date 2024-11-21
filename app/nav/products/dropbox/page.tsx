@@ -1,5 +1,5 @@
 import Information from "@/app/ui/components/inform";
-import Frame from "@/app/ui/components/picture-frame";
+import {FrameV1} from "@/app/ui/components/picture-frame";
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import Everything from "@/app/ui/components/everything";
@@ -22,7 +22,7 @@ export default function page() {
           }}
           className="w-full h-full text-stone-400 box-border justify-center flex flex-col items-center"
         >
-          <Frame />
+          <FrameV1 src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/hero/all-files-desktop.png?id=75a3b2c3-59ab-45f6-bdaa-fa64bac618e7&width=2880&output_type=png" alt="Dropbox homepage image" />
         </div>
       </div>
       <div

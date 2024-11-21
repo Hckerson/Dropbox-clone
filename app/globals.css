@@ -373,3 +373,10 @@ input[type="number"]::-webkit-outer-spin-button {
   animation: swipe 101250ms linear  infinite  ;
   animation-play-state: running;
 }
+
+@media(min-width: 1536px){
+  #faq{
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1.5fr;
+  }
+}

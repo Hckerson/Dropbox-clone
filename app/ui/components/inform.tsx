@@ -140,7 +140,10 @@ export function Informationv2() {
       <div className="w-full box-border grid pt-7 gap-y-6" id="start">
         <div className="w-full box-border grid  gap-y-6">
           <div className="2xl:pr-6">
-            <ActionB text="Download for Windows" link="https://apps.microsoft.com/detail/9msmrxt381vp?hl=en-us&gl=US" />
+            <ActionB
+              text="Download for Windows"
+              link="https://apps.microsoft.com/detail/9msmrxt381vp?hl=en-us&gl=US"
+            />
           </div>
           <Link href="nav/login">
             {" "}
@@ -165,6 +168,39 @@ export function Informationv2() {
               </svg>
             </p>
           </Link>
+        </div>
+        <div className="lg:hidden md:block hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function Informationv3() {
+  return (
+    <div className="box-border w-full p-6 md:p-12 md:pb-28 grid">
+      <div className="w-full box-border grid gap-y-5">
+        {" "}
+        <legend className="text-base font-semibold">Dropbox DocSend</legend>
+        <h1
+          style={{
+            overflowWrap: "anywhere",
+            textAlign: "unset",
+            lineHeight: "100%",
+          }}
+          className={`font-normal box-border hyphens-manual text-3xl text-wrap   md:text-5xl ${golos.className}`}
+        >
+          Securely share files with real-time control and insights
+        </h1>
+        <p className="font-normal text-wrap hyphens-manual text-base ">
+          Enjoy complete control over your most sensitive files after hitting
+          send and sharpen your business proposals with valuable insights.
+        </p>
+      </div>
+      <div className="w-full box-border grid pt-6 gap-y-6" id="start">
+        <div className="w-full box-border grid  gap-y-6">
+          <div style={{width : 'fit-content'}} className="2xl:pr-6 text-black">
+            <ActionB link="" text="Try Docsend" />
+          </div>
         </div>
         <div className="lg:hidden md:block hidden"></div>
       </div>
