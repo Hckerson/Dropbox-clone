@@ -9,6 +9,10 @@ import Righty, { Lefty } from "@/app/ui/components/rem";
 import { Frametri } from "@/app/ui/components/big-vid";
 import Faq from "@/app/ui/components/FAQ";
 import Why from "@/app/ui/components/why-rep";
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Fast track video reviews and approve',
+}
 export default function page() {
   return (
     <div className="box-border w-full ">

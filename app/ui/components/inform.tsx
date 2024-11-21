@@ -198,9 +198,66 @@ export function Informationv3() {
       </div>
       <div className="w-full box-border grid pt-6 gap-y-6" id="start">
         <div className="w-full box-border grid  gap-y-6">
-          <div style={{width : 'fit-content'}} className="2xl:pr-6 text-black">
+          <div style={{ width: "fit-content" }} className="2xl:pr-6 text-black">
             <ActionB link="" text="Try Docsend" />
           </div>
+        </div>
+        <div className="lg:hidden md:block hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function Informationv4() {
+  return (
+    <div className="box-border w-full p-6 md:p-12 md:pb-24 grid">
+      <div className="w-full box-border grid gap-y-5">
+        {" "}
+        <legend className="text-base font-semibold">Dropbox Sign</legend>
+        <h1
+          style={{
+            overflowWrap: "anywhere",
+            textAlign: "unset",
+            lineHeight: "100%",
+          }}
+          className={`font-normal box-border hyphens-manual text-3xl text-wrap   md:text-5xl ${golos.className}`}
+        >
+          Sign paperwork without all the paperwork
+        </h1>
+        <p className="font-normal text-wrap hyphens-manual text-base ">
+          Sign the contract, sign your next client, or sign up a new hire the
+          simple way. With legally-binding eSignatures, you can execute business
+          critical documents in a few quick clicks.
+        </p>
+      </div>
+      <div className="w-full box-border grid pt-6 gap-y-6" id="start">
+        <div className="w-full box-border grid  gap-y-6">
+          <div className="2xl:pr-6 text-black">
+            <ActionB link="https://sign.dropbox.com/products/dropbox-sign/pricing" text="Try eSignature for free" />
+          </div>
+          <Link href="nav/login">
+            {" "}
+            <p className="inline-flex items-center text-base group  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+              Need to sign and store? Try Dropbox Essentials{" "}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                width="24"
+                height="24"
+                role="presentation"
+                focusable="false"
+              >
+                <path
+                  d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+              </svg>
+            </p>
+          </Link>
         </div>
         <div className="lg:hidden md:block hidden"></div>
       </div>

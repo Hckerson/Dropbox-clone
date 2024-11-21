@@ -1,4 +1,3 @@
-"use client";
 import Navbar from "./ui/navbar/nav-bar";
 import About from "./ui/landing-page/about";
 import Dropbox from "./ui/landing-page/dropbox";
@@ -11,6 +10,10 @@ import Aspect from "./ui/landing-page/aspect";
 import Discovery from "./ui/landing-page/discovery";
 import Footer from "./ui/landing-page/footer";
 import { Blur } from "./ui/navbar/nav-link";
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Dropbox.com',
+}
 export default function Home() {
   return (
     <main className="flex flex-col min-h-screen ">

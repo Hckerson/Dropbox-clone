@@ -6,6 +6,10 @@ import Plans from "@/app/ui/components/plans";
 import { ReplayV1 } from "@/app/ui/landing-page/saying2.0";
 import { Expressionv1 } from "@/app/ui/components/expression";
 import Everything from "@/app/ui/components/easyToUse";
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Dropbox Bakcup: Your Secure Clone',
+}
 export default function page() {
   return (
     <main className="box-border w-full ">

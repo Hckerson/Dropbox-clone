@@ -243,6 +243,13 @@ export const everyV1 = [
   {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/capture_sharedcollections_840xauto.png?id=3eb5fe46-2bfa-4df0-b389-2aec4c77aa72&output_type=png',head : 'Integrate seamlessly into the way you work', body : 'Use your existing keyboard shortcuts and work faster with content automatically stored in Dropbox.'},
 ];
 
+export const everyV2 = [
+  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-create-template-ui-transparent-2560x2560.png?id=85a5d26b-6f55-461b-9b3c-a24251717dc6&width=2560&output_type=png',head : 'Document templates', body : 'Stop wasting time preparing the same documents. Minimize duplicative work by using customizable templates to send common forms, like NDAs and tax forms, to multiple recipients. '},
+  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-send-reminder-ui-transparent-2560x2560.png?id=d673cd2b-0173-47e5-972b-7a7e8c474ccc&width=2560&output_type=png',head : 'Automated reminders', body : 'Cut down the time from pitch to purchase order. Dropbox eSignatures have built-in reminders so you don’t have to chase paperwork. '},
+  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-mobile-signing-ui-transparent-2560x2560.png?id=7b3b3a20-337f-410f-b120-d169b84361d4&width=2560&output_type=png',head : 'Mobile-friendly signing', body : 'Take advantage of every opportunity. Mobile-friendly signing empowers teams to work from wherever they are—at the office or on the go.'},
+];
+
+
 export const easy = [
   {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/01_Backup_Simple-Computer-Backup_840x840.png?id=82281998-f695-4e27-80bc-54964274afab&output_type=png',head : 'Backup made simple', body : 'In just a few clicks, you can choose the files and folders you want Backup to keep safe, and we’ll take it from there.'},
   {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/03_Backup-External-Drive_840x840.png?id=5098b754-be53-4b5f-8f1c-72e2e3e7789a&output_type=png',head : 'An automated safety net', body : 'Automatic, always-on cloud backup saves you from accidental deletions, drive failures, and ransomware attacks.'},
@@ -539,5 +546,49 @@ export const customerV2 = [
     name: "William Crowder",
     role: "Founder and Managing Partner, Aperture Venture Capital",
     link: 'https://www.docsend.com/customers/aperture-venture-capital/'
+  },
+];
+
+
+export const questionsV3 = [
+  {
+    id: 1,
+    topic: "Close deals and protect relationships",
+    baby: "Get sales contracts, MSAs, change orders, and more signed 80% faster so you can focus on landing the next big client..",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_securesharing_1440x1080.jpg?id=4f7660e9-44d5-4a95-8908-bc9cfa9ddaf1&output_type=jpg",
+    bg: "#b4c8e1",
+  },
+  {
+    id: 2,
+    topic: "Easy onboarding = happier employees",
+    baby: "Optimize the employee paperwork experience and boost retention by making non-disclosure agreements, offer letters, and other documents easier to turn around.",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_documentanalytics_1440x1080.jpg?id=181e1c99-2834-48dd-8d2a-3aedb98cd21b&output_type=jpg",
+    bg: "#fa551e",
+  },
+  {
+    id: 3,
+    topic: "Protect your business and IP",
+    baby: "Put your business relationships in writing by getting legally binding eSignatures for privacy and liability agreements like NDAs and waivers signed quickly.",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_oneclick_1442x988.jpg?id=9fec2bd2-6c3a-4409-b2cc-cd48f280b148&output_type=jpg",
+    bg: "#f2eee8",
+  },
+  {
+    id: 4,
+    topic: "Streamline real estate agreements",
+    baby: "Manage the flood of agreements for buyers, sellers, agents, financing, and rentals that come across your desk and keep clients happy.",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_documentanalytics_1440x1080.jpg?id=181e1c99-2834-48dd-8d2a-3aedb98cd21b&output_type=jpg",
+    bg: "#fa551e",
+  },
+  {
+    id: 5,
+    topic: "Secure finances and grow your business",
+    baby: "Easily process loan and grant applications; shareholders' agreements and term sheets; invoices; and other financial documents.",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_oneclick_1442x988.jpg?id=9fec2bd2-6c3a-4409-b2cc-cd48f280b148&output_type=jpg",
+    bg: "#f2eee8",
   },
 ];

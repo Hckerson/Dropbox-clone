@@ -6,6 +6,10 @@ import {FaqV3} from "@/app/ui/components/FAQ";
 import { Expressionv3, ExpressV4 } from "@/app/ui/components/expression";
 import { ReplayV2 } from "@/app/ui/landing-page/saying2.0";
 import { customerV2 } from "@/app/ui/navbar/links";
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'DocSend - Dropbox',
+}
 export default function page() {
   return (
     <main className="box-border w-full ">

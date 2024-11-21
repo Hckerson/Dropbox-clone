@@ -5,6 +5,10 @@ import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import Everything from "@/app/ui/components/everything";
 import How from "@/app/ui/components/how";
 import Saying from "@/app/ui/landing-page/saying";
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Organized, Secure, Always accessible',
+}
 export default function page() {
   return (
     <main className="box-border w-full ">

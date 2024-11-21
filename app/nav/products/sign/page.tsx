@@ -1,10 +1,13 @@
-import Information from "@/app/ui/components/inform";
+import {Informationv4} from "@/app/ui/components/inform";
 import {FrameV1} from "@/app/ui/components/picture-frame";
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
-import Everything from "@/app/ui/components/everything";
-import How from "@/app/ui/components/how";
+import {EverythingV2} from "@/app/ui/components/everything";
 import Saying from "@/app/ui/landing-page/saying";
+import type { Metadata } from 'next'
+export const metadata: Metadata = {
+  title: 'Dropbox Sign - Dropbox',
+}
 export default function page() {
   return (
     <main className="box-border w-full ">
@@ -14,23 +17,22 @@ export default function page() {
       </div>
       <div className="w-full box-border  mt-12 md:mt-20 grid" id="drop">
         <div className="w-full box-border bg-stone-900 text-white">
-          <Information />
+          <Informationv4 />
         </div>
         <div
           style={{
-            backgroundColor: "#d8d3cb",
+            backgroundColor: "#b4c8e1",
           }}
           className="w-full h-full text-stone-400 box-border justify-center flex flex-col items-center"
         >
-          <FrameV1 src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/test/homepageredesign2024/hero/all-files-desktop.png?id=75a3b2c3-59ab-45f6-bdaa-fa64bac618e7&width=2880&output_type=png" alt="Dropbox homepage image" />
+          <FrameV1 src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-entry-point-ui-transparent-2048x1280.png?id=75f1a89e-1f72-48f9-afd5-ee9b368108c8&output_type=png" alt="Dropbox homepage image" />
         </div>
       </div>
       <div
         style={{ backgroundColor: "#f7f5f2" }}
         className="w-full box-border flex flex-col items-center"
       >
-        <Everything />
-        <How />
+        <EverythingV2 />
       </div>
       <div className="w-full box-border ">
         <Saying />

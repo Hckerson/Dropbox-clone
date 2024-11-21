@@ -1,3 +1,4 @@
+'use client'
 import { VideoLeft, VideoRight } from "./video";
 import { ImgLayout, MiniImg } from "./img-layout";
 import { useState, useEffect } from "react";
