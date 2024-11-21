@@ -20,14 +20,14 @@ export function PDDs() {
                   <li className="inline w-60" key={each.label}>
                     <Link
                       href={each.href}
-                      className="hover:text-blue-500 text-neutral-200 transition-colors "
+                      className="hover:text-blue-500 text-black transition-colors "
                     >
                       <div className="w-full flex space-x-5 p-4 rounded-xl hover:bg-stone-200">
                         <div className="shrink-0">
                           <img src={each.src} className="size-8" alt="image" />
                         </div>
                         <div className="flex  flex-col">
-                          <p className="text-base text-black font-semibold">
+                          <p className="text-base font-semibold">
                             {each.label}
                           </p>
                           <p className="text-xs text-stone-500">{each.body}</p>
@@ -44,7 +44,7 @@ export function PDDs() {
                   <li className="inline w-60" key={each.label}>
                     <Link
                       href={each.href}
-                      className="hover:text-blue-500 text-neutral-200 transition-colors "
+                      className="hover:text-blue-500 text-black transition-colors "
                     >
                       <div className="w-full flex space-x-5 p-4 rounded-xl hover:bg-stone-200">
                         <div className="shrink-0">
@@ -55,7 +55,7 @@ export function PDDs() {
                           />
                         </div>
                         <div className="flex  flex-col">
-                          <p className="text-base text-black font-semibold">
+                          <p className="text-base font-semibold">
                             {each.label}
                           </p>
                           <p className="text-xs text-stone-500">{each.body}</p>

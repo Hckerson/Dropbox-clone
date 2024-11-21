@@ -311,6 +311,10 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 1fr 1fr;
   }
 
+  .sixty{
+    width : 50%;
+  }
+
 }
 
 @media (min-width: 1280px) {
@@ -374,9 +378,13 @@ input[type="number"]::-webkit-outer-spin-button {
   animation-play-state: running;
 }
 
-@media(min-width: 1536px){
+@media(min-width: 1540px){
   #faq{
     grid-auto-flow: column;
     grid-template-columns: 1fr 1.5fr;
   }
+
+.sixty{
+  width : 60%
+}
 }

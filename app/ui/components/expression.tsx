@@ -271,10 +271,9 @@ export function ExpressV4() {
           }}
           className="font-normal text-4xl"
         >
-          
           DocSend is the easiest to setup, has the best ROI
         </h5>
-        
+
         <h5 className="underline underline-offset-1 text-lg text-center font-semibold text-stone-800">
           <Link href={"https://www.g2.com/products/dropbox-docsend/reviews"}>
             Check out our reviews
@@ -350,6 +349,31 @@ export function ExpressV4() {
           />
         </div>
       </div>
+    </div>
+  );
+}
+
+export function Expressionv5() {
+  return (
+    <div className=" grid items-center justify-center text-white  gap-y-8   z-0 pb-8 pt-36 transition-opacity  px-6 xs:px-12 md:px-0">
+      <h3
+        className={`${golos.className} text-xl px-7 md:text-4xl text-center font-normal `}
+      >
+        Dropbox Early Access
+      </h3>
+      <h5
+        className="font-light text-lg"
+        style={{
+          maxWidth: "75ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+      >
+        Test drive the next generation of work tools, now in alpha or beta.
+        Scroll down for more info on all the cutting-edge tech available to you
+        through Dropbox Early Access. And thanks in advance for sharing
+        feedback—your ideas could directly influence the final product!
+      </h5>
     </div>
   );
 }

@@ -5,121 +5,49 @@ import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-const questions = [
+import { questions, questionsV1, questionsV2 } from "../navbar/links";
+
+
+const questionsV3 = [
   {
-    id: 1,
-    topic:
-      "Can I use Replay without upgrading to Dropbox Plus or a higher plan?",
-    baby: "Yes, Replay is available to users on our Basic plan with limited features. To explore Replay, sign-in or sign-up to get started.",
+    id: 1,        
+    topic: "Close deals and protect relationships",
+    baby: "Get sales contracts, MSAs, change orders, and more signed 80% faster so you can focus on landing the next big client.",
+    alt: "Dropbox sign features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign_workflow_1440x368.png?id=358d7fce-a975-41af-b9cc-53b780795355&output_type=png",
+    bg: "#fad24b",
   },
   {
     id: 2,
-    topic: "Can I edit video, audio and images using Replay?",
-    baby: "No. Replay is a review and approvals solution. When it comes to making amends to your content, Replay integrates with editing software such as Adobe Premiere Pro, Adobe After Effects, Apple Final Cut Pro, Blackmagic Design DaVinci Resolve, and Avid Pro Tools.",
-  },
-  {
-    id: 3,
-    topic: "Where will the media files be stored?",
-    baby: "Files uploaded from your local drive or third-party video tools, to Replay, are stored in your Dropbox account and will count towards your total storage amount. Files already stored in your Dropbox account and opened in Replay, will not count additionally towards your total storage. For every project, you can view how much storage they use, directly inside of Replay.",
-  },
-  {
-    id: 4,
-    topic: "What type of media files are compatible with Replay?",
-    baby: "Video, image, audio, PSD, and PDF projects are all compatible with Replay. File sizes up to 150 GB can be uploaded, and the maximum supported audio and video length is 12 hours.",
-  },
-  {
-    id: 5,
-    topic: "Is this a web based or desktop application? Or both?",
-    baby: "While there is a macOS desktop application, Replay is accessible through the internet browser on your Windows, macOS, or mobile device. You can use Chrome, Firefox, or Safari, but we recommend using Chrome for the best experience. ",
-  },
-];
-
-const questionsV1 = [
-  {
-    id: 1,
-    topic: "Migrate files to a new computer",
-    baby: "You can restore your files to a new computer to get your shiny new laptop up and running with ease—no complicated or slow manual connections from computer to computer.",
-    alt: "Restoration process image",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_migrate_files_1440x1440.png?id=58105247-15e4-4dab-9fc0-7ae97b983f0b&width=2880&output_type=png",
-    bg : '#fa551e'
-  },
-  {
-    id: 2,
-    topic: "Easily recover if something goes wrong",
-    baby: "Getting back up and running works just the way it should—quickly and easily. Start recovery with just a few clicks, and your files will be automatically restored from cloud backup to their original locations.",
-    alt: "Restoration process image",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_easily_recover_1440x1440.png?id=b60e06ec-61f1-4763-92f9-6addbd7ce60c&width=2880&output_type=png",
-    bg : '#c8aff0'
-  },
-  {
-    id: 3,
-    topic: "Consolidate tools and have less to manage",
-    baby: "Backup is included in all Dropbox plans, giving you cloud backup and all the tools you need to collaborate and stay organized—all in a single subscription.",
-    alt: "image of dropbox tools",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup-consolidate-tools-1440x1440.png?id=f3af389e-caaa-44e0-80fc-49d5ec88f0a1&output_type=png",
-    bg : '#14c8eb'
-  },
-  {
-    id: 4,
-    topic: "Keep your files secure",
-    baby: "Built on a secure and reliable network trusted by 700 million users worldwide, your files are safe with Dropbox.",
-    alt: "image depicting security",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup-secure-files-1440x1440.png?id=2590edd3-e04a-4b41-b89e-85d9f0f60a79&output_type=png",
-    bg : '#fad24b'
-  },
-  {
-    id: 5,
-    topic: "Keep backed up files in their own safe place",
-    baby: "Dropbox Backup stores your files separate from your shared files, so you won’t have to worry about overwriting your emergency backups.",
-    alt: "Backup page",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_keep_files_separate_1440x1440.png?id=56e7c04b-3b3e-4023-887b-c6eb428fbe82&width=2880&output_type=png",
-    bg : '#ffafa5'
-  },
-  {
-    id: 6,
-    topic: "Back up multiple devices",
-    baby: "One-time setup keeps files stored across devices—like your computer and external drive—safe in one place.",
-    alt: "Backup page",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_multiple_device_backup_1440x1440.png?id=94f0d8d2-5c68-4ffe-af46-f45e13dde525&width=2880&output_type=png",
-    bg : '#14c8eb'
-  },
-  {
-    id: 7,
-    topic: "View backups whenever, wherever",
-    baby: "Just as you’d expect from Dropbox, you can easily get to your backed up files any time, anywhere—from your computer, through our mobile app, or on the web.",
-    alt: "Backup on android",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_mobile_backup_1440x1440.png?id=f6f79922-b054-4058-9b45-9be63eaaca89&width=2880&output_type=png",
-    bg : '#b4dc19'
-  },
-];
-
-const questionsV2 = [
-  {
-    id: 1,
-    topic: "Secure Sharing",
-    baby: "Control every aspect of your shared documents, even after you hit send.",
-    alt: "Dropbox clone features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_securesharing_1440x1080.jpg?id=4f7660e9-44d5-4a95-8908-bc9cfa9ddaf1&output_type=jpg",
-    link: "https://www.docsend.com/features/sharing/?utm_medium=referral&utm_source=referral%20traffic&utm_campaign=dbx%20top%20nav&utm_content=jtbd",
+    topic: "Easy onboarding = happier employees",
+    baby: "Optimize the employee paperwork experience and boost retention by making non-disclosure agreements, offer letters, and other documents easier to turn around.",
+    alt: "Dropbox sign features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/features/productivity/electronic-signature-request/sign_templates_1440xauto.jpg?id=c9f8e9c2-081a-433b-9c63-b9524cbebcad&output_type=jpg",
     bg: "#b4c8e1",
   },
   {
-    id: 2,
-    topic: "Document and Video Analytics",
-    baby: "Gain actionable insights that drive your deals forward and build lasting relationships.",
-    alt: "Dropbox clone features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_documentanalytics_1440x1080.jpg?id=181e1c99-2834-48dd-8d2a-3aedb98cd21b&output_type=jpg",
-    link: "https://www.docsend.com/features/analytics/?utm_medium=referral&utm_source=referral%20traffic&utm_campaign=dbx%20top%20nav&utm_content=jtbd",
+    id: 3,
+    topic: "Protect your business and IP",
+    baby: "Put your business relationships in writing by getting legally binding eSignatures for privacy and liability agreements like NDAs and waivers signed quickly.",
+    alt: "Dropbox sign features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-signaturepage-2560xauto.jpg?id=8b1c6388-4835-49a1-aafc-a03382b11ff3&width=2560&output_type=jpg",
+    bg: "#c8aff0",
+  },
+  {
+    id: 4,
+    topic: "Streamline real estate agreements",
+    baby: "Manage the flood of agreements for buyers, sellers, agents, financing, and rentals that come across your desk and keep clients happy.",
+    alt: "Dropbox sign features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/features/productivity/electronic-signature-request/sign_documents_1440x960.png?id=931cb9ed-c5a3-4b0c-8a5b-d41126015c42&output_type=png",
     bg: "#fa551e",
   },
   {
-    id: 3,
-    topic: "Advanced DocSend Features",
-    baby: "DocSend offers advanced features like virtual data rooms, file indexing and, one-click NDAs, and much more.",
-    alt: "Dropbox clone features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_oneclick_1442x988.jpg?id=9fec2bd2-6c3a-4409-b2cc-cd48f280b148&output_type=jpg",
-    link: "https://www.docsend.com/",
-    bg: "#f2eee8",
+    id: 5,
+    topic: "Secure finances and grow your business",
+    baby: "Easily process loan and grant applications; shareholders' agreements and term sheets; invoices; and other financial documents.",
+    alt: "Dropbox sign features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-templates-2560xauto.png?id=9e7dc209-9bf3-4ce2-a5f1-c4f06430f4e9&width=2560&output_type=png",
+    bg: "#b4dc19",
   },
 ];
 
@@ -204,7 +132,7 @@ export function FaqV1() {
 
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
-      <div className="w-full box-border relative grid " id="faq">
+      <div className="w-full box-border relative grid overflow-hidden" id="faq">
         <ul className="w-full box-border  md:px-10 lg:px-14">
           {questionsV1.map((question, index) => {
             return (
@@ -251,7 +179,7 @@ export function FaqV1() {
                     </li>
                     <div
                       style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
-                      className="lg:absolute relative lg:w-1/2 top-0 right-0 w-full h-full  flex items-center justify-center"
+                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
                     >
                       <div className="w-full relative h-full py-4 flex items-center  max-w-full">
                         <Image
@@ -270,7 +198,7 @@ export function FaqV1() {
             );
           })}
         </ul>
-        <div className="inset-0 hidden lg:flex items-center justify-center relative"></div>
+        <div className="inset-0 hidden lg:flex items-center justify-center relative overflow-hidden"></div>
       </div>
     </div>
   );
@@ -286,7 +214,7 @@ export function FaqV3() {
 
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
-      <div className="w-full box-border relative grid " id="faq">
+      <div className="w-full box-border relative grid overflow-hidden " id="faq">
         <ul className="w-full box-border  md:px-10 lg:px-14">
           {questionsV2.map((question, index) => {
             return (
@@ -336,7 +264,7 @@ export function FaqV3() {
                     </li>
                     <div
                       style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
-                      className={clsx("lg:absolute relative lg:w-1/2 2xl:w-3/5 top-0 right-0 w-full h-full  flex items-center justify-center transition-transform ease-in-out duration-300")}
+                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
                     >
                       <div className="w-full relative h-full py-4 flex items-center  max-w-full">
                         <Image
@@ -355,7 +283,7 @@ export function FaqV3() {
             );
           })}
         </ul>
-        <div className="inset-0 hidden lg:flex items-center justify-center relative"></div>
+        <div className="inset-0 hidden lg:flex items-center justify-center relative overflow-hidden"></div>
       </div>
     </div>
   );
@@ -369,9 +297,9 @@ export function FaqV4() {
 
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
-      <div className="w-full box-border relative grid " id="faq">
+      <div className="w-full box-border relative grid overflow-hidden " id="faq">
         <ul className="w-full box-border  md:px-10 lg:px-14">
-          {questionsV2.map((question, index) => {
+          {questionsV3.map((question, index) => {
             return (
               <li
                 key={question.id}
@@ -414,12 +342,9 @@ export function FaqV4() {
                     <li className="w-full text-base font-light">
                       {question.baby}
                     </li>
-                    <li className="w-full text-base font-light">
-                        <Link href={question.link}>Learn more</Link>
-                    </li>
                     <div
                       style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
-                      className={clsx("lg:absolute relative lg:w-1/2 2xl:w-3/5 top-0 right-0 w-full h-full  flex items-center justify-center transition-transform ease-in-out duration-300")}
+                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
                     >
                       <div className="w-full relative h-full py-4 flex items-center  max-w-full">
                         <Image
@@ -428,7 +353,7 @@ export function FaqV4() {
                           width={2880}
                           height={1368} // Adjust this as needed
                           quality={80}
-                          className="object-contain w-full h-full"
+                          className="object-contain w-full h-full scale-75"
                         />
                       </div>
                     </div>
@@ -438,7 +363,7 @@ export function FaqV4() {
             );
           })}
         </ul>
-        <div className="inset-0 hidden lg:flex items-center justify-center relative"></div>
+        <div className="inset-0 hidden lg:flex items-center justify-center relative overflow-hidden"></div>
       </div>
     </div>
   );
@@ -895,7 +820,7 @@ export function FaqV2() {
             </div>
           </li>
         </ul>
-        <div className="inset-0 hidden lg:flex items-center justify-center relative"></div>
+        <div className="inset-0 hidden lg:flex items-center justify-center relative overflow-hidden"></div>
       </div>
     </div>
   );

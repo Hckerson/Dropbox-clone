@@ -639,7 +639,7 @@ export  function ReplayV2({customers} : {customers : Collections[]}) {
 
               <div className="flex flex-col items-center justify-center">
                 <span className=" text-xl text-stone-400 px-2">
-                  {String(currentSlide + 1).padStart(2, "0")}/04
+                  {String(currentSlide + 1).padStart(2, "0")}/0{customers.length}
                 </span>
               </div>
               {currentSlide < customers.length - 1 && (

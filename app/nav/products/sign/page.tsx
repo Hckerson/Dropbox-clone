@@ -3,8 +3,10 @@ import {FrameV1} from "@/app/ui/components/picture-frame";
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import {EverythingV2} from "@/app/ui/components/everything";
-import Saying from "@/app/ui/landing-page/saying";
+import { FaqV4 } from "@/app/ui/components/FAQ";
+import { ReplayV2 } from "@/app/ui/landing-page/saying2.0";
 import type { Metadata } from 'next'
+import { customerV3 } from "@/app/ui/navbar/links";
 export const metadata: Metadata = {
   title: 'Dropbox Sign - Dropbox',
 }
@@ -34,8 +36,11 @@ export default function page() {
       >
         <EverythingV2 />
       </div>
-      <div className="w-full box-border ">
-        <Saying />
+      <div className="w-full ">
+        <FaqV4/>
+      </div>
+      <div>
+        <ReplayV2 customers={customerV3}/>
       </div>
     </main>
   );

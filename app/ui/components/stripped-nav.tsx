@@ -4,7 +4,7 @@ import Link from "next/link";
 import clsx from "clsx";
 import { StartLink } from "./sublink";
 
-export default function Navbar() {
+export default function Navbar({ condition = true }) {
   return (
     <nav className="bg-white relative z-50 flex flex-col">
       <div className="p-0 sm:px-5 lg:px-6">
@@ -71,9 +71,11 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-      <div className="w-full box-border border z-20 border-t-stone-300 ">
-        <StartLink />
-      </div>
+      {condition && (
+        <div className="w-full box-border border z-20 border-t-stone-300 ">
+          <StartLink />
+        </div>
+      )}
     </nav>
   );
 }
