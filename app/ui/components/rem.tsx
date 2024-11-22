@@ -110,18 +110,25 @@ export function LeftyV1() {
               within Dropbox and beyond
             </li>
             <li>
-            Summarize documents with a click, instantly generate AI-powered insights, and collaborate easily using shareable content collections
+              Summarize documents with a click, instantly generate AI-powered
+              insights, and collaborate easily using shareable content
+              collections
             </li>
             <li>
-            Powerful admin controls—easily view and manage access permissions to make sure only the right people see sensitive content
+              Powerful admin controls—easily view and manage access permissions
+              to make sure only the right people see sensitive content
             </li>
           </ul>
+          <span>
+            Dropbox Dash is currently available to users in the US in English
+            only.
+          </span>
           <Link
-            href=""
-            className=" rounded-xl text-white group py-5 px-6 ring-2 ring-white flex space-x-5 font-semibold "
+            href="https://dash.dropbox.com/?tk=dea"
+            className=" rounded-xl text-white group py-5 px-6 ring-2 hover:bg-stone-700 ring-white flex space-x-5 font-semibold "
             style={{ width: "fit-content" }}
           >
-            <p>Start project</p>
+            <p>Try Dash now</p>
             <svg
               viewBox="0 0 24 24"
               fill="none"

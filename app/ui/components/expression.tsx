@@ -377,3 +377,94 @@ export function Expressionv5() {
     </div>
   );
 }
+
+export function ExpressionV6() {
+  return (
+    <div className=" grid items-center text-white justify-center w-full gap-y-8 ">
+      <div
+        style={{
+          maxWidth: "75ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+        className=" grid items-center justify-center  w-full  gap-y-4"
+      >
+        <h3
+          className={`${golos.className} text-2xl px-7 md:text-4xl text-center font-normal `}
+        >
+          Investing in innovation
+        </h3>
+        <h5 className="font-light text-lg">
+          We’re looking for the biggest ideas, the best new tech, and the most
+          talented teams. Through Dropbox Ventures, we’re investing up to $50
+          million in early-stage AI startups.
+        </h5>
+      </div>
+      <div className="flex justify-center group">
+        <Link href="https://www.dropbox.com/ventures" className="text-center">
+          Learn more
+          <span className="group-hover:translate-x-1 transition-transform ease-out duration-300">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="inline-flex transition-transform duration-300 "
+              width="24"
+              height="24"
+              role="presentation"
+              focusable="false"
+            >
+              <path
+                d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                vectorEffect="non-scaling-stroke"
+              ></path>
+            </svg>
+          </span>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function Expressionv7() {
+  return (
+    <div
+      className=" grid items-center justify-center  w-full  gap-y-14"
+      style={{
+        maxWidth: "70ch",
+        lineHeight: "1.2",
+        textAlign: "center",
+      }}
+    >
+      <div className="w-full grid gap-y-4">
+        {" "}
+        <h3
+          className={`${dmSans.className}  px-7 text-2xl md:text-4xl tracking-normal text-center font-normal `}
+        >
+          Dropbox AI Principles
+        </h3>
+        <h5 className="font-light text-lg md:text-base text-center">
+          Customer focused. Security minded. Responsible and honest.
+        </h5>
+        <Link
+          href="https://www.dropbox.com/ventures"
+          className="text-center underline underline-offset-1 decoration-1  decoration-stone-800"
+        >
+          Learn about all the principles guiding our teams as they develop new
+          AI-powered products
+        </Link>
+      </div>
+
+      <h5 className="font-light text-lg md:text-base text-center">
+        Your participation in Dropbox Early Access is subject to the following
+        <span>
+          <Link href="https://help.dropbox.com/account-settings/alpha-beta-product" className="text-blue-700"> {" "}terms</Link>
+        </span>
+        . We cannot guarantee that the features or products we make available as
+        part of this program will be accessible to you in the future.
+      </h5>
+    </div>
+  );
+}
