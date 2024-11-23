@@ -152,3 +152,72 @@ export function LeftyV1() {
     </div>
   );
 }
+
+export function RightV1() {
+  return (
+    <div className="grid items-center h-full p-4" id="one">
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
+        <div className="grid  gap-y-6">
+          <p className={`text-2xl font-normal ${golos.className}`}>
+            Centralize your content, maximize your productivity
+          </p>
+          <span className=" font-normal">
+            No more toggling between apps—you can{" "}
+            <span className="underline underline-offset-2 decoration-2">
+              <Link
+                href={"https://www.dropbox.com/features/content_collaboration"}
+              >
+                organize and make edits
+              </Link>
+            </span>{" "}
+            to contracts and PDFs inside Dropbox, then{" "}
+            <span className="underline underline-offset-2 decoration-2">
+              <Link
+                href={"https://www.dropbox.com/features/share"}
+              >
+                share those files
+              </Link>
+            </span>{" "}
+            with a few clicks.
+          </span>
+        </div>
+      </div>
+      <div className="xl:flex hidden"></div>
+    </div>
+  );
+}
+
+
+export function LeftV2() {
+  return (
+    <div className="grid items-center h-full p-3" id="two">
+      <div className="xl:flex hidden"></div>
+      <div className=" box-border md:px-4 h-full flex items-center justify-center">
+        <div className="grid  gap-y-6">
+          <p className={`text-2xl  font-normal ${golos.className}`}>
+          Close deals up to 80% faster
+          </p>
+          <span className=" font-normal">
+          Your sales team doesn’t need any more distractions. With{" "}
+            <span className="underline underline-offset-2 decoration-2">
+              <Link
+                href={"https://www.dropbox.com/features/content_collaboration"}
+              >
+                files synced across devices
+              </Link>
+            </span>{" "} and
+      
+            <span className="underline underline-offset-2 decoration-2">
+              <Link
+                href={"https://www.dropbox.com/features/share"}
+              >
+                secure eSignatures,
+              </Link>
+            </span>{" "}
+            Dropbox takes admin work off your plate so you can close deals faster.
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}

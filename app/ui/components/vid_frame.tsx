@@ -36,11 +36,11 @@ export default function Frame() {
 }
 
 
-export  function FrameV1() {
+export  function FrameV() {
   return (
     <div
       style={{ aspectRatio: 16 / 9, overflow: "unset" }}
-      className=" relative h-auto max-w-[1000px] max-h-full w-full min-w-0  box-border "
+      className=" relative h-auto max-w-[1000px] max-h-full w-full min-w-0  scale-90 md:scale-100 box-border "
     >
       <div
         style={{
@@ -60,11 +60,11 @@ export  function FrameV1() {
           muted
         >
           <source
-            src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/features/content-collaboration/screen-recorder/02_bdx_capture_screen_record_with_video_1440xauto.mov"
+            src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/business/solutions/human-resources/fss-suggested-quick-actions-ui-transparent-1080xauto.mov"
             type="video/quicktime; codecs=hvc1"
           />
           <source
-            src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/features/content-collaboration/screen-recorder/02_bdx_capture_screen_record_with_video_1440xauto.webm"
+            src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/business/solutions/human-resources/fss-suggested-quick-actions-ui-transparent-1080xauto.webm"
             type="video/webm; codecs=vp9"
           />
         </video>

@@ -5,49 +5,41 @@ import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { questions, questionsV1, questionsV2 } from "../navbar/links";
+import { questions, questionsV1, questionsV2, questionsV3 } from "../navbar/links";
 
 
-const questionsV3 = [
+const questionsv4 = [
   {
     id: 1,        
-    topic: "Close deals and protect relationships",
-    baby: "Get sales contracts, MSAs, change orders, and more signed 80% faster so you can focus on landing the next big client.",
-    alt: "Dropbox sign features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign_workflow_1440x368.png?id=358d7fce-a975-41af-b9cc-53b780795355&output_type=png",
-    bg: "#fad24b",
+    topic: "Document protection for peace of mind",
+    baby: "Secure documents with passwords and expiration dates and turn off the ability to download.",
+    alt: "Depiction of security",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/compare/Vault-1696x954.svg?id=47289066-49c0-4944-9138-a45ed680adda",
+    bg: "",
   },
   {
     id: 2,
-    topic: "Easy onboarding = happier employees",
-    baby: "Optimize the employee paperwork experience and boost retention by making non-disclosure agreements, offer letters, and other documents easier to turn around.",
-    alt: "Dropbox sign features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/features/productivity/electronic-signature-request/sign_templates_1440xauto.jpg?id=c9f8e9c2-081a-433b-9c63-b9524cbebcad&output_type=jpg",
-    bg: "#b4c8e1",
+    topic: "Fulfill corporate and government requirements with ease",
+    baby: "Automate tracking and reporting of sensitive data. Maintain audit trails for crucial documents including access, reviews, and signatures.",
+    alt: "Depiction of security",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/supreme-court-1696x954.svg?id=aaab30db-00b1-47d1-8687-230aab0af8d3",
+    bg: "",
   },
   {
     id: 3,
-    topic: "Protect your business and IP",
-    baby: "Put your business relationships in writing by getting legally binding eSignatures for privacy and liability agreements like NDAs and waivers signed quickly.",
+    topic: "Gain confidence in your content’s security",
+    baby: "Utilize tamper-proof documents for protection against changes. Employ access codes and two-factor authentication to verify signers' identity.",
     alt: "Dropbox sign features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-signaturepage-2560xauto.jpg?id=8b1c6388-4835-49a1-aafc-a03382b11ff3&width=2560&output_type=jpg",
-    bg: "#c8aff0",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/end-to-end-encryption-1696x954.svg?id=e40683b4-fcf6-493c-855c-e9cebb2f9b64",
+    bg: "",
   },
   {
     id: 4,
-    topic: "Streamline real estate agreements",
-    baby: "Manage the flood of agreements for buyers, sellers, agents, financing, and rentals that come across your desk and keep clients happy.",
+    topic: "Disaster-proof protection made simple",
+    baby: "Cut disputes by 10x with clear audit trails. Safeguard files on devices with automatic backups for swift recovery.",
     alt: "Dropbox sign features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/features/productivity/electronic-signature-request/sign_documents_1440x960.png?id=931cb9ed-c5a3-4b0c-8a5b-d41126015c42&output_type=png",
-    bg: "#fa551e",
-  },
-  {
-    id: 5,
-    topic: "Secure finances and grow your business",
-    baby: "Easily process loan and grant applications; shareholders' agreements and term sheets; invoices; and other financial documents.",
-    alt: "Dropbox sign features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-templates-2560xauto.png?id=9e7dc209-9bf3-4ce2-a5f1-c4f06430f4e9&width=2560&output_type=png",
-    bg: "#b4dc19",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/security-archive-1696x954.svg?id=4cc022c6-227c-46f0-b5f3-e9bc65bab16a",
+    bg: "",
   },
 ];
 
@@ -347,6 +339,86 @@ export function FaqV4() {
                       className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
                     >
                       <div className="w-full relative h-full py-4 flex items-center  max-w-full">
+                        <Image
+                          src={question.src}
+                          alt={question.alt}
+                          width={2880}
+                          height={1368} // Adjust this as needed
+                          quality={80}
+                          className="object-contain w-full h-full scale-75"
+                        />
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="inset-0 hidden lg:flex items-center justify-center relative overflow-hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function FaqV5() {
+  const [openMenu, setMenuOpen] = useState<number | null>(0);
+  const toggleMenu = (menu: number) => {
+    setMenuOpen(menu);
+  };
+
+  return (
+    <div className="w-full box-border flex flex-col text-black   items-center">
+      <div className="w-full box-border relative grid overflow-hidden " id="faq">
+        <ul className="w-full box-border  md:px-10 lg:px-14">
+          {questionsv4.map((question, index) => {
+            return (
+              <li
+                key={question.id}
+                className="flex flex-col   border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border"
+              >
+                <div
+                  className={clsx(
+                    "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                    openMenu == index ? "pb-0" : "pb-6"
+                  )}
+                  onClick={() => toggleMenu(index)}
+                >
+                  <span
+                    className={clsx(
+                      "text-base font-semibold peer transition-colors ease-in-out"
+                    )}
+                  >
+                    {question.topic}
+                  </span>
+                  <div className="p-3">
+                    {openMenu === index ? (
+                      <ChevronUpIcon className="size-6 transition-colors ease-in-out text-black " />
+                    ) : (
+                      <ChevronDownIcon className="size-6 transition-colors ease-in-out text-black " />
+                    )}
+                  </div>
+                </div>
+                <div
+                  className={clsx(
+                    "overflow-hidden transition-all duration-300 ease-in-out ",
+                    openMenu === index
+                      ? "max-h-[450px] opacity-100 pb-6"
+                      : "max-h-0 opacity-0 pb-0"
+                  )}
+                >
+                  <ul
+                    style={{ scrollbarWidth: "none" }}
+                    className="w-full box-border px-6 flex overflow-x-hidden flex-col"
+                  >
+                    <li className="w-full text-base font-light">
+                      {question.baby}
+                    </li>
+                    <div
+                      style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
+                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
+                    >
+                      <div className="w-full relative h-full py-4 flex items-center bg-[#f2eee8] max-w-full">
                         <Image
                           src={question.src}
                           alt={question.alt}
