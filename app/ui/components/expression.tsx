@@ -460,7 +460,13 @@ export function Expressionv7() {
       <h5 className="font-light text-lg md:text-base text-center">
         Your participation in Dropbox Early Access is subject to the following
         <span>
-          <Link href="https://help.dropbox.com/account-settings/alpha-beta-product" className="text-blue-700"> {" "}terms</Link>
+          <Link
+            href="https://help.dropbox.com/account-settings/alpha-beta-product"
+            className="text-blue-700"
+          >
+            {" "}
+            terms
+          </Link>
         </span>
         . We cannot guarantee that the features or products we make available as
         part of this program will be accessible to you in the future.
@@ -468,7 +474,6 @@ export function Expressionv7() {
     </div>
   );
 }
-
 
 export function Expressionv8() {
   return (
@@ -481,10 +486,13 @@ export function Expressionv8() {
           textAlign: "center",
         }}
       >
-      Rest easy with data compliant security
+        Rest easy with data compliant security
       </h3>
       <div className="flex justify-center group">
-        <Link href="https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf" className="text-center underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+        <Link
+          href="https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf"
+          className="text-center underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400"
+        >
           Read security whitepaper
           <span className="group-hover:translate-x-1 transition-transform ease-out duration-300">
             <svg
@@ -505,6 +513,52 @@ export function Expressionv8() {
               ></path>
             </svg>
           </span>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function ExpressV9() {
+  return (
+    <div className=" grid items-center justify-center py-10 w-full gap-y-8">
+      <div className=" grid items-center justify-center  w-full  gap-y-6">
+        <h5 className="font-normal text-4xl text-center">
+          What Dropbox means for your team
+        </h5>
+        <h3
+          style={{
+            maxWidth: "70ch",
+            lineHeight: "1.2",
+            textAlign: "center",
+          }}
+        >
+          Dropbox improves productivity for sales teams, accelerating key
+          workflows and projects while providing a better experience.
+        </h3>
+
+        <Link href="https://dropbox.com/try/teams" className="text-center">
+          {" "}
+          <p className="inline-flex items-center text-base group text-center  underline underline-offset-2 decoration-1 hover:decoration-black transition-colors duration-200 decoration-stone-700">
+            See Forrester report{" "}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              width="24"
+              height="24"
+              role="presentation"
+              focusable="false"
+            >
+              <path
+                d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                vectorEffect="non-scaling-stroke"
+              ></path>
+            </svg>
+          </p>
         </Link>
       </div>
     </div>

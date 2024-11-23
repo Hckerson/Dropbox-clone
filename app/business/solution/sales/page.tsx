@@ -4,11 +4,12 @@ import { FrameV } from "@/app/ui/components/vid_frame";
 import { FrameV1 } from "@/app/ui/components/picture-frame";
 import Cvid from "@/app/ui/components/control-vid";
 import { LeftV2, RightV1 } from "@/app/ui/components/rem";
-import Faq from "@/app/ui/components/FAQ";
 import { DiscList } from "@/app/ui/components/why-rep";
 import { FaqV5 } from "@/app/ui/components/FAQ";
 import { Expressionv8 } from "@/app/ui/components/expression";
+import Saying from "@/app/ui/landing-page/txtSaying";
 import { SmallPicV2 } from "@/app/ui/components/why-rep";
+import Edge from "@/app/ui/landing-page/edge";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Fast track video reviews and approve",
@@ -84,13 +85,10 @@ export default function page() {
           </div>
         </div>
       </div>
-      <div
-        style={{ backgroundColor: "#f7f5f2" }}
-        className="w-full box-border "
-      >
-        <Faq />
+      <div className="w-full box-border flex flex-col  items-center">
+        <Saying />
+        <Edge/>
       </div>
     </div>
   );
 }
-

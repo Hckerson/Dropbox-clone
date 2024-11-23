@@ -190,9 +190,9 @@ export function RightV1() {
 
 export function LeftV2() {
   return (
-    <div className="grid items-center h-full p-3" id="two">
+    <div className="grid items-center h-full md:p-3 px-4" id="two">
       <div className="xl:flex hidden"></div>
-      <div className=" box-border md:px-4 h-full flex items-center justify-center">
+      <div className=" box-border px-4 h-full flex items-center justify-center">
         <div className="grid  gap-y-6">
           <p className={`text-2xl  font-normal ${golos.className}`}>
           Close deals up to 80% faster

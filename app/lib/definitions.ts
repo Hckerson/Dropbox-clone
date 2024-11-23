@@ -24,3 +24,10 @@ export type Collections = {
   role : string;
   link : string
 }
+
+export type Collabs = {
+  id : number;
+  topic : string;
+  body : string;
+  src : string
+}

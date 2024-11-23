@@ -804,3 +804,146 @@ export const doings = [
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/comment-64x64.svg?id=6e111489-5cc2-459d-80d6-9794c89a7ce5",
   },
 ];
+
+
+export const customersV2 = [
+  {
+    id: 1,
+    body: `“I can’t imagine life without Dropbox or Sign, it’s absolutely critical for everything we do. The products are engrained in our whole business cycle, right from pre-qualification, to tender, to after-sales”`,
+    name: "David Cully",
+    role: "Managing Director, Cully Automation Ltd",
+  },
+  {
+    id: 2,
+    body: `“Time is money in any industry. With Dropbox, you don’t have to work the old way, and that saves a tremendous amount of time”`,
+    link: "/https://experience.dropbox.com/resources/sundane-success-story",
+    name: "Matt Hall",
+    role: "Managing Director, Centric",
+  },
+  {
+    id: 3,
+    body: "“I can’t imagine how we’d collaborate if we didn’t have Dropbox. Being able to work together from any location elevates us and keeps the business growing at an accelerated rate.”",
+    name: "Anna Lecat",
+    role: "CEO Les Lunes",
+  },
+
+];
+
+export const collabs = [
+  {
+    topic: "Office 365",
+    id: 1,
+    body: "Easily access, edit, and share Office docs online in Dropbox.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/office-365-64x64.svg?id=4476fa42-2482-45b5-8bbd-3b83027ca3e7",
+  },
+  {
+    topic: "Slack",
+    id: 2,
+    body: "Bring Slack conversations and Dropbox content together to keep teams in sync.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/slack-64x64.svg?id=e028dbd7-df26-4076-ad15-faa51c132578",
+  },
+  {
+    topic: "Hubspot",
+    id: 3,
+    body: "Deliver great campaigns quickly, and create, send and sign contracts from within HubSpot.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/hubspot-64x64.svg?id=7e2af795-5f18-44f7-994f-52e63f0de4f4",
+  },
+  {
+    topic: "Google Workspace",
+    id: 4,
+    body: "Create, edit, and share Google Docs, Sheets, and Slides from Dropbox.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/google-workspace-64x64.svg?id=78f36f5f-a55a-4904-b45f-03a76f6688a9",
+  },
+];
+
+export const collabsV1 = [
+  {
+    topic: "amoCRM",
+    id: 1,
+    body: "Increase your amoCRM storage space by instantly saving sales documents in Dropbox.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/amocrm-64x64.svg?id=2fd41b51-1b61-4ca5-97d4-f907e4e1a623",
+  },
+  {
+    topic: "Asana",
+    id: 2,
+    body: "Teams can track any kind of work with Asana, while keeping content from Dropbox right alongside.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/asana-64x64.svg?id=7f82e737-0902-4a4b-9396-2117a12a8eee",
+  },
+  {
+    topic: "Salesforce",
+    id: 3,
+    body: "Sync and share your Dropbox content securely within Salesforce.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/salesforce-64x64.svg?id=a4695992-bbc1-43b1-b5bd-e192d13013bd",
+  },
+  {
+    topic: "Zoho CRM",
+    id: 4,
+    body: "Share files from Dropbox and collaborate with your team to accelerate your sales cycle.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/zoho-crm-64x64_white.svg?id=561edcf4-78f4-4e2d-8fc7-38895573bb41",
+  },
+];
+
+
+export const collabsV2 = [
+  {
+    topic: "Boost your bottom line",
+    id: 1,
+    body: "Teams using Dropbox saw a 375% ROI and payback in under 6 months.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/money.svg?id=8d0b16b4-b470-4c80-8821-21b2f4305409",
+  },
+  {
+    topic: "Close deals faster",
+    id: 2,
+    body: "Dropbox increased collaboration by 10% and reduced rework by 90%.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/rocket-64x64.svg?id=ae54f196-976b-4c34-ac91-35453c770791",
+  },
+  {
+    topic: "Save time",
+    id: 3,
+    body: "Improved user productivity valued at over $530,000 over three years.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/clock.svg?id=88786c1e-af86-47e7-8314-afd72f0d6c7d",
+  },
+  {
+    topic: "Keep it simple",
+    id: 4,
+    body: "Highest rated eSignature solution for Ease of Implementation on G2 Crowd.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/win.svg?id=19499995-4a7f-4363-8217-4bb8c0ae5477",
+  },
+];
+
+export const questionsv4 = [
+  {
+    id: 1,        
+    topic: "Document protection for peace of mind",
+    baby: "Secure documents with passwords and expiration dates and turn off the ability to download.",
+    alt: "Depiction of security",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/compare/Vault-1696x954.svg?id=47289066-49c0-4944-9138-a45ed680adda",
+    bg: "",
+  },
+  {
+    id: 2,
+    topic: "Fulfill corporate and government requirements with ease",
+    baby: "Automate tracking and reporting of sensitive data. Maintain audit trails for crucial documents including access, reviews, and signatures.",
+    alt: "Depiction of security",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/supreme-court-1696x954.svg?id=aaab30db-00b1-47d1-8687-230aab0af8d3",
+    bg: "",
+  },
+  {
+    id: 3,
+    topic: "Gain confidence in your content’s security",
+    baby: "Utilize tamper-proof documents for protection against changes. Employ access codes and two-factor authentication to verify signers' identity.",
+    alt: "Dropbox sign features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/end-to-end-encryption-1696x954.svg?id=e40683b4-fcf6-493c-855c-e9cebb2f9b64",
+    bg: "",
+  },
+  {
+    id: 4,
+    topic: "Disaster-proof protection made simple",
+    baby: "Cut disputes by 10x with clear audit trails. Safeguard files on devices with automatic backups for swift recovery.",
+    alt: "Dropbox sign features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/security-archive-1696x954.svg?id=4cc022c6-227c-46f0-b5f3-e9bc65bab16a",
+    bg: "",
+  },
+];
+
+

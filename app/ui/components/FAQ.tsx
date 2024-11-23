@@ -5,43 +5,13 @@ import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
-import { questions, questionsV1, questionsV2, questionsV3 } from "../navbar/links";
-
-
-const questionsv4 = [
-  {
-    id: 1,        
-    topic: "Document protection for peace of mind",
-    baby: "Secure documents with passwords and expiration dates and turn off the ability to download.",
-    alt: "Depiction of security",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/compare/Vault-1696x954.svg?id=47289066-49c0-4944-9138-a45ed680adda",
-    bg: "",
-  },
-  {
-    id: 2,
-    topic: "Fulfill corporate and government requirements with ease",
-    baby: "Automate tracking and reporting of sensitive data. Maintain audit trails for crucial documents including access, reviews, and signatures.",
-    alt: "Depiction of security",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/supreme-court-1696x954.svg?id=aaab30db-00b1-47d1-8687-230aab0af8d3",
-    bg: "",
-  },
-  {
-    id: 3,
-    topic: "Gain confidence in your content’s security",
-    baby: "Utilize tamper-proof documents for protection against changes. Employ access codes and two-factor authentication to verify signers' identity.",
-    alt: "Dropbox sign features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/end-to-end-encryption-1696x954.svg?id=e40683b4-fcf6-493c-855c-e9cebb2f9b64",
-    bg: "",
-  },
-  {
-    id: 4,
-    topic: "Disaster-proof protection made simple",
-    baby: "Cut disputes by 10x with clear audit trails. Safeguard files on devices with automatic backups for swift recovery.",
-    alt: "Dropbox sign features",
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/business/solutions/creatives/security-archive-1696x954.svg?id=4cc022c6-227c-46f0-b5f3-e9bc65bab16a",
-    bg: "",
-  },
-];
+import {
+  questions,
+  questionsV1,
+  questionsV2,
+  questionsV3,
+  questionsv4,
+} from "../navbar/links";
 
 export default function Faq() {
   const [openMenu, setMenuOpen] = useState<number | null>(null);
@@ -59,55 +29,58 @@ export default function Faq() {
         </h3>
         <div className="w-full box-border">
           <ul className="w-full box-border">
-            {questions.map((question, index)=>{
-              return(
-                <li key={question.id} className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border">
-                <div
-                  className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
-                  onClick={() => toggleMenu(index)}
+            {questions.map((question, index) => {
+              return (
+                <li
+                  key={question.id}
+                  className="flex flex-col relative border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border"
                 >
-                  <span
-                    className={clsx(
-                      "text-base font-semibold peer transition-colors ease-in-out"
-                    )}
+                  <div
+                    className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
+                    onClick={() => toggleMenu(index)}
                   >
-                    {question.topic}
-                  </span>
-                  <div className="p-3">
-                    {openMenu === index ? (
-                      <ChevronUpIcon
-                        className={clsx(
-                          "size-6 transition-colors ease-in-out text-black "
-                        )}
-                      />
-                    ) : (
-                      <ChevronDownIcon
-                        className={clsx(
-                          "size-6 transition-colors ease-in-out text-black "
-                        )}
-                      />
-                    )}
+                    <span
+                      className={clsx(
+                        "text-base font-semibold peer transition-colors ease-in-out"
+                      )}
+                    >
+                      {question.topic}
+                    </span>
+                    <div className="p-3">
+                      {openMenu === index ? (
+                        <ChevronUpIcon
+                          className={clsx(
+                            "size-6 transition-colors ease-in-out text-black "
+                          )}
+                        />
+                      ) : (
+                        <ChevronDownIcon
+                          className={clsx(
+                            "size-6 transition-colors ease-in-out text-black "
+                          )}
+                        />
+                      )}
+                    </div>
                   </div>
-                </div>
-                <div
-                  className={clsx(
-                    "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
-                    openMenu === index
-                      ? "max-h-[100px] opacity-100"
-                      : "max-h-0 opacity-0"
-                  )}
-                >
-                  <ul
-                    style={{ scrollbarWidth: "none" }}
-                    className="w-full box-border px-6 flex overflow-scroll"
+                  <div
+                    className={clsx(
+                      "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
+                      openMenu === index
+                        ? "max-h-[100px] opacity-100"
+                        : "max-h-0 opacity-0"
+                    )}
                   >
-                    <li className="w-full text-base font-light">
-                      {question.baby}
-                    </li>
-                  </ul>
-                </div>
-              </li>
-              )
+                    <ul
+                      style={{ scrollbarWidth: "none" }}
+                      className="w-full box-border px-6 flex overflow-scroll"
+                    >
+                      <li className="w-full text-base font-light">
+                        {question.baby}
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              );
             })}
           </ul>
         </div>
@@ -170,8 +143,15 @@ export function FaqV1() {
                       {question.baby}
                     </li>
                     <div
-                      style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
-                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
+                      style={{
+                        aspectRatio: 16 / 9,
+                        overflow: "unset",
+                        backgroundColor: question.bg,
+                      }}
+                      className={clsx(
+                        "lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300",
+                        openMenu == index ? "translate-x-0" : "translate-x-full"
+                      )}
                     >
                       <div className="w-full relative h-full py-4 flex items-center  max-w-full">
                         <Image
@@ -196,8 +176,6 @@ export function FaqV1() {
   );
 }
 
-
-
 export function FaqV3() {
   const [openMenu, setMenuOpen] = useState<number | null>(0);
   const toggleMenu = (menu: number) => {
@@ -206,7 +184,10 @@ export function FaqV3() {
 
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
-      <div className="w-full box-border relative grid overflow-hidden " id="faq">
+      <div
+        className="w-full box-border relative grid overflow-hidden "
+        id="faq"
+      >
         <ul className="w-full box-border  md:px-10 lg:px-14">
           {questionsV2.map((question, index) => {
             return (
@@ -252,11 +233,18 @@ export function FaqV3() {
                       {question.baby}
                     </li>
                     <li className="w-full text-base font-light">
-                        <Link href={question.link}>Learn more</Link>
+                      <Link href={question.link}>Learn more</Link>
                     </li>
                     <div
-                      style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
-                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
+                      style={{
+                        aspectRatio: 16 / 9,
+                        overflow: "unset",
+                        backgroundColor: question.bg,
+                      }}
+                      className={clsx(
+                        "lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300",
+                        openMenu == index ? "translate-x-0" : "translate-x-full"
+                      )}
                     >
                       <div className="w-full relative h-full py-4 flex items-center  max-w-full">
                         <Image
@@ -289,7 +277,10 @@ export function FaqV4() {
 
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
-      <div className="w-full box-border relative grid overflow-hidden " id="faq">
+      <div
+        className="w-full box-border relative grid overflow-hidden "
+        id="faq"
+      >
         <ul className="w-full box-border  md:px-10 lg:px-14">
           {questionsV3.map((question, index) => {
             return (
@@ -335,8 +326,15 @@ export function FaqV4() {
                       {question.baby}
                     </li>
                     <div
-                      style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
-                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
+                      style={{
+                        aspectRatio: 16 / 9,
+                        overflow: "unset",
+                        backgroundColor: question.bg,
+                      }}
+                      className={clsx(
+                        "lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300",
+                        openMenu == index ? "translate-x-0" : "translate-x-full"
+                      )}
                     >
                       <div className="w-full relative h-full py-4 flex items-center  max-w-full">
                         <Image
@@ -369,7 +367,10 @@ export function FaqV5() {
 
   return (
     <div className="w-full box-border flex flex-col text-black   items-center">
-      <div className="w-full box-border relative grid overflow-hidden " id="faq">
+      <div
+        className="w-full box-border relative grid overflow-hidden "
+        id="faq"
+      >
         <ul className="w-full box-border  md:px-10 lg:px-14">
           {questionsv4.map((question, index) => {
             return (
@@ -380,7 +381,10 @@ export function FaqV5() {
                 <div
                   className={clsx(
                     "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
-                    openMenu == index ? "pb-0" : "pb-6", index == 0  || index == questionsv4.length ? " " : "border-t border-black border-opacity-40 "
+                    openMenu == index ? "pb-0" : "pb-6",
+                    index == 0 || index == questionsv4.length
+                      ? " "
+                      : "border-t border-black border-opacity-40 "
                   )}
                   onClick={() => toggleMenu(index)}
                 >
@@ -415,8 +419,15 @@ export function FaqV5() {
                       {question.baby}
                     </li>
                     <div
-                      style={{ aspectRatio: 16 / 9, overflow: "unset", backgroundColor : question.bg }}
-                      className={clsx("lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300", openMenu == index ? 'translate-x-0': 'translate-x-full')}
+                      style={{
+                        aspectRatio: 16 / 9,
+                        overflow: "unset",
+                        backgroundColor: question.bg,
+                      }}
+                      className={clsx(
+                        "lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300",
+                        openMenu == index ? "translate-x-0" : "translate-x-full"
+                      )}
                     >
                       <div className="w-full relative h-full py-4 flex items-center bg-[#f2eee8] max-w-full">
                         <Image
@@ -893,6 +904,117 @@ export function FaqV2() {
           </li>
         </ul>
         <div className="inset-0 hidden lg:flex items-center justify-center relative overflow-hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function ComplexFaq() {
+  const [openMenu, setMenuOpen] = useState<number | null>(null);
+  const toggleMenu = (menu: number) => {
+    setMenuOpen(openMenu == menu ? null : menu);
+  };
+
+  return (
+    <div className="w-full box-border flex flex-col text-black  items-center">
+      <div className="xl:max-w-[1200px] box-border gap-y-20 md:p-14 lg:p-20 flex flex-col w-full mx-auto items-center">
+        <h3
+          className={`md:text-4xl text-3xl font-medium text-center px-6  ${golos.className}`}
+        >
+          Frequently asked questions
+        </h3>
+        <div className="w-full box-border">
+          <ul className="w-full box-border">
+            <li className="flex flex-col relative border-y border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border">
+              <div
+                className="cursor-pointer w-full box-border px-6 py-8 flex  justify-between space-x-2 items-center"
+                onClick={() => toggleMenu(0)}
+              >
+                <span
+                  className={clsx(
+                    "text-base font-semibold peer transition-colors ease-in-out"
+                  )}
+                >
+                  Which CRM tools does Dropbox integrate with?
+                </span>
+                <div className="p-3">
+                  {openMenu === 0 ? (
+                    <ChevronUpIcon
+                      className={clsx(
+                        "size-6 transition-colors ease-in-out text-black "
+                      )}
+                    />
+                  ) : (
+                    <ChevronDownIcon
+                      className={clsx(
+                        "size-6 transition-colors ease-in-out text-black "
+                      )}
+                    />
+                  )}
+                </div>
+              </div>
+              <div
+                className={clsx(
+                  "overflow-hidden transition-all duration-300 ease-in-out -translate-y-7",
+                  openMenu === 0
+                    ? "max-h-[500px] opacity-100"
+                    : "max-h-0 opacity-0"
+                )}
+              >
+                <div className="px-6  lg:w-9/12 w-full mb-6">
+                  Your CRM tool is the backbone of your sales department, which
+                  is why Dropbox integrates seamlessly with leading CRM
+                  platforms:
+                </div>
+                <ul
+                  style={{ scrollbarWidth: "none" }}
+                  className="lg:w-4/5 w-full box-border px-6 flex flex-col gap-y-4 overflow-scroll  list-disc   pl-12"
+                >
+                  <li>
+                    <span className="text-lg font-semibold  underline underline-offset-2 decoration-1  hover:no-underline ">
+                      <Link href="">Salesforce</Link>
+                    </span>
+                    
+                    —collaborate with your customers and team members on any of
+                    your content stored in Dropbox, directly from your
+                    Salesforce records
+                  </li>
+                  <li>
+                    <span className="text-lg font-semibold  underline underline-offset-2 decoration-1   hover:no-underline">
+                      <Link href="">Zoho CRM</Link>
+                    </span>
+                    —give sales reps a quick and easy solution to manage, create,
+                    share and access files in your Dropbox account from within
+                    Zoho CRM.
+                  </li>
+                  <li>
+                    <span className="text-lg font-semibold  underline underline-offset-2 decoration-1  hover:no-underline ">
+                      <Link href="">Hubspot</Link>
+                    </span>
+                    —access any Dropbox file from within your Hubspot workflow,
+                    sign documents seamlessly, and simplify processes to get
+                    more done—with less work
+                  </li>
+                  <li>
+                    <span className="text-lg font-semibold  underline underline-offset-2 decoration-1   hover:no-underline">
+                      <Link href="">amoCRM</Link>
+                    </span>
+                    —attach Dropbox files directly to your lead card notes, and
+                    access Dropbox files directly from amoCRM (also known as
+                    Kommo CRM)
+                  </li>
+                  <li>
+                    <span className="text-lg font-semibold  underline underline-offset-2 decoration-1   hover:no-underline">
+                      <Link href="">Insightly</Link>
+                    </span>
+                    —link files stored in your Dropbox account to your Insightly
+                    records, no need to upload to two separate platforms
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
