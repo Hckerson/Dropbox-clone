@@ -375,12 +375,12 @@ export function FaqV5() {
             return (
               <li
                 key={question.id}
-                className="flex flex-col   border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border"
+                className="flex flex-col     hover:bg-[#eee9e2]  items-start box-border"
               >
                 <div
                   className={clsx(
                     "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
-                    openMenu == index ? "pb-0" : "pb-6"
+                    openMenu == index ? "pb-0" : "pb-6", index == 0  || index == questionsv4.length ? " " : "border-t border-black border-opacity-40 "
                   )}
                   onClick={() => toggleMenu(index)}
                 >
