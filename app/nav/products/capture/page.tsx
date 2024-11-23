@@ -1,5 +1,5 @@
 import { Informationv2 } from "@/app/ui/components/inform";
-import { FrameV1 } from "@/app/ui/components/vid_frame";
+import { FrameV } from "@/app/ui/components/vid_frame";
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import Plans from "@/app/ui/components/plans";
@@ -19,7 +19,7 @@ export default function page() {
           <Informationv2 />
         </div>
         <div className="w-full h-full bg-[#b4dc19] box-border justify-center flex flex-col items-center">
-          <FrameV1 />
+          <FrameV />
         </div>
       </div>
       <div className="w-full box-border bg-[#f7f5f2]">
