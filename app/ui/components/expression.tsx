@@ -468,3 +468,45 @@ export function Expressionv7() {
     </div>
   );
 }
+
+
+export function Expressionv8() {
+  return (
+    <div className=" grid items-center  justify-center w-full gap-y-8 ">
+      <h3
+        className={`${golos.className} text-3xl px-7 md:text-4xl font-normal `}
+        style={{
+          maxWidth: "40ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+      >
+      Rest easy with data compliant security
+      </h3>
+      <div className="flex justify-center group">
+        <Link href="https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf" className="text-center underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+          Read security whitepaper
+          <span className="group-hover:translate-x-1 transition-transform ease-out duration-300">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="inline-flex transition-transform duration-300 "
+              width="24"
+              height="24"
+              role="presentation"
+              focusable="false"
+            >
+              <path
+                d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                vectorEffect="non-scaling-stroke"
+              ></path>
+            </svg>
+          </span>
+        </Link>
+      </div>
+    </div>
+  );
+}

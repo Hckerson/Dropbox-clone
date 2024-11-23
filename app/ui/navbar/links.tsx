@@ -120,6 +120,8 @@ export const features = [
   {label : 'Convert to PDF', href :  '/features/productivity/convert_to_pdf' },
 ]
 
+
+
 export const supports = [
   {label : 'Help center ', href :  '/https://help.dropbox.com' },
   {label : 'Contact us', href :  '/aspect/contact' },
@@ -752,5 +754,53 @@ export const questionsV2 = [
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/docsend/docsend_oneclick_1442x988.jpg?id=9fec2bd2-6c3a-4409-b2cc-cd48f280b148&output_type=jpg",
     link: "https://www.docsend.com/",
     bg: "#f2eee8",
+  },
+];
+
+export const stats = [
+  {
+    topic: "of Fortune 500 companies",
+    id: 1,
+    body: "have at least one Dropbox team plan.",
+    no: "56%",
+  },
+  {
+    topic: "teams globally",
+    id: 2,
+    body: "use Dropbox to share work, safeguard content, and grow their business.",
+    no: "575k+",
+  },
+  {
+    topic: "connections and counting",
+    id: 3,
+    body: "created through Dropbox file sharing.",
+    no: "4.5B",
+  },
+  {
+    topic: "mobile app downloads",
+    id: 4,
+    body: "with Editors’ Choice Awards from the Google Play and Apple App Store.",
+    no: "!B+",
+  },
+];
+
+export const doings = [
+  {
+    topic: "Personalize the pitch",
+    id: 1,
+    body: "Catch a prospect’s attention with custom-branded contracts and NDAs, then get real-time document analytics to help make data-driven decisions.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/analytics-64x64.svg?id=36a29a53-5e39-407e-bcd8-8c34a1d68625",
+  },
+  {
+    topic: "Drive the conversation forward",
+    id: 2,
+    body: "Create screen recordings or screenshots to share feedback easily with customers and stakeholders.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/rocket-64x64.svg?id=ae54f196-976b-4c34-ac91-35453c770791",
+  },
+  {
+    topic: "Respond faster than ever",
+    id: 3,
+    body: "Need to add a comment or open a contract on the fly? Make changes right inside Dropbox from wherever you’re at to keep leads warm.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/comment-64x64.svg?id=6e111489-5cc2-459d-80d6-9794c89a7ce5",
   },
 ];
