@@ -64,8 +64,8 @@ export const lLink = [
 export const rLink = [
   { name: "Contact sales", href: "/nav/contact" },
   { name: "Get app", href: "", icon: ChevronDownIcon, dropdown : GDD },
-  { name: "Sign up", href: "/nav/register" },
-  { name: "Log in", href: "/nav/login" },
+  { name: "Sign up", href: "/en_GB/register" },
+  { name: "Log in", href: "/en_GB/login" },
 ];
 
 export const L = [
@@ -78,8 +78,8 @@ export const L = [
 export const R = [
   { name: "Contact sales", href: "/nav/contact" },
   { name: "Get app", href: "", icon: ChevronDownIcon, dropdown : GDDs },
-  { name: "Sign up", href: "/nav/register" },
-  { name: "Log in", href: "/nav/login" },
+  { name: "Sign up", href: "/en_GB/register" },
+  { name: "Log in", href: "/en_GB/login" },
 ];
 
 export const dropbox = [
@@ -945,5 +945,13 @@ export const questionsv4 = [
     bg: "",
   },
 ];
+
+export const subLink = [
+  {label : 'Privacy & terms', link : '/en_GB/terms', id : 1},
+  {label : 'Cookie policy', link : 'https://help.dropbox.com/security/cookies', id : 2},
+  {label : 'Cookies & CCPA preferences', link : '/login#manage-cookies', id : 3},
+  {label : 'AI Principles', link : '/en-GB/ai-principles', id : 4},
+  {label : 'Modern Slavery Statement', link : 'https://assets.dropbox.com/warp/en-us/modern-slavery/Dropbox_Modern_Slavery_Statement.pdf', id:5},
+]
 
 

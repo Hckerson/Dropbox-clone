@@ -5,6 +5,7 @@ import {
   supports,
   resources,
   company,
+  subLink
 } from "../navbar/links";
 import { GlobeAltIcon, ChevronRightIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
@@ -216,6 +217,39 @@ export default function Footer() {
               <span className="text-white ml-2">English (United States)</span>{" "}
               <ChevronRightIcon className="w-6 h-6 text-white" />
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function MiniFooter() {
+  return (
+    <div className="w-full flex items-center flex-col box-border">
+      <div
+        style={{ flexGrow: 1 }}
+        className="xl:max-w-[1300px] box-border gap-y-20 flex flex-col   w-full mx-auto  py-10  items-center"
+      >
+        <div className="flex items-start  space-y-10 w-full box-border px-7 pb-12 flex-col">
+          <div className="flex gap-x-8">
+            {subLink.map((link)=>{
+              return(
+                <li key={link.id} className="inline text-base font-light">
+                  <Link href={link.link}>
+                    {link.label}
+                  </Link>
+                </li>
+              )
+            })}
+          </div>
+          <div className=" w-[115px]">
+            <hr className="" />
+          </div>
+          <div className="flex  ">
+            <GlobeAltIcon className="w-6 h-6 " />{" "}
+            <span className=" ml-2">English (United States)</span>{" "}
+            <ChevronRightIcon className="w-6 h-6 " />
           </div>
         </div>
       </div>
