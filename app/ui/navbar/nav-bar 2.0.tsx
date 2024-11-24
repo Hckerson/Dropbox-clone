@@ -4,7 +4,7 @@ import { Started } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Replmenu } from "./buttons";
 
-export default function Navbar({ condition = false }) {
+export default function Navbar({ condition = true }) {
   return (
     <nav className="bg-white relative z-50 ">
       <div className="mx-auto  p-0 sm:px-5 lg:px-6">

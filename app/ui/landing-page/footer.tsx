@@ -232,7 +232,7 @@ export function MiniFooter() {
         className="xl:max-w-[1300px] box-border gap-y-20 flex flex-col   w-full mx-auto  py-10  items-center"
       >
         <div className="flex items-start  space-y-10 w-full box-border px-7 pb-12 flex-col">
-          <div className="flex gap-x-8">
+          <div className="flex gap-x-8 gap-y-6 flex-wrap">
             {subLink.map((link)=>{
               return(
                 <li key={link.id} className="inline text-base font-light hover:underline decoration-1">

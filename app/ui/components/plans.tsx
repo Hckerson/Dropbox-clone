@@ -1,3 +1,5 @@
+"use client";
+import { useState } from "react";
 import { ReadyB } from "./get-started";
 import Link from "next/link";
 import { ChartBarSquareIcon } from "@heroicons/react/24/outline";
@@ -61,6 +63,11 @@ const plus = [
 ];
 
 export default function Plans() {
+  const [value, setValue] = useState("female");
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value);
+  };
   return (
     <div className="box-border w-full ">
       <div className="w-full flex flex-col items-center box-border">
@@ -69,43 +76,46 @@ export default function Plans() {
           className="xl:max-w-[1280px]  box-border flex flex-col items-center  w-full mx-auto py-16"
         >
           <div className="w-full box-border h-16 relative">
-            <FormControl className="absolute left-8">
-              <RadioGroup
-                row
-                aria-labelledby="demo-radio-buttons-group-label"
-                defaultValue="female"
-                name="radio-buttons-group"
-              >
-                <FormControlLabel
-                  value="female"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "black",
-                        "&.Mui-checked": {
+            <form action="">
+              <FormControl className="absolute left-8">
+                <RadioGroup
+                  row
+                  aria-labelledby="demo-radio-buttons-group-label"
+                  name="radio-buttons-group"
+                  value={value}
+                  onChange={handleChange}
+                >
+                  <FormControlLabel
+                    value="female"
+                    control={
+                      <Radio
+                        sx={{
                           color: "black",
-                        },
-                      }}
-                    />
-                  }
-                  label="Billed monthly"
-                />
-                <FormControlLabel
-                  value="male"
-                  control={
-                    <Radio
-                      sx={{
-                        color: "black",
-                        "&.Mui-checked": {
+                          "&.Mui-checked": {
+                            color: "black",
+                          },
+                        }}
+                      />
+                    }
+                    label="Billed monthly"
+                  />
+                  <FormControlLabel
+                    value="male"
+                    control={
+                      <Radio
+                        sx={{
                           color: "black",
-                        },
-                      }}
-                    />
-                  }
-                  label="Billed yearly"
-                />
-              </RadioGroup>
-            </FormControl>
+                          "&.Mui-checked": {
+                            color: "black",
+                          },
+                        }}
+                      />
+                    }
+                    label="Billed yearly"
+                  />
+                </RadioGroup>
+              </FormControl>
+            </form>
           </div>
           <div className="w-full box-border">
             <div

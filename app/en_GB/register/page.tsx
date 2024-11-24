@@ -7,7 +7,7 @@ export default function page() {
   return (
     <main className="box-border w-full ">
       <div className="w-full box-border  items-center  justify-center py-20  mt-12 md:mt-20 flex">
-        <div className="w-[350px] text-center">
+        <div className="w-[350px] text-center px-4">
           <form action="">
             <div className="grid gap-y-5">
               <h3 className="text-2xl font-medium"> sign up or Log in</h3>
