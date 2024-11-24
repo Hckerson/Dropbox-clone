@@ -235,7 +235,7 @@ export function MiniFooter() {
           <div className="flex gap-x-8">
             {subLink.map((link)=>{
               return(
-                <li key={link.id} className="inline text-base font-light">
+                <li key={link.id} className="inline text-base font-light hover:underline decoration-1">
                   <Link href={link.link}>
                     {link.label}
                   </Link>

@@ -11,7 +11,7 @@ export default function page() {
           <form action="">
             <div className="grid gap-y-5">
               <h3 className="text-2xl font-medium"> sign up or Log in</h3>
-              <h5 className="font-normal">
+              <h5 className="font-light">
                 We recommend using your <span className=" text-base font-semibold">work email address.</span>
               </h5>
               <div className="w-full flex items-center border hover:bg-[#f7f5f2] ">

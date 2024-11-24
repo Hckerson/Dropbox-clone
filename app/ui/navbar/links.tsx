@@ -58,7 +58,7 @@ export const lLink = [
   { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDD },
   { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDD },
   { name: "Enterprise", href: "/nav/enterprise" },
-  { name: "Pricing", href: "/plans" },
+  { name: "Pricing", href: "/en_GB/plans" },
 ];
 
 export const rLink = [
@@ -72,7 +72,7 @@ export const L = [
   { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDDs },
   { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDDs },
   { name: "Enterprise", href: "/nav/enterprise" },
-  { name: "Pricing", href: "/plans" },
+  { name: "Pricing", href: "/en_GB/plans" },
 ];
 
 export const R = [

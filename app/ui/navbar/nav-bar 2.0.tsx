@@ -4,7 +4,7 @@ import { Started } from "./buttons";
 import { GlobeAltIcon } from "@heroicons/react/24/outline";
 import { Replmenu } from "./buttons";
 
-export default function Navbar() {
+export default function Navbar({ condition = false }) {
   return (
     <nav className="bg-white relative z-50 ">
       <div className="mx-auto  p-0 sm:px-5 lg:px-6">
@@ -48,9 +48,12 @@ export default function Navbar() {
           <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6 space-x-1 sm:space-x-2">
             <GlobeAltIcon className=" size-4 sm:size-5  hidden xs:block" />
             <Rightlink />
-            <div className="rounded-xl  text-white bg-blue-600 hidden md:block ">
-              <Started />
-            </div>
+            {condition && (
+              <div className="rounded-xl  text-white bg-blue-600 hidden md:block ">
+                <Started />
+              </div>
+            )}
+
             <div>
               <Replmenu />
             </div>
