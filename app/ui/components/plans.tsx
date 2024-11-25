@@ -4,6 +4,8 @@ import { ReadyB } from "./get-started";
 import Link from "next/link";
 import { ChartBarSquareIcon } from "@heroicons/react/24/outline";
 import { golos } from "../fonts";
+import { plans } from "@/app/lib/placeholder-data";
+import { Plan } from "@/app/lib/definitions";
 import {
   Radio,
   RadioGroup,
@@ -48,7 +50,7 @@ const businesses = [
   { id: 10, label: "Know what content is shared", src: VerifiedUserOutlined },
 ];
 
-const plus = [
+const businessPlus = [
   { id: 1, label: "1 user", src: PermIdentity },
   { id: 2, label: "3 TB of storage", src: PieChartOutline },
   { id: 3, label: "Transfer files up to 100GB", src: SendOutlined },
@@ -63,10 +65,21 @@ const plus = [
 ];
 
 export default function Plans() {
-  const [value, setValue] = useState("female");
+  const [value, setValue] = useState("monthly");
+  const [filteredData, setFilteredData] = useState<Plan[]>([  {
+    id: "410544b2-4001-4271-9855-fec4b6a6442a",
+    name: "monthly",
+    plus: 11.99,
+    essential: 19.99,
+    business: 18,
+    businessPlus: 30,
+  },]); 
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value);
+    const selectValue = event.target.value
+    setValue(selectValue);
+    const data = plans.filter((plan)=> plan.name == selectValue)
+    setFilteredData(data)
   };
   return (
     <div className="box-border w-full ">
@@ -86,7 +99,7 @@ export default function Plans() {
                   onChange={handleChange}
                 >
                   <FormControlLabel
-                    value="female"
+                    value="monthly"
                     control={
                       <Radio
                         sx={{
@@ -100,7 +113,7 @@ export default function Plans() {
                     label="Billed monthly"
                   />
                   <FormControlLabel
-                    value="male"
+                    value="yearly"
                     control={
                       <Radio
                         sx={{
@@ -137,7 +150,7 @@ export default function Plans() {
                     </h2>
                     <span className={`text-xl font-medium ${golos.className}`}>
                       {" "}
-                      / month
+                      {filteredData[0].plus}/ month
                     </span>
                   </div>
                   <div className="flex flex-col  gap-y-8 w-full box-border">
@@ -217,7 +230,7 @@ export default function Plans() {
                       Business
                     </h2>
                     <span className={`text-xl font-medium ${golos.className}`}>
-                      / user / month
+                    {filteredData[0].business} / user / month
                     </span>
                   </div>
                   <div className="flex flex-col  gap-y-8 w-full box-border">
@@ -286,7 +299,7 @@ export default function Plans() {
                       Business plus
                     </h2>
                     <span className={`text-xl font-medium ${golos.className}`}>
-                      / user / month
+                    {filteredData[0].businessPlus} / user / month
                     </span>
                   </div>
                   <ReadyB link={"aspect/try/essentials"} />
@@ -317,7 +330,7 @@ export default function Plans() {
                     </span>
                     <div className="w-full box-border">
                       <ul className="w-full grid gap-y-4">
-                        {plus.map((each) => {
+                        {businessPlus.map((each) => {
                           const Icon = each.src;
                           return (
                             <li className="inline " key={each.id}>

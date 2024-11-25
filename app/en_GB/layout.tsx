@@ -1,5 +1,4 @@
 import Navbar from "../ui/navbar/scarceNav";
-import { MiniFooter } from "../ui/landing-page/footer";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex  flex-col min-h-screen box-border ">
@@ -9,9 +8,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         </div>
       </header>
       {children}
-      <footer className="w-full box-border">
-        <MiniFooter/>
-      </footer>
     </div>
   );
 }

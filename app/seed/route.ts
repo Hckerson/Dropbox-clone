@@ -30,6 +30,7 @@ async function seedPlans() {
 }
 
 
+
 export async function GET() {
   try {
     await client.sql`BEGIN`;

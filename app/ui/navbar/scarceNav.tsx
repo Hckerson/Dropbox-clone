@@ -36,8 +36,8 @@ export default function Navbar() {
                 ></path>
               </svg>
             </div>
-            <p className="text-xl ml-2 mr-6 font-bold  hidden xs:block mb-1">
-              Dropbox
+            <p className="text-xl max-w-[100px] leading-5 text-wrap ml-2 mr-6 font-bold  hidden xs:block mb-1">
+              Dropbox clone
             </p>
           </div>
           <div className="absolute inset-y-0 right-0 flex items-center h-full  sm:static sm:inset-auto sm:ml-6 space-x-1 sm:space-x-2">

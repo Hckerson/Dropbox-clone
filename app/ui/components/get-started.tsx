@@ -110,3 +110,18 @@ export function ActionB({ link, text }: { link: string, text : string }) {
     </div>
   );
 }
+
+export function ActionBV1({ link, text }: { link: string, text : string }) {
+  return (
+    <div
+      className="  group flex" style={{height : 'fit-content', width : 'fit-content'}}
+    >
+      <Link
+        href={link}
+        className=" w-full  underline underline-offset-2 decoration-1 hover:decoration-black transition-colors duration-200 decoration-stone-400 justify-between font-semibold "
+      >
+        {text}
+      </Link>
+    </div>
+  );
+}

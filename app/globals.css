@@ -126,6 +126,11 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-flow: row;
 }
 
+#plansE{
+  grid-auto-rows: minmax(0, max-content);
+  grid-auto-flow: row;
+}
+
 .inner{
   aspect-ratio: 16/9;
 }
@@ -242,6 +247,10 @@ input[type="number"]::-webkit-outer-spin-button {
   #plans{
     grid-template-columns: 1fr 1fr ;
   }
+
+  #plansE{
+    grid-template-columns: 1fr 1fr ;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -258,6 +267,11 @@ input[type="number"]::-webkit-outer-spin-button {
   #plans{
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: column;
+  }
+
+  #plansE{
+    grid-template-columns: 1fr 1fr 1fr ;
+    grid-auto-flow: row;
   }
 
   #way{
@@ -356,6 +370,11 @@ input[type="number"]::-webkit-outer-spin-button {
 
   #scroll {
     padding: 0 max(48px, calc(50% - 550px));
+  }
+
+  #plansE{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-auto-flow: column;
   }
 
   #foot{

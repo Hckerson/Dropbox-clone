@@ -41,8 +41,8 @@ export default function Navbar() {
                 ></path>
               </svg>
             </div>
-            <p className="text-2xl ml-2 mr-6 font-semibold text-white hidden xs:block mb-1">
-              Dropbox
+            <p className="text-xl max-w-[100px] leading-5 text-wrap ml-2 mr-6 text-white font-bold  hidden xs:block mb-1">
+              Dropbox clone
             </p>
             <div className="flex text-white">
               <Leftlink />

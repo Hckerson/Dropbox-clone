@@ -564,3 +564,26 @@ export function ExpressV9() {
     </div>
   );
 }
+
+export function ExpressionV10() {
+  return (
+    <div className=" grid items-center justify-center  w-full  gap-y-8">
+      <h3
+        className={`${golos.className} text-2xl px-7 md:text-3xl text-center font-normal `}
+      >
+        Go from idea to done with Dropbox
+      </h3>
+      <h5
+        style={{
+          maxWidth: "80ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+        className="font-light text-lg"
+      >
+        Store and share files. Sign and send documents. Record screens and
+        comment. All with Dropbox.
+      </h5>
+    </div>
+  );
+}

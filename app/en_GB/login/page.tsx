@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { MiniFooter } from "@/app/ui/landing-page/footer";
 import { Button } from "@/app/ui/button";
 export const metadata: Metadata = {
   title: "Dropbox - Login",
@@ -110,6 +111,9 @@ export default function page() {
           </form>
         </div>
       </div>
+      <footer className="w-full box-border">
+        <MiniFooter/>
+      </footer>   
     </main>
   );
 }
