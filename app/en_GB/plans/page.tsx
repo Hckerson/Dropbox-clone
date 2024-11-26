@@ -1,13 +1,34 @@
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
+import PlanCard from "@/app/ui/components/planCard";
 import Plans from "./plans";
-import { ReplayV1 } from "@/app/ui/landing-page/saying2.0";
 import { ExpressionV10 } from "@/app/ui/components/expression";
-import Everything from "@/app/ui/components/easyToUse";
+import Footer from "@/app/ui/landing-page/footer";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title: "Dropbox Bakcup: Your Secure Clone",
+  title: "Find your Dropbox plan | get a 30-days free trial",
 };
+
+const planCards = [
+  {
+    id: 1,
+    head: "Basic",
+    sub: "Free",
+    detail: "2 GB to store and share your files",
+    link: "/en-GB/register",
+    bName: "Get Basic",
+  },
+  {
+    id: 2,
+    head: "Enterprise",
+    sub: "Contact us for pricing",
+    detail:
+      "Customise to your business with enterprise-grade security, integrations with best-in-class security solutions and live support from dedicated experts",
+    link: "/en-GB/register",
+    bName: "Contact us",
+  },
+];
+
 export default function page() {
   return (
     <main className="box-border w-full ">
@@ -15,7 +36,7 @@ export default function page() {
       <div className="w-full box-border z-50 fixed top-0">
         <Navbar condition={false} />
       </div>
-      <div className="w-full box-border  mt-12 md:mt-20 grid" id="drop">
+      <div className="w-full box-border  mt-12 md:mt-20 grid">
 
       </div>
       <div className="w-full box-border py-14 ">
@@ -27,10 +48,27 @@ export default function page() {
       >
         <Plans />
       </div>
-      <div className="w-full box-border bg-[#f7f5f2]">
-        <Everything />
+      <div className="box-border w-full ">
+        <div className="w-full flex flex-col items-center box-border">
+          <div
+            style={{ flexGrow: 1 }}
+            className="xl:max-w-[1350px]  box-border flex flex-col items-center gap-y-20 w-full mx-auto py-20"
+          >
+            <div
+              className="grid box-border w-full px-6 md:px-10 md:gap-y-0 gap-y-14 xl:px-0"
+              id="planCard"
+            >
+              {planCards.map((plan) => {
+                return <PlanCard key={plan.id} {...plan} />;
+              })}
+            </div>
+          </div>
+        </div>
       </div>
-      <ReplayV1 />
+
+      <footer className="w-full box-border">
+        <Footer />
+      </footer>
     </main>
   );
 }

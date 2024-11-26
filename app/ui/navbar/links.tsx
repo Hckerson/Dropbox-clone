@@ -57,7 +57,7 @@ export const sub = [
 export const lLink = [
   { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDD },
   { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDD },
-  { name: "Enterprise", href: "/nav/enterprise" },
+  { name: "Enterprise", href: "/en_GB/enterprise" },
   { name: "Pricing", href: "/en_GB/plans" },
 ];
 
@@ -71,7 +71,7 @@ export const rLink = [
 export const L = [
   { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDDs },
   { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDDs },
-  { name: "Enterprise", href: "/nav/enterprise" },
+  { name: "Enterprise", href: "/en_GB/enterprise" },
   { name: "Pricing", href: "/en_GB/plans" },
 ];
 
@@ -98,7 +98,7 @@ export const products = [
   {label : 'Plus', href :  '/plans/plus' },
   {label : 'Professional', href :  '/plans/professional' },
   {label : 'Business', href :  '/plans/business' },
-  {label : 'Enterprise', href :  '/plans/enterprise' },
+  {label : 'Enterprise', href :  '/en_GB/enterprise' },
   {label : 'Dash (beta)', href :  '/https://dash.dropbox.com' },
   {label : 'Dropbox Sign', href :  '/https://sign.dropbox.com' },
   {label : 'DocSend', href :  '/https://www.docsend.com' },

@@ -305,7 +305,7 @@ export default function Menu() {
                   openMenu === "pricing" ? "text-blue-500" : "text-white"
                 )}
               >
-                <Link href="/nav/plans"> Pricing</Link>
+                <Link href="/en_GB/plans"> Pricing</Link>
               </span>
             </div>
           </li>

@@ -567,7 +567,7 @@ export function ExpressV9() {
 
 export function ExpressionV10() {
   return (
-    <div className=" grid items-center justify-center  w-full  gap-y-8">
+    <div className=" grid items-center justify-center  w-full  gap-y-6">
       <h3
         className={`${golos.className} text-2xl px-7 md:text-3xl text-center font-normal `}
       >

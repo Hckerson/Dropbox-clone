@@ -195,30 +195,6 @@ export default function Plans() {
                     <ReadyB link={"aspect/try/essentials"} />
                     <div className="flex flex-col justify-between h-full">
                       <div className="flex flex-col  gap-y-8">
-                        <span>
-                          <Link href={""} className="group/svg">
-                            or buy now{" "}
-                            <span className="">
-                              <svg
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                className="inline-flex transition-transform duration-300 group-hover/svg:translate-x-2  "
-                                width="24"
-                                height="24"
-                                role="presentation"
-                                focusable="false"
-                              >
-                                <path
-                                  d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
-                                  stroke="currentColor"
-                                  strokeWidth="1.5"
-                                  strokeMiterlimit="10"
-                                  vectorEffect="non-scaling-stroke"
-                                ></path>
-                              </svg>
-                            </span>
-                          </Link>
-                        </span>
                         <div className="w-full box-border">
                           <ul className="w-full grid gap-y-3">
                             {plus.map((each) => {
@@ -270,7 +246,7 @@ export default function Plans() {
                     <div className="flex flex-col justify-between h-full">
                       <div className="flex flex-col  gap-y-8">
                         <span>
-                          <Link href={""} className="group/svg">
+                          <Link href={""} className="group/svg underline underline-offset-2 decoration-1 hover:decoration-black transition-colors duration-200 decoration-stone-400">
                             or buy now{" "}
                             <span className="">
                               <svg
@@ -354,7 +330,7 @@ export default function Plans() {
                     <div className="flex flex-col justify-between h-full">
                       <div className="flex flex-col  gap-y-8">
                         <span>
-                          <Link href={""} className="group/svg">
+                          <Link href={""} className="group/svg underline underline-offset-2 decoration-1 hover:decoration-black transition-colors duration-200 decoration-stone-400">
                             or buy now{" "}
                             <span className="">
                               <svg
@@ -426,7 +402,7 @@ export default function Plans() {
                   <div className="flex flex-col space-y-4 justify-between">
                     <div className="flex flex-col  gap-y-8">
                       <span>
-                        <Link href={""} className="group/svg">
+                        <Link href={""} className="group/svg underline underline-offset-2 decoration-1 hover:decoration-black transition-colors duration-200 decoration-stone-400">
                           or buy now{" "}
                           <span className="">
                             <svg
