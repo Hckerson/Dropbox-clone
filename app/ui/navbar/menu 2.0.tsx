@@ -307,7 +307,7 @@ export default function Whitemenu() {
                   openMenu === "pricing" ? "text-blue-500" : "text-black"
                 )}
               >
-                <Link href="/nav/plans"> Pricing</Link>
+                <Link href="/en_GB/plans"> Pricing</Link>
               </span>
             </div>
           </li>

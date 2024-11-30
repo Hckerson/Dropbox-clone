@@ -1,9 +1,11 @@
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import PlanCard from "@/app/ui/components/planCard";
+import Compare from "@/app/ui/components/compare";
 import Plans from "./plans";
 import { ExpressionV10 } from "@/app/ui/components/expression";
 import Footer from "@/app/ui/landing-page/footer";
+import { golos } from "@/app/ui/fonts";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Find your Dropbox plan | get a 30-days free trial",
@@ -36,9 +38,7 @@ export default function page() {
       <div className="w-full box-border z-50 fixed top-0">
         <Navbar condition={false} />
       </div>
-      <div className="w-full box-border  mt-12 md:mt-20 grid">
-
-      </div>
+      <div className="w-full box-border  mt-12 md:mt-20 grid"></div>
       <div className="w-full box-border py-14 ">
         <ExpressionV10 />
       </div>
@@ -62,10 +62,22 @@ export default function page() {
                 return <PlanCard key={plan.id} {...plan} />;
               })}
             </div>
+            <h2
+            style={{
+              maxWidth: "35ch",
+              lineHeight: "1.2",
+              textAlign: "center",
+            }}
+            className={`text-center p-0 mx-4 font-medium text-xl tracking-wide md:text-4xl box-border hyphens-manual ${golos.className}`}
+          >
+            How easy closing the deal can be with Dropbox
+          </h2>
+            <div className="w-full box-border px-12">
+              <Compare />
+            </div>
           </div>
         </div>
       </div>
-
       <footer className="w-full box-border">
         <Footer />
       </footer>
