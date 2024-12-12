@@ -24,4 +24,14 @@ const useLenisScroll = () => {
   }, []);
 };
 
-export default useLenisScroll;
+const LenisScrollContainer = ({ children }) => {
+  useLenisScroll();
+
+  return (
+    <div>
+      {children}
+    </div>
+  );
+};
+
+export default LenisScrollContainer;

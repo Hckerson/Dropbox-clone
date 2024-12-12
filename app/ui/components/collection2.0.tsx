@@ -87,6 +87,8 @@ export default function Collection({ src, body, name }: Cardprops) {
   );
 }
 
+
+
 export function CollectionV1({ src, body, name, link, role }: Props) {
   return (
     <div
