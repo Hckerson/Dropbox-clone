@@ -1,6 +1,7 @@
 import { golos } from "../fonts";
-import BigPicCard from "./big-pic Card";
+import BigPicCard, {BigPicCardV1} from "./big-pic Card";
 import { every, everyV1, everyV2 } from "../navbar/links";
+import { EveryV3 } from "@/app/lib/definitions";
 
 export default function Everything() {
   return (
@@ -112,6 +113,36 @@ export function EverythingV2() {
             >
               Simple, automated workflows for your most vital agreements
             </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+
+export function EverythingV3({content} : {content : EveryV3[]}) {
+  return (
+    <div className="box-border w-full ">
+      <div className="w-full flex flex-col items-center box-border">
+        <div
+          style={{ flexGrow: 1 }}
+          className="xl:max-w-[1200px]  box-border flex flex-col items-center gap-y-14 w-full mx-auto py-10"
+        >
+          <div className="w-full box-border">
+            <div
+              style={{ width: "fit-content" }}
+              id="position"
+              className="grid gap-y-14 md:gap-y-0 box-border px-6 md:px-8 xl:px-0  "
+            >
+              {content.map((one) => {
+                return (
+                  <div key={one.id} className="w-full relative box-border">
+                    <BigPicCardV1 key={one.id} {...one} />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

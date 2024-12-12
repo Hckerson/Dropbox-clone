@@ -1,4 +1,4 @@
-import { GetStartedv1, GetStarted, ActionB } from "./get-started";
+import { GetStartedv1, GetStarted, ActionB,  ActionBV2} from "./get-started";
 import Link from "next/link";
 import { golos } from "../fonts";
 export default function Information() {
@@ -321,6 +321,40 @@ export function Informationv5() {
               </svg>
             </p>
           </Link>
+        </div>
+        <div className="lg:hidden md:block hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function Informationv6() {
+  return (
+    <div className="box-border w-full p-6 md:p-12 md:pb-20 grid">
+      <div className="w-full box-border grid gap-y-5">
+        {" "}
+        <legend className="text-base font-semibold">Dropbox Enterprise</legend>
+        <h1
+          style={{
+            overflowWrap: "anywhere",
+            textAlign: "unset",
+            lineHeight: "100%",
+          }}
+          className={`font-normal box-border hyphens-manual text-3xl text-wrap   md:text-5xl ${golos.className}`}
+        >
+          Secure collaboration across your corporation
+        </h1>
+        <p className="font-normal text-wrap hyphens-manual text-base ">
+          Help your teams store, share and get more done. With industry-leading
+          security features, you can secure unmanaged data and control licences
+          all in one place.
+        </p>
+      </div>
+      <div className="w-full box-border grid pt-6 gap-y-6" id="start">
+        <div className="w-full box-border grid  gap-y-6">
+          <div className="2xl:pr-6 text-white">
+            <ActionBV2 text="Contact Sales" link="https://experience.dropbox.com/contact" />
+          </div>
         </div>
         <div className="lg:hidden md:block hidden"></div>
       </div>

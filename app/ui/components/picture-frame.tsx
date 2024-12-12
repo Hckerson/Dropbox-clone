@@ -38,6 +38,7 @@ export  function FrameV1({ src, alt}: { src : string, alt : string}) {
           width={2880}
           height={1368} // Adjust this as needed
           quality={80}
+          priority
           className="object-contain w-full absolute inset-0 h-full scale-90 "
         />
       </div>

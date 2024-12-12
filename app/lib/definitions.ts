@@ -32,3 +32,11 @@ export type Collabs = {
   body : string;
   src : string
 }
+
+export type EveryV3 = {
+  id : number;
+  src : string;
+  head : string;
+  body : string;
+  bg : string
+}

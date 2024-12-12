@@ -251,6 +251,13 @@ export const everyV2 = [
   {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-mobile-signing-ui-transparent-2560x2560.png?id=7b3b3a20-337f-410f-b120-d169b84361d4&width=2560&output_type=png',head : 'Mobile-friendly signing', body : 'Take advantage of every opportunity. Mobile-friendly signing empowers teams to work from wherever they are—at the office or on the go.'},
 ];
 
+export const everyV3   = [
+  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-users-badge-480x480.svg?id=523c3c0a-748f-42e4-ae9c-f970be0695ca',head : 'Users love us', body : 'Dropbox users rate our products highly among our peers.' , bg : '#2b2929'},
+  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-enterprise-badge-480x480.svg?id=ab211839-ba82-4d4d-816f-e0b8e71ccc20',head : 'Leader in enterprise', body : 'Dropbox is highly rated by G2 users and has a substantial Satisfaction and Market Presence score.' , bg : '#2b2929'},
+  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-momentum-badge-480x480.svg?id=20a2685e-ca4d-46fa-8f90-dda10062a2e3',head : 'Momentum leader', body : 'Dropbox ranks in the Momentum Grid® rank in the top 25% of our category’s products by users.' , bg : '#2b2929'},
+  {id : 4, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-leader-badge-480x480.svg?id=6db8fb57-9b4d-4803-933b-fc197a2685c1',head : 'Leader', body : 'Dropbox is a Winter 2024 Leader according to reviews by G2 users!' , bg : '#2b2929'},
+];
+
 
 export const easy = [
   {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/01_Backup_Simple-Computer-Backup_840x840.png?id=82281998-f695-4e27-80bc-54964274afab&output_type=png',head : 'Backup made simple', body : 'In just a few clicks, you can choose the files and folders you want Backup to keep safe, and we’ll take it from there.'},

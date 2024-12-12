@@ -133,7 +133,7 @@ export function ActionBV2({ link, text }: { link: string, text : string }) {
     >
       <Link
         href={link}
-        className=" rounded-lg w-full p-4  group flex justify-between font-semibold "
+        className=" rounded-lg w-full p-6  group flex justify-between font-semibold "
       >
         {text}
         <svg
