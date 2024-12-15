@@ -4,10 +4,11 @@ import { FrameV1 } from "@/app/ui/components/picture-frame";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import Frame, { Frametwo, FrameOne } from "@/app/ui/components/big-vid";
 import { everyV3 } from "@/app/ui/navbar/links";
-import Expression, {
+import {
   Expresstwo,
   Expresstri,
-  ExpressV11
+  ExpressV11,
+  ExpressV12
 } from "@/app/ui/components/expression";
 import Righty, { Lefty } from "@/app/ui/components/rem";
 import { EverythingV3 } from "@/app/ui/components/everything";
@@ -50,9 +51,8 @@ export default function page() {
           <ExpressV11 />
           <EverythingV3 content={everyV3}/>
         </div>
-        <Frame />
-        <div className=" w-full">
-          <Expression />
+        <div className=" w-full bg-[#f7f5f2] py-10 box-border">
+          <ExpressV12 />
         </div>
         <div className="w-full box-border grid" id="features">
           <div
@@ -65,6 +65,7 @@ export default function page() {
             <Righty />
           </div>
         </div>
+        <Frame />
         <div className="w-full box-border grid pb-14" id="integrations">
           <div className="w-full box-border h-full">
             <Lefty />

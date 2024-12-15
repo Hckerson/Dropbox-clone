@@ -127,13 +127,13 @@ export function EverythingV3({content} : {content : EveryV3[]}) {
       <div className="w-full flex flex-col items-center box-border">
         <div
           style={{ flexGrow: 1 }}
-          className="xl:max-w-[1200px]  box-border flex flex-col items-center gap-y-14 w-full mx-auto py-10"
+          className="xl:max-w-[1280px]  box-border flex flex-col items-center gap-y-14 w-full mx-auto py-10"
         >
           <div className="w-full box-border">
             <div
               style={{ width: "fit-content" }}
               id="position"
-              className="grid gap-y-14 md:gap-y-0 box-border px-6 md:px-8 xl:px-0  "
+              className="grid xl:gap-x-0 gap-x-6  xl:gap-y-0 gap-y-8 box-border px-6 md:px-8 xl:px-0  "
             >
               {content.map((one) => {
                 return (

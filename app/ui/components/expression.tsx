@@ -594,12 +594,12 @@ export function ExpressV11() {
       <div
         className=" grid items-center justify-center  w-full text-white  gap-y-6"
         style={{
-          maxWidth: "85ch",
+          maxWidth: "75ch",
           lineHeight: "1.2",
           textAlign: "center",
         }}
       >
-        <h5 className="font-normal text-4xl tracking-wide text-center">
+        <h5 className="font-normal text-4xl text-center">
           One clear message from customers: Dropbox is where you work together
         </h5>
         <h3>
@@ -615,6 +615,66 @@ export function ExpressV11() {
           {" "}
           <p className="inline-flex items-center text-base group text-center  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
             Read G2 Reviews{" "}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              width="24"
+              height="24"
+              role="presentation"
+              focusable="false"
+            >
+              <path
+                d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                vectorEffect="non-scaling-stroke"
+              ></path>
+            </svg>
+          </p>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+export function ExpressV12() {
+  return (
+    <div className=" grid items-center justify-center py-10 w-full gap-y-8">
+      <div className=" grid items-center justify-center  w-full  gap-y-6">
+        <span className="w-full flex justify-center">
+          <h5
+            className="font-normal text-4xl w-full text-center "
+            style={{
+              maxWidth: "30ch",
+              lineHeight: "1.2",
+              textAlign: "center",
+            }}
+          >
+            Security isn’t just our priority, it’s our promise
+          </h5>
+        </span>
+        <h3
+          style={{
+            maxWidth: "80ch",
+            lineHeight: "1.2",
+            textAlign: "center",
+          }}
+          className=""
+        >
+          Dropbox helps teams work securely. User, device and content controls
+          ensure nothing gets shared you don’t want shared, and nothing gets
+          seen you don’t want seen.
+        </h3>
+
+        <Link
+          href="https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf"
+          className="text-center"
+        >
+          {" "}
+          <p className="inline-flex items-center text-base group text-center  underline underline-offset-2 decoration-1 hover:decoration-black transition-colors duration-200 decoration-stone-700">
+            Read our security whitepaper{" "}
             <svg
               viewBox="0 0 24 24"
               fill="none"

@@ -764,6 +764,33 @@ export const questionsV2 = [
   },
 ];
 
+export const questionsV4 = [
+  {
+    id: 1,
+    topic: "Hyper-vigilance, not just surveillance",
+    baby: "Dropbox provides always-on protection for your systems – with vulnerability testing, dark-web monitoring and enterprise detection-and-response.",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/security-display-case-1696x954.svg?id=a753b123-0fcf-4063-a888-2e718a266a78",
+    link: "https://www.dropbox.com/features/security",
+  },
+  {
+    id: 2,
+    topic: "Security that stays alert",
+    baby: "Real-time notifications of potential suspicious behaviour, risky activity and data leaks to help with threat management and data loss prevention.",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/security-camera-weather-1696x954.svg?id=32dfbb8b-758f-4ff3-8c29-907e54bcbdc9",
+    link: "https://www.dropbox.com/features/security",
+  },
+  {
+    id: 3,
+    topic: "Compliance, built on confidence",
+    baby: "Dropbox’s advanced data protection secures your sensitive and confidential files, meeting global regulatory standards for HIPAA, GDPR, ISO 27001, NIST, SOC2 Type II, SOC3 and FDA 21 CFR Part 11.",
+    alt: "Dropbox clone features",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/supreme-court-1696x954.svg?id=e17f510c-616d-449a-b153-5d3ef731274b",
+    link: "https://www.dropbox.com/features/security",
+  },
+];
+
 export const stats = [
   {
     topic: "of Fortune 500 companies",
