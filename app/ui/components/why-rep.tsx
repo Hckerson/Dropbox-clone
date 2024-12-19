@@ -1,6 +1,6 @@
 import { golos } from "../fonts";
 import Image from "next/image";
-import { why, stats, doings, collabs, collabsV1 } from "../navbar/links";
+import { why, stats, doings, collabs, collabsV1, listing } from "../navbar/links";
 import Replay from "../landing-page/saying2.0";
 import Link from "next/link";
 import { Collabs } from "@/app/lib/definitions";
@@ -148,6 +148,66 @@ export default function Why() {
           </div>
           <div className="w-full box-border">
             <Replay />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function Enterprise() {
+  return (
+    <div
+      style={{ backgroundColor: "#1e1919" }}
+      className="box-border w-full text-white"
+    >
+      <div className="w-full flex flex-col items-center box-border">
+        <div
+          style={{ flexGrow: 1 }}
+          className="xl:max-w-[1280px]  box-border flex flex-col items-center gap-y-20 w-full mx-auto py-20"
+        >
+          <section className="flex flex-col justify-center items-center gap-y-4">
+            <h2
+              style={{
+                maxWidth: "35ch",
+                lineHeight: "1.2",
+                textAlign: "center",
+              }}
+              className={`text-center px-4 m-0 font-medium text-3xl md:text-4xl box-border hyphens-manual ${golos.className}`}
+            >
+              Dropbox Enterprise: like Dropbox, but bigger
+            </h2>
+            <span className="text-center">Do everything you’d normally do with Dropbox, and more:</span>
+          </section>
+          <div className="w-full box-border">
+            <div
+              id="listing"
+              className="grid box-border px-4 w-full lg:px-10 md:gap-y-0 gap-y-10   "
+            >
+              {listing.map((each) => {
+                return (
+                  <div
+                    key={each.id}
+                    className="box-border w-full h-full px-3 lg:px-6"
+                  >
+                    <div
+                      style={{
+                        gridAutoFlow: "row",
+                        gridTemplateRows: "max-content",
+                      }}
+                      className="box-border grid overflow-hidden h-full items-start p-0 m-0 "
+                    >
+                      <div className="box-border flex flex-col gap-y-4 h-full ">
+                        <div className="text-2xl font-medium">{each.why}</div>
+                        <div className="font-normal text-base ">
+                          {each.fact}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </div>

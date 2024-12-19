@@ -5,6 +5,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/24/outline";
+import { Faqs } from "@/app/lib/definitions";
 import {
   questions,
   questionsV1,
@@ -437,6 +438,94 @@ export function FaqV5() {
                           height={1368} // Adjust this as needed
                           quality={80}
                           className="object-contain w-full h-full scale-75"
+                        />
+                      </div>
+                    </div>
+                  </ul>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+        <div className="inset-0 hidden lg:flex items-center justify-center relative overflow-hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function FaqV6({question} : {question  : Faqs[]}) {
+  const [openMenu, setMenuOpen] = useState<number | null>(0);
+  const toggleMenu = (menu: number) => {
+    setMenuOpen(menu);
+  };
+
+  return (
+    <div className="w-full box-border flex flex-col text-black   items-center">
+      <div
+        className="w-full box-border relative grid overflow-hidden "
+        id="faq"
+      >
+        <ul className="w-full box-border bg-white   md:px-10 lg:px-14">
+          {question.map((question, index) => {
+            return (
+              <li
+                key={question.id}
+                className="flex flex-col   border-b border-black hover:bg-[#eee9e2] border-opacity-40 items-start box-border"
+              >
+                <div
+                  className={clsx(
+                    "cursor-pointer w-full box-border px-6 pt-6 flex  justify-between space-x-2 items-center",
+                    openMenu == index ? "pb-0" : "pb-6"
+                  )}
+                  onClick={() => toggleMenu(index)}
+                >
+                  <span
+                    className={clsx(
+                      "text-base font-semibold peer transition-colors ease-in-out"
+                    )}
+                  >
+                    {question.topic}
+                  </span>
+                  <div className="p-3">
+                    {openMenu === index ? (
+                      <ChevronUpIcon className="size-6 transition-colors ease-in-out text-black " />
+                    ) : (
+                      <ChevronDownIcon className="size-6 transition-colors ease-in-out text-black " />
+                    )}
+                  </div>
+                </div>
+                <div
+                  className={clsx(
+                    "overflow-hidden transition-all duration-300 ease-in-out ",
+                    openMenu === index
+                      ? "max-h-[450px] opacity-100 pb-6"
+                      : "max-h-0 opacity-0 pb-0"
+                  )}
+                >
+                  <ul
+                    style={{ scrollbarWidth: "none" }}
+                    className="w-full box-border px-6 flex overflow-x-hidden flex-col"
+                  >
+                    <li className="w-full text-base font-light">
+                      {question.baby}
+                    </li>
+                    <li className="w-full text-base font-light">
+                      <Link href={question.link}>Learn more</Link>
+                    </li>
+                    <div
+                      className={clsx(
+                        "lg:absolute relative  sixty top-0  right-0 w-full h-full  flex items-center justify-center  transition-transform ease-in-out duration-300",
+                        openMenu == index ? "translate-x-0" : "translate-x-full"
+                      )}
+                    >
+                      <div className="w-full relative h-full flex items-center  max-w-full">
+                        <Image
+                          src={question.src}
+                          alt={question.alt}
+                          width={2880}
+                          height={1368} // Adjust this as needed
+                          quality={80}
+                          className="object-contain w-full h-full"
                         />
                       </div>
                     </div>

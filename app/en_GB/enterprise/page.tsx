@@ -1,19 +1,19 @@
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
-import {Informationv6} from "@/app/ui/components/inform";
+import { Informationv6 } from "@/app/ui/components/inform";
 import { FrameV1 } from "@/app/ui/components/picture-frame";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
-import Frame, { Frametwo, FrameOne } from "@/app/ui/components/big-vid";
+import {PicFrame} from "@/app/ui/components/big-frame";
 import { everyV3 } from "@/app/ui/navbar/links";
-import Expression, {
-  Expresstwo,
-  Expresstri,
-  ExpressV11
+import Footer from "@/app/ui/landing-page/footer";
+import { questionsV4 } from "@/app/ui/navbar/links";
+import {
+  ExpressV11,
+  ExpressV12,
 } from "@/app/ui/components/expression";
-import Righty, { Lefty } from "@/app/ui/components/rem";
+import  { LeftyV3, RightyV3 } from "@/app/ui/components/rem";
 import { EverythingV3 } from "@/app/ui/components/everything";
-import { Frametri } from "@/app/ui/components/big-vid";
-import Faq from "@/app/ui/components/FAQ";
-import Why from "@/app/ui/components/why-rep";
+import { FaqV6 } from "@/app/ui/components/FAQ";
+import {Enterprise} from "@/app/ui/components/why-rep";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Enterprise - Dropbox",
@@ -44,55 +44,55 @@ export default function page() {
       </div>
       <div
         style={{ backgroundColor: "#1e1919" }}
-        className="w-full box-border flex flex-col space-y-10 items-center"
+        className="w-full box-border flex flex-col  items-center"
       >
         <div className="w-full flex flex-col  box-border ">
           <ExpressV11 />
-          <EverythingV3 content={everyV3}/>
+          <EverythingV3 content={everyV3} />
         </div>
-        <Frame />
-        <div className=" w-full">
-          <Expression />
+        <div className="w-full box-border bg-[#f7f5f2]  flex flex-col ">
+          <ExpressV12
+            title="Security isn’t just our priority, it’s our promise"
+            body="Dropbox helps teams work securely. User, device and content controls ensure nothing gets shared you don’t want shared, and nothing gets seen you don’t want seen."
+            link="https://assets.dropbox.com/www/en-us/business/solutions/solutions/dfb_security_whitepaper.pdf"
+            linkName="Read our security whitepaper"
+          />
+          <FaqV6 question={questionsV4} />
         </div>
-        <div className="w-full box-border grid" id="features">
-          <div
-            style={{ backgroundColor: "#2b2929" }}
-            className="lg:py-16 py-6 px-6 sm:py-10 sm:px-8 flex items-center justify-center"
+        <div className="bg-[#f7f5f2] w-full box-border flex-col flex pt-8 xl:pt-16 gap-y-10 xl:gap-y-16">
+          <h2
+            style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
+            className="text-center p-0 m-0 font-medium text-3xl box-border hyphens-manual"
           >
-            <FrameOne />
-          </div>
-          <div className="w-full box-border h-full">
-            <Righty />
-          </div>
-        </div>
-        <div className="w-full box-border grid pb-14" id="integrations">
-          <div className="w-full box-border h-full">
-            <Lefty />
-          </div>
-          <div
-            style={{ backgroundColor: "#2b2929" }}
-            className="lg:py-24 py-6 px-6 sm:py-10 sm:px-8 flex items-center justify-center"
-          >
-            <Frametwo />
+            Features built for enterprise teams
+          </h2>
+          <div className="w-full">
+            <div className="w-full box-border grid" id="features">
+              <div
+                style={{ backgroundColor: "#2b2929" }}
+                className="flex items-center justify-center"
+              >
+                <PicFrame src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/work-from-office-01-2560x1709.png?id=a07fd89c-199f-47dd-b447-055c7cf38aa6&width=2560&output_type=png" />
+              </div>
+              <div className="w-full box-border h-full">
+                <RightyV3 />
+              </div>
+            </div>
+            <div className="w-full box-border grid " id="integrations">
+              <div className="w-full box-border h-full">
+              <LeftyV3 />
+              </div>
+              <div
+                style={{ backgroundColor: "#2b2929" }}
+                className=" flex items-center justify-center"
+              >
+                <PicFrame src="https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/work-from-office-02-2560x1707.png?id=f4c2bb17-6210-4986-abd3-006eea519f7a&width=2560&output_type=png" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="w-full box-border">
-          <Expresstwo />
-        </div>
-        <div className="w-full box-border">
-          <Frametri />
-        </div>
-        <div className="w-full box-border">
-          <Expresstri />
-        </div>
-        <div
-          style={{ backgroundColor: "#f7f5f2" }}
-          className="w-full box-border "
-        >
-          <Faq />
-        </div>
-        <div className="w-full box-border">
-          <Why />
+          <Enterprise />
         </div>
         <div className="w-full bg-white px-4  py-20 flex items-center justify-center">
           <span
@@ -107,6 +107,9 @@ export default function page() {
           </span>
         </div>
       </div>
+      <footer className="w-full box-border">
+        <Footer />
+      </footer>
     </div>
   );
 }

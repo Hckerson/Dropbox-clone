@@ -599,7 +599,7 @@ export function ExpressV11() {
           textAlign: "center",
         }}
       >
-        <h5 className="font-normal text-4xl tracking-wide text-center">
+        <h5 className="font-normal text-4xl tracking-tight  text-center">
           One clear message from customers: Dropbox is where you work together
         </h5>
         <h3>
@@ -615,6 +615,56 @@ export function ExpressV11() {
           {" "}
           <p className="inline-flex items-center text-base group text-center  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
             Read G2 Reviews{" "}
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+              width="24"
+              height="24"
+              role="presentation"
+              focusable="false"
+            >
+              <path
+                d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeMiterlimit="10"
+                vectorEffect="non-scaling-stroke"
+              ></path>
+            </svg>
+          </p>
+        </Link>
+      </div>
+    </div>
+  );
+}
+
+
+export function ExpressV12({title, body, link, linkName}:{title : string, body : string, link : string, linkName : string}) {
+  return (
+    <div className=" grid items-center justify-center py-10 w-full gap-y-8 px-6">
+      <div
+        className=" grid items-center justify-center  w-full   gap-y-6"
+        style={{
+          maxWidth: "85ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+      >
+        <h5 className="font-normal text-4xl tracking-tight  text-center">
+          {title}
+        </h5>
+        <h3>
+        {body}
+        </h3>
+
+        <Link
+          href={link}
+          className="text-center"
+        >
+          {" "}
+          <p className="inline-flex items-center text-base group text-center  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+            {linkName}{" "}
             <svg
               viewBox="0 0 24 24"
               fill="none"

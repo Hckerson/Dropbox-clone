@@ -182,6 +182,17 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-rows: minmax(0, max-content);
 }
 
+@media (max-width: 1024px) {
+  #features {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  #integrations {
+    display: flex;
+    flex-direction: column;
+  }
+
+}
 
 @media (min-width: 768px) {
   #scroll {
@@ -206,6 +217,11 @@ input[type="number"]::-webkit-outer-spin-button {
   #dropbox{
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr ;
+  }
+
+  #listing{
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr 1fr ;
   }
 
   #stats{
@@ -353,6 +369,11 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 
   #features{
+    grid-auto-flow: column;
+    grid-template-columns: 50% 50%  ;
+  }
+
+  #integrations{
     grid-auto-flow: column;
     grid-template-columns: 50% 50%  ;
   }
