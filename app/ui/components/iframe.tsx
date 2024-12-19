@@ -1,5 +1,4 @@
 import { golos } from "../fonts";
-import Link from "next/link";
 
 export default function IFrame({src}: {src: string}) {
   return (
