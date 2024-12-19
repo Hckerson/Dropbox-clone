@@ -127,7 +127,7 @@ export function EverythingV3({content} : {content : EveryV3[]}) {
       <div className="w-full flex flex-col items-center box-border">
         <div
           style={{ flexGrow: 1 }}
-          className="xl:max-w-[1200px]  box-border flex flex-col items-center gap-y-14 w-full mx-auto py-10"
+          className="xl:max-w-[1280px]  box-border flex flex-col items-center gap-y-14 w-full mx-auto py-10"
         >
           <div className="w-full box-border flex items-center justify-center">
             <div

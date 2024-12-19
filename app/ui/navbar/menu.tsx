@@ -290,7 +290,7 @@ export default function Menu() {
                   openMenu === "enterprise" ? "text-blue-500" : "text-white"
                 )}
               >
-                <Link href="/nav/enterprise">Enterprise</Link>
+                <Link href="/en_GB/enterprise">Enterprise</Link>
               </span>
             </div>
           </li>

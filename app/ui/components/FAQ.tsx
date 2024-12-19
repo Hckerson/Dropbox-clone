@@ -453,7 +453,7 @@ export function FaqV5() {
   );
 }
 
-export function FaqV6({question} : {question  : Faqs[]}) {
+export function FaqV6({ question }: { question: Faqs[] }) {
   const [openMenu, setMenuOpen] = useState<number | null>(0);
   const toggleMenu = (menu: number) => {
     setMenuOpen(menu);
@@ -521,11 +521,11 @@ export function FaqV6({question} : {question  : Faqs[]}) {
                       <div className="w-full relative h-full flex items-center  max-w-full">
                         <Image
                           src={question.src}
-                          alt={question.alt}
-                          width={2880}
-                          height={1368} // Adjust this as needed
-                          quality={80}
-                          className="object-contain w-full h-full"
+                          alt="quality"
+                          width={662}
+                          height={300} // Adjust this as needed
+                          className="h-full w-full absolute inset-0 box-border max-h-full max-w-full"
+                          quality={100}
                         />
                       </div>
                     </div>

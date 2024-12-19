@@ -63,7 +63,7 @@ export  function BigPicCardV1({ src, head, body, bg="#eee9e2"}: everyPropsV1) {
       >
         <div
           style={{ backgroundColor: bg }}
-          className="overflow-hidden box-border p-5 "
+          className="overflow-hidden box-border"
         >
           <div
             style={{ aspectRatio: 1 }}
@@ -82,8 +82,8 @@ export  function BigPicCardV1({ src, head, body, bg="#eee9e2"}: everyPropsV1) {
           </div>
         </div>
         <div className="box-border grid gap-y-4 text-white">
-          <div className="text-xl font-semibold">{head}</div>
-          <div className="font-light  text-lg  ">{body}</div>
+          <div className="text-lg font-semibold">{head}</div>
+          <div className="font-light ">{body}</div>
         </div>
       </div>
     </div>

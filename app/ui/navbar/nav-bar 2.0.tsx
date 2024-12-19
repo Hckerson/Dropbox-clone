@@ -16,7 +16,7 @@ export default function Navbar({ condition = true }) {
             >
               <svg
                 viewBox="0 0 30 25"
-                height="48"
+                height="49"
                 width="48"
                 fill="blue"
                 xmlns="http://www.w3.org/2000/svg"

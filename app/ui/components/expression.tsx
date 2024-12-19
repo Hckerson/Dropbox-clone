@@ -594,7 +594,7 @@ export function ExpressV11() {
       <div
         className=" grid items-center justify-center  w-full text-white  gap-y-6"
         style={{
-          maxWidth: "85ch",
+          maxWidth: "75ch",
           lineHeight: "1.2",
           textAlign: "center",
         }}
