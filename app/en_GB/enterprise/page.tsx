@@ -2,19 +2,21 @@ import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Informationv6 } from "@/app/ui/components/inform";
 import { FrameV1 } from "@/app/ui/components/picture-frame";
 import { Blur } from "@/app/ui/navbar/nav-link 2.0";
-import {PicFrame} from "@/app/ui/components/big-frame";
+import { PicFrame } from "@/app/ui/components/big-frame";
 import { everyV3 } from "@/app/ui/navbar/links";
 import Footer from "@/app/ui/landing-page/footer";
 import { questionsV4 } from "@/app/ui/navbar/links";
-import {
-  ExpressV11,
-  ExpressV12,
-} from "@/app/ui/components/expression";
+import { partners, partnersV1 } from "@/app/ui/navbar/links";
+import { ExpressV11, ExpressV12 } from "@/app/ui/components/expression";
 import IFrame from "@/app/ui/components/iframe";
-import  { LeftyV3, RightyV3 } from "@/app/ui/components/rem";
+import { SayingV1 } from "@/app/ui/landing-page/txtSaying";
+import { LeftyV3, RightyV3 } from "@/app/ui/components/rem";
 import { EverythingV3 } from "@/app/ui/components/everything";
 import { FaqV6 } from "@/app/ui/components/FAQ";
-import {Enterprise} from "@/app/ui/components/why-rep";
+import { MiniDiscList } from "@/app/ui/components/why-rep";
+import { Enterprise } from "@/app/ui/components/why-rep";
+import { SmallPicV4, SmallPicV5 } from "@/app/ui/components/why-rep";
+import Ending from "@/app/ui/components/ending";
 import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Enterprise - Dropbox",
@@ -81,7 +83,7 @@ export default function page() {
             </div>
             <div className="w-full box-border grid " id="integrations">
               <div className="w-full box-border h-full">
-              <LeftyV3 />
+                <LeftyV3 />
               </div>
               <div
                 style={{ backgroundColor: "#2b2929" }}
@@ -95,21 +97,30 @@ export default function page() {
         <div className="w-full box-border">
           <Enterprise />
         </div>
-        <div className="w-full box-border bg-[#f7f5f2]">
+        <div className="w-full box-border bg-[#f7f5f2] flex flex-col items-center gap-y-14">
           <IFrame src="https://player.vimeo.com/video/915282309" />
+          <div>
+            <ExpressV12
+              title="Dropbox works with who you work with"
+              body="When your data automatically syncs between tools, users have more time to get things done without constantly switching context."
+              link="https://www.dropbox.com/en_GB/app-integrations"
+              linkName="Explore app integrations"
+            />
+          </div>
+          <SmallPicV4 onebit={partners} tobit={partnersV1} />
+          <div className="w-full box-border bg-[#1e1919] pb-16">
+            <SmallPicV5 />
+          </div>
         </div>
-        <div className="w-full bg-white px-4  py-20 flex items-center justify-center">
-          <span
-            className="text-base font-light  "
-            style={{
-              maxWidth: "70ch",
-              lineHeight: "1.2",
-            }}
-          >
-            *Based on a 2021 Dropbox research survey of registered Dropbox users
-            who have used Dropbox Replay.
-          </span>
+        <div className="flex flex-col w-full bg-[#f7f5f2] pb-14">
+          <div className="w-full box-border">
+            <SayingV1 />
+          </div>
+          <div>
+            <MiniDiscList />
+          </div>
         </div>
+        <Ending condition={false} word="Collaborate at scale with Dropbox Enterprise" link={"https://experience.dropbox.com/contact"} text ={"Contact sales"} />
       </div>
       <footer className="w-full box-border">
         <Footer />

@@ -6,11 +6,11 @@ export default function IFrame({src}: {src: string}) {
       <div className="w-full flex flex-col items-center box-border">
         <div
           style={{ flexGrow: 1 }}
-          className="  box-border flex flex-col items-center gap-y-20 w-full mx-auto pt-20"
+          className="  box-border flex z-20 relative flex-col items-center gap-y-20 w-full mx-auto pt-20"
         >
           <h2
             style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
-            className={`text-center p-0 mx-4 font-medium text-3xl md:text-4xl box-border hyphens-manual ${golos.className}`}
+            className={`text-center p-0 mx-4 font-medium relative text-3xl md:text-4xl box-border hyphens-manual ${golos.className}`}
           >
             Expedia travels with Dropbox
           </h2>

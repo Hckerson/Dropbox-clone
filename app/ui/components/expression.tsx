@@ -590,7 +590,7 @@ export function ExpressionV10() {
 
 export function ExpressV11() {
   return (
-    <div className=" grid items-center justify-center py-10 w-full gap-y-8">
+    <div className=" grid items-center justify-center py-10 w-full gap-y-8 px-3">
       <div
         className=" grid items-center justify-center  w-full text-white  gap-y-6"
         style={{

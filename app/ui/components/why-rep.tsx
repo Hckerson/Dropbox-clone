@@ -1,6 +1,15 @@
 import { golos } from "../fonts";
 import Image from "next/image";
-import { why, stats, doings, collabs, collabsV1, listing } from "../navbar/links";
+import {
+  why,
+  stats,
+  statsV1,
+  doings,
+  collabs,
+  better,
+  collabsV1,
+  listing,
+} from "../navbar/links";
 import Replay from "../landing-page/saying2.0";
 import Link from "next/link";
 import { Collabs } from "@/app/lib/definitions";
@@ -177,7 +186,9 @@ export function Enterprise() {
             >
               Dropbox Enterprise: like Dropbox, but bigger
             </h2>
-            <span className="text-center">Do everything you’d normally do with Dropbox, and more:</span>
+            <span className="text-center">
+              Do everything you’d normally do with Dropbox, and more:
+            </span>
           </section>
           <div className="w-full box-border">
             <div
@@ -257,6 +268,56 @@ export function DiscList() {
                           </div>
                         </div>
                       </div>
+                      <div className="box-border flex flex-col gap-y-4 h-full ">
+                        <div className="text-xl font-medium">{stat.topic}</div>
+                        <div className="font-normal text-base ">
+                          {stat.body}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function MiniDiscList() {
+  return (
+    <div style={{ backgroundColor: "#f7f5f2" }} className="box-border w-full ">
+      <div className="w-full flex flex-col items-center box-border">
+        <div
+          style={{ flexGrow: 1 }}
+          className="xl:max-w-[1350px]  box-border flex flex-col items-center gap-y-20 w-full mx-auto "
+        >
+          <h2
+            style={{ overflowWrap: "anywhere", lineHeight: "120%" }}
+            className={`text-center px-4 m-0 font-medium text-3xl md:text-4xl box-border hyphens-manual ${golos.className}`}
+          >
+            You’re in good company
+          </h2>
+          <div className="w-full box-border">
+            <div
+              id="stats"
+              className="grid box-border px-4 w-full lg:px-10 md:gap-y-0 gap-y-10   "
+            >
+              {statsV1.map((stat) => {
+                return (
+                  <div
+                    key={stat.id}
+                    className="box-border w-full h-full px-3 lg:px-4"
+                  >
+                    <div
+                      style={{
+                        gridAutoFlow: "row",
+                        gridTemplateRows: "max-content",
+                      }}
+                      className="box-border grid overflow-hidden h-full items-start p-0 m-0 "
+                    >
                       <div className="box-border flex flex-col gap-y-4 h-full ">
                         <div className="text-xl font-medium">{stat.topic}</div>
                         <div className="font-normal text-base ">
@@ -550,6 +611,229 @@ export function SmallPicV3({ collabsV2 }: { collabsV2: Collabs[] }) {
                   );
                 })}
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function SmallPicV4({
+  onebit,
+  tobit,
+}: {
+  onebit: Collabs[];
+  tobit: Collabs[];
+}) {
+  return (
+    <div className="box-border w-full pb-16">
+      <div className="w-full flex flex-col items-center box-border">
+        <div
+          style={{ flexGrow: 1 }}
+          className="xl:max-w-[1280px]  box-border flex flex-col items-center gap-y-10 w-full mx-auto "
+        >
+          <div className="w-full box-border">
+            <div className="w-full grid gap-y-8">
+              <div
+                id="collabs"
+                className="grid box-border px-4 w-full lg:px-10 lg:gap-y-0 gap-y-10   "
+              >
+                {onebit.map((stat) => {
+                  return (
+                    <div
+                      key={stat.id}
+                      className="box-border w-full h-full px-3 lg:px-4"
+                    >
+                      <div
+                        style={{
+                          gridAutoFlow: "row",
+                          gridTemplateRows: "max-content",
+                        }}
+                        className="box-border grid overflow-hidden h-full items-start p-0 m-0 "
+                      >
+                        <div className="overflow-hidden box-border  ">
+                          <div
+                            style={{ aspectRatio: 4 }}
+                            className="w-full relative box-border"
+                          >
+                            <div className=" max-w-full max-h-full h-14 w-14  absolute inset-0 box-border flex items-center">
+                              <Image
+                                src={stat.src}
+                                alt="picture"
+                                width={400}
+                                height={400} // Adjust this as needed
+                                className="h-full w-full absolute  inset-0 box-border max-h-full max-w-full"
+                                quality={100}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="box-border flex flex-col gap-y-4 h-full ">
+                          <div className="text-xl font-medium">
+                            {stat.topic}
+                          </div>
+                          <div className="font-normal text-base ">
+                            {stat.body}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+              <div
+                id="collabs"
+                className="grid box-border px-4 w-full lg:px-10 lg:gap-y-0 gap-y-10   "
+              >
+                {tobit.map((stat) => {
+                  return (
+                    <div
+                      key={stat.id}
+                      className="box-border w-full h-full px-3 lg:px-4"
+                    >
+                      <div
+                        style={{
+                          gridAutoFlow: "row",
+                          gridTemplateRows: "max-content",
+                        }}
+                        className="box-border grid overflow-hidden h-full items-start p-0 m-0 "
+                      >
+                        <div className="overflow-hidden box-border  ">
+                          <div
+                            style={{ aspectRatio: 4 }}
+                            className="w-full relative box-border"
+                          >
+                            <div className=" max-w-full max-h-full h-14 w-14  absolute inset-0 box-border flex items-center">
+                              <Image
+                                src={stat.src}
+                                alt="picture"
+                                width={400}
+                                height={400} // Adjust this as needed
+                                className="h-full w-full absolute  inset-0 box-border max-h-full max-w-full"
+                                quality={100}
+                              />
+                            </div>
+                          </div>
+                        </div>
+                        <div className="box-border flex flex-col gap-y-4 h-full ">
+                          <div className="text-xl font-medium">
+                            {stat.topic}
+                          </div>
+                          <div className="font-normal text-base ">
+                            {stat.body}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function SmallPicV5() {
+  return (
+    <div className="box-border w-full text-white ">
+      <div className="w-full flex flex-col items-center box-border">
+        <div
+          style={{ flexGrow: 1 }}
+          className="xl:max-w-[1280px]  box-border flex flex-col items-center gap-y-20 w-full mx-auto "
+        >
+          <div className=" grid items-center justify-center py-10 w-full gap-y-8">
+            <div
+              className=" grid items-center justify-center  w-full   gap-y-6"
+              style={{
+                maxWidth: "75ch",
+                lineHeight: "1.2",
+                textAlign: "center",
+              }}
+            >
+              <h5 className="font-normal text-4xl tracking-tight  text-center">
+              How much better can it get?
+              </h5>
+              <h3>
+              Dropbox improves productivity by accelerating key workflows and projects – all while providing a better employee experience.
+              </h3>
+
+              <Link
+                href="https://assets.dropbox.com/dmep/en-us/assets/pdfs/TEI_of_Dropbox_2022_10_12_Final.pdf"
+                className="text-center"
+              >
+                {" "}
+                <p className="inline-flex items-center text-base group text-center  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+                  Read the forrester report{" "}
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                    width="24"
+                    height="24"
+                    role="presentation"
+                    focusable="false"
+                  >
+                    <path
+                      d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeMiterlimit="10"
+                      vectorEffect="non-scaling-stroke"
+                    ></path>
+                  </svg>
+                </p>
+              </Link>
+            </div>
+          </div>
+          <div className="w-full box-border">
+            <div
+              id="better"
+              className="grid box-border px-4 w-full lg:px-10 md:gap-y-0 gap-y-10   "
+            >
+              {better.map((stat) => {
+                return (
+                  <div
+                    key={stat.id}
+                    className="box-border w-full h-full px-3 lg:px-4"
+                  >
+                    <div
+                      style={{
+                        gridAutoFlow: "row",
+                        gridTemplateRows: "max-content",
+                      }}
+                      className="box-border grid overflow-hidden h-full items-start p-0 m-0 "
+                    >
+                      <div className="overflow-hidden box-border  ">
+                        <div
+                          style={{ aspectRatio: 4 }}
+                          className="w-full relative box-border"
+                        >
+                          <div className=" max-w-full max-h-full fill-white stroke-white h-14 w-14 absolute inset-0 box-border flex items-center">
+                            <Image
+                              src={stat.src}
+                              alt="picture"
+                              width={400}
+                              height={400} // Adjust this as needed
+                              className="h-full w-full absolute  inset-0 box-border max-h-full max-w-full"
+                              quality={100}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="box-border flex flex-col gap-y-4 h-full ">
+                        <div className="text-xl font-medium">{stat.topic}</div>
+                        <div className="font-normal text-base ">
+                          {stat.body}
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>

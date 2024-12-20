@@ -1,156 +1,210 @@
-import { ChevronDownIcon} from "@heroicons/react/24/outline"
-import { PDD, SDD, GDD } from "./test"
-import { PDDs, SDDs, GDDs } from "./test 2.0"
+import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { PDD, SDD, GDD } from "./test";
+import { PDDs, SDDs, GDDs } from "./test 2.0";
 
 export const productLInkL = [
-  {label : 'Dropbox', href :  '/nav/products/dropbox' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Dropbox-logo-nav.svg?id=d587e174-e284-42e8-a18c-85c0d8e57e9e', body : 'Store, share and access files across devices'},
-  {label : 'Replay', href :  '/nav/products/replay' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/replay-logo-nav.svg?id=411f20bf-600b-42f8-a5a5-508c48fc55f7', body : 'Review and approve videos faster'},
-  {label : 'Backup', href :  '/nav/products/backup' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Backup-logo-nav.svg?id=88a257c5-602b-48c0-bf49-e65aa2df21dd', body : 'Automatically back up your devices'},
-  {label : 'Reclaim.ai', href :  'https://reclaim.ai/?utm_medium=referral&utm_source=dbx-header-referral&utm_campaign=dbx-header&utm_term=dbx-header' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/reclaim-dbx-waffle-32x32.svg?id=48ed6a4b-91be-43f0-a91e-0868a4380db7', body : 'Schedule habits, tasks and meeting with AI'}
-]
+  {
+    label: "Dropbox",
+    href: "/nav/products/dropbox",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Dropbox-logo-nav.svg?id=d587e174-e284-42e8-a18c-85c0d8e57e9e",
+    body: "Store, share and access files across devices",
+  },
+  {
+    label: "Replay",
+    href: "/nav/products/replay",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/replay-logo-nav.svg?id=411f20bf-600b-42f8-a5a5-508c48fc55f7",
+    body: "Review and approve videos faster",
+  },
+  {
+    label: "Backup",
+    href: "/nav/products/backup",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/Backup-logo-nav.svg?id=88a257c5-602b-48c0-bf49-e65aa2df21dd",
+    body: "Automatically back up your devices",
+  },
+  {
+    label: "Reclaim.ai",
+    href: "https://reclaim.ai/?utm_medium=referral&utm_source=dbx-header-referral&utm_campaign=dbx-header&utm_term=dbx-header",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/reclaim-dbx-waffle-32x32.svg?id=48ed6a4b-91be-43f0-a91e-0868a4380db7",
+    body: "Schedule habits, tasks and meeting with AI",
+  },
+];
 
 export const productLInkR = [
-  {label : 'Dash', href :  'https://dash.dropbox.com' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/dash-logo-nav.svg?id=0eaff5fa-ffc5-41dd-bba1-4f05c5e32205', body : 'Find, organize and protect company content'},
-  {label : 'Sign', href :  '/nav/products/sign' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/DocSend-logo-nav.svg?id=27f665ce-74c5-4746-8b8c-61cd9e34aadd', body : 'Send documant securely and track activity'},
-  {label : 'DocSend', href :  '/nav/products/docsend' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/dropbox-sign-logo.svg?id=f9aee885-ea7b-4b1f-81fd-3e908dadc578', body : 'Request and add signatures to document'},
-  {label : 'Early access', href :  '/nav/products/early_access' ,src : 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/arrow_right.svg?id=e5339d6c-dcc7-477d-984b-7b2a039ca239', body : 'Preview new document experiences'}
-]
+  {
+    label: "Dash",
+    href: "https://dash.dropbox.com",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/dash-logo-nav.svg?id=0eaff5fa-ffc5-41dd-bba1-4f05c5e32205",
+    body: "Find, organize and protect company content",
+  },
+  {
+    label: "Sign",
+    href: "/nav/products/sign",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/DocSend-logo-nav.svg?id=27f665ce-74c5-4746-8b8c-61cd9e34aadd",
+    body: "Send documant securely and track activity",
+  },
+  {
+    label: "DocSend",
+    href: "/nav/products/docsend",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/dropbox-sign-logo.svg?id=f9aee885-ea7b-4b1f-81fd-3e908dadc578",
+    body: "Request and add signatures to document",
+  },
+  {
+    label: "Early access",
+    href: "/nav/products/early_access",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/arrow_right.svg?id=e5339d6c-dcc7-477d-984b-7b2a039ca239",
+    body: "Preview new document experiences",
+  },
+];
 
-
-export const team =[
-  {label : 'Sales', href :  '/business/solution/sales' },
-  {label : 'Marketing', href :  '/business/solution/marketing' },
-  {label : 'HR', href :  '/business/solution/hr' },
-  {label : 'IT', href :  '/business/solution/it' },
-  {label : 'Creatives', href :  '/business/solution/creatives' }
-]
+export const team = [
+  { label: "Sales", href: "/business/solution/sales" },
+  { label: "Marketing", href: "/business/solution/marketing" },
+  { label: "HR", href: "/business/solution/hr" },
+  { label: "IT", href: "/business/solution/it" },
+  { label: "Creatives", href: "/business/solution/creatives" },
+];
 
 export const industries = [
-  {label : 'Construction', href :  '/nav/industries/construction' },
-  {label : 'Technology', href :  '/nav/industries/technology' },
-  {label : 'Manufacturing', href :  '/nav/industries/manufacturing' },
-  {label : 'Media', href :  '/nav/industries/media' },
-  {label : 'Professional services ', href :  '/nav/industries/professional_services' },
-  {label : 'Education', href :  '/nav/industries/education' }
-]
+  { label: "Construction", href: "/nav/industries/construction" },
+  { label: "Technology", href: "/nav/industries/technology" },
+  { label: "Manufacturing", href: "/nav/industries/manufacturing" },
+  { label: "Media", href: "/nav/industries/media" },
+  {
+    label: "Professional services ",
+    href: "/nav/industries/professional_services",
+  },
+  { label: "Education", href: "/nav/industries/education" },
+];
 
 export const useCase = [
-  {label : 'Cloud storage', href :  '/features/cloud_storage' },
-  {label : 'Video review', href :  '/nav/products/replay' },
-  {label : 'Signing document', href :  '/features/productivity/electronic_signature' },
-  {label : 'Sharing files', href :  '/features/share' }
-]
+  { label: "Cloud storage", href: "/features/cloud_storage" },
+  { label: "Video review", href: "/nav/products/replay" },
+  {
+    label: "Signing document",
+    href: "/features/productivity/electronic_signature",
+  },
+  { label: "Sharing files", href: "/features/share" },
+];
 
 export const app = [
-  {label : 'Desktop app', href :  '/nav/desktop' },
-  {label : 'Mobile app', href :  '/nav/mobile' },
-]
+  { label: "Desktop app", href: "/nav/desktop" },
+  { label: "Mobile app", href: "/nav/mobile" },
+];
 
 export const sub = [
-  {label : 'Replay', href :  '/nav/products/replay' },
-  {label : 'Features', href :  '/nav/products/replay#features' },
-  {label : 'Integrations', href :  '/nav/products/replay#integrations' },
-  {label : 'Pricing', href :  '/nav/products/replay#pricing' },
-  {label : 'Why Replay?', href :  '/nav/products/replay#dropbox' },
-]
+  { label: "Replay", href: "/nav/products/replay" },
+  { label: "Features", href: "/nav/products/replay#features" },
+  { label: "Integrations", href: "/nav/products/replay#integrations" },
+  { label: "Pricing", href: "/nav/products/replay#pricing" },
+  { label: "Why Replay?", href: "/nav/products/replay#dropbox" },
+];
 
 export const lLink = [
   { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDD },
-  { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDD },
+  { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown: SDD },
   { name: "Enterprise", href: "/en_GB/enterprise" },
   { name: "Pricing", href: "/en_GB/plans" },
 ];
 
 export const rLink = [
   { name: "Contact sales", href: "/nav/contact" },
-  { name: "Get app", href: "", icon: ChevronDownIcon, dropdown : GDD },
+  { name: "Get app", href: "", icon: ChevronDownIcon, dropdown: GDD },
   { name: "Sign up", href: "/en_GB/register" },
   { name: "Log in", href: "/en_GB/login" },
 ];
 
 export const L = [
   { name: "Products", href: "", icon: ChevronDownIcon, dropdown: PDDs },
-  { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown : SDDs },
+  { name: "Solutions", href: "", icon: ChevronDownIcon, dropdown: SDDs },
   { name: "Enterprise", href: "/en_GB/enterprise" },
   { name: "Pricing", href: "/en_GB/plans" },
 ];
 
 export const R = [
   { name: "Contact sales", href: "/nav/contact" },
-  { name: "Get app", href: "", icon: ChevronDownIcon, dropdown : GDDs },
+  { name: "Get app", href: "", icon: ChevronDownIcon, dropdown: GDDs },
   { name: "Sign up", href: "/en_GB/register" },
   { name: "Log in", href: "/en_GB/login" },
 ];
 
 export const dropbox = [
-  {label : 'Desktop app', href :  '/nav/desktop' },
-  {label : 'Mobile app', href :  '/nav/mobile' },
-  {label : 'Integration', href :  '/features/integrations' },
-  {label : 'Features', href :  '/features' },
-  {label : 'Solutions', href :  '/business/solutions' },
-  {label : 'Security', href :  '/features/security' },
-  {label : 'Early access', href :  '/aspect/early_access' },
-  {label : 'Templates', href :  '/aspect/templates' },
-  {label : 'Free tools', href :  '/aspect/free_tools' },
-]
+  { label: "Desktop app", href: "/nav/desktop" },
+  { label: "Mobile app", href: "/nav/mobile" },
+  { label: "Integration", href: "/features/integrations" },
+  { label: "Features", href: "/features" },
+  { label: "Solutions", href: "/business/solutions" },
+  { label: "Security", href: "/features/security" },
+  { label: "Early access", href: "/aspect/early_access" },
+  { label: "Templates", href: "/aspect/templates" },
+  { label: "Free tools", href: "/aspect/free_tools" },
+];
 
 export const products = [
-  {label : 'Plus', href :  '/plans/plus' },
-  {label : 'Professional', href :  '/plans/professional' },
-  {label : 'Business', href :  '/plans/business' },
-  {label : 'Enterprise', href :  '/en_GB/enterprise' },
-  {label : 'Dash (beta)', href :  '/https://dash.dropbox.com' },
-  {label : 'Dropbox Sign', href :  '/https://sign.dropbox.com' },
-  {label : 'DocSend', href :  '/https://www.docsend.com' },
-  {label : 'Plans', href :  '/plans' },
-  {label : 'Product Updates', href :  '/aspect/product/updates' },
-
-]
+  { label: "Plus", href: "/plans/plus" },
+  { label: "Professional", href: "/plans/professional" },
+  { label: "Business", href: "/plans/business" },
+  { label: "Enterprise", href: "/en_GB/enterprise" },
+  { label: "Dash (beta)", href: "/https://dash.dropbox.com" },
+  { label: "Dropbox Sign", href: "/https://sign.dropbox.com" },
+  { label: "DocSend", href: "/https://www.docsend.com" },
+  { label: "Plans", href: "/plans" },
+  { label: "Product Updates", href: "/aspect/product/updates" },
+];
 
 export const features = [
-  {label : 'Send large files', href :  '/features/share/send_large_files' },
-  {label : 'Send long videos', href :  '/features/share/send_long_videos' },
-  {label : 'Cloud photo storage', href :  '/features/cloud_storage/photos' },
-  {label : 'Secure file transfer', href :  '/features/share/file_transfer' },
-  {label : 'Password manager', href :  '/features/security/passwords' },
-  {label : 'Cloud backup', href :  '/features/cloud_storage/file_backup' },
-  {label : 'Edit PDFs', href :  '/features/productivity/pdf_editor' },
-  {label : 'Electronic signatures', href :  '/features/productivity/elctronic_signature' },
-  {label : 'Screen recorder', href :  '/features/content_collaboration/screen_recorder' },
-  {label : 'Convert to PDF', href :  '/features/productivity/convert_to_pdf' },
-]
-
-
+  { label: "Send large files", href: "/features/share/send_large_files" },
+  { label: "Send long videos", href: "/features/share/send_long_videos" },
+  { label: "Cloud photo storage", href: "/features/cloud_storage/photos" },
+  { label: "Secure file transfer", href: "/features/share/file_transfer" },
+  { label: "Password manager", href: "/features/security/passwords" },
+  { label: "Cloud backup", href: "/features/cloud_storage/file_backup" },
+  { label: "Edit PDFs", href: "/features/productivity/pdf_editor" },
+  {
+    label: "Electronic signatures",
+    href: "/features/productivity/elctronic_signature",
+  },
+  {
+    label: "Screen recorder",
+    href: "/features/content_collaboration/screen_recorder",
+  },
+  { label: "Convert to PDF", href: "/features/productivity/convert_to_pdf" },
+];
 
 export const supports = [
-  {label : 'Help center ', href :  '/https://help.dropbox.com' },
-  {label : 'Contact us', href :  '/aspect/contact' },
-  {label : 'Privacy & terms', href :  '/aspect/terms' },
-  {label : 'Cookie policy', href :  '//https://help.dropbox.com/account_billing/security/cookies' },
-  {label : 'Cookies & CCPA preferences', href :  '/aspect/manage_cookies' },
-  {label : 'AI principles', href :  '/features/ai_principles' },
-  {label : 'Sitemap', href :  '/https://experience.dropbox.com' },
-  {label : 'Learning resources', href :  '/https://learn.dropbox.com' },
-]
+  { label: "Help center ", href: "/https://help.dropbox.com" },
+  { label: "Contact us", href: "/aspect/contact" },
+  { label: "Privacy & terms", href: "/aspect/terms" },
+  {
+    label: "Cookie policy",
+    href: "//https://help.dropbox.com/account_billing/security/cookies",
+  },
+  { label: "Cookies & CCPA preferences", href: "/aspect/manage_cookies" },
+  { label: "AI principles", href: "/features/ai_principles" },
+  { label: "Sitemap", href: "/https://experience.dropbox.com" },
+  { label: "Learning resources", href: "/https://learn.dropbox.com" },
+];
 
 export const resources = [
-  {label : 'Blog', href :  '/https://blog.dropbox.com' },
-  {label : 'Customer stories', href :  '/aspect/customers' },
-  {label : 'Resources library', href :  '/https://experience.dropbox.com' },
-  {label : 'Developers', href :  '/aspect/developers' },
-  {label : 'Community forums', href :  '/https://www.dropboxforum.com' },
-  {label : 'Referrals', href :  '/aspect/refer' },
-  {label : 'Resellers partners', href :  '/business/partners' },
-  {label : 'Integration partners', href :  '/aspect/app_integrations' },
-  {label : 'Find a partner', href :  '/https://experience.dropbox.com/partner_locator' },
-]
+  { label: "Blog", href: "/https://blog.dropbox.com" },
+  { label: "Customer stories", href: "/aspect/customers" },
+  { label: "Resources library", href: "/https://experience.dropbox.com" },
+  { label: "Developers", href: "/aspect/developers" },
+  { label: "Community forums", href: "/https://www.dropboxforum.com" },
+  { label: "Referrals", href: "/aspect/refer" },
+  { label: "Resellers partners", href: "/business/partners" },
+  { label: "Integration partners", href: "/aspect/app_integrations" },
+  {
+    label: "Find a partner",
+    href: "/https://experience.dropbox.com/partner_locator",
+  },
+];
 
 export const company = [
-  {label : 'About us ', href :  '/aspect/about' },
-  {label : 'Jobs', href :  '/https://jobs.dropbox.com' },
-  {label : 'Investor relations', href :  '/https://investors.dropbox.com' },
-  {label : 'ESG', href :  '/aspect/esg' },
-]
+  { label: "About us ", href: "/aspect/about" },
+  { label: "Jobs", href: "/https://jobs.dropbox.com" },
+  { label: "Investor relations", href: "/https://investors.dropbox.com" },
+  { label: "ESG", href: "/aspect/esg" },
+];
 
 export const articles = [
   {
@@ -160,7 +214,7 @@ export const articles = [
     about:
       "Study: here is how many hours we lose to distraction—and how to get our focus back",
     note: "For our study, Economist Impact included knowledge workers globally—and found that, no matter where people work, there’s a significant cost to lost focus around the world.",
-    name : 'Blue face'
+    name: "Blue face",
   },
   {
     id: 2,
@@ -169,7 +223,7 @@ export const articles = [
     about:
       "Dropbox teams up with McLaren Racing as an Official Technology Partner of McLaren Formula 1 Team",
     note: "Dropbox brings simplified sharing, collaboration, and organization to the McLaren Formula 1 Team.",
-    name : 'mclaren vehicle'
+    name: "mclaren vehicle",
   },
   {
     id: 3,
@@ -177,7 +231,7 @@ export const articles = [
     href: "https://experience.dropbox.com/get-organized/best-way-to-share-photos",
     about: "The best way to share photos with family and friends",
     note: "Don’t lose precious photos. Save them and share them with loved ones—for free. Here’s an easy-to-follow guide to sharing and storing photos with Dropbox.",
-    name : 'a happy family'
+    name: "a happy family",
   },
 ];
 
@@ -234,41 +288,138 @@ export const aspects = [
 ];
 
 export const every = [
-  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/MultiblockCard1_840x816.jpg?id=cd74929b-c11a-45d0-aae4-1eac15984c30&output_type=jpg',head : 'Simple organization', body : 'Keep all your files in one place, and organize it just the way you want'},
-  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/MultiblockCard2_840x829.jpg?id=abd2c8cb-aab4-4287-8723-bef17297a6c0&output_type=jpg',head : 'Anytime access', body : 'Get to your files whenever and wherever you need them—on desktop, mobile or web '},
-  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/storage-watermark-ui-transparent-2560x2560.png?id=0a37ebad-1922-414f-9a5c-07bd331c55c3&width=2560&output_type=png',head : 'Seamless security', body : 'Be sure your content is protected accross all devices with industry-leading encrytion, automatic backup, and two factor authentication'},
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/MultiblockCard1_840x816.jpg?id=cd74929b-c11a-45d0-aae4-1eac15984c30&output_type=jpg",
+    head: "Simple organization",
+    body: "Keep all your files in one place, and organize it just the way you want",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/MultiblockCard2_840x829.jpg?id=abd2c8cb-aab4-4287-8723-bef17297a6c0&output_type=jpg",
+    head: "Anytime access",
+    body: "Get to your files whenever and wherever you need them—on desktop, mobile or web ",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/storage-watermark-ui-transparent-2560x2560.png?id=0a37ebad-1922-414f-9a5c-07bd331c55c3&width=2560&output_type=png",
+    head: "Seamless security",
+    body: "Be sure your content is protected accross all devices with industry-leading encrytion, automatic backup, and two factor authentication",
+  },
 ];
 
 export const everyV1 = [
-  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/02a_capture_tray_1440.png?id=764f26f5-f879-4186-987b-afe5a3b6058c&output_type=png',head : 'Be heard and stay engaged', body : 'Take screen recordings, screenshots, and GIFs with one click and share them easily with a link.'},
-  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/01b_capture_permissions_1920x1280.png?id=d6fbee0a-6d58-4ab4-95a6-7eebc8cd886e&width=1920&output_type=png',head : 'Quickly share updates with your team', body : 'Personalize and share your message with the right people at the right time using sharing links. '},
-  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/capture_sharedcollections_840xauto.png?id=3eb5fe46-2bfa-4df0-b389-2aec4c77aa72&output_type=png',head : 'Integrate seamlessly into the way you work', body : 'Use your existing keyboard shortcuts and work faster with content automatically stored in Dropbox.'},
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/02a_capture_tray_1440.png?id=764f26f5-f879-4186-987b-afe5a3b6058c&output_type=png",
+    head: "Be heard and stay engaged",
+    body: "Take screen recordings, screenshots, and GIFs with one click and share them easily with a link.",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/01b_capture_permissions_1920x1280.png?id=d6fbee0a-6d58-4ab4-95a6-7eebc8cd886e&width=1920&output_type=png",
+    head: "Quickly share updates with your team",
+    body: "Personalize and share your message with the right people at the right time using sharing links. ",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/capture/capture_sharedcollections_840xauto.png?id=3eb5fe46-2bfa-4df0-b389-2aec4c77aa72&output_type=png",
+    head: "Integrate seamlessly into the way you work",
+    body: "Use your existing keyboard shortcuts and work faster with content automatically stored in Dropbox.",
+  },
 ];
 
 export const everyV2 = [
-  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-create-template-ui-transparent-2560x2560.png?id=85a5d26b-6f55-461b-9b3c-a24251717dc6&width=2560&output_type=png',head : 'Document templates', body : 'Stop wasting time preparing the same documents. Minimize duplicative work by using customizable templates to send common forms, like NDAs and tax forms, to multiple recipients. '},
-  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-send-reminder-ui-transparent-2560x2560.png?id=d673cd2b-0173-47e5-972b-7a7e8c474ccc&width=2560&output_type=png',head : 'Automated reminders', body : 'Cut down the time from pitch to purchase order. Dropbox eSignatures have built-in reminders so you don’t have to chase paperwork. '},
-  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-mobile-signing-ui-transparent-2560x2560.png?id=7b3b3a20-337f-410f-b120-d169b84361d4&width=2560&output_type=png',head : 'Mobile-friendly signing', body : 'Take advantage of every opportunity. Mobile-friendly signing empowers teams to work from wherever they are—at the office or on the go.'},
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-create-template-ui-transparent-2560x2560.png?id=85a5d26b-6f55-461b-9b3c-a24251717dc6&width=2560&output_type=png",
+    head: "Document templates",
+    body: "Stop wasting time preparing the same documents. Minimize duplicative work by using customizable templates to send common forms, like NDAs and tax forms, to multiple recipients. ",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-send-reminder-ui-transparent-2560x2560.png?id=d673cd2b-0173-47e5-972b-7a7e8c474ccc&width=2560&output_type=png",
+    head: "Automated reminders",
+    body: "Cut down the time from pitch to purchase order. Dropbox eSignatures have built-in reminders so you don’t have to chase paperwork. ",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/hellosign/sign-mobile-signing-ui-transparent-2560x2560.png?id=7b3b3a20-337f-410f-b120-d169b84361d4&width=2560&output_type=png",
+    head: "Mobile-friendly signing",
+    body: "Take advantage of every opportunity. Mobile-friendly signing empowers teams to work from wherever they are—at the office or on the go.",
+  },
 ];
 
-export const everyV3   = [
-  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-users-badge-480x480.svg?id=523c3c0a-748f-42e4-ae9c-f970be0695ca',head : 'Users love us', body : 'Dropbox users rate our products highly among our peers.' , bg : '#2b2929'},
-  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-enterprise-badge-480x480.svg?id=ab211839-ba82-4d4d-816f-e0b8e71ccc20',head : 'Leader in enterprise', body : 'Dropbox is highly rated by G2 users and has a substantial Satisfaction and Market Presence score.' , bg : '#2b2929'},
-  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-momentum-badge-480x480.svg?id=20a2685e-ca4d-46fa-8f90-dda10062a2e3',head : 'Momentum leader', body : 'Dropbox ranks in the Momentum Grid® rank in the top 25% of our category’s products by users.' , bg : '#2b2929'},
-  {id : 4, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-leader-badge-480x480.svg?id=6db8fb57-9b4d-4803-933b-fc197a2685c1',head : 'Leader', body : 'Dropbox is a Winter 2024 Leader according to reviews by G2 users!' , bg : '#2b2929'},
+export const everyV3 = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-users-badge-480x480.svg?id=523c3c0a-748f-42e4-ae9c-f970be0695ca",
+    head: "Users love us",
+    body: "Dropbox users rate our products highly among our peers.",
+    bg: "#2b2929",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-enterprise-badge-480x480.svg?id=ab211839-ba82-4d4d-816f-e0b8e71ccc20",
+    head: "Leader in enterprise",
+    body: "Dropbox is highly rated by G2 users and has a substantial Satisfaction and Market Presence score.",
+    bg: "#2b2929",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-momentum-badge-480x480.svg?id=20a2685e-ca4d-46fa-8f90-dda10062a2e3",
+    head: "Momentum leader",
+    body: "Dropbox ranks in the Momentum Grid® rank in the top 25% of our category’s products by users.",
+    bg: "#2b2929",
+  },
+  {
+    id: 4,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/enterprise/g2-leader-badge-480x480.svg?id=6db8fb57-9b4d-4803-933b-fc197a2685c1",
+    head: "Leader",
+    body: "Dropbox is a Winter 2024 Leader according to reviews by G2 users!",
+    bg: "#2b2929",
+  },
 ];
-
 
 export const easy = [
-  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/01_Backup_Simple-Computer-Backup_840x840.png?id=82281998-f695-4e27-80bc-54964274afab&output_type=png',head : 'Backup made simple', body : 'In just a few clicks, you can choose the files and folders you want Backup to keep safe, and we’ll take it from there.'},
-  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/03_Backup-External-Drive_840x840.png?id=5098b754-be53-4b5f-8f1c-72e2e3e7789a&output_type=png',head : 'An automated safety net', body : 'Automatic, always-on cloud backup saves you from accidental deletions, drive failures, and ransomware attacks.'},
-  {id : 3, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/02_Backup_Restoration_840x840.png?id=52ff9a9b-9e32-468b-8ee5-7ea6d9442fab&output_type=png',head : 'Fast file recovery', body : 'Restore files quickly, and they’ll show up right back where you had them—no need to reorganize.'},
-]
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/01_Backup_Simple-Computer-Backup_840x840.png?id=82281998-f695-4e27-80bc-54964274afab&output_type=png",
+    head: "Backup made simple",
+    body: "In just a few clicks, you can choose the files and folders you want Backup to keep safe, and we’ll take it from there.",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/03_Backup-External-Drive_840x840.png?id=5098b754-be53-4b5f-8f1c-72e2e3e7789a&output_type=png",
+    head: "An automated safety net",
+    body: "Automatic, always-on cloud backup saves you from accidental deletions, drive failures, and ransomware attacks.",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/02_Backup_Restoration_840x840.png?id=52ff9a9b-9e32-468b-8ee5-7ea6d9442fab&output_type=png",
+    head: "Fast file recovery",
+    body: "Restore files quickly, and they’ll show up right back where you had them—no need to reorganize.",
+  },
+];
 
 export const hows = [
-  {id : 1, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/professionals-ui-1272x424.jpg?id=307eff00-8218-492a-8df5-659ca1fd4888&output_type=jpg',head : 'For work', body : 'Work efficiently with teammates and clients, stay in sync on projects, and keep company data safe—all',link : '/overview?frompath=dropbox', name:'Try Dropbox'},
-  {id : 2, src: 'https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/teams-ui-1272x424.jpg?id=5576ba5e-cca2-4b39-8abd-c2119e398717&output_type=jpg',head : 'For personal use', body : `Keep everything  that's important to you sharable and safe in one place. Store files in the cloud, share photos and videos, and more`, link : '/nav/plans', name: 'Compare plans'},
-]
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/professionals-ui-1272x424.jpg?id=307eff00-8218-492a-8df5-659ca1fd4888&output_type=jpg",
+    head: "For work",
+    body: "Work efficiently with teammates and clients, stay in sync on projects, and keep company data safe—all",
+    link: "/overview?frompath=dropbox",
+    name: "Try Dropbox",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/teams-ui-1272x424.jpg?id=5576ba5e-cca2-4b39-8abd-c2119e398717&output_type=jpg",
+    head: "For personal use",
+    body: `Keep everything  that's important to you sharable and safe in one place. Store files in the cloud, share photos and videos, and more`,
+    link: "/nav/plans",
+    name: "Compare plans",
+  },
+];
 
 export const why = [
   {
@@ -313,7 +464,6 @@ export const listing = [
     fact: "Speed up document turnaround with the ability to convert, edit, sign and organise PDFs",
   },
 ];
-
 
 export const cards = [
   {
@@ -454,7 +604,6 @@ export const customer = [
   },
 ];
 
-
 export const customerV1 = [
   {
     id: 1,
@@ -499,7 +648,6 @@ export const customerV1 = [
     name: "M. Collins, United States",
   },
 ];
-
 
 export const customersV1 = [
   {
@@ -553,7 +701,7 @@ export const customerV2 = [
     body: "“DocSend shows us exactly which prospective clients are engaging with proposals and are interested in working with us. I love how the email notifications alert me when someone is reviewing a proposal in real-time, which helps me prioritize strategic follow-up and insight on any potential questions.”",
     name: "Jon Cattivera",
     role: "CEO and Creative Director, Sleepless Media",
-    link: 'https://www.docsend.com/customers/sleepless-media/'
+    link: "https://www.docsend.com/customers/sleepless-media/",
   },
   {
     id: 2,
@@ -561,7 +709,7 @@ export const customerV2 = [
     body: `“DocSend’s NDA lets us share industry research with peers with a single click of a button. Fund managers and investors alike can access their signed NDAs after completion, making for an easy audit trail.”`,
     name: "David Jud",
     role: "Finance Manager, Aquamarine",
-    link : 'https://www.docsend.com/customers/aquamarine/'
+    link: "https://www.docsend.com/customers/aquamarine/",
   },
   {
     id: 3,
@@ -569,7 +717,7 @@ export const customerV2 = [
     body: `“I brought DocSend on to share presentations and financials with our board. It’s been helpful for me to see who has interacted with a document before a meeting. DocSend’s analytics let me know how to best prepare and tailor the meeting to our board members’ top interests.”`,
     name: "David J. Whelan",
     role: "CEO, BioscienceLA",
-    link : 'https://www.docsend.com/customers/biosciencela/'
+    link: "https://www.docsend.com/customers/biosciencela/",
   },
   {
     id: 4,
@@ -577,7 +725,7 @@ export const customerV2 = [
     body: `“Our decision to use DocSend’s data room for fundraising is largely driven by the idea of version control. Having the ability to control distribution and access to our information has been invaluable to us.”`,
     name: "William Crowder",
     role: "Founder and Managing Partner, Aperture Venture Capital",
-    link: 'https://www.docsend.com/customers/aperture-venture-capital/'
+    link: "https://www.docsend.com/customers/aperture-venture-capital/",
   },
 ];
 
@@ -588,7 +736,7 @@ export const customerV3 = [
     body: "“The policy processing group spent about 20% of their day, say two to three hours, 240 days per year, indexing documents. By eliminating the manual indexing and getting the electronic signature in real time, we’re saving over 700 employee hours per year.”",
     name: "—Bob Negrey",
     role: "VP of Information Technology, CGIA",
-    link: ''
+    link: "",
   },
   {
     id: 2,
@@ -596,7 +744,7 @@ export const customerV3 = [
     body: `“HelloSign [now Dropbox Sign] is extremely convenient for us to use since everything can be signed on a mobile device anywhere at any time. It saves me and my clients a lot of time, especially for contracts that need be signed outside of the country.”`,
     name: "—Jason Lew",
     role: "Director and Founder, Entrust",
-    link : ''
+    link: "",
   },
   {
     id: 3,
@@ -604,7 +752,7 @@ export const customerV3 = [
     body: `““HelloSign [now Dropbox Sign] is location and device-agnostic, and scalable. For an IT team, that’s the dream: everyone gets the same experience, and maintenance is simple. This means we don’t have to change how we work as we grow—HelloSign [now Dropbox Sign] and Dropbox Business will grow and scale with us.””`,
     name: "—Daniel Halter",
     role: "Group IT Manager, VolitionRX",
-    link : ''
+    link: "",
   },
   {
     id: 4,
@@ -612,7 +760,7 @@ export const customerV3 = [
     body: `“I have used various top-notch, expensive eSignature solutions, but HelloSign [now Dropbox Sign] changed my perspective. It is the simplest and has the best UX while still achieving the same output as those other expensive solutions.”`,
     name: "—Edmund Liu",
     role: "Head of InfoComm Technology & Management, ISCA",
-    link: ''
+    link: "",
   },
   {
     id: 5,
@@ -620,11 +768,9 @@ export const customerV3 = [
     body: `“The changeover to HelloSign [now Dropbox Sign] was seamless. Our hundreds of users didn’t even notice the transition and we’ve had minimal support requests compared to the previous application.”`,
     name: "—Shelley Glueckert",
     role: "Director of Salesforce Automation, Vivial",
-    link: ''
+    link: "",
   },
 ];
-
-
 
 export const questionsV3 = [
   {
@@ -705,7 +851,7 @@ export const questionsV1 = [
     baby: "You can restore your files to a new computer to get your shiny new laptop up and running with ease—no complicated or slow manual connections from computer to computer.",
     alt: "Restoration process image",
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_migrate_files_1440x1440.png?id=58105247-15e4-4dab-9fc0-7ae97b983f0b&width=2880&output_type=png",
-    bg : '#fa551e'
+    bg: "#fa551e",
   },
   {
     id: 2,
@@ -713,7 +859,7 @@ export const questionsV1 = [
     baby: "Getting back up and running works just the way it should—quickly and easily. Start recovery with just a few clicks, and your files will be automatically restored from cloud backup to their original locations.",
     alt: "Restoration process image",
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_easily_recover_1440x1440.png?id=b60e06ec-61f1-4763-92f9-6addbd7ce60c&width=2880&output_type=png",
-    bg : '#c8aff0'
+    bg: "#c8aff0",
   },
   {
     id: 3,
@@ -721,7 +867,7 @@ export const questionsV1 = [
     baby: "Backup is included in all Dropbox plans, giving you cloud backup and all the tools you need to collaborate and stay organized—all in a single subscription.",
     alt: "image of dropbox tools",
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup-consolidate-tools-1440x1440.png?id=f3af389e-caaa-44e0-80fc-49d5ec88f0a1&output_type=png",
-    bg : '#14c8eb'
+    bg: "#14c8eb",
   },
   {
     id: 4,
@@ -729,7 +875,7 @@ export const questionsV1 = [
     baby: "Built on a secure and reliable network trusted by 700 million users worldwide, your files are safe with Dropbox.",
     alt: "image depicting security",
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup-secure-files-1440x1440.png?id=2590edd3-e04a-4b41-b89e-85d9f0f60a79&output_type=png",
-    bg : '#fad24b'
+    bg: "#fad24b",
   },
   {
     id: 5,
@@ -737,7 +883,7 @@ export const questionsV1 = [
     baby: "Dropbox Backup stores your files separate from your shared files, so you won’t have to worry about overwriting your emergency backups.",
     alt: "Backup page",
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_keep_files_separate_1440x1440.png?id=56e7c04b-3b3e-4023-887b-c6eb428fbe82&width=2880&output_type=png",
-    bg : '#ffafa5'
+    bg: "#ffafa5",
   },
   {
     id: 6,
@@ -745,7 +891,7 @@ export const questionsV1 = [
     baby: "One-time setup keeps files stored across devices—like your computer and external drive—safe in one place.",
     alt: "Backup page",
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_multiple_device_backup_1440x1440.png?id=94f0d8d2-5c68-4ffe-af46-f45e13dde525&width=2880&output_type=png",
-    bg : '#14c8eb'
+    bg: "#14c8eb",
   },
   {
     id: 7,
@@ -753,7 +899,7 @@ export const questionsV1 = [
     baby: "Just as you’d expect from Dropbox, you can easily get to your backed up files any time, anywhere—from your computer, through our mobile app, or on the web.",
     alt: "Backup on android",
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Backup_mobile_backup_1440x1440.png?id=f6f79922-b054-4058-9b45-9be63eaaca89&width=2880&output_type=png",
-    bg : '#b4dc19'
+    bg: "#b4dc19",
   },
 ];
 
@@ -841,6 +987,29 @@ export const stats = [
   },
 ];
 
+export const statsV1 = [
+  {
+    topic: "56% of Fortune 500 companies",
+    id: 1,
+    body: "have at least one Dropbox team plan.",
+  },
+  {
+    topic: "600k+ teams globally",
+    id: 2,
+    body: "use Dropbox to share work, safeguard content, and grow their business.",
+  },
+  {
+    topic: "4.5B connections and counting",
+    id: 3,
+    body: "created through Dropbox file sharing.",
+  },
+  {
+    topic: "1B+ mobile app downloads",
+    id: 4,
+    body: "with Editors’ Choice Awards from the Google Play and Apple App Store.",
+  },
+];
+
 export const doings = [
   {
     topic: "Personalize the pitch",
@@ -862,6 +1031,32 @@ export const doings = [
   },
 ];
 
+export const better = [
+  {
+    topic: "Boost your bottom line",
+    id: 1,
+    body: "Teams using Dropbox saw a 375% ROI and payback in under six months.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/money-coconut.svg?id=6619a576-0031-4a11-8032-6f569b4c1576",
+  },
+  {
+    topic: "Skip the do-overs",
+    id: 2,
+    body: "Dropbox increased collaboration by 10% and showed a 90% reduction in rework.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/rocket-coconut.svg?id=af806b07-aa72-4bc3-9d95-6ff7e24490a5",
+  },
+  {
+    topic: "Get more done",
+    id: 3,
+    body: "Companies using Dropbox improved productivity – valued at over $530,000 – over three years.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/to_do_coconut.svg?id=12b68efe-096f-47a7-bd2f-35383e084269",
+  },
+  {
+    topic: "Go big and go home",
+    id: 3,
+    body: "Dropbox supports over 189 file types and can handle large files, HD and 4k-rich media up to 2 TB – with 4X faster upload, download and sync.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/win-coconut.svg?id=395b8945-5c84-4b77-9916-4852b8bcddb3",
+  },
+];
 
 export const customersV2 = [
   {
@@ -883,7 +1078,30 @@ export const customersV2 = [
     name: "Anna Lecat",
     role: "CEO Les Lunes",
   },
+];
 
+export const customersV3 = [
+  {
+    id: 1,
+    body: `“Compared to its competitors, Dropbox is more secure, supports a wider variety of files and syncs files faster. It’s the perfect app if you need to collaborate on a project and share files back and forth, or if you just want to sync up your own files between your devices.”`,
+    name: "Chloe Good",
+    link: "https://www.g2.com/survey_responses/dropbox-review-9032955",
+    role: "Project Manager at Vinfen",
+  },
+  {
+    id: 2,
+    body: `“Easy to use, easy to operate, reliable file-syncing and storage service with enhanced collaboration features, provides tighter admin controls and sharing settings, and it’s designed for businesses.”`,
+    link: "https://www.g2.com/products/dropbox/reviews/dropbox-review-4544693",
+    name: "Verified User",
+    role: "Information Technology and Services",
+  },
+  {
+    id: 3,
+    body: "“The file review reminder option is very helpful, especially when a project is live. All project updates can be uploaded to Dropbox Business, and the Admin can allow the participants to either edit or have full control. Dropbox Business can easily be downloaded and set up even on a Mobile device.”",
+    name: "Aurovinda Shyamal",
+    link: '',
+    role: "Senior Software Engineer at Eurofins",
+  },
 ];
 
 export const collabs = [
@@ -940,7 +1158,6 @@ export const collabsV1 = [
   },
 ];
 
-
 export const collabsV2 = [
   {
     topic: "Boost your bottom line",
@@ -970,7 +1187,7 @@ export const collabsV2 = [
 
 export const questionsv4 = [
   {
-    id: 1,        
+    id: 1,
     topic: "Document protection for peace of mind",
     baby: "Secure documents with passwords and expiration dates and turn off the ability to download.",
     alt: "Depiction of security",
@@ -1004,11 +1221,71 @@ export const questionsv4 = [
 ];
 
 export const subLink = [
-  {label : 'Privacy & terms', link : '/en_GB/terms', id : 1},
-  {label : 'Cookie policy', link : 'https://help.dropbox.com/security/cookies', id : 2},
-  {label : 'Cookies & CCPA preferences', link : '/login#manage-cookies', id : 3},
-  {label : 'AI Principles', link : '/en-GB/ai-principles', id : 4},
-  {label : 'Modern Slavery Statement', link : 'https://assets.dropbox.com/warp/en-us/modern-slavery/Dropbox_Modern_Slavery_Statement.pdf', id:5},
-]
+  { label: "Privacy & terms", link: "/en_GB/terms", id: 1 },
+  {
+    label: "Cookie policy",
+    link: "https://help.dropbox.com/security/cookies",
+    id: 2,
+  },
+  { label: "Cookies & CCPA preferences", link: "/login#manage-cookies", id: 3 },
+  { label: "AI Principles", link: "/en-GB/ai-principles", id: 4 },
+  {
+    label: "Modern Slavery Statement",
+    link: "https://assets.dropbox.com/warp/en-us/modern-slavery/Dropbox_Modern_Slavery_Statement.pdf",
+    id: 5,
+  },
+];
 
+export const partners = [
+  {
+    topic: "Zoom",
+    id: 1,
+    body: "Connect and collaborate on all your content, in real time, no matter where your teams may be.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/zoom-64x64.svg?id=efe22ed9-cd50-4936-9d61-3ed948d1f67b",
+  },
+  {
+    topic: "Slack",
+    id: 2,
+    body: "Integrate your conversations and Dropbox content to keep teams in sync.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/slack-64x64.svg?id=e028dbd7-df26-4076-ad15-faa51c132578",
+  },
+  {
+    topic: "Office365",
+    id: 3,
+    body: "Easily access, edit and share Office docs online in Dropbox.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/office-365-64x64.svg?id=4476fa42-2482-45b5-8bbd-3b83027ca3e7",
+  },
+  {
+    topic: "Google Workspace",
+    id: 4,
+    body: "Create, edit and share Google Docs, Sheets and Slides from Dropbox.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/google-workspace-64x64.svg?id=78f36f5f-a55a-4904-b45f-03a76f6688a9",
+  },
+];
 
+export const partnersV1 = [
+  {
+    topic: "Microsoft Teams",
+    id: 1,
+    body: "Share files directly from Dropbox to the work you’re doing in Microsoft Teams.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/microsoft-teams-64x64.svg?id=e733e298-cbb9-4d15-aebd-f5dad25527f6",
+  },
+  {
+    topic: "Canva",
+    id: 2,
+    body: "Create beautiful graphics in Canva with your content from Dropbox.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/canva-64x64.svg?id=0d0d356b-8ac1-4afb-b61e-9614c3fd73e6",
+  },
+  {
+    topic: "Asana",
+    id: 3,
+    body: "Teams can track any kind of work with Asana, while keeping content from Dropbox right alongside.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/asana-64x64.svg?id=7f82e737-0902-4a4b-9396-2117a12a8eee",
+  },
+  {
+    topic: "Miro",
+    id: 4,
+    body: "Map, discuss and work together with your Dropbox files on an online collaborative whiteboard.",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/icons/miro-64x64.svg?id=e20a901b-070f-4c95-9e78-df93ac92c253",
+  },
+];
