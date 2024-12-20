@@ -1,6 +1,6 @@
 import { golos } from "../fonts";
 import BigPicCard, { BigPicCardV1 } from "./big-pic Card";
-import { every, everyV1, everyV2, everyV4 } from "../navbar/links";
+import { every, everyV1, everyV2 } from "../navbar/links";
 import { EveryV3, EveryV4 } from "@/app/lib/definitions";
 
 export default function Everything() {
