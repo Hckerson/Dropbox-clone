@@ -308,6 +308,28 @@ export const every = [
   },
 ];
 
+export const everyV4 = [
+  {
+    id: 1,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/desktop/Image-5-permissions-en_GB.png?id=fb5b34d4-3b67-4336-8a23-715e45bd271d&output_type=png",
+    head: "Control file and folder permissions",
+    body: "Dropbox makes it easy to control who can access your files and how much they can do.",
+  },
+  {
+    id: 2,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/desktop/Image-6-tray-en_GB.png?id=ffccc1b6-fe19-4fce-8c81-0cf71b3b08b2",
+    head: "Take a quick glance",
+    body: "Search your files and see recent activity by clicking the Dropbox icon on your PC’s taskbar or Mac’s menu bar.  ",
+  },
+  {
+    id: 3,
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/desktop/Image-7-organize-en_GB.png?id=7be1b527-a5d5-4b09-b57e-fc9ccbd6b60e&output_type=png",
+    head: "Organise it all",
+    body: "Give your files focus by adding them to folders, dragging to different locations, renaming and more.",
+  },
+];
+
+
 export const everyV1 = [
   {
     id: 1,

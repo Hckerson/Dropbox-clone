@@ -1,4 +1,4 @@
-import { GetStartedv1, GetStarted, ActionB,  ActionBV2} from "./get-started";
+import { GetStartedv1, GetStarted, ActionB, ActionBV2 } from "./get-started";
 import Link from "next/link";
 import { golos } from "../fonts";
 export default function Information() {
@@ -353,8 +353,72 @@ export function Informationv6() {
       <div className="w-full box-border grid pt-6 gap-y-6" id="start">
         <div className="w-full box-border grid  gap-y-6">
           <div className="2xl:pr-6 text-white">
-            <ActionBV2 text="Contact Sales" link="https://experience.dropbox.com/contact" />
+            <ActionBV2
+              text="Contact Sales"
+              link="https://experience.dropbox.com/contact"
+            />
           </div>
+        </div>
+        <div className="lg:hidden md:block hidden"></div>
+      </div>
+    </div>
+  );
+}
+
+export function Informationv7() {
+  return (
+    <div className="box-border w-full p-6 md:p-12 md:pb-40 grid">
+      <div className="w-full box-border grid gap-y-5">
+        {" "}
+        <h1
+          style={{
+            overflowWrap: "anywhere",
+            textAlign: "unset",
+            lineHeight: "100%",
+          }}
+          className={`font-normal box-border hyphens-manual text-3xl text-wrap   md:text-5xl ${golos.className}`}
+        >
+          The Dropbox desktop app
+        </h1>
+        <p className="font-light text-wrap hyphens-manual text-base ">
+          Save hard drive space, share and edit files and send for signature –
+          all without the distraction of countless browser tabs.
+        </p>
+        <p className="font-light text-wrap hyphens-manual text-base ">
+          Get the desktop app now.
+        </p>
+      </div>
+      <div className="w-full box-border grid pt-6 gap-y-6" id="start">
+        <div className="w-full box-border grid  gap-y-6">
+          <div className="2xl:pr-6 text-white">
+            <ActionB
+              link="https://www.dropbox.com/download?os=win"
+              text="Install"
+            />
+          </div>
+          <Link href="https://dropbox.com/try/teams">
+            {" "}
+            <p className="inline-flex items-center text-base font-semibold group  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+              Learn more{" "}
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                width="24"
+                height="24"
+                role="presentation"
+                focusable="false"
+              >
+                <path
+                  d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+              </svg>
+            </p>
+          </Link>
         </div>
         <div className="lg:hidden md:block hidden"></div>
       </div>

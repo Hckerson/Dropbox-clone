@@ -82,7 +82,7 @@ export function ReadyB({ link }: { link: string }) {
 export function ActionB({ link, text }: { link: string, text : string }) {
   return (
     <div
-      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3" style={{height : 'fit-content', width : 'fit-content'}}
+      className="rounded-2xl  group flex bg-[#0061fe] hover:bg-blue-700 space-x-3" style={{height : 'fit-content', width : 'fit-content'}}
     >
       <Link
         href={link}

@@ -291,3 +291,65 @@ export function LeftyV3() {
     </div>
   );
 }
+
+export function LeftyV4() {
+  return (
+    <div className="grid items-center h-full py-10   lg:py-20" id="two">
+      <div className="xl:flex hidden"></div>
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
+        <div className="grid text-white  gap-y-3">
+          <p className={`text-3xl font-normal ${golos.className}`}>
+            Share files quickly, with anyone
+          </p>
+          <span>
+            Share a Dropbox link – of photos, videos, zipped folders, CAD files
+            and more – with anyone, even if they don’t have a Dropbox account.
+          </span>
+          <span className=" font-normal">
+            Have big files to share? Got you covered. Dropbox is still the best
+            way to share big files.
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function RightyV4() {
+  return (
+    <div className="grid items-center h-full py-10   lg:py-20" id="one">
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
+        <div className="grid text-white gap-y-6">
+          <p className={`text-3xl  font-normal ${golos.className}`}>
+            Changes sync everywhere
+          </p>
+          <span>
+            Every update you make to your desktop file or folder will also
+            reflect on dropbox.com, and on your mobile phone and tablet.
+          </span>
+        </div>
+      </div>
+      <div className="xl:flex hidden"></div>
+    </div>
+  );
+}
+
+export function LeftyV5() {
+  return (
+    <div className="grid items-center h-full py-10   lg:py-20" id="two">
+      <div className="xl:flex hidden"></div>
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
+        <div className="grid text-white  gap-y-3">
+          <p className={`text-3xl font-normal ${golos.className}`}>
+            Right-click your files and do more
+          </p>
+          <span>
+            Want to send your file for signature? See version history? By
+            right-clicking a file in your Dropbox folder, you can uncover a
+            whole host of options.
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}

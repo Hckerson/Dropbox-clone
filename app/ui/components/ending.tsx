@@ -8,7 +8,7 @@ export default function Ending({
   text
 }: {
   word: string;
-  condition: boolean;
+  condition?: boolean;
   link : string;
   text : string
 }) {

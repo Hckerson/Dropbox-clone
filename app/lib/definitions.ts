@@ -48,3 +48,10 @@ export type EveryV3 = {
   body: string;
   bg: string;
 };
+
+export type EveryV4 = {
+  id: number;
+  src: string;
+  head: string;
+  body: string;
+};
