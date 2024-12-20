@@ -20,7 +20,7 @@ export default function Whitemenu() {
   };
   return (
     <div
-      style={{ maxHeight: "100vh", backgroundColor : ' rgb(238, 233, 226)' }}
+      style={{ maxHeight: "100vh", backgroundColor: " rgb(238, 233, 226)" }}
       className="fixed h-full  inset-x-0 block xl:hidden  bg-opacity-95  w-full box-border overflow-scroll mt-3 md:mt-7  z-30  justify-center"
     >
       <div className="py-10 w-full box-border ">
@@ -57,9 +57,7 @@ export default function Whitemenu() {
             <div
               className={clsx(
                 "overflow-hidden w-full transition-all duration-300 ease-in-out",
-                openMenu === "products"
-                  ? "h-auto opacity-100"
-                  : "h-0 opacity-0"
+                openMenu === "products" ? "h-auto opacity-100" : "h-0 opacity-0"
               )}
             >
               <ul className="w-full box-border p-6 md:p-12 bg-stone-100 flex justify-between space-x-3 overflow-scroll">
@@ -189,7 +187,9 @@ export default function Whitemenu() {
                 >
                   <div className="w-full box-border  flex flex-col space-y-8">
                     <div className="flex flex-col space-y-6">
-                      <legend className="text-base text-stone-500 font-medium">Team</legend>
+                      <legend className="text-base text-stone-500 font-medium">
+                        Team
+                      </legend>
                       {team.map((each) => {
                         return (
                           <li className="" key={each.label}>
@@ -322,7 +322,10 @@ export default function Whitemenu() {
                   openMenu === "contact sales" ? "text-blue-500" : "text-black"
                 )}
               >
-                <Link href="/nav/contact"> Contact sales</Link>
+                <Link href="https://experience.dropbox.com/contact">
+                  {" "}
+                  Contact sales
+                </Link>
               </span>
             </div>
           </li>

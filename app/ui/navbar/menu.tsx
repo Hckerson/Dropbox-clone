@@ -320,7 +320,10 @@ export default function Menu() {
                   openMenu === "contact sales" ? "text-blue-500" : "text-white"
                 )}
               >
-                <Link href="/nav/contact"> Contact sales</Link>
+                <Link href="https://experience.dropbox.com/contact">
+                  {" "}
+                  Contact sales
+                </Link>
               </span>
             </div>
           </li>

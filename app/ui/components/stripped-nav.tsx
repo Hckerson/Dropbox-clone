@@ -45,7 +45,7 @@ export default function Navbar({ condition = true }) {
             <GlobeAltIcon className=" size-4 sm:size-5  hidden xs:block" />
             <div className="box-border hidden xl:flex flex-col items-center justify-center">
               <Link
-                href="/nav/contact"
+                href="https://experience.dropbox.com/contact"
                 className={clsx(
                   "px-2 py-3  h-full focus:outline-none hover:text-blue-600 text-sm xs:text-base font-light  focus:ring-offset-0 items-center  transition-colors ease-in-out  flex space-x-1 "
                 )}

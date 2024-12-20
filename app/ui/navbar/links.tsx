@@ -107,7 +107,7 @@ export const lLink = [
 ];
 
 export const rLink = [
-  { name: "Contact sales", href: "/nav/contact" },
+  { name: "Contact sales", href: "https://experience.dropbox.com/contact" },
   { name: "Get app", href: "", icon: ChevronDownIcon, dropdown: GDD },
   { name: "Sign up", href: "/en_GB/register" },
   { name: "Log in", href: "/en_GB/login" },
@@ -121,7 +121,7 @@ export const L = [
 ];
 
 export const R = [
-  { name: "Contact sales", href: "/nav/contact" },
+  { name: "Contact sales", href: "https://experience.dropbox.com/contact" },
   { name: "Get app", href: "", icon: ChevronDownIcon, dropdown: GDDs },
   { name: "Sign up", href: "/en_GB/register" },
   { name: "Log in", href: "/en_GB/login" },
@@ -1099,7 +1099,7 @@ export const customersV3 = [
     id: 3,
     body: "“The file review reminder option is very helpful, especially when a project is live. All project updates can be uploaded to Dropbox Business, and the Admin can allow the participants to either edit or have full control. Dropbox Business can easily be downloaded and set up even on a Mobile device.”",
     name: "Aurovinda Shyamal",
-    link: '',
+    link: "",
     role: "Senior Software Engineer at Eurofins",
   },
 ];
