@@ -8,7 +8,7 @@ export function GetStarted() {
   return (
     <div>
       <Link
-        href="/nav/plans"
+        href="/en_GB/plans"
         className=" rounded-xl px-4 py-3  bg-white w-full font-semibold "
       >
         Get Started
@@ -21,7 +21,7 @@ export function Started() {
   return (
     <div>
       <Link
-        href="/nav/plans"
+        href="/en_GB/plans"
         className=" rounded-xl px-4 py-3  bg-blue-600 w-full font-semibold "
       >
         Get Started
@@ -37,7 +37,7 @@ export function Mainmenu() {
   };
 
   return (
-    <div className="mr-3 sm:mr-0" >
+    <div className="mr-3 sm:mr-0">
       {!menuOpen && (
         <Bars3Icon
           className=" h-6 xl:hidden cursor-pointer "

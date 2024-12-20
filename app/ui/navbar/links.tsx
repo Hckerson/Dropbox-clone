@@ -329,7 +329,6 @@ export const everyV4 = [
   },
 ];
 
-
 export const everyV1 = [
   {
     id: 1,
@@ -438,7 +437,7 @@ export const hows = [
     src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/teams-ui-1272x424.jpg?id=5576ba5e-cca2-4b39-8abd-c2119e398717&output_type=jpg",
     head: "For personal use",
     body: `Keep everything  that's important to you sharable and safe in one place. Store files in the cloud, share photos and videos, and more`,
-    link: "/nav/plans",
+    link: "/en_GB/plans",
     name: "Compare plans",
   },
 ];

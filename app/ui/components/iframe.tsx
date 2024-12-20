@@ -16,7 +16,7 @@ export default function IFrame({src}: {src: string}) {
           </h2>
           <section className="w-full ">
             <div
-              style={{ aspectRatio: 16 / 9 }}
+              style={{ aspectRatio: 16 / 9, pointerEvents : 'all', position : 'static' }}
               className="flex lg:px-12 md:px-6 px-4 box-border w-full h-auto flex-col items-center "
             >
               <iframe src={src} className="h-full w-full"></iframe>

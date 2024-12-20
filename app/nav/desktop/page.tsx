@@ -1,6 +1,7 @@
 import Navbar from "@/app/ui/navbar/nav-bar 2.0";
 import { Informationv7 } from "@/app/ui/components/inform";
 import { FrameV1 } from "@/app/ui/components/picture-frame";
+import { Blur } from "@/app/ui/navbar/nav-link 2.0";
 import { LeftyV4, RightyV4, LeftyV5 } from "@/app/ui/components/rem";
 import { EverythingV4 } from "@/app/ui/components/everything";
 import { golos } from "@/app/ui/fonts";
@@ -13,6 +14,7 @@ export const metadata: Metadata = {
 export default function page() {
   return (
     <div className="box-border w-full ">
+      <Blur/>
       <div className="w-full box-border z-50 fixed top-0">
         <Navbar />
       </div>

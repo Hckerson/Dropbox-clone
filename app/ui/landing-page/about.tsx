@@ -46,7 +46,9 @@ export default function About() {
             (fadeEndPercent - fadeStartPercent);
         const scaleValue =
           maxScale -
-          ((scrollPercentage - fadeStartPercent) / (fadeEndPercent - fadeStartPercent)) * 0.25 ;
+          ((scrollPercentage - fadeStartPercent) /
+            (fadeEndPercent - fadeStartPercent)) *
+            0.25;
         setScale(scaleValue);
         setOpacity(opacityValue);
         setBgColor(bgColorValue);
@@ -83,9 +85,7 @@ export default function About() {
         className="box-border"
       >
         <div className="box-border justify-center items-center flex flex-wrap space-y-5 flex-col">
-          <h2
-            className="text-balance sm:text-wrap text-4xl md:text-6xl font-semibold text-white text-center box-border "
-          >
+          <h2 className="text-balance sm:text-wrap text-4xl md:text-6xl font-semibold text-white text-center box-border ">
             Get to work, with a lot less work
           </h2>
           <p
@@ -132,7 +132,7 @@ export default function About() {
             <div className="">
               <Link
                 className="text-sm text-white underline flex mt-5 mb-1 px-3 group"
-                href="/nav/plans"
+                href="/en_GB/plans"
               >
                 <p className="inline-flex items-center text-base">
                   Find your plan

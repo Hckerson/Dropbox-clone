@@ -6,7 +6,7 @@ export function GetStarted() {
   return (
     <div className="w-full  bg-blue-500 hover:bg-blue-400 rounded-2xl ">
       <Link
-        href="/nav/plans"
+        href="/en_GB/plans"
         className=" rounded-xl w-full text-black group px-6 py-6 justify-between flex space-x-3 font-semibold "
       >
         Get Started now
@@ -49,7 +49,8 @@ export function GetStartedv1() {
 export function ReadyB({ link }: { link: string }) {
   return (
     <div
-      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3" style={{height : 'fit-content'}}
+      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3"
+      style={{ height: "fit-content" }}
     >
       <Link
         href={link}
@@ -78,11 +79,11 @@ export function ReadyB({ link }: { link: string }) {
   );
 }
 
-
-export function ActionB({ link, text }: { link: string, text : string }) {
+export function ActionB({ link, text }: { link: string; text: string }) {
   return (
     <div
-      className="rounded-2xl  group flex bg-[#0061fe] hover:bg-blue-700 space-x-3" style={{height : 'fit-content', width : 'fit-content'}}
+      className="rounded-2xl  group flex bg-[#0061fe] hover:bg-blue-700 space-x-3"
+      style={{ height: "fit-content", width: "fit-content" }}
     >
       <Link
         href={link}
@@ -111,10 +112,11 @@ export function ActionB({ link, text }: { link: string, text : string }) {
   );
 }
 
-export function ActionBV1({ link, text }: { link: string, text : string }) {
+export function ActionBV1({ link, text }: { link: string; text: string }) {
   return (
     <div
-      className="  group flex" style={{height : 'fit-content', width : 'fit-content'}}
+      className="  group flex"
+      style={{ height: "fit-content", width: "fit-content" }}
     >
       <Link
         href={link}
@@ -126,10 +128,11 @@ export function ActionBV1({ link, text }: { link: string, text : string }) {
   );
 }
 
-export function ActionBV2({ link, text }: { link: string, text : string }) {
+export function ActionBV2({ link, text }: { link: string; text: string }) {
   return (
     <div
-      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3" style={{height : 'fit-content', width : 'fit-content'}}
+      className="rounded-2xl  group flex bg-blue-600 hover:bg-blue-700 space-x-3"
+      style={{ height: "fit-content", width: "fit-content" }}
     >
       <Link
         href={link}

@@ -315,6 +315,27 @@ export function LeftyV4() {
   );
 }
 
+export function LeftyV6() {
+  return (
+    <div className="grid items-center h-full py-10   lg:py-20" id="two">
+      <div className="xl:flex hidden"></div>
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
+        <div className="grid  gap-y-3">
+          <p className={`text-3xl font-normal ${golos.className}`}>
+            Give and get feedback
+          </p>
+          <span>
+            Dropbox makes it easy to send files, big and small, and collect
+            everyone’s comments in one place. Viewers can access links and
+            preview over 150 file types, as well as add comments and read yours
+            – even if they don’t have a Dropbox account.
+          </span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function RightyV4() {
   return (
     <div className="grid items-center h-full py-10   lg:py-20" id="one">
@@ -350,6 +371,47 @@ export function LeftyV5() {
           </span>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function RightyV5() {
+  return (
+    <div className="grid items-center h-full py-10   lg:py-20" id="one">
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
+        <div className="grid  gap-y-6">
+          <p className={`text-3xl  font-normal ${golos.className}`}>
+            All of your work, at your fingertips
+          </p>
+          <span>
+            Access your files from anywhere with the Dropbox mobile app, and
+            never miss a beat. You can even mark files and folders for offline
+            access to make them available if you lose your Internet connection.
+          </span>
+        </div>
+      </div>
+      <div className="xl:flex hidden"></div>
+    </div>
+  );
+}
+
+export function RightyV6() {
+  return (
+    <div className="grid items-center h-full py-10   lg:py-20" id="one">
+      <div className=" box-border px-4 md:px-8 h-full flex items-center justify-center">
+        <div className="grid  gap-y-6">
+          <p className={`text-3xl  font-normal ${golos.className}`}>
+            Get your time back
+          </p>
+          <span>
+            The Dropbox mobile app simplifies common tasks that can eat up your
+            day. Scan receipts, stickers and other documents in seconds using
+            your phone’s camera. Save time – and get peace of mind – with
+            automatic photo and video backup.
+          </span>
+        </div>
+      </div>
+      <div className="xl:flex hidden"></div>
     </div>
   );
 }

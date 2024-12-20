@@ -639,8 +639,17 @@ export function ExpressV11() {
   );
 }
 
-
-export function ExpressV12({title, body, link, linkName}:{title : string, body : string, link : string, linkName : string}) {
+export function ExpressV12({
+  title,
+  body,
+  link,
+  linkName,
+}: {
+  title: string;
+  body: string;
+  link: string;
+  linkName: string;
+}) {
   return (
     <div className=" grid items-center justify-center py-10 w-full gap-y-8 px-6">
       <div
@@ -654,14 +663,9 @@ export function ExpressV12({title, body, link, linkName}:{title : string, body :
         <h5 className="font-normal text-4xl tracking-tight  text-center">
           {title}
         </h5>
-        <h3>
-        {body}
-        </h3>
+        <h3>{body}</h3>
 
-        <Link
-          href={link}
-          className="text-center"
-        >
+        <Link href={link} className="text-center">
           {" "}
           <p className="inline-flex items-center text-base group text-center  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
             {linkName}{" "}
@@ -685,6 +689,34 @@ export function ExpressV12({title, body, link, linkName}:{title : string, body :
           </p>
         </Link>
       </div>
+    </div>
+  );
+}
+
+export function Expressionv13() {
+  return (
+    <div className=" grid items-center justify-center  w-full py-16  gap-y-5">
+      <h3
+        className={`${dmSans.className}  px-7 text-2xl md:text-4xl tracking-normal text-center font-normal `}
+      >
+        Dropbox mobile app
+      </h3>
+      <h5 className="font-light text-lg text-center md:text-base">
+        Keep work flowing – on the go
+      </h5>
+      <h5
+        className="font-light text-lg md:text-base text-center"
+        style={{
+          maxWidth: "75ch",
+          lineHeight: "1.2",
+          textAlign: "center",
+        }}
+      >
+        The free Dropbox mobile app helps you keep projects moving from
+        anywhere, so you can stay focused on what matters. Access work,
+        collaborate with colleagues and clients and quickly take care of tasks –
+        all from your phone or tablet.
+      </h5>
     </div>
   );
 }
