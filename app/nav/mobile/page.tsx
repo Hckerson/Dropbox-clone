@@ -70,7 +70,7 @@ export default function page() {
       </div>
       <div>
         <div className="w-full box-border  grid" id="half">
-          <div className="w-full box-border h-full flex flex-col items-center justify-center">
+          <div className="w-full box-border h-full min-h-[390px] flex flex-col items-center justify-center">
             <h3
               className={`${golos.className} text-3xl 2xl:text-5xl text-black px-7 md:text-4xl font-normal `}
               style={{
