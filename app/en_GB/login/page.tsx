@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import { MiniFooter } from "@/app/ui/landing-page/footer";
 import { Button } from "@/app/ui/button";
+import { Login } from "@/app/Auth/login";
 export const metadata: Metadata = {
   title: "Dropbox - Login",
 };
-export default function page() {
+export default function page() {    
   return (
     <main className="box-border w-full ">
       <div className="w-full box-border  items-center  justify-center py-20  mt-12 md:mt-20 flex">
         <div className="w-[350px] text-center px-4">
-          <form action="">
+          <form action=''>
             <div className="grid gap-y-5">
               <h3 className="text-2xl font-medium">Log in or sign up</h3>
               <div className="w-full flex items-center border hover:bg-[#f7f5f2] ">
