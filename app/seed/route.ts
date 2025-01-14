@@ -1,44 +1,40 @@
-import { db } from "@vercel/postgres";
-import { plans } from "../lib/placeholder-data";
+import bcrypt from "bcryptjs";
+import { neon } from '@neondatabase/serverless';
+import { users } from "../lib/placeholder-data";
 
-const client = await db.connect();
-
-async function seedPlans() {
-  await client.sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
-
-  await client.sql`
-    CREATE TABLE IF NOT EXISTS plans (
+const sql = neon(`${process.env.DATABASE_URL}`, {
+  fetchOptions: {
+    timeout: 10000, 
+  },
+});
+import "dotenv/config"
+async function seedUsers() {
+  await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
+  await sql`
+    CREATE TABLE IF NOT EXISTS users (
       id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
       name VARCHAR(255) NOT NULL,
-      essential DOUBLE PRECISION NOT NULL,
-      business DOUBLE PRECISION NOT NULL,
-      plus DOUBLE PRECISION NOT NULL
+      email TEXT NOT NULL UNIQUE,
+      password TEXT NOT NULL
     );
   `;
-
-  const insertedPlans = await Promise.all(
-    plans.map(async (plan) => {
-      return await client.sql`
-        INSERT INTO plans (id, name, essential, business, plus)
-        VALUES (${plan.id}, ${plan.name}, ${plan.essential}, ${plan.business}, ${plan.plus})
-        ON CONFLICT (id) DO NOTHING;
-      `;
+  await Promise.all(
+    users.map(async(user)=>{
+      await sql(`INSERT INTO users (id, name, email, password)
+      VALUES ($1, $2, $3, $4)`, [user.id, user.name, user.email, user.password])
     })
-  );
-
-  return insertedPlans;
+  )
 }
-
-
 
 export async function GET() {
   try {
-    await client.sql`BEGIN`;
-    await seedPlans()
-    await client.sql`COMMIT`;
-    return Response.json({message : 'Data seeded successfully'})
+    await sql`BEGIN`;
+    await seedUsers();
+    await sql`COMMIT`;
+
+    return Response.json({ message: 'Database seeded successfully' });
   } catch (error) {
-    await client.sql`ROLLBACK`;
-    return Response.json({error}, {status : 500})
+    await sql`ROLLBACK`;
+    return Response.json({ error }, { status: 500 });
   }
 }

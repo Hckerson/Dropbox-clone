@@ -14,12 +14,14 @@
     "@heroicons/react": "^2.1.5",
     "@mui/icons-material": "^6.1.7",
     "@mui/material": "^6.1.7",
+    "@neondatabase/serverless": "^0.10.4",
     "@tailwindcss/forms": "^0.5.9",
     "@vercel/postgres": "^0.10.0",
-    "@vercel/style-guide": "^6.0.0",  
+    "@vercel/style-guide": "^6.0.0",
     "autoprefixer": "^10.4.20",
     "bcryptjs": "^2.4.3",
     "clsx": "^2.1.1",
+    "dotenv": "^16.4.7",
     "lenis": "^1.1.18",
     "next": "14.2.15",
     "next-auth": "^4.24.11",
@@ -30,6 +32,7 @@
     "sharp": "^0.33.5",
     "swiper": "^11.1.15",
     "use-debounce": "^10.0.4",
+    "uuid": "^11.0.5",
     "zod": "^3.24.1"
   },
   "devDependencies": {

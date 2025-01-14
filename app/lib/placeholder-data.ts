@@ -1,3 +1,5 @@
+import { Password } from '@mui/icons-material';
+import { v4 as uuidv4 } from 'uuid';
 const plans = [
   {
     id: "410544b2-4001-4271-9855-fec4b6a6442a",
@@ -17,4 +19,12 @@ const plans = [
   },
 ];
 
-export { plans };
+const users = [
+  {
+    id : uuidv4(),
+    name : "Hckerson",
+    email : "hckerson@gmail.com",
+    password : "264813795"
+  }
+]
+export { plans, users };
