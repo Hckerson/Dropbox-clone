@@ -58,7 +58,7 @@ export default function Aspect() {
                       className="w-full h-full flex overflow-hidden relative max-h-full max-w-full box-border items-center"
                     >
                       <Image
-                        src={aspect.pic}
+                        src={aspect.pic.trim()}
                         alt={aspect.name}
                         width={1920}
                         height={1080} // Adjust this as needed

@@ -1,3 +1,5 @@
+import { z } from "zod";
+
 export type Plan = {
   id: string;
   name: string;
@@ -57,7 +59,7 @@ export type EveryV4 = {
 };
 
 
-import { z } from "zod";
+
 
 export type FormState = {
   errors?: {
@@ -67,6 +69,7 @@ export type FormState = {
   };
   message?: string | null;
 };
+
 
 export const LoginSchema = z.object({
   name: z
@@ -87,3 +90,5 @@ export const LoginSchema = z.object({
     })
     .trim(),
 });
+
+export const SignSchema = LoginSchema.omit({name : true})

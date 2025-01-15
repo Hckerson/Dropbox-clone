@@ -280,7 +280,7 @@ export const aspects = [
   {
     href: "/education",
     id: 6,
-    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/education/education-hero@2x.jpg?id=40129999-5c0d-45fc-800e-134eecfd175e&width=1920&output_type=jpg ",
+    pic: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/education/education-hero@2x.jpg?id=40129999-5c0d-45fc-800e-134eecfd175e&width=1920&output_type=jpg",
     name: "Education",
     about:
       "Power student learning, faculty research, and staff operations on Dropbox Education’s secure cloud collaboration platform.",
@@ -542,7 +542,7 @@ export const customers = [
   },
   {
     id: 5,
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_5.jpg?id=e1c41b07-cb77-4a83-b521-5f5b99c52ed6&width=2560&output_type=jpg ",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/Dropbox_DWG/quote_2560x1440_5.jpg?id=e1c41b07-cb77-4a83-b521-5f5b99c52ed6&width=2560&output_type=jpg",
     body: "“Our team is working remotely—everyone’s in a different time zone. Dropbox is a great hub for us to all work at once and seamlessly share files.”",
     link: "/https://experience.dropbox.com/drop-in-video-series/sophia-chang",
     name: "Sophia Chang",
@@ -652,7 +652,7 @@ export const customerV1 = [
   },
   {
     id: 5,
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Ekaterina-Borschov-Badano.png?id=95c4c069-53e0-464d-a058-78502f1487af&width=1920&output_type=png ",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/backup/Ekaterina-Borschov-Badano.png?id=95c4c069-53e0-464d-a058-78502f1487af&width=1920&output_type=png",
     body: "“Dropbox Backup has improved my productivity since I don't have to spend so much time backing up my work to portable hard drives or syncing files to Dropbox. It also made it very easy to transfer all my files when I bought a new computer!”",
     name: "Ekaterina Borschov-Badano, United States",
   },

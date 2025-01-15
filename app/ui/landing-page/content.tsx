@@ -110,8 +110,6 @@ export default function Content() {
               aria-label=""
               playsInline
             >
-              <source src="" type="video/quicktime; codecs=hvc1" />
-              <source src="" type="video/webm; codecs=vp9" />
               <source
                 src="https://aem.dropbox.com/cms/content/dam/dropbox/warp/en-us/test/homepageredesign2024/features/collaboration/Bottle-Solo.mp4"
                 type="video/mp4"
