@@ -63,7 +63,6 @@ export type EveryV4 = {
 
 export type FormState = {
   errors?: {
-    name?: string[];
     email?: string[];
     password?: string[];
   };

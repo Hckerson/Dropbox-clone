@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { MiniFooter } from "@/app/ui/landing-page/footer";
-import AuthForm from "@/app/ui/components/auth_Form";
+import AuthForm from "@/app/en_GB/register/auth_Form2";
 export const metadata: Metadata = {
   title: "Dropbox - Register",
 };

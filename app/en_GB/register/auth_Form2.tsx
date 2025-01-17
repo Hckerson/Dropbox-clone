@@ -1,6 +1,6 @@
-"use client"
-import { useState } from "react";
-
+"use client";
+import React, { useState } from "react";
+import clsx from "clsx";
 
 export default function AuthForm({ type }: { type: string }) {
   const [email, setEmail] = useState("");
@@ -10,36 +10,13 @@ export default function AuthForm({ type }: { type: string }) {
     const { name, value } = event.target;
     setEmail(value);
   };
-  const handleClick = () => {
-    setLoader(true);
-
+  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
   };
 
   return (
     <form action="">
       <div className="grid gap-y-5">
-        <button className="inline-flex group justify-start pl-4 ">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            className="size-6 rotate-180  transition-transform duration-300 group-hover:-translate-x-1"
-            width="24"
-            height="24"
-            role="presentation"
-            focusable="false"
-          >
-            <path
-              d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
-              stroke="currentColor"
-              strokeWidth="1.5"
-              strokeMiterlimit="10"
-              vectorEffect="non-scaling-stroke"
-            ></path>
-          </svg>
-          <span className="underline decoration-1 font-light underline-offset-2 transition-colors hover:decoration-slate-300  decoration-black">
-            Back
-          </span>
-        </button>
         {type == "login" ? (
           <h3 className="text-2xl font-medium">Log in or sign up</h3>
         ) : (
@@ -135,14 +112,32 @@ export default function AuthForm({ type }: { type: string }) {
           </span>
           <input
             type="text"
-            className="mt-1 block w-full px-3 py-2 hover:bg-[#f7f5f2] hover:border-black    border border-slate-300 text-sm  placeholder-slate-400 "
+            className={clsx(
+              "mt-1 block w-full px-3 py-2 hover:bg-[#f7f5f2] hover:border-black    border border-slate-300 text-sm  placeholder-slate-400"
+            )}
             autoFocus
             name="email"
             value={email}
             onChange={handleEmailChange}
           />
         </label>
-        <button onClick={handleClick} type="submit">
+
+        <label className="block">
+          <span className="block text-start text-xs font-medium text-slate-500">
+            Password
+          </span>
+          <input
+            type="text"
+            className="mt-1 block w-full px-3 py-2 hover:bg-[#f7f5f2] hover:border-black    border border-slate-300 text-sm  placeholder-slate-400 "
+            autoFocus
+            name="password"
+          />
+        </label>
+        <button
+          onClick={handleClick}
+          type="submit"
+          className="w-full p-3 rounded-xl bg-[#0061fe] text-white"
+        >
           Continue
         </button>
       </div>
