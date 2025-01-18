@@ -9,6 +9,7 @@ export const sql = neon(`${process.env.DATABASE_URL}`, {
 });
 import "dotenv/config"
 async function seedUsers() {
+  await sql('DROP TABLE users')
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
   await sql`
     CREATE TABLE IF NOT EXISTS users (

@@ -61,7 +61,7 @@ export type EveryV4 = {
 
 
 
-export type FormState = {
+export type State = {
   errors?: {
     email?: string[];
     password?: string[];
@@ -71,10 +71,6 @@ export type FormState = {
 
 
 export const LoginSchema = z.object({
-  name: z
-    .string({ required_error: "Name is required" })
-    .min(4, { message: "Name must be at least 4 characters long" })
-    .trim(),
   email: z
     .string({ required_error: "Email is required" })
     .email({ message: "Invalid email address" })
@@ -89,5 +85,3 @@ export const LoginSchema = z.object({
     })
     .trim(),
 });
-
-export const SignSchema = LoginSchema.omit({name : true})
