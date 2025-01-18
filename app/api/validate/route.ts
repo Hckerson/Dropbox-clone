@@ -1,5 +1,12 @@
 import { NextResponse } from "next/server";
-import { sql } from "@/app/seed/route";
+import { neon } from '@neondatabase/serverless';
+
+const sql = neon(`${process.env.DATABASE_URL}`, {
+  fetchOptions: {
+    timeout: 10000, 
+  },
+});
+import "dotenv/config"
 
 export async function POST(request: Request) {
   const body = await request.json();
