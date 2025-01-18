@@ -1,27 +1,30 @@
 "use client";
 import React, { useState } from "react";
+import { useActionState } from "react";
+import { signUp } from "@/app/Auth/signUp";
+import { State } from "@/app/lib/definitions";
 import clsx from "clsx";
+import { error } from "console";
 
-export default function AuthForm({ type }: { type: string }) {
+export default function AuthForm() {
+  const initialState: State = { message: null, errors: {} };
+  const [state, formAction] = useActionState(signUp, initialState);
   const [email, setEmail] = useState("");
   const [loader, setLoader] = useState(false);
-
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = event.target;
     setEmail(value);
   };
-  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-  };
 
   return (
-    <form action="">
+    <form action={formAction} onKeyDown={(e)=>{
+      if (e.key === 'Enter'){
+        e.preventDefault()
+      }
+    }}>
       <div className="grid gap-y-5">
-        {type == "login" ? (
-          <h3 className="text-2xl font-medium">Log in or sign up</h3>
-        ) : (
-          <h3 className="text-2xl font-medium">Sign up or Log in</h3>
-        )}
+        <h3 className="text-2xl font-medium">Sign up or Log in</h3>
+
         <div className="w-full flex items-center border hover:bg-[#f7f5f2] ">
           <div className="flex  flex-col w-full ">
             <p className="text-sm ">Continue with Google</p>
@@ -120,6 +123,15 @@ export default function AuthForm({ type }: { type: string }) {
             value={email}
             onChange={handleEmailChange}
           />
+          {state?.errors?.email &&
+            state.errors.email.map((error) => {
+              return (
+                <p key={error} className="text-xs text-red-500 text-start">
+                  {" "}
+                  {error}
+                </p>
+              );
+            })}
         </label>
 
         <label className="block">
@@ -132,14 +144,23 @@ export default function AuthForm({ type }: { type: string }) {
             autoFocus
             name="password"
           />
+          {state?.errors?.password &&
+            state.errors.password.map((error) => {
+              return (
+                <p key={error} className="text-xs text-red-500 text-start">
+                  {" "}
+                  {error}
+                </p>
+              );
+            })}
         </label>
         <button
-          onClick={handleClick}
           type="submit"
-          className="w-full p-3 rounded-xl bg-[#0061fe] text-white"
+          className="w-full p-3 rounded-xl bg-[#0061fe] hover:bg-blue-500 text-white"
         >
           Continue
         </button>
+        {state?.message && <p className="text-sm text-red-500">{state.message}</p>}
       </div>
     </form>
   );

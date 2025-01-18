@@ -1,39 +1,43 @@
 "use client";
 import React, { useState } from "react";
 import axios from "axios";
+import { login } from "@/app/Auth/login";
+import { useActionState } from "react";
+import { State } from "@/app/lib/definitions";
 import CircleLoader from "react-spinners/CircleLoader";
 import clsx from "clsx";
 
 export default function AuthForm({ type }: { type: string }) {
+  const initialState: State = { message: null, errors: {} };
+  const [state, formAction] = useActionState(login, initialState);
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<boolean | string>("");
   const [error, setError] = useState("");
   const [view, setView] = useState(false);
   const [loader, setLoader] = useState(false);
 
-  const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
-    setEmail(value);
-  };
-  const handleClick = async (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
+  const handleClick = async (e: React.MouseEvent<HTMLDivElement>) => {
     setLoader(true);
     try {
       const response = await axios.post("/api/validate", { email });
       const status = response.data.success;
       if (status) {
         setView(true);
-        setLoader(false)
+        setLoader(false);
       } else {
         setError(response.data.error);
-        setLoader(false)
+        setLoader(false);
       }
       setStatus(status);
     } catch (error) {}
   };
 
   return (
-    <form action="">
+    <form action={formAction} onKeyDown={(e)=>{
+      if (e.key === 'Enter'){
+        e.preventDefault()
+      }
+    }}>
       <div className="grid gap-y-5">
         {status && (
           <button
@@ -155,27 +159,29 @@ export default function AuthForm({ type }: { type: string }) {
           <span className="mx-3 text-gray-500">or</span>
           <div className="border-t border-gray-300 flex-grow"></div>
         </div>
-        {!status && (
-          <label className="block">
-            <span className="block text-start text-xs font-medium text-slate-500">
-              Email address
-            </span>
-            <input
-              type="text"
-              className={clsx(
-                "mt-1 block w-full px-3 py-2 hover:bg-[#f7f5f2] hover:border-black    border border-slate-300 text-sm  placeholder-slate-400",
-                error && "border-red-500"
-              )}
-              autoFocus
-              name="email"
-              value={email}
-              onChange={handleEmailChange}
-            />
-            {error && (
-              <p className="text-red-500 text-xs text-start">{error}</p>
+        <label className={clsx("block", !status ? "" : "hidden")}>
+          <span className="block text-start text-xs font-medium text-slate-500">
+            Email address
+          </span>
+          <input
+            type="text"
+            className={clsx(
+              "mt-1 block w-full px-3 py-2 hover:bg-[#f7f5f2] hover:border-black    border border-slate-300 text-sm  placeholder-slate-400",
+              error && "border-red-500"
             )}
-          </label>
-        )}
+            autoFocus
+            name="email"
+            value={email}
+            onChange={(e) => {
+              setEmail(e.target.value);
+            }}
+          />
+          {state?.errors?.email &&
+            state.errors.email.map((error) => {
+              return <p key={error} className="text-xs text-red-500 text-start"> {error}</p>;
+            })}
+          {error && <p className="text-red-500 text-xs text-start">{error}</p>}
+        </label>
 
         {status && (
           <label className="block">
@@ -188,15 +194,37 @@ export default function AuthForm({ type }: { type: string }) {
               autoFocus
               name="password"
             />
+            {state?.errors?.password &&
+              state.errors.password.map((error) => {
+                return <p key={error} className="text-xs text-red-500 text-start"> {error}</p>;
+              })}
           </label>
         )}
-        <button
-          onClick={handleClick}
-          type="submit"
-          className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
-        >
-          {loader ? <CircleLoader color="white" loading={loader} size={30}/> : "Continue"}
-        </button>
+        {!status && (
+          <div
+            onClick={handleClick}
+            className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
+          >
+            {loader ? (
+              <CircleLoader color="white" loading={loader} size={30} />
+            ) : (
+              "Continue"
+            )}
+          </div>
+        )}
+        {status && (
+          <button
+            type="submit"
+            className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
+          >
+            {loader ? (
+              <CircleLoader color="white" loading={loader} size={30} />
+            ) : (
+              "Log in"
+            )}
+          </button>
+        )}
+        {state?.message && <p className="text-xs text-red-500 ">{state.message}</p>}
       </div>
     </form>
   );
