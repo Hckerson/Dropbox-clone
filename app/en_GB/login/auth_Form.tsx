@@ -15,7 +15,7 @@ export default function AuthForm({ type }: { type: string }) {
   const [error, setError] = useState("");
   const [loader, setLoader] = useState(false);
 
-  const handleClick = async (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleClick = async () => {
     setLoader(true);
     try {
       const response = await axios.post("/api/validate", { email });
@@ -27,7 +27,9 @@ export default function AuthForm({ type }: { type: string }) {
         setLoader(false);
       }
       setStatus(status);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (
