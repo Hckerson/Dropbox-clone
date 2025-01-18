@@ -8,7 +8,7 @@ import 'dotenv/config'
 
 
 export async function login(prevState: State = {}, formData: FormData) {
-  {prevState}
+  console.log(prevState)
   const validatedFields = LoginSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
