@@ -13,7 +13,6 @@ export default function AuthForm({ type }: { type: string }) {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<boolean | string>("");
   const [error, setError] = useState("");
-  const [view, setView] = useState(false);
   const [loader, setLoader] = useState(false);
 
   const handleClick = async (e: React.MouseEvent<HTMLDivElement>) => {
@@ -22,7 +21,6 @@ export default function AuthForm({ type }: { type: string }) {
       const response = await axios.post("/api/validate", { email });
       const status = response.data.success;
       if (status) {
-        setView(true);
         setLoader(false);
       } else {
         setError(response.data.error);

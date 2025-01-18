@@ -7,7 +7,6 @@ const sql = neon(`${process.env.DATABASE_URL}`);
 import "dotenv/config";
 
 export async function signUp(state: State, formData: FormData) {
-
   const validatedFields = LoginSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
@@ -30,7 +29,7 @@ export async function signUp(state: State, formData: FormData) {
 
     if (response.length == 0) {
       const name = email.includes("@") ? email.split("@")[0] : "";
-      const result = await sql(
+      await sql(
         `
         INSERT INTO users (name, email, password)
         VALUES ($1, $2, $3)`,
@@ -40,7 +39,6 @@ export async function signUp(state: State, formData: FormData) {
     return {
       message: "Email already exists, Login instead",
     };
-
   } catch (error) {
     console.log(error);
     return {

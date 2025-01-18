@@ -1,4 +1,3 @@
-import bcrypt from "bcryptjs";
 import { neon } from '@neondatabase/serverless';
 import { users } from "../lib/placeholder-data";
 

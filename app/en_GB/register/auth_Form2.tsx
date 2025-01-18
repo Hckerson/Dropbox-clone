@@ -4,15 +4,14 @@ import { useActionState } from "react";
 import { signUp } from "@/app/Auth/signUp";
 import { State } from "@/app/lib/definitions";
 import clsx from "clsx";
-import { error } from "console";
 
 export default function AuthForm() {
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(signUp, initialState);
   const [email, setEmail] = useState("");
-  const [loader, setLoader] = useState(false);
+  // const [loader, setLoader] = useState(false);
   const handleEmailChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const { name, value } = event.target;
+    const {  value } = event.target;
     setEmail(value);
   };
 
