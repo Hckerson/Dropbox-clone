@@ -8,6 +8,9 @@ const sql = neon(`${process.env.DATABASE_URL}`, {
 });
 import "dotenv/config"
 async function seedUsers() {
+  const check = await sql`SELECT * FROM users`
+  console.log(check)
+  // await sql(`DELETE FROM users WHERE email = $1`,['user@nextmail.com'])
   await sql`CREATE EXTENSION IF NOT EXISTS "uuid-ossp"`;
   await sql`
     CREATE TABLE IF NOT EXISTS users (

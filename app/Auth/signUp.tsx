@@ -6,7 +6,7 @@ import { neon } from "@neondatabase/serverless";
 const sql = neon(`${process.env.DATABASE_URL}`);
 import "dotenv/config";
 
-export async function signUp(state: State, formData: FormData) {
+export async function signUp(state: State ={}, formData: FormData) {
   const validatedFields = LoginSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
@@ -35,10 +35,11 @@ export async function signUp(state: State, formData: FormData) {
         VALUES ($1, $2, $3)`,
         [name, email, hashedPassword]
       );
+    } else {
+      return {
+        message: "Email already exists, Login instead",
+      };
     }
-    return {
-      message: "Email already exists, Login instead",
-    };
   } catch (error) {
     console.log(error);
     return {
