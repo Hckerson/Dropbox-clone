@@ -2,6 +2,8 @@
 import bcrypt from 'bcryptjs'
 import { State } from '../lib/definitions';
 import { LoginSchema } from '../lib/definitions';
+import { createSession } from '../lib/session';
+import { redirect } from 'next/navigation';
 import { neon } from '@neondatabase/serverless';
 const sql = neon(`${process.env.DATABASE_URL}`)
 import 'dotenv/config'
@@ -34,12 +36,15 @@ export async function login(prevState: State = {}, formData: FormData) {
     }
     const storedPassword = response[0].password
     const isValid = await bcrypt.compare(password, storedPassword)
+    const userid = response[0].id
     console.log(isValid)
     if (!isValid){
       return {
         message : 'Invalid Password'
       }
     }
+    await createSession(userid)
+    /** redirect('/home') */
   } catch (error) {
     console.log(error)
     return {
