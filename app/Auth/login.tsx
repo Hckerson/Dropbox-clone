@@ -37,11 +37,13 @@ export async function login(prevState: State = {}, formData: FormData) {
     const storedPassword = response[0].password
     const isValid = await bcrypt.compare(password, storedPassword)
     const userid = response[0].id
-    console.log(isValid)
     if (!isValid){
       return {
         message : 'Invalid Password'
       }
+    }
+    return {
+      message  : "Logged in successfully"
     }
     await createSession(userid)
     /** redirect('/home') */
