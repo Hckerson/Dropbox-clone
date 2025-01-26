@@ -23,7 +23,7 @@ const users = [
     id : uuidv4(),
     name : "Hckerson",
     email : "hckerson@gmail.com",
-    password : "264813795"
+    password : "264813795Aa#"
   }
 ]
 export { plans, users };

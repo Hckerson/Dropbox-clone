@@ -13,7 +13,7 @@ export default async function middleware(req: NextRequest) {
   const isPublicRoute = publicRoutes.includes(path)
  
   // 3. Decrypt the session from the cookie
-  const cookie = (await cookies()).get('session')?.value
+  const cookie =  (await cookies()).get('session')?.value
   const session = await decrypt(cookie)
  
   // 4. Redirect to /login if the user is not authenticated
@@ -35,5 +35,5 @@ export default async function middleware(req: NextRequest) {
  
 // Routes Middleware should not run on
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
+  matcher: ['/((?!api|_next/static|business|en_GB|nav|_next/image|.*\\.png$).*)'],
 }
