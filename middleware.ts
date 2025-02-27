@@ -3,8 +3,8 @@ import { decrypt } from '@/app/lib/session'
 import { cookies } from 'next/headers'
  
 // 1. Specify protected and public routes
-const protectedRoutes = ['/dashboard/*']
-const publicRoutes = ['/login', '/signup', '/', 'en_GB/*', '/business/*', '/nav/*']
+const protectedRoutes = ['/dashboard']
+const publicRoutes = ['/login', '/signup', '/']
  
 export default async function middleware(req: NextRequest) {
   // 2. Check if the current route is protected or public
@@ -14,11 +14,11 @@ export default async function middleware(req: NextRequest) {
  
   // 3. Decrypt the session from the cookie
   const cookie =  (await cookies()).get('session')?.value
-  const session = await decrypt(cookie)
+  const session = cookie ? await decrypt(cookie) : null
  
   // 4. Redirect to /login if the user is not authenticated
-  if (isProtectedRoute && !session?.userId) {
-    return NextResponse.redirect(new URL('/login', req.nextUrl))
+  if (isProtectedRoute && !session?.user_id) {
+    return NextResponse.redirect(new URL('/en_GB/login', req.nextUrl))
   }
  
   // 5. Redirect to /dashboard if the user is authenticated
@@ -35,5 +35,5 @@ export default async function middleware(req: NextRequest) {
  
 // Routes Middleware should not run on
 export const config = {
-  matcher: ['/((?!api|_next/static|business|en_GB|nav|_next/image|.*\\.png$).*)'],
+  matcher: ['/((?!api|_next/static|en_GB|nav|_next/image|.*\\.png$).*)'],
 }

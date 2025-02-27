@@ -597,7 +597,7 @@ export const customer = [
   },
   {
     id: 5,
-    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/desk-laptop.svg?id=644389ee-53b3-41a3-95a3-77017b107e18 ",
+    src: "https://fjord.dropboxstatic.com/warp/conversion/dropbox/warp/en-us/replay/desk-laptop.svg?id=644389ee-53b3-41a3-95a3-77017b107e18",
     body: "“Dropbox Replay works well with the rest of my workflow. Since my work-in-progress files are already in Dropbox, I can just click on the file and add it to Replay.”",
     name: "Scott Lalonde",
     role: "Filmmaker, scottlalonde.com",

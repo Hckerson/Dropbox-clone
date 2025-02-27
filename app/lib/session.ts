@@ -43,7 +43,7 @@ export async function createSession(userId:string) {
     const cookieStore = await cookies()
     cookieStore.set('session', session, {
         httpOnly : true,
-        secure : true,
+        secure : false,  /**set to true in production */
         expires : expiresAt,
         sameSite : 'lax',
         path : '/'
@@ -58,12 +58,12 @@ export async function updateSession() {
         return null
     }
     const expires = new Date(Date.now() + 1 * 24 * 60 * 60 * 1000)
-    const newSession = await encrypt({sessionId : payload.sessionId, user_Id : payload.user_id, role : payload.role, expiresAt : expires})
+    const newSession = await encrypt({sessionId : payload.sessionId, user_id : payload.user_id, role : payload.role, expiresAt : expires})
     await sql(`UPDATE sessions SET expires_at = $1 WHERE id = $2`, [expires, payload.sessionId])
     const cookieStore = await cookies()
     cookieStore.set('session', newSession, {
       httpOnly: true,
-      secure: true, 
+      secure: false, 
       expires: expires,
       sameSite: 'lax',
       path: '/',

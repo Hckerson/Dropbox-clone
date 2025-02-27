@@ -206,7 +206,7 @@ export default function AuthForm({ type }: { type: string }) {
             className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
           >
             {loader ? (
-              <CircleLoader color="white" loading={loader} size={30} />
+              <CircleLoader color="white" loading={loader} size={27} />
             ) : (
               "Continue"
             )}
@@ -218,7 +218,7 @@ export default function AuthForm({ type }: { type: string }) {
             className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
           >
             {loader ? (
-              <CircleLoader color="white" loading={loader} size={30} />
+              <CircleLoader color="white" loading={loader} size={27} />
             ) : (
               "Log in"
             )}
