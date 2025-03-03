@@ -33,7 +33,7 @@ export async function decrypt(session: string | undefined = '') {
 
 
 export async function createSession(userId:string) {
-    const expiresAt = new Date(Date.now() +  1 * 24 * 60 * 60 * 1000)
+    const expiresAt = new Date(Date.now() +  2 * 24 * 60 * 60 * 1000)
     const data = await sql(`
         INSERT INTO sessions(user_id, expires_at)
         VALUES ($1, $2) RETURNING *`,[userId, expiresAt])
@@ -43,7 +43,7 @@ export async function createSession(userId:string) {
     const cookieStore = await cookies()
     cookieStore.set('session', session, {
         httpOnly : true,
-        secure : false,  /**set to true in production */
+        secure : false, 
         expires : expiresAt,
         sameSite : 'lax',
         path : '/'
@@ -57,7 +57,7 @@ export async function updateSession() {
         console.error('Session is invalid or expired')
         return null
     }
-    const expires = new Date(Date.now() + 1 * 24 * 60 * 60 * 1000)
+    const expires = new Date(Date.now() + 2 * 24 * 60 * 60 * 1000)
     const newSession = await encrypt({sessionId : payload.sessionId, user_id : payload.user_id, role : payload.role, expiresAt : expires})
     await sql(`UPDATE sessions SET expires_at = $1 WHERE id = $2`, [expires, payload.sessionId])
     const cookieStore = await cookies()

@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { login } from "@/app/Auth/login";
 import { useActionState } from "react";
+import { useRouter } from "next/navigation";
 import { State } from "@/app/lib/definitions";
 import CircleLoader from "react-spinners/CircleLoader";
 import clsx from "clsx";
 
-export default function AuthForm({ type }: { type: string }) {
+export default function   AuthForm({ type }: { type: string }) {
+  const router = useRouter();
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(login, initialState);
   const [email, setEmail] = useState("");
@@ -28,16 +30,26 @@ export default function AuthForm({ type }: { type: string }) {
       }
       setStatus(status);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
+  useEffect(() => {
+    setLoader(false);
+    if (state?.message === "success") {
+      router.push("/dashboard");
+    }
+  }, [state]);
+
   return (
-    <form action={formAction} onKeyDown={(e)=>{
-      if (e.key === 'Enter'){
-        e.preventDefault()
-      }
-    }}>
+    <form
+      action={formAction}
+      onKeyDown={(e) => {
+        if (e.key === "Enter") {
+          e.preventDefault();
+        }
+      }}
+    >
       <div className="grid gap-y-5">
         {status && (
           <button
@@ -178,7 +190,12 @@ export default function AuthForm({ type }: { type: string }) {
           />
           {state?.errors?.email &&
             state.errors.email.map((error) => {
-              return <p key={error} className="text-xs text-red-500 text-start"> {error}</p>;
+              return (
+                <p key={error} className="text-xs text-red-500 text-start">
+                  {" "}
+                  {error}
+                </p>
+              );
             })}
           {error && <p className="text-red-500 text-xs text-start">{error}</p>}
         </label>
@@ -196,14 +213,19 @@ export default function AuthForm({ type }: { type: string }) {
             />
             {state?.errors?.password &&
               state.errors.password.map((error) => {
-                return <p key={error} className="text-xs text-red-500 text-start"> {error}</p>;
+                return (
+                  <p key={error} className="text-xs text-red-500 text-start">
+                    {" "}
+                    {error}
+                  </p>
+                );
               })}
           </label>
         )}
         {!status && (
           <div
             onClick={handleClick}
-            className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
+            className="w-full p-3 flex justify-center cursor-pointer rounded-xl bg-[#0061fe] text-white"
           >
             {loader ? (
               <CircleLoader color="white" loading={loader} size={27} />
@@ -216,6 +238,9 @@ export default function AuthForm({ type }: { type: string }) {
           <button
             type="submit"
             className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
+            onClick={()=>{
+              setLoader(true)
+            }}
           >
             {loader ? (
               <CircleLoader color="white" loading={loader} size={27} />
@@ -224,7 +249,9 @@ export default function AuthForm({ type }: { type: string }) {
             )}
           </button>
         )}
-        {state?.message && <p className="text-xs text-red-500 ">{state.message}</p>}
+        {state?.message && (
+          <p className="text-xs text-red-500 ">{state.message}</p>
+        )}
       </div>
     </form>
   );

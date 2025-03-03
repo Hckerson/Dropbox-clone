@@ -3,7 +3,6 @@ import bcrypt from "bcryptjs";
 import { State } from "../lib/definitions";
 import { LoginSchema } from "../lib/definitions";
 import { createSession } from "../lib/session";
-import { redirect } from "next/navigation";
 import { neon } from "@neondatabase/serverless";
 const sql = neon(`${process.env.DATABASE_URL}`);
 import "dotenv/config";
@@ -44,9 +43,8 @@ export async function login(prevState: State = {}, formData: FormData) {
     }
     await createSession(userid);
     return {
-      message: "Logged in successfully",
+      message: "success",
     };
-    /** redirect('/home') */
   } catch (error) {
     console.log(error);
     return {
