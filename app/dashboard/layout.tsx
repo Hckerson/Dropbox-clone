@@ -1,9 +1,12 @@
 "use client";
 import { useState } from "react";
+import { Box } from "../ui/components/vgs";
 import clsx from "clsx";
 import { FiPlus } from "react-icons/fi";
+import Ring from "../ui/components/ring";
 import List from "../ui/components/list";
 import { FaAngleRight } from "react-icons/fa6";
+import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 export default function DashboardLayout({
   children,
@@ -15,8 +18,8 @@ export default function DashboardLayout({
   const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]);
   return (
     <div className="flex box-border h-screen w-screen bg-black ">
-      <div className="w-[19%] relative box-border h-full flex">
-        <div className="w-1/4 h-full border-r-[1px] border-white border-opacity-20">
+      <div className=" relative box-border h-full flex">
+        <div className="w-[70px] h-full border-r-[1px] border-white bg-black z-20 px-2 border-opacity-20">
           <div className="flex flex-col h-full items-center justify-between py-4">
             <div className="flex flex-col space-y-3 justify-center">
               <span className="inline-flex">
@@ -101,15 +104,13 @@ export default function DashboardLayout({
                 </div>
               </span>
             </div>
-            <div>
+            <div className="h-[30px] *:w-full flex items-center justify-center">
               {!isOpen ? (
                 <span className="inline-flex">
                   <svg
                     viewBox="0 0 24 24"
                     fill="none"
-                    className=""
-                    width="24"
-                    height="24"
+                    className="cursor-pointer size-6"
                     focusable="false"
                     aria-label="Hide sidebar"
                     onClick={() => setIsOpen(!isOpen)}
@@ -125,9 +126,7 @@ export default function DashboardLayout({
                 <svg
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="cursor-pointer"
-                  width="24"
-                  height="24"
+                  className="cursor-pointer size-6"
                   focusable="false"
                   aria-label="Show sidebar"
                   onClick={() => setIsOpen(!isOpen)}
@@ -142,7 +141,12 @@ export default function DashboardLayout({
             </div>
           </div>
         </div>
-        <div className="flex flex-col justify-between h-full w-full px-2 box-border pt-8 pb-2 border-r-[1px] border-white border-opacity-20 relative">
+        <div
+          className={clsx(
+            "flex w-[225px] flex-col justify-between h-full  px-2 box-border pt-8 pb-2 border-r-[1px] border-white border-opacity-20 relative transition-transform duration-700 ease-in-out",
+            isOpen ? "-translate-x-full  " : "translate-x-0"
+          )}
+        >
           <div className="flex flex-col w-full h-full  space-y-6  text-white">
             <legend className="font-semibold text-lg px-8 pb-2">Home</legend>
             <List />
@@ -180,19 +184,29 @@ export default function DashboardLayout({
           </div>
 
           <div className=" w-full text-white rounded-xl  ">
-            <div className="  rounded-xl shadow-lg flex items-center gap-x-4 bg-[#002969]">
-              <div className="shrink-0"></div>
-              <div>
-                <div className=" font-medium text-black text-sm">
+            <div className="  rounded-xl shadow-lg flex items-center p-2 gap-x-4 bg-[#002969]">
+              <div className="shrink-0">
+                <Ring color="#002969">
+                  <Box color="#2563eb" />
+                </Ring>
+              </div>
+              <div className="flex flex-col space-y-1">
+                <div
+                  style={{ fontSize: "11px" }}
+                  className=" text-xs text-blue-400 "
+                >
                   Explore free features
                 </div>
-                <p className="text-slate-500 text-sm">0 bytes of 2gb</p>
+                <p style={{ fontSize: "10px" }} className="text-blue-400 ">
+                  0 bytes of 2gb
+                </p>
               </div>
+              <FaAngleUp className="text-blue-400" />
             </div>
           </div>
         </div>
       </div>
-      <div>{children}</div>
+      <div className={clsx("transition-transform duration-700 ease-in-out w-full", isOpen ? '-translate-x-[225px]' : 'translate-x-0')}>{children}</div>
     </div>
   );
 }
