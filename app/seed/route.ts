@@ -1,5 +1,4 @@
 import { neon } from "@neondatabase/serverless";
-import { users } from "../lib/placeholder-data";
 
 const sql = neon(`${process.env.DATABASE_URL}`, {
   fetchOptions: {

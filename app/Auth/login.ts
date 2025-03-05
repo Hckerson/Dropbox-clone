@@ -8,6 +8,7 @@ const sql = neon(`${process.env.DATABASE_URL}`);
 import "dotenv/config";
 
 export async function login(prevState: State = {}, formData: FormData) {
+  console.log(prevState)
   const validatedFields = LoginSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),

@@ -39,7 +39,7 @@ export default function   AuthForm({ type }: { type: string }) {
     if (state?.message === "success") {
       router.push("/dashboard");
     }
-  }, [state]);
+  }, [state, router]);
 
   return (
     <form

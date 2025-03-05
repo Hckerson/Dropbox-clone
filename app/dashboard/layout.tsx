@@ -15,13 +15,13 @@ export default function DashboardLayout({
 }) {
   const [active, setActive] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
-  const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]);
+  const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]); 
   return (
-    <div className="flex box-border h-screen w-screen bg-black ">
-      <div className=" relative box-border h-full flex">
+    <div className="flex box-border h-screen w-screen  ">
+      <div className=" relative box-border h-full flex bg-black">
         <div className="w-[70px] h-full border-r-[1px] border-white bg-black z-20 px-2 border-opacity-20">
           <div className="flex flex-col h-full items-center justify-between py-4">
-            <div className="flex flex-col space-y-3 justify-center">
+            <div className="flex flex-col items-center space-y-3 justify-center">
               <span className="inline-flex">
                 <svg
                   viewBox="0 0 64 64"
@@ -49,13 +49,13 @@ export default function DashboardLayout({
                   ></path>
                 </svg>
               </span>
-              <span className="inline-flex flex-col cursor-pointer">
+              <span className="inline-flex justify-center space-y-1 flex-col cursor-pointer" onClick={() => setActive("home")}>
                 <svg
                   viewBox="0 0 24 24"
                   fill="white"
-                  className=" p-3"
-                  width="51"
-                  height="51"
+                  className={clsx("p-[8px] rounded-xl", active == "home" ? "bg-stone-800" : "")}
+                  width="40"
+                  height="40"
                   focusable="false"
                   aria-label="Home"
                 >
@@ -76,13 +76,13 @@ export default function DashboardLayout({
                   </p>
                 </div>
               </span>
-              <span className="inline-flex flex-col cursor-pointer">
+              <span className="inline-flex justify-center space-y-1 flex-col cursor-pointer" onClick={() => setActive("folder")}>
                 <svg
                   viewBox="0 0 24 24"
                   fill="white"
-                  className="p-3"
-                  width="51"
-                  height="51"
+                  className={clsx("p-[8px] rounded-xl", active == "folder" ? "bg-stone-800" : "")}
+                  width="40"
+                  height="40"
                   focusable="false"
                   aria-label="Folders"
                 >
@@ -96,7 +96,7 @@ export default function DashboardLayout({
                   <p
                     className={clsx(
                       " text-center text-sm font-normal",
-                      active == "folder " ? "text-white" : "text-stone-500"
+                      active == "folder" ? "text-white" : "text-stone-500"
                     )}
                   >
                     Folder
@@ -113,7 +113,12 @@ export default function DashboardLayout({
                     className="cursor-pointer size-6"
                     focusable="false"
                     aria-label="Hide sidebar"
-                    onClick={() => setIsOpen(!isOpen)}
+                    onClick={() => {setIsOpen(!isOpen)
+                      setTimeout(() => {
+                        const sidebar = document.getElementById("sidebar");
+                        sidebar?.classList.add("absolute");
+                      }, 300);
+                    }}
                   >
                     <path
                       d="M19.383 20.025 19.433 4l-1.5-.005-.05 16.025 1.5.005ZM9.931 6.177 4.5 12.009l1.023.953 4.527 4.763 1.088-1.034-3.814-4.012h8.742v-1.5H7.324l3.706-3.98-1.098-1.022Z"
@@ -129,7 +134,12 @@ export default function DashboardLayout({
                   className="cursor-pointer size-6"
                   focusable="false"
                   aria-label="Show sidebar"
-                  onClick={() => setIsOpen(!isOpen)}
+                  onClick={() => {setIsOpen(!isOpen)
+                    setTimeout(() => {
+                      const sidebar = document.getElementById("sidebar");
+                      sidebar?.classList.remove("absolute");
+                    }, 300);
+                  }}
                 >
                   <path
                     d="M5 4.5h1.5V19H5V4.5Zm7.456 3.016 1.088-1.032 4.989 5.266-4.989 5.266-1.088-1.032 3.3-3.484H8V11h7.757l-3.301-3.484Z"
@@ -142,9 +152,10 @@ export default function DashboardLayout({
           </div>
         </div>
         <div
+          id="sidebar"
           className={clsx(
-            "flex w-[225px] flex-col justify-between h-full  px-2 box-border pt-8 pb-2 border-r-[1px] border-white border-opacity-20 relative transition-transform duration-700 ease-in-out",
-            isOpen ? "-translate-x-full  " : "translate-x-0"
+            "flex w-[225px] flex-col justify-between h-full   px-2 box-border pt-8 pb-2 border-r-[1px] border-white border-opacity-20  transition-transform duration-700 ease-in-out",
+            isOpen ? "-translate-x-full" : "translate-x-0"
           )}
         >
           <div className="flex flex-col w-full h-full  space-y-6  text-white">
@@ -157,7 +168,7 @@ export default function DashboardLayout({
               </span>
             </div>
             <div className="w-full box-border flex-col flex space-y-5">
-              <div className="text-xs -translate-x-4 font-semibold text-stone-200 px-9 inline-flex items-center justify-between">
+              <div className="text-xs -translate-x-4 font-semibold text-stone-200 px-9 inline-flex items-center justify-between" onClick={() => setIsFolderOpen([...isFolderOpen, "starred"])}>
                 <span className="inline-flex space-x-1 text-stone-500">
                   {isFolderOpen.includes("starred") ? (
                     <FaAngleDown />
@@ -206,7 +217,7 @@ export default function DashboardLayout({
           </div>
         </div>
       </div>
-      <div className={clsx("transition-transform duration-700 ease-in-out w-full", isOpen ? '-translate-x-[225px]' : 'translate-x-0')}>{children}</div>
+      <div className={clsx("transition-transform duration-700 ease-in-out w-full", isOpen ? '' : '')}>{children}</div>
     </div>
   );
 }
