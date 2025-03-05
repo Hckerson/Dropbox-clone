@@ -1,6 +1,6 @@
 import 'server-only'
 import { cookies } from 'next/headers'
-import { SignJWT, jwtVerify } from 'jose'
+import { JWTPayload, SignJWT, jwtVerify } from 'jose'
 import { neon } from '@neondatabase/serverless'
 import { redirect } from 'next/navigation'
 const secretKey = process.env.SESSION_SECRET
@@ -10,7 +10,7 @@ const sql = neon(`${process.env.DATABASE_URL}`)
 if (!secretKey) {
     throw new Error('SESSION KEY NOT DEFINED')
 }
-export async function encrypt(payload : any) {
+export async function encrypt(payload : JWTPayload | undefined) {
     return new SignJWT(payload)
     .setProtectedHeader({alg : 'HS256'})
     .setIssuedAt()
