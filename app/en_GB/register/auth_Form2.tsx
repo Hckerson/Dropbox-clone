@@ -24,7 +24,6 @@ export default function AuthForm({ type }: { type: string }) {
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(signUp, initialState);
   const [email, setEmail] = useState("");
-  const [error, setError] = useState("");
   const [loader, setLoader] = useState(false);
   const [visible, setVisible] = useState(false);
   const [letter, setLetter] = useState(false);
@@ -194,7 +193,6 @@ export default function AuthForm({ type }: { type: string }) {
             type="text"
             className={clsx(
               "mt-1 block w-full px-3 py-2 hover:bg-[#f7f5f2] hover:border-black    border border-slate-300 text-sm  placeholder-stone-400",
-              error && "border-red-500",
               !status ? "text-black" : "text-stone-500"
             )}
             autoFocus
@@ -213,7 +211,6 @@ export default function AuthForm({ type }: { type: string }) {
                 </p>
               );
             })}
-          {error && <p className="text-red-500 text-xs text-start">{error}</p>}
         </label>
 
         {status && (
@@ -563,7 +560,7 @@ export default function AuthForm({ type }: { type: string }) {
         {status && (
           <>
             <span className="font-light text-xs text-left">
-              By selecting "Agree and sign up" I agree to the{" "}
+              By selecting {"Agree and sign up"} I agree to the{" "}
               <Link className="text-blue-600" href={""}>
                 Dropbox Terms
               </Link>{" "}
