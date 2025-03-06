@@ -1,17 +1,18 @@
 "use server";
 import bcrypt from "bcryptjs";
-import { State } from "../lib/definitions";
-import { LoginSchema } from "../lib/definitions";
+import { State } from "../en_GB/register/auth_Form2";
+import { RegisterSchema } from "../lib/definitions";
 import { neon } from "@neondatabase/serverless";
 import { createSession } from "../lib/session";
 const sql = neon(`${process.env.DATABASE_URL}`);
 import "dotenv/config";
 
 export async function signUp(state: State = {}, formData: FormData) {
-  console.log(state);
-  const validatedFields = LoginSchema.safeParse({
+  const validatedFields = RegisterSchema.safeParse({
     email: formData.get("email"),
     password: formData.get("password"),
+    firstname: formData.get("firstname"),
+    lastname: formData.get("lastname"),
   });
   if (!validatedFields.success) {
     return {
@@ -19,7 +20,7 @@ export async function signUp(state: State = {}, formData: FormData) {
       message: "",
     };
   }
-  const { email, password } = validatedFields.data;
+  const { email, password, firstname, lastname } = validatedFields.data;
   const hashedPassword = await bcrypt.hash(password, 10);
   try {
     const response = await sql(
@@ -30,19 +31,20 @@ export async function signUp(state: State = {}, formData: FormData) {
     );
 
     if (response.length == 0) {
-      const name = email.includes("@") ? email.split("@")[0] : "";
-      const detais = await sql(
+      const details = await sql(
         `
-        INSERT INTO users (name, email, password)
-        VALUES ($1, $2, $3) RETURNING *`,
-        [name, email, hashedPassword]
+        INSERT INTO users (firstname, lastname, email, password)
+        VALUES ($1, $2, $3, $4) RETURNING *`,
+        [firstname, lastname, email, hashedPassword]
       );
-      const id = detais[0].id;
+      const id = details[0].id;
       await createSession(id);
-      /** redirect('/home') */
+      return {
+        message: "success",
+      };
     } else {
       return {
-        message: "Email already exists, Login instead",
+        message: "login",
       };
     }
   } catch (error) {

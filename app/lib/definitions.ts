@@ -70,6 +70,8 @@ export type State = {
 };
 
 
+
+
 export const LoginSchema = z.object({
   email: z
     .string({ required_error: "Email is required" })
@@ -84,4 +86,22 @@ export const LoginSchema = z.object({
       message: "Password must contain at least one special character",
     })
     .trim(),
+});
+
+export const RegisterSchema = z.object({
+  email: z
+    .string({ required_error: "Email is required" })
+    .email({ message: "Invalid email address" })
+    .trim(),
+  password: z
+    .string({ required_error: "Password is required" })
+    .min(6, { message: "Passwrod must be at least 6 characters long" })
+    .regex(/[a-zA-Z]/, { message: "Contain at least one letter" })
+    .regex(/[0-9]/, { message: "Password must contain at least one number" })
+    .regex(/[^a-zA-Z0-9]/, {
+      message: "Password must contain at least one special character",
+    })
+    .trim(),
+  firstname : z.string({required_error : "First name is required"}).min(2, {message : "First name must be at least 2 characters long"}).trim(),
+  lastname : z.string({required_error : "Last name is required"}).min(2, {message : "Last name must be at least 2 characters long"}).trim(),
 });
