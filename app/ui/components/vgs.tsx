@@ -1,4 +1,10 @@
-export function Box({color} : {color : string}) {
+import { GrFormUpload } from "react-icons/gr";
+import { IoMdAdd } from "react-icons/io";
+import { RiDownloadLine } from "react-icons/ri";
+import { RiFolderAddLine } from "react-icons/ri";
+import { IoShareOutline } from "react-icons/io5";
+import { BiTransfer } from "react-icons/bi";
+export function Box({ color }: { color: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
@@ -23,4 +29,28 @@ export function Box({color} : {color : string}) {
       ></path>
     </svg>
   );
+}
+
+export function Upload({ color }: { color: string }) {
+  return <GrFormUpload fill={color} />;
+}
+
+export function Create({ color }: { color: string }) {
+  return <IoMdAdd />;
+}
+
+export function Folder({ color }: { color: string }) {
+  return <RiFolderAddLine />;
+}
+
+export function App({ color }: { color: string }) {
+  return <RiDownloadLine />;
+}
+
+export function Transfer({ color }: { color: string }) {
+  return <BiTransfer />;
+}
+
+export function Share({ color }: { color: string }) {
+  return <IoShareOutline />;
 }

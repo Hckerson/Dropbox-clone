@@ -1,8 +1,10 @@
 import { SearchBar } from "../ui/components/search";
+import { Upload } from "../ui/components/vgs";
 import { Row } from "../ui/components/rowed_items";
+import ActionCard from "../ui/components/action-card";
 export default function page() {
   return (
-    <div className="text-white w-full h-full px-10 py-3 flex-col space-y-4 bg-[#1a1918] justify-between flex">
+    <div className="text-white w-full h-full px-10 py-3 flex-col space-y-4 bg-[#1a1918]  flex">
       <section className="w-full box-border flex space-x-2 items-center">
         <SearchBar />
         <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px] px-2 bg-stone-700 rounded-md">
@@ -28,8 +30,12 @@ export default function page() {
             <p className="text-sm text-white min-w-max ">Invite members</p>
           </div>
         </div>
-        <Row/>
-        
+        <Row />
+      </section>
+      <section className="w-full box-border flex space-x-2 items-center">
+        <ActionCard first={true} active={true} link="" name="upload">
+          <Upload color=""/>
+        </ActionCard>
       </section>
     </div>
   );
