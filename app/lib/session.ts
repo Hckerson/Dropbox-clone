@@ -28,11 +28,16 @@ export async function decrypt(session: string | undefined = "") {
       `SELECT * FROM sessions WHERE id = $1 AND expires_at > NOW()`,
       [payload.sessionId]
     );
-    if (result.length === 0) return;
+    if (result.length === 0) {
+      return { error: "INVALID_SESSION" };
+    }
     return payload;
   } catch (error) {
     console.error("Failed to verify session", error);
-    return null;
+    if (error instanceof Error && error.message.includes("fetch failed")) {
+      return { error: "DATABASE_ERROR" };
+    }
+    return { error: "INVALID_SESSION" };
   }
 }
 

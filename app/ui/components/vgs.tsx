@@ -31,26 +31,26 @@ export function Box({ color }: { color: string }) {
   );
 }
 
-export function Upload({ color }: { color: string }) {
-  return <GrFormUpload fill={color} />;
+export function Upload() {
+  return <GrFormUpload color="black" className="size-4" />;
 }
 
-export function Create({ color }: { color: string }) {
-  return <IoMdAdd />;
+export function Create() {
+  return <IoMdAdd className="size-4"/>;
 }
 
-export function Folder({ color }: { color: string }) {
-  return <RiFolderAddLine />;
+export function Folder() {
+  return <RiFolderAddLine className="size-4"/>;
 }
 
-export function App({ color }: { color: string }) {
-  return <RiDownloadLine />;
+export function App() {
+  return <RiDownloadLine className="size-4" />;
 }
 
-export function Transfer({ color }: { color: string }) {
-  return <BiTransfer />;
+export function Transfer() {
+  return <BiTransfer  className="size-4"/>;
 }
 
-export function Share({ color }: { color: string }) {
-  return <IoShareOutline />;
+export function Share() {
+  return <IoShareOutline className="size-4" />;
 }

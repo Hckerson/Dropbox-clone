@@ -1,7 +1,28 @@
 import { SearchBar } from "../ui/components/search";
-import { Upload } from "../ui/components/vgs";
+import {
+  Upload,
+  Create,
+  Folder,
+  Transfer,
+  Share,
+} from "../ui/components/vgs";
 import { Row } from "../ui/components/rowed_items";
 import ActionCard from "../ui/components/action-card";
+import { OneCard } from "../ui/components/action-card";
+
+const cards = [
+  { first: true, active: false, link: "", name: "Upload or drop", vgs: Upload },
+  { first: false, active: false, link: "", name: "Create", vgs: Create },
+  { first: false, active: false, link: "", name: "Create folder", vgs: Folder },
+  {
+    first: false,
+    active: false,
+    link: "",
+    name: "Transfer a copy",
+    vgs: Transfer,
+  },
+  { first: false, active: false, link: "", name: "Share", vgs: Share },
+];
 export default function page() {
   return (
     <div className="text-white w-full h-full px-10 py-3 flex-col space-y-4 bg-[#1a1918]  flex">
@@ -32,10 +53,16 @@ export default function page() {
         </div>
         <Row />
       </section>
-      <section className="w-full box-border flex space-x-2 items-center">
-        <ActionCard first={true} active={true} link="" name="upload">
-          <Upload color=""/>
-        </ActionCard>
+      <section style={{gridAutoFlow : 'column'}} className="w-full max-w-[870px] box-border grid grid-cols-6 gap gap-x-8 items-center">
+        {cards.map((card) => {
+          const Icon  = card.vgs
+          return (
+            <ActionCard key={card.name} first={card.first}  name={card.name}>
+              <Icon />
+            </ActionCard>
+          );
+        })}
+        <OneCard/>
       </section>
     </div>
   );
