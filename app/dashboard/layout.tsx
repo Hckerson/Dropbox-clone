@@ -4,7 +4,14 @@ import { Box } from "../ui/components/vgs";
 import clsx from "clsx";
 import { FiPlus } from "react-icons/fi";
 import Ring from "../ui/components/ring";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 import List from "../ui/components/list";
+import { BiDotsVerticalRounded } from "react-icons/bi";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
@@ -15,7 +22,7 @@ export default function DashboardLayout({
 }) {
   const [active, setActive] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
-  const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]); 
+  const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]);
   return (
     <div className="flex box-border h-screen w-screen  ">
       <div className=" relative box-border h-full flex bg-black">
@@ -49,11 +56,17 @@ export default function DashboardLayout({
                   ></path>
                 </svg>
               </span>
-              <span className="inline-flex justify-center space-y-1 flex-col cursor-pointer" onClick={() => setActive("home")}>
+              <span
+                className="inline-flex justify-center space-y-1 flex-col cursor-pointer"
+                onClick={() => setActive("home")}
+              >
                 <svg
                   viewBox="0 0 24 24"
                   fill="white"
-                  className={clsx("p-[8px] rounded-xl", active == "home" ? "bg-stone-800" : "")}
+                  className={clsx(
+                    "p-[8px] rounded-xl",
+                    active == "home" ? "bg-stone-800" : ""
+                  )}
                   width="40"
                   height="40"
                   focusable="false"
@@ -76,11 +89,17 @@ export default function DashboardLayout({
                   </p>
                 </div>
               </span>
-              <span className="inline-flex justify-center space-y-1 flex-col cursor-pointer" onClick={() => setActive("folder")}>
+              <span
+                className="inline-flex justify-center space-y-1 flex-col cursor-pointer"
+                onClick={() => setActive("folder")}
+              >
                 <svg
                   viewBox="0 0 24 24"
                   fill="white"
-                  className={clsx("p-[8px] rounded-xl", active == "folder" ? "bg-stone-800" : "")}
+                  className={clsx(
+                    "p-[8px] rounded-xl",
+                    active == "folder" ? "bg-stone-800" : ""
+                  )}
                   width="40"
                   height="40"
                   focusable="false"
@@ -107,46 +126,71 @@ export default function DashboardLayout({
             <div className="h-[30px] *:w-full flex items-center justify-center">
               {!isOpen ? (
                 <span className="inline-flex">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    className="cursor-pointer size-6"
-                    focusable="false"
-                    aria-label="Hide sidebar"
-                    onClick={() => {setIsOpen(!isOpen)
-                      setTimeout(() => {
-                        const sidebar = document.getElementById("sidebar");
-                        sidebar?.classList.add("absolute");
-                      }, 300);
-                    }}
-                  >
-                    <path
-                      d="M19.383 20.025 19.433 4l-1.5-.005-.05 16.025 1.5.005ZM9.931 6.177 4.5 12.009l1.023.953 4.527 4.763 1.088-1.034-3.814-4.012h8.742v-1.5H7.324l3.706-3.98-1.098-1.022Z"
-                      fill="gray"
-                      vectorEffect="non-scaling-stroke"
-                    ></path>
-                  </svg>
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        {" "}
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="cursor-pointer size-6"
+                          focusable="false"
+                          aria-label="Hide sidebar"
+                          onClick={() => {
+                            setIsOpen(!isOpen);
+                            setTimeout(() => {
+                              const sidebar =
+                                document.getElementById("sidebar");
+                              sidebar?.classList.add("absolute");
+                            }, 300);
+                          }}
+                        >
+                          <path
+                            d="M19.383 20.025 19.433 4l-1.5-.005-.05 16.025 1.5.005ZM9.931 6.177 4.5 12.009l1.023.953 4.527 4.763 1.088-1.034-3.814-4.012h8.742v-1.5H7.324l3.706-3.98-1.098-1.022Z"
+                            fill="gray"
+                            vectorEffect="non-scaling-stroke"
+                          ></path>
+                        </svg>
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Hide sidebar</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </span>
               ) : (
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  className="cursor-pointer size-6"
-                  focusable="false"
-                  aria-label="Show sidebar"
-                  onClick={() => {setIsOpen(!isOpen)
-                    setTimeout(() => {
-                      const sidebar = document.getElementById("sidebar");
-                      sidebar?.classList.remove("absolute");
-                    }, 300);
-                  }}
-                >
-                  <path
-                    d="M5 4.5h1.5V19H5V4.5Zm7.456 3.016 1.088-1.032 4.989 5.266-4.989 5.266-1.088-1.032 3.3-3.484H8V11h7.757l-3.301-3.484Z"
-                    fill="gray"
-                    vectorEffect="non-scaling-stroke"
-                  ></path>
-                </svg>
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      <span className="inlne-flex">
+                        <svg
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          className="cursor-pointer size-6"
+                          focusable="false"
+                          aria-label="Show sidebar"
+                          onClick={() => {
+                            setIsOpen(!isOpen);
+                            setTimeout(() => {
+                              const sidebar =
+                                document.getElementById("sidebar");
+                              sidebar?.classList.remove("absolute");
+                            }, 300);
+                          }}
+                        >
+                          <path
+                            d="M5 4.5h1.5V19H5V4.5Zm7.456 3.016 1.088-1.032 4.989 5.266-4.989 5.266-1.088-1.032 3.3-3.484H8V11h7.757l-3.301-3.484Z"
+                            fill="gray"
+                            vectorEffect="non-scaling-stroke"
+                          ></path>
+                        </svg>
+                      </span>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Open sidebar</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               )}
             </div>
           </div>
@@ -161,35 +205,89 @@ export default function DashboardLayout({
           <div className="flex flex-col w-full h-full  space-y-6  text-white">
             <legend className="font-semibold text-lg px-8 pb-2">Home</legend>
             <List />
-            <div className="text-xs font-semibold text-stone-200 px-9 inline-flex items-center justify-between">
-              <p>Quick access</p>
+            <div className="text-xs font-medium tracking-wide text-stone-200 px-7 inline-flex items-center justify-between">
+              <p className="tracking-wide">Quick access</p>
               <span style={{ verticalAlign: "middle" }}>
-                <FiPlus />
+                <TooltipProvider>
+                  <Tooltip>
+                    <TooltipTrigger>
+                      {" "}
+                      <FiPlus className="size-4" />
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Create section</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
               </span>
             </div>
-            <div className="w-full box-border flex-col flex space-y-5">
-              <div className="text-xs -translate-x-4 font-semibold text-stone-200 px-9 inline-flex items-center justify-between" onClick={() => setIsFolderOpen([...isFolderOpen, "starred"])}>
-                <span className="inline-flex space-x-1 text-stone-500">
+            <div className="w-full box-border flex-col flex space-y-1">
+              <div
+                className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-lg inline-flex items-center justify-between"
+                onClick={() => setIsFolderOpen([...isFolderOpen, "starred"])}
+              >
+                <span className="inline-flex items-center space-x-1 w-full  text-stone-400">
                   {isFolderOpen.includes("starred") ? (
                     <FaAngleDown />
                   ) : (
                     <FaAngleRight />
                   )}
-                  <p>Starred</p>
+                  <div className="w-full flex items-center justify-between">
+                    <p>Starred</p>
+                    <span className="p-1 hover:bg-stone-600 rounded-md flex items-center justify-center">
+                      <TooltipProvider>
+                        <Tooltip>
+                          <TooltipTrigger>
+                            <FiPlus className="size-4 " />
+                          </TooltipTrigger>
+                          <TooltipContent>
+                            <p>Create sections or add items</p>
+                          </TooltipContent>
+                        </Tooltip>
+                      </TooltipProvider>
+                    </span>
+                  </div>
                 </span>
               </div>
-              <div className="text-xs -translate-x-4 font-semibold text-stone-200 px-9 inline-flex items-center justify-between">
-                <span className="inline-flex space-x-1 text-stone-500">
+              <div
+                className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-lg inline-flex items-center justify-between"
+                onClick={() => {
+                  setIsFolderOpen([...isFolderOpen, "untitled"]);
+                }}
+              >
+                <span className="inline-flex items-center space-x-1 w-full text-stone-400">
                   {isFolderOpen.includes("untitled") ? (
                     <FaAngleDown />
                   ) : (
                     <FaAngleRight />
                   )}
-                  <p>Untitled</p>
+
+                  <div className="w-full flex items-center justify-between">
+                    <div className="w-full flex items-center justify-between">
+                      <p>Untitled</p>
+                      <div className="flex items-center justify-center">
+                        <span className="p-1 hover:bg-stone-600 rounded-md">
+                          <BiDotsVerticalRounded className="size-4 " />
+                        </span>{" "}
+                        <span className="p-1 hover:bg-stone-600 flex items-center justify-center rounded-md">
+                          <TooltipProvider>
+                            <Tooltip>
+                              <TooltipTrigger>
+                                <FiPlus className="size-4 " />
+                              </TooltipTrigger>
+                              <TooltipContent>
+                                <p>Create sections or add items</p>
+                              </TooltipContent>
+                            </Tooltip>
+                          </TooltipProvider>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
                 </span>
               </div>
             </div>
-            <div className="px-7 text-base font-light text-stone-500">
+            <div className="px-7 text-base font-light text-stone-400">
               Drag important items here.
             </div>
           </div>
@@ -217,7 +315,14 @@ export default function DashboardLayout({
           </div>
         </div>
       </div>
-      <div className={clsx("transition-transform duration-700 ease-in-out w-full", isOpen ? '' : '')}>{children}</div>
+      <div
+        className={clsx(
+          "transition-transform duration-700 ease-in-out w-full",
+          isOpen ? "" : ""
+        )}
+      >
+        {children}
+      </div>
     </div>
   );
 }

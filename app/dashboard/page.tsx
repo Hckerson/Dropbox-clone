@@ -1,29 +1,58 @@
+"use client";
 import { SearchBar } from "../ui/components/search";
-import {
-  Upload,
-  Create,
-  Folder,
-  Transfer,
-  Share,
-} from "../ui/components/vgs";
+import { Upload, Create, Folder, Transfer, Share } from "../ui/components/vgs";
 import { Row } from "../ui/components/rowed_items";
+import Initials from "../ui/components/nameCard";
 import ActionCard from "../ui/components/action-card";
+import { IoSettingsOutline } from "react-icons/io5";
+import { WiTime8 } from "react-icons/wi";
+import { FaRegStar } from "react-icons/fa";
+import { CiGrid31 } from "react-icons/ci";
+import { FaBars } from "react-icons/fa6";
 import { OneCard } from "../ui/components/action-card";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
 
 const cards = [
-  { first: true, active: false, link: "", name: "Upload or drop", vgs: Upload },
-  { first: false, active: false, link: "", name: "Create", vgs: Create },
-  { first: false, active: false, link: "", name: "Create folder", vgs: Folder },
+  { first: true, link: "", name: "Upload or drop", vgs: Upload },
+  { first: false, link: "", name: "Create", vgs: Create },
+  { first: false, link: "", name: "Create folder", vgs: Folder },
   {
     first: false,
-    active: false,
     link: "",
     name: "Transfer a copy",
     vgs: Transfer,
   },
-  { first: false, active: false, link: "", name: "Share", vgs: Share },
+  { first: false, link: "", name: "Share", vgs: Share },
 ];
+
 export default function page() {
+  const [name, setName] = useState("");
+  const [first, setFirst] = useState("");
+  const [last, setLast] = useState("");
+  useEffect(() => {
+    const fetchClientDetails = async () => {
+      const response = await fetch("/api/details", {
+        next: { revalidate: 1 * 24 * 60 * 60 * 1000 },
+      });
+      const result = await response.json();
+      const first = result.first;
+      const last = result.last;
+      setFirst(first);
+      setLast(last);
+      const firstname = result.first?.slice(0, 1).toUpperCase();
+      const lastname = result.last?.slice(0, 1).toUpperCase();
+      const initials = `${firstname}${lastname}`;
+      setName(initials);
+    };
+    fetchClientDetails();
+  });
   return (
     <div className="text-white w-full h-full px-10 py-3 flex-col space-y-4 bg-[#1a1918]  flex">
       <section className="w-full box-border flex space-x-2 items-center">
@@ -52,17 +81,108 @@ export default function page() {
           </div>
         </div>
         <Row />
+        <div className="hover:bg-stone-700 p-1 flex items-center justify-center rounded-lg">
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                {" "}
+                <Initials
+                  classname="size-6 text-[10px] font-bold rounded-lg "
+                  color="#fad24b"
+                  bg="#684505"
+                  name={name}
+                />
+              </TooltipTrigger>
+              <TooltipContent>
+                <p>Account</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        </div>
+        <div className=" block text-nowrap bg-[#b4dc19] text-[14px] text-black tracking-wide rounded-lg  p-2 font-semibold">
+          <Link
+            href={
+              "https://www.dropbox.com/plans?_camp=19135&_tk=link_campaign_format"
+            }
+          >
+            {" "}
+            Click to update
+          </Link>
+        </div>
       </section>
-      <section style={{gridAutoFlow : 'column'}} className="w-full max-w-[870px] box-border grid grid-cols-6 gap gap-x-8 items-center">
+      <section
+        style={{ gridAutoFlow: "column" }}
+        className="w-full max-w-[870px] box-border grid grid-cols-6 gap gap-x-8 items-center"
+      >
         {cards.map((card) => {
-          const Icon  = card.vgs
+          const Icon = card.vgs;
           return (
-            <ActionCard key={card.name} first={card.first}  name={card.name}>
+            <ActionCard key={card.name} first={card.first} name={card.name}>
               <Icon />
             </ActionCard>
           );
         })}
-        <OneCard/>
+        <OneCard />
+      </section>
+      <section className="flex justify-between">
+        <div className="flex items-center space-x-4">
+          <p className="text-2xl font-semibold">All files</p>
+          <button>
+            <IoSettingsOutline className="size-4" />
+          </button>
+        </div>
+        <div className="flex items-center space-x-2">
+          <div className="inline-flex items-center justify-center">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Initials
+                    classname="size-8 text-[12px] font-bold rounded-xl "
+                    color="#fa551e"
+                    bg="#4e0119"
+                    name={name}
+                  />
+                </TooltipTrigger>
+                <TooltipContent>
+                  <div className="flex flex-col justify-center">
+                    <p>
+                      {first} {last} {`(you)`}
+                    </p>
+                    <p className="text-center">Owner</p>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
+          <p className="text-stone-400">Only you</p>
+        </div>
+      </section>
+      <section className="flex justify-between">
+        <div className="flex space-x-3">
+          <div className="flex items-center border border-white border-opacity-15 px-3 py-1 rounded-2xl space-x-1 bg-stone-800 hover:bg-stone-700 origin-bottom transition-all ">
+            <button>
+              <WiTime8 className="size-5" />
+            </button>
+            <p className="text-sm font-normal">Recents</p>
+          </div>
+          <div className="flex items-center border border-white border-opacity-15 px-3 py-1 rounded-2xl space-x-1 bg-stone-800 hover:bg-stone-700 origin-bottom transition-all ">
+            <button>
+              <FaRegStar className="size-4" />
+            </button>
+            <p className="text-sm font-normal">Starred</p>
+          </div>
+        </div>
+        <div className="flex items-center space-x-2">
+          <button className="inline-flex p-2 hover:bg-stone-700 rounded-lg">
+            <FaBars className="size-4" />
+          </button>
+          <button className="inline-flex p-[5px] hover:bg-stone-700 rounded-lg">
+            <CiGrid31 className="size-5" />
+          </button>
+        </div>
+      </section>
+      <section>
+        
       </section>
     </div>
   );

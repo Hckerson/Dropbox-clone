@@ -1,5 +1,5 @@
 import "./globals.css";
-import { inter } from "./ui/fonts";
+import { instrument_Sans } from "./ui/fonts";
 import LenisScrollContainer from "./hooks/useLenisScroll";
 
 export default function RootLayout({
@@ -16,7 +16,7 @@ export default function RootLayout({
         />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <body className={`${inter.className} antialiased`}>
+      <body className={`${instrument_Sans.className} antialiased`}>
         <LenisScrollContainer>{children}</LenisScrollContainer>
       </body>
     </html>

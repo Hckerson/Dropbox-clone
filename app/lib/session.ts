@@ -49,9 +49,10 @@ export async function createSession(userId: string) {
         VALUES ($1, $2) RETURNING *`,
     [userId, expiresAt]
   );
-  const role = await sql(`SELECT role FROM users WHERE id = $1`, [userId]);
-  const { id: sessionId, user_id } = data[0];
-  const session = await encrypt({ sessionId, user_id, role, expiresAt });
+  const details = await sql(`SELECT role, firstname, lastname FROM users WHERE id = $1`, [userId]);
+  const {role, firstname, lastname} = details[0];
+  const { id: sessionId, user_id, } = data[0];
+  const session = await encrypt({ sessionId, user_id, role, expiresAt, firstname, lastname });
   const cookieStore = await cookies();
   cookieStore.set("session", session, {
     httpOnly: true,
@@ -75,6 +76,8 @@ export async function updateSession() {
     user_id: payload.user_id,
     role: payload.role,
     expiresAt: expires,
+    firstname : payload.firstname,
+    lastname : payload.lastname
   });
   await sql(`UPDATE sessions SET expires_at = $1 WHERE id = $2`, [
     expires,
