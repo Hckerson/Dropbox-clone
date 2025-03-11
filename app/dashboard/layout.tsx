@@ -15,6 +15,15 @@ import { BiDotsVerticalRounded } from "react-icons/bi";
 import { FaAngleRight } from "react-icons/fa6";
 import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
+
+const data = [
+  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
+  {name : 'Sign documents', about : '0 byter of 2 gb',  action: 'Upload'},
+  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
+  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
+  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
+  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
+]
 export default function DashboardLayout({
   children,
 }: {
@@ -292,7 +301,8 @@ export default function DashboardLayout({
             </div>
           </div>
 
-          <div className=" w-full text-white rounded-xl  ">
+          <div className=" w-full text-white rounded-xl   relative">
+
             <div className="  rounded-xl shadow-lg flex items-center p-2 gap-x-4 bg-[#002969]">
               <div className="shrink-0">
                 <Ring color="#002969">

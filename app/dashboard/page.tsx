@@ -12,6 +12,7 @@ import { FaBars } from "react-icons/fa6";
 import { OneCard } from "../ui/components/action-card";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import FileUpload from "../ui/components/check";
 import {
   Tooltip,
   TooltipContent,
@@ -39,9 +40,10 @@ export default function page() {
   useEffect(() => {
     const fetchClientDetails = async () => {
       const response = await fetch("/api/details", {
-        next: { revalidate: 1 * 24 * 60 * 60 * 1000 },
+        next: { revalidate: 1 * 24 * 60 * 60  },
       });
-      const result = await response.json();
+      const data = await response.json()
+      const result = data ?? {first : 'D', last : 'B'}
       const first = result.first;
       const last = result.last;
       setFirst(first);
@@ -99,11 +101,12 @@ export default function page() {
             </Tooltip>
           </TooltipProvider>
         </div>
-        <div className=" block text-nowrap bg-[#b4dc19] text-[14px] text-black tracking-wide rounded-lg  p-2 font-semibold">
+        <div className=" block text-nowrap  text-[14px] text-black tracking-wide  font-semibold">
           <Link
             href={
               "https://www.dropbox.com/plans?_camp=19135&_tk=link_campaign_format"
             }
+            className="bg-[#b4dc19] rounded-lg  p-2"
           >
             {" "}
             Click to update
@@ -182,7 +185,7 @@ export default function page() {
         </div>
       </section>
       <section>
-        
+        <FileUpload/>
       </section>
     </div>
   );
