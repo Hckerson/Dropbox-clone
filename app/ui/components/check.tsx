@@ -1,5 +1,4 @@
 import React, {
-  useCallback,
   useState,
   ChangeEvent,
   DragEvent,
@@ -8,8 +7,6 @@ import React, {
 import { PiUploadSimple } from "react-icons/pi";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
-import { FaBullseye } from "react-icons/fa6";
-
 interface FileWithSize extends File {
   size: number;
 }

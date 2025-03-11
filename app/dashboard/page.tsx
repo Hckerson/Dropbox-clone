@@ -33,7 +33,7 @@ const cards = [
   { first: false, link: "", name: "Share", vgs: Share },
 ];
 
-export default function page() {
+export default function Page() {
   const [name, setName] = useState("");
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");

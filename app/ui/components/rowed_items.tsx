@@ -106,7 +106,7 @@ export function Row() {
                 </span>
               </TooltipTrigger>
               <TooltipContent>
-                <p>See what's new</p>
+                <p>{`See what's new`}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

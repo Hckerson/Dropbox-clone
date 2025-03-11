@@ -17,13 +17,14 @@ import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 
 const data = [
-  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
-  {name : 'Sign documents', about : '0 byter of 2 gb',  action: 'Upload'},
-  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
-  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
-  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
-  {name : 'Upload anything', about : '0 byter of 2 gb',  action: 'Upload'},
-]
+  { name: "Upload anything", about: "0 byter of 2 gb", action: "Upload" },
+  { name: "Sign documents", about: "0 of 3 requests per MO", action: "Sign" },
+  { name: "Edit images", about: "Unlimited", action: "Edit" },
+  { name: "Edit videos", about: "Unlimited", action: "Edit" },
+  { name: "Review media", about: ") of 4 media files", action: "Review" },
+  { name: "Edit PDFs", about: "Unlimited", action: "Edit" },
+];
+console.log(data)
 export default function DashboardLayout({
   children,
 }: {
@@ -302,7 +303,6 @@ export default function DashboardLayout({
           </div>
 
           <div className=" w-full text-white rounded-xl   relative">
-
             <div className="  rounded-xl shadow-lg flex items-center p-2 gap-x-4 bg-[#002969]">
               <div className="shrink-0">
                 <Ring color="#002969">
