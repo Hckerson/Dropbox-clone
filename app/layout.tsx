@@ -16,7 +16,7 @@ export default function RootLayout({
         />
         <meta name="viewport" content="initial-scale=1, width=device-width" />
       </head>
-      <body className={`${instrument_Sans.className} antialiased`}>
+      <body className={`${instrument_Sans.className} antialiased box-border relative`}>
         <LenisScrollContainer>{children}</LenisScrollContainer>
       </body>
     </html>

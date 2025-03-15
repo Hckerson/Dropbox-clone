@@ -36,7 +36,7 @@ export default function DashboardLayout({
   const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]);
   return (
     <div className="flex box-border h-screen w-screen  ">
-      <div className=" relative box-border h-full flex bg-black">
+      <div className="lg:relative lg:z-0 z-30 absolute  box-border h-full flex bg-black">
         <div className="w-[70px] h-full border-r-[1px] border-white bg-black z-20 px-2 border-opacity-20">
           <div className="flex flex-col h-full items-center justify-between py-4">
             <div className="flex flex-col items-center space-y-3 justify-center">

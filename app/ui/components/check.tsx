@@ -20,26 +20,13 @@ export default function FileUpload({
   handler,
   factor,
 }: {
-  handler: (response : boolean)=> void;
+  handler: (response: boolean) => void;
   factor: boolean;
 }) {
   const [files, setFiles] = useState<FileWithSize[]>([]);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
   const imageRef = useRef<HTMLImageElement>(null);
-
-  // Handle file selection
-  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files) {
-      const selectedFiles = Array.from(e.target.files) as FileWithSize[];
-      setFiles(selectedFiles);
-      uploadFiles(selectedFiles);
-      handler(true);
-    } else {
-      handler(false);
-    }
-    onFileSelected(e);
-  };
 
   // Handle drag-and-drop
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
@@ -51,19 +38,6 @@ export default function FileUpload({
     setIsDragging(false);
   };
 
-  function onFileSelected(event: React.ChangeEvent<HTMLInputElement>) {
-    const selectedFile = event.target.files?.[0]; // Optional chaining for files array
-    if (!selectedFile) return;
-    const reader = new FileReader();
-    reader.onload = (loadEvent) => {
-      if (!loadEvent.target?.result || !imageRef.current) return;
-      setFiles(prev => [...prev, selectedFile]);
-      imageRef.current.src = loadEvent.target.result as string;
-    };
-
-    reader.readAsDataURL(selectedFile);
-  }
-
   const handleDrop = (e: DragEvent<HTMLDivElement>) => {
     e.preventDefault();
     setIsDragging(false);
@@ -71,9 +45,38 @@ export default function FileUpload({
       const droppedFiles = Array.from(e.dataTransfer.files) as FileWithSize[];
       setFiles(droppedFiles);
       uploadFiles(droppedFiles);
+      handler(true);
+    } else {
+      handler(false);
     }
   };
 
+  const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const selectedFiles = Array.from(e.target.files) as FileWithSize[];
+      console.log(selectedFiles);
+      setFiles(selectedFiles);
+      uploadFiles(selectedFiles);
+      handler(true);
+    } else {
+      handler(false);
+    }
+    onFileSelected(e);
+  };
+
+  function onFileSelected(event: React.ChangeEvent<HTMLInputElement>) {
+    const selectedFile = event.target.files?.[0]; // Optional chaining for files array
+    if (!selectedFile) return;
+    const reader = new FileReader();
+    reader.onload = (loadEvent) => {
+      if (!loadEvent.target?.result || !imageRef.current) {
+        console.log("na");
+      } else {
+        imageRef.current.src = loadEvent.target.result as string;
+      }
+    };
+    reader.readAsDataURL(selectedFile);
+  }
   // Upload files to the server
   const uploadFiles = async (files: FileWithSize[]) => {
     const formData = new FormData();
@@ -91,23 +94,29 @@ export default function FileUpload({
     // }
   };
 
-  useEffect(() => {}, [checked]);
+  useEffect(() => {
+    console.log(files);
+  }, [files]);
 
   return (
     <div
-      className={clsx("w-full h-full  border-stone-600", {
-        "p-8 mt-10 box-border relative  border-2 border-dashed":
-          factor == false,
-      })}
+      className={clsx(
+        "w-full h-full  border-stone-600 ",
+        {
+          "p-8 mt-10 box-border relative  border-2 border-dashed":
+            factor == false,
+        },
+        isDragging ? "bg-stone-800" : "bg-[#1a1918]"
+      )}
     >
       {!factor ? (
         <div
-          className={` relative items-center flex flex-col rounded-lg scrollbar overflow-y-auto max-h-[350px] text-center py-12 ${
-            isDragging ? "bg-stone-800" : "bg-[#1a1918]"
-          }`}
+          className={` relative items-center flex flex-col rounded-lg scrollbar overflow-y-auto  text-center py-12`}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
-          onDrop={handleDrop}
+          onDrop={(e) => {
+            handleDrop(e);
+          }}
         >
           <PiUploadSimple className="size-14 text-stone-500" />
           <div className="absolute right-7 top-3 size-5">
@@ -195,7 +204,9 @@ export default function FileUpload({
                     return (
                       <tr
                         key={index}
-                        className={clsx("max-h-[30px] border-white border-opacity-20 border-b-[1px]")}
+                        className={clsx(
+                          "max-h-[30px] border-white border-opacity-20 border-b-[1px]"
+                        )}
                       >
                         <td className="w-3/5 text-start flex items-center space-x-3">
                           {" "}
@@ -213,9 +224,13 @@ export default function FileUpload({
                               height={500}
                             ></Image>
                           </div>
-                          <p className=" text-start text-nowrap text-[14px] font-light">{file.name}</p>
+                          <p className=" text-start text-nowrap text-[14px] font-light">
+                            {file.name}
+                          </p>
                         </td>
-                        <td className=" text-start text-base font-light">Only you</td>
+                        <td className=" text-start text-base font-light">
+                          Only you
+                        </td>
                         <td className=" text-start text-base font-light text-nowrap">
                           {/* {(file.size / 1024).toFixed(2)} KB */}
                         </td>

@@ -1,6 +1,6 @@
 "use client";
 import { SearchBar } from "../ui/components/search";
-import { Upload, Create, Folder, Transfer, Share } from "../ui/components/vgs";
+import { Upload, Create, Folder, Transfer, Share, App } from "../ui/components/vgs";
 import { Row } from "../ui/components/rowed_items";
 import Initials from "../ui/components/nameCard";
 import ActionCard from "../ui/components/action-card";
@@ -9,7 +9,6 @@ import { WiTime8 } from "react-icons/wi";
 import { FaRegStar } from "react-icons/fa";
 import { CiGrid31 } from "react-icons/ci";
 import { FaBars } from "react-icons/fa6";
-import { OneCard } from "../ui/components/action-card";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import FileUpload from "../ui/components/check";
@@ -21,27 +20,28 @@ import {
 } from "@/components/ui/tooltip";
 
 const cards = [
-  { first: true, link: "", name: "Upload or drop", vgs: Upload },
-  { first: false, link: "", name: "Create", vgs: Create },
-  { first: false, link: "", name: "Create folder", vgs: Folder },
+  { first: true, link: "", name: "Upload or drop", vgs: Upload, hidden : 'relative' },
+  { first: false, link: "", name: "Create", vgs: Create, hidden : 'relative' },
+  { first: false, link: "", name: "Create folder", vgs: Folder, hidden : 'relative' },
   {
     first: false,
     link: "",
     name: "Transfer a copy",
-    vgs: Transfer,
+    vgs: Transfer, hidden : 'min-[1025px]:block hidden relative'
   },
-  { first: false, link: "", name: "Share", vgs: Share },
+  { first: false, link: "", name: "Share", vgs: Share, hidden : 'min-[1536px]:block hidden relative' },
+  { first: false, link: "", name: "Get the app", vgs: App, hidden : 'xl:block hidden'  },
 ];
 
 export default function Page() {
   const [name, setName] = useState("");
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
-  const [factor, setFactor]= useState(false)
+  const [factor, setFactor] = useState(false);
 
-  const handleFactor = (response : boolean)=>{
-    setFactor(response)
-  }
+  const handleFactor = (response: boolean) => {
+    setFactor(response);
+  };
 
   useEffect(() => {
     const fetchClientDetails = async () => {
@@ -49,20 +49,26 @@ export default function Page() {
         next: { revalidate: 1 * 24 * 60 * 60 },
       });
       const data = await response.json();
-      const result = data ?? { first: "D", last: "B" };
-      const first = result.first;
-      const last = result.last;
-      setFirst(first);
-      setLast(last);
-      const firstname = result.first?.slice(0, 1).toUpperCase();
-      const lastname = result.last?.slice(0, 1).toUpperCase();
-      const initials = `${firstname}${lastname}`;
-      setName(initials);
+      if (data?.error === "unauthorized") {
+        setFirst("D");
+        setLast("B");
+        setName("DB");
+      } else {
+        const result = data;
+        const first = result.first;
+        const last = result.last;
+        setFirst(first);
+        setLast(last);
+        const firstname = result.first?.slice(0, 1).toUpperCase();
+        const lastname = result.last?.slice(0, 1).toUpperCase();
+        const initials = `${firstname}${lastname}`;
+        setName(initials);
+      }
     };
     fetchClientDetails();
   });
   return (
-    <div className="text-white w-full h-full px-10 py-3 flex-col space-y-4 bg-[#1a1918]  flex">
+    <div className="text-white w-full h-full px-10 py-3 x flex-col space-y-4 bg-[#1a1918]  flex">
       <section className="w-full box-border flex space-x-2 items-center">
         <SearchBar />
         <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px] px-2 bg-stone-700 rounded-md">
@@ -121,17 +127,16 @@ export default function Page() {
       </section>
       <section
         style={{ gridAutoFlow: "column" }}
-        className="w-full max-w-[870px] box-border grid grid-cols-6 gap gap-x-8 items-center"
+        className="w-full  box-border flex space-x-2 items-center"
       >
         {cards.map((card) => {
           const Icon = card.vgs;
           return (
-            <ActionCard key={card.name} first={card.first} name={card.name}>
+            <ActionCard key={card.name} first={card.first} name={card.name} hidden={card.hidden} >
               <Icon />
             </ActionCard>
           );
         })}
-        <OneCard />
       </section>
       <section className="flex justify-between">
         <div className="flex items-center space-x-4">
