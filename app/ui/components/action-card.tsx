@@ -1,6 +1,4 @@
 import clsx from "clsx";
-import Link from "next/link";
-import { App } from "./vgs";
 interface Card {
   first: boolean;
   name: string;
