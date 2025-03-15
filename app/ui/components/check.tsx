@@ -101,7 +101,7 @@ export default function FileUpload({
   return (
     <div
       className={clsx(
-        "w-full h-full  border-stone-600 ",
+        "w-full   border-stone-600 ",
         {
           "p-8 mt-10 box-border relative  border-2 border-dashed":
             factor == false,
