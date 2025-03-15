@@ -1,6 +1,13 @@
 "use client";
 import { SearchBar } from "../ui/components/search";
-import { Upload, Create, Folder, Transfer, Share, App } from "../ui/components/vgs";
+import {
+  Upload,
+  Create,
+  Folder,
+  Transfer,
+  Share,
+  App,
+} from "../ui/components/vgs";
 import { Row } from "../ui/components/rowed_items";
 import Initials from "../ui/components/nameCard";
 import ActionCard from "../ui/components/action-card";
@@ -20,17 +27,36 @@ import {
 } from "@/components/ui/tooltip";
 
 const cards = [
-  { first: true, link: "", name: "Upload or drop", vgs: Upload, hidden : 'relative' },
-  { first: false, link: "", name: "Create", vgs: Create, hidden : 'relative' },
-  { first: false, link: "", name: "Create folder", vgs: Folder, hidden : 'relative' },
+  { first: true, link: "", name: "Upload ", vgs: Upload, hidden: "relative" },
+  { first: false, link: "", name: "Create", vgs: Create, hidden: "relative" },
+  {
+    first: false,
+    link: "",
+    name: "Create folder",
+    vgs: Folder,
+    hidden: "relative hidden md:block",
+  },
   {
     first: false,
     link: "",
     name: "Transfer a copy",
-    vgs: Transfer, hidden : 'min-[1025px]:block hidden relative'
+    vgs: Transfer,
+    hidden: "min-[1025px]:block hidden relative",
   },
-  { first: false, link: "", name: "Share", vgs: Share, hidden : 'min-[1536px]:block hidden relative' },
-  { first: false, link: "", name: "Get the app", vgs: App, hidden : 'xl:block hidden'  },
+  {
+    first: false,
+    link: "",
+    name: "Share",
+    vgs: Share,
+    hidden: "min-[1536px]:block hidden relative",
+  },
+  {
+    first: false,
+    link: "",
+    name: "Get the app",
+    vgs: App,
+    hidden: "xl:block hidden",
+  },
 ];
 
 export default function Page() {
@@ -64,15 +90,15 @@ export default function Page() {
         const initials = `${firstname}${lastname}`;
         setName(initials);
       }
-      localStorage.setItem('name', name)
+      localStorage.setItem("name", name);
     };
     fetchClientDetails();
   }, [name]);
   return (
-    <div className="text-white w-full h-full px-10 py-3 x flex-col space-y-4 bg-[#1a1918]  flex">
+    <div className="text-white w-full h-full px-7 md:px-10 py-3 x flex-col space-y-4 bg-[#1a1918] relative flex">
       <section className="w-full box-border flex space-x-2 items-center">
         <SearchBar />
-        <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px] px-2 bg-stone-700 rounded-md">
+        <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px]  justify-center px-2 bg-stone-700 rounded-md">
           <div className="shrink-0">
             <span className="">
               <svg
@@ -91,8 +117,10 @@ export default function Page() {
               </svg>
             </span>
           </div>
-          <div>
-            <p className="text-sm text-white min-w-max ">Invite members</p>
+          <div className="flex">
+            <p className="text-sm text-white min-w-max  sm:hidden hidden">
+              Invite members
+            </p>
           </div>
         </div>
         <Row classes="relative space-x-1 lg:flex hidden" fill="white" />
@@ -114,7 +142,7 @@ export default function Page() {
             </Tooltip>
           </TooltipProvider>
         </div>
-        <div className=" block text-nowrap  text-[14px] text-black tracking-wide  font-semibold">
+        <div className=" text-nowrap md:block hidden text-[14px] text-black tracking-wide  font-semibold">
           <Link
             href={
               "https://www.dropbox.com/plans?_camp=19135&_tk=link_campaign_format"
@@ -133,7 +161,12 @@ export default function Page() {
         {cards.map((card) => {
           const Icon = card.vgs;
           return (
-            <ActionCard key={card.name} first={card.first} name={card.name} hidden={card.hidden} >
+            <ActionCard
+              key={card.name}
+              first={card.first}
+              name={card.name}
+              hidden={card.hidden}
+            >
               <Icon />
             </ActionCard>
           );

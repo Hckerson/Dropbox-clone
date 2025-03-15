@@ -15,6 +15,7 @@ import { Row } from "../ui/components/rowed_items";
 import List from "../ui/components/list";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { FaAngleRight } from "react-icons/fa6";
+import { HiMiniBars4 } from "react-icons/hi2";
 import { FaAngleUp } from "react-icons/fa6";
 import { FaAngleDown } from "react-icons/fa6";
 
@@ -26,6 +27,7 @@ const data = [
   { name: "Review media", about: ") of 4 media files", action: "Review" },
   { name: "Edit PDFs", about: "Unlimited", action: "Edit" },
 ];
+console.log(data);
 
 export default function DashboardLayout({
   children,
@@ -34,18 +36,34 @@ export default function DashboardLayout({
 }) {
   const [active, setActive] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
-  const [name, setName] = useState("")
+  const [name, setName] = useState("");
   const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]);
-  useEffect(()=>{
-    const name = localStorage.getItem('name') as string
-    setName(name)
-  }, [name])
+  useEffect(() => {
+    const name = localStorage.getItem("name") as string;
+    setName(name);
+  }, [name]);
   return (
     <div className="flex box-border h-screen w-screen  ">
-      <div className="lg:relative lg:z-0 z-30 absolute lg:translate-x-0 -translate-x-full  box-border h-full flex bg-black">
+      <div
+        id="movement"
+        className="lg:relative lg:z-0 z-30 absolute lg:translate-x-0 -translate-x-full transition-transform  box-border h-full flex bg-black"
+      >
         <div className="w-[70px] h-full border-r-[1px] border-white bg-black z-20 px-2 border-opacity-20">
           <div className="flex flex-col h-full items-center justify-between py-4">
             <div className="flex flex-col items-center space-y-3 justify-center">
+              <span
+                className=" lg:hidden z-20  flex "
+                onClick={() => {
+                  const element = document.getElementById("movement");
+                  element?.classList.toggle("-translate-x-full");
+                }}
+              >
+                <HiMiniBars4
+                  className="size-5 text-white"
+                  fill="white"
+                  stroke="white"
+                />
+              </span> 
               <span className="inline-flex">
                 <svg
                   viewBox="0 0 64 64"
@@ -161,7 +179,7 @@ export default function DashboardLayout({
                 </div>
               </span>
             </div>
-            <div className="h-[30px] *:w-full flex items-center justify-center">
+            <div className="h-[30px] *:w-full lg:flex hidden items-center justify-center">
               {!isOpen ? (
                 <span className="inline-flex">
                   <TooltipProvider>
@@ -355,10 +373,23 @@ export default function DashboardLayout({
       </div>
       <div
         className={clsx(
-          "transition-transform duration-700 ease-in-out w-full",
+          "transition-transform relative duration-700 ease-in-out w-full",
           isOpen ? "" : ""
         )}
       >
+        <span
+          className="absolute top-6 lg:hidden z-10 left-1 sm:left-2 flex "
+          onClick={() => {
+            const element = document.getElementById("movement");
+            element?.classList.toggle("-translate-x-full");
+          }}
+        >
+          <HiMiniBars4
+            className="size-5 text-white"
+            fill="white"
+            stroke="white"
+          />
+        </span>
         {children}
       </div>
     </div>

@@ -111,7 +111,7 @@ export default function FileUpload({
     >
       {!factor ? (
         <div
-          className={` relative items-center flex flex-col rounded-lg scrollbar overflow-y-auto  text-center py-12`}
+          className={` relative items-center flex flex-col rounded-lg scrollbar pb-4 overflow-y-auto  text-center py-12`}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={(e) => {
