@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box } from "../ui/components/vgs";
 import clsx from "clsx";
 import { FiPlus } from "react-icons/fi";
@@ -10,6 +10,8 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import Initials from "../ui/components/nameCard";
+import { Row } from "../ui/components/rowed_items";
 import List from "../ui/components/list";
 import { BiDotsVerticalRounded } from "react-icons/bi";
 import { FaAngleRight } from "react-icons/fa6";
@@ -24,7 +26,6 @@ const data = [
   { name: "Review media", about: ") of 4 media files", action: "Review" },
   { name: "Edit PDFs", about: "Unlimited", action: "Edit" },
 ];
-console.log(data)
 
 export default function DashboardLayout({
   children,
@@ -33,10 +34,15 @@ export default function DashboardLayout({
 }) {
   const [active, setActive] = useState("home");
   const [isOpen, setIsOpen] = useState(false);
+  const [name, setName] = useState("")
   const [isFolderOpen, setIsFolderOpen] = useState<string[]>([]);
+  useEffect(()=>{
+    const name = localStorage.getItem('name') as string
+    setName(name)
+  }, [name])
   return (
     <div className="flex box-border h-screen w-screen  ">
-      <div className="lg:relative lg:z-0 z-30 absolute  box-border h-full flex bg-black">
+      <div className="lg:relative lg:z-0 z-30 absolute lg:translate-x-0 -translate-x-full  box-border h-full flex bg-black">
         <div className="w-[70px] h-full border-r-[1px] border-white bg-black z-20 px-2 border-opacity-20">
           <div className="flex flex-col h-full items-center justify-between py-4">
             <div className="flex flex-col items-center space-y-3 justify-center">
@@ -131,6 +137,27 @@ export default function DashboardLayout({
                   >
                     Folder
                   </p>
+                </div>
+              </span>
+              <span className="inline-flex w-full justify-center space-y-1 flex-col cursor-pointer">
+                <Row classes="flex-col space-y-2 lg:hidden" fill="white" />
+                <div className="hover:bg-stone-700 p-1 flex lg:hidden items-center justify-center rounded-lg">
+                  <TooltipProvider>
+                    <Tooltip>
+                      <TooltipTrigger>
+                        {" "}
+                        <Initials
+                          classname="size-6 text-[10px] font-bold rounded-lg "
+                          color="#fad24b"
+                          bg="#684505"
+                          name={name}
+                        />
+                      </TooltipTrigger>
+                      <TooltipContent>
+                        <p>Account</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  </TooltipProvider>
                 </div>
               </span>
             </div>

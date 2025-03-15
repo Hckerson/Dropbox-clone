@@ -64,9 +64,10 @@ export default function Page() {
         const initials = `${firstname}${lastname}`;
         setName(initials);
       }
+      localStorage.setItem('name', name)
     };
     fetchClientDetails();
-  });
+  }, [name]);
   return (
     <div className="text-white w-full h-full px-10 py-3 x flex-col space-y-4 bg-[#1a1918]  flex">
       <section className="w-full box-border flex space-x-2 items-center">
@@ -94,8 +95,8 @@ export default function Page() {
             <p className="text-sm text-white min-w-max ">Invite members</p>
           </div>
         </div>
-        <Row />
-        <div className="hover:bg-stone-700 p-1 flex items-center justify-center rounded-lg">
+        <Row classes="relative space-x-1 lg:flex hidden" fill="white" />
+        <div className="hover:bg-stone-700 p-1 hidden lg:flex items-center justify-center rounded-lg">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
