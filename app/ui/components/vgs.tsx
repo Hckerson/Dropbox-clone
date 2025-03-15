@@ -1,10 +1,15 @@
 import { GrFormUpload } from "react-icons/gr";
 import { IoMdAdd } from "react-icons/io";
-import { RiDownloadLine } from "react-icons/ri";
-import { RiFolderAddLine } from "react-icons/ri";
+import {
+  RiDownloadLine,
+  RiFolderAddLine,
+} from "react-icons/ri";
+import { ImBin } from "react-icons/im";
 import { IoShareOutline } from "react-icons/io5";
 import { FaFilePdf } from "react-icons/fa";
 import { AiOutlinePicture } from "react-icons/ai";
+import { FaAngleDown, FaArrowUp } from "react-icons/fa6";
+import clsx from "clsx";
 import { MdOutlineOndemandVideo } from "react-icons/md";
 import { LuChartPie } from "react-icons/lu";
 import { BiTransfer } from "react-icons/bi";
@@ -77,8 +82,20 @@ export function Review() {
   );
 }
 
+export function Bin() {
+  return <ImBin className="size-4" />;
+}
+
 export function Upload() {
   return <GrFormUpload color="black" className="size-4" />;
+}
+
+export function Down() {
+  return <FaAngleDown className="size-4" />;
+}
+
+export function Up({classes }:{classes : string}) {
+  return <FaArrowUp  className={clsx("FaArrowUp ", classes)} />;
 }
 
 export function Create() {
@@ -97,8 +114,8 @@ export function Pic() {
   return <AiOutlinePicture className="size-4" />;
 }
 
-export function Pdf(){
-  return <FaFilePdf className="size-4" />
+export function Pdf() {
+  return <FaFilePdf className="size-4" />;
 }
 
 export function App() {

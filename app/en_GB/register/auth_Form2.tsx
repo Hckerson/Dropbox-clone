@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useActionState } from "react";
 import { signUp } from "@/app/Auth/signUp";
 import Link from "next/link";
+import { instrument_Sans } from "@/app/ui/fonts";
 import { useRouter } from "next/navigation";
 import { HiOutlineDotsVertical } from "react-icons/hi";
 import CircleLoader from "react-spinners/CircleLoader";
@@ -46,10 +47,19 @@ export default function AuthForm({ type }: { type: string }) {
   useEffect(() => {
     if (state.message === "success") {
       router.push("/dashboard");
-    } else if (state.message === "login") {
-      router.push("/en_GB/login");
+    } else if (
+      state.message === "login, Already have an account, Redirecting ..."
+    ) {
+      setLoader(false);
+      const timeoutId = setTimeout(() => {
+        router.push("/en_GB/login");
+      }, 1500);
+      return () => clearTimeout(timeoutId);
     }
-  });
+    if(state?.errors){
+      setLoader(false)
+    }
+  },[state.message, state.errors, router] );
 
   return (
     <form
@@ -59,6 +69,7 @@ export default function AuthForm({ type }: { type: string }) {
           e.preventDefault();
         }
       }}
+      className={instrument_Sans.className}
     >
       <div className="grid gap-y-5">
         {status && (
@@ -593,6 +604,32 @@ export default function AuthForm({ type }: { type: string }) {
         {state?.message && (
           <p className="text-xs text-red-500 ">{state.message}</p>
         )}
+        <div className="w-full ">
+          <Link href="/en_GB/login">
+            {" "}
+            <p className="inline-flex items-center text-base font-medium group  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+              {"Already have an account, "}{" "}
+              <span className="font-semibold text-base">Login</span>
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                width="24"
+                height="24"
+                role="presentation"
+                focusable="false"
+              >
+                <path
+                  d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+              </svg>
+            </p>
+          </Link>
+        </div>
       </div>
     </form>
   );

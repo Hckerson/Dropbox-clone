@@ -27,7 +27,7 @@ export async function decrypt(session: string | undefined = "") {
     const result = await sql(
       `SELECT * FROM sessions WHERE id = $1 AND expires_at > NOW()`,
       [payload.sessionId]
-    );
+    ) ?? null
     if (result.length === 0) {
       return { error: "INVALID_SESSION" };
     }

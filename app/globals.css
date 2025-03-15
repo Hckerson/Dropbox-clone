@@ -2,25 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
-:root{
-  --ease-in-quad: cubic-bezier(0.55,0.085,0.68,0.53);
-  --ease-in-cubic: cubic-bezier(0.55,0.055,0.675,0.19);
-  --ease-in-quart: cubic-bezier(0.895,0.03,0.685,0.22);
-  --ease-in-quint: cubic-bezier(0.755,0.05,0.855,0.06);
-  --ease-in-expo: cubic-bezier(0.95,0.05,0.795,0.035);
-  --ease-in-circ: cubic-bezier(0.6,0.04,0.98,0.335);
-  --ease-out-quad: cubic-bezier(0.25,0.46,0.45,0.94);
-  --ease-out-cubic: cubic-bezier(0.215,0.61,0.355,1);
-  --ease-out-quart: cubic-bezier(0.165,0.84,0.44,1);
-  --ease-out-quint: cubic-bezier(0.23,1,0.32,1);
-  --ease-out-expo: cubic-bezier(0.19,1,0.22,1);
-  --ease-out-circ: cubic-bezier(0.075,0.82,0.165,1);
-  --ease-in-out-quad: cubic-bezier(0.455,0.03,0.515,0.955);
-  --ease-in-out-cubic: cubic-bezier(0.645,0.045,0.355,1);
-  --ease-in-out-quart: cubic-bezier(0.77,0,0.175,1);
-  --ease-in-out-quint: cubic-bezier(0.86,0,0.07,1);
-  --ease-in-out-expo: cubic-bezier(1,0,0,1);
-  --ease-in-out-circ: cubic-bezier(0.785,0.135,0.15,0.86);
+:root {
+  --ease-in-quad: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --ease-in-cubic: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --ease-in-quart: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --ease-in-quint: cubic-bezier(0.755, 0.05, 0.855, 0.06);
+  --ease-in-expo: cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  --ease-in-circ: cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  --ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-out-quart: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --ease-out-quint: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-out-circ: cubic-bezier(0.075, 0.82, 0.165, 1);
+  --ease-in-out-quad: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --ease-in-out-quart: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-in-out-quint: cubic-bezier(0.86, 0, 0.07, 1);
+  --ease-in-out-expo: cubic-bezier(1, 0, 0, 1);
+  --ease-in-out-circ: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 input[type="number"] {
@@ -38,6 +38,33 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 10px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 20px;
+    background: #292524;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #1a1918;
+    border-radius: 100vh;
+    border: 2px solid #78716c;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #1a1918;
+  }
+}
+
+.scrollbar {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; /* For smooth scrolling on WebKit browsers */
+}
+
 /* Add this to your Tailwind CSS file or a custom CSS file */
 @layer utilities {
   .transition-max-height {
@@ -53,7 +80,6 @@ input[type="number"]::-webkit-outer-spin-button {
   }
 }
 
-
 .scroll-text {
   will-change: background-position;
   transition: background-position 0.3s ease-in-out;
@@ -63,21 +89,19 @@ input[type="number"]::-webkit-outer-spin-button {
   aspect-ratio: 1.2;
 }
 
-
-#foot{
-  grid-auto-flow:  row;
-  grid-template-columns: repeat(2 , 1fr);
+#foot {
+  grid-auto-flow: row;
+  grid-template-columns: repeat(2, 1fr);
 }
 
-#pic{
+#pic {
   grid-auto-flow: column;
   grid-template-columns: auto;
 }
 
-.people{
+.people {
   min-width: calc(100% + 2px);
 }
-
 
 #card {
   grid-auto-flow: row;
@@ -85,11 +109,11 @@ input[type="number"]::-webkit-outer-spin-button {
   row-gap: 8px;
 }
 
-#aspect{
+#aspect {
   grid-auto-rows: minmax(0, max-content);
 }
 
-#drop{
+#drop {
   grid-auto-flow: row;
   grid-template-rows: min-content;
 }
@@ -98,7 +122,7 @@ input[type="number"]::-webkit-outer-spin-button {
   aspect-ratio: 1.2;
 }
 
-#collections{
+#collections {
   grid-auto-flow: column;
 }
 
@@ -111,27 +135,27 @@ input[type="number"]::-webkit-outer-spin-button {
   grid-auto-columns: 300px;
 }
 
-#discovery{
+#discovery {
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: minmax(0, max-content)
+  grid-auto-rows: minmax(0, max-content);
 }
 
-#everything{
+#everything {
   grid-auto-rows: minmax(0, max-content);
   grid-auto-flow: row;
 }
 
-#plans{
+#plans {
   grid-auto-rows: minmax(0, max-content);
   grid-auto-flow: row;
 }
 
-#plansE{
+#plansE {
   grid-auto-rows: minmax(0, max-content);
   grid-auto-flow: row;
 }
 
-.inner{
+.inner {
   aspect-ratio: 16/9;
 }
 
@@ -139,68 +163,67 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
 
   &:before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
- }
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
-#how{
+#how {
   grid-auto-flow: row;
 }
 
-#way{
+#way {
   grid-auto-flow: row;
 }
 
-#media{
+#media {
   grid-auto-flow: row;
 }
 
-#box{
-  grid-auto-flow: row;
-  grid-auto-rows: minmax(0, max-content);
-}
-
-#half{
+#box {
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
 
-#dropbox{
+#half {
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
 
-#better{
+#dropbox {
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
 
-#stats{
+#better {
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
 
-#collabs{
+#stats {
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
 
+#collabs {
+  grid-auto-flow: row;
+  grid-auto-rows: minmax(0, max-content);
+}
 
-.nine{
+.nine {
   aspect-ratio: 1;
 }
 
-#planCard{
+#planCard {
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
 
-#faq{
+#faq {
   grid-auto-flow: row;
   grid-auto-rows: minmax(0, max-content);
 }
@@ -214,12 +237,11 @@ input[type="number"]::-webkit-outer-spin-button {
     display: flex;
     flex-direction: column;
   }
-
 }
 
 @media (min-width: 480px) {
-  #position{
-    grid-template-columns: 1fr 1fr ;
+  #position {
+    grid-template-columns: 1fr 1fr;
     grid-auto-flow: row;
   }
 }
@@ -230,78 +252,77 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0 48px;
   }
 
-  #half{
+  #half {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
   }
 
-  #planCard{
+  #planCard {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
   }
 
-  .nine{
+  .nine {
     aspect-ratio: 16/9;
   }
 
-  #box{
+  #box {
     grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  #dropbox{
+  #dropbox {
     grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: 1fr 1fr 1fr;
   }
 
-  #better{
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-  }
-
-  #listing{
-    grid-auto-flow: column;
-    grid-template-columns: 1fr 1fr 1fr 1fr ;
-  }
-
-  #stats{
+  #better {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  #collabs{
-    grid-auto-flow: row;
-    grid-template-columns: 1fr 1fr ;
+  #listing {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-  #media{
+  #stats {
+    grid-auto-flow: column;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+
+  #collabs {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #media {
     grid-auto-flow: column;
   }
 
-  #everything{
+  #everything {
     grid-template-columns: 1fr 1fr 1fr;
   }
 
-  #how{
-    grid-template-columns: 1fr 1fr ;
+  #how {
+    grid-template-columns: 1fr 1fr;
   }
 
-  #start{
+  #start {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
   }
-  
-  
-  #products{
+
+  #products {
     grid-template-columns: 1fr 1fr;
   }
 
-  #solutions{
+  #solutions {
     grid-template-columns: 1fr 1fr;
   }
 
-  #foot{
-    grid-template-columns: repeat(3 , 1fr);
+  #foot {
+    grid-template-columns: repeat(3, 1fr);
   }
 
   #card {
@@ -310,51 +331,50 @@ input[type="number"]::-webkit-outer-spin-button {
     grid-template-columns: 275px 1fr;
   }
 
-  #plans{
-    grid-template-columns: 1fr 1fr ;
+  #plans {
+    grid-template-columns: 1fr 1fr;
   }
 
-  #plansE{
-    grid-template-columns: 1fr 1fr ;
+  #plansE {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 @media (min-width: 1024px) {
-  #aspect{
+  #aspect {
     grid-template-columns: 1fr 1fr;
   }
 
-  #collabs{
+  #collabs {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr 1fr 1fr;
   }
 
-
-  #plans{
+  #plans {
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: column;
   }
 
-  #plansE{
-    grid-template-columns: 1fr 1fr 1fr ;
+  #plansE {
+    grid-template-columns: 1fr 1fr 1fr;
     grid-auto-flow: row;
   }
 
-  #way{
+  #way {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
   }
 
-  .inner{
+  .inner {
     aspect-ratio: unset;
   }
 
-  #start{
+  #start {
     grid-auto-flow: row;
     grid-template-columns: 1fr;
   }
 
-  #drop{
+  #drop {
     grid-template-columns: 1fr 1fr;
     grid-auto-flow: column;
   }
@@ -403,48 +423,46 @@ input[type="number"]::-webkit-outer-spin-button {
     aspect-ratio: 1.83;
   }
 
-
   #faster {
     aspect-ratio: 1.83;
   }
 
-  #features{
+  #features {
     grid-auto-flow: column;
-    grid-template-columns: 50% 50%  ;
+    grid-template-columns: 50% 50%;
   }
 
-  #integrations{
+  #integrations {
     grid-auto-flow: column;
-    grid-template-columns: 50% 50%  ;
+    grid-template-columns: 50% 50%;
   }
 
-  #faq{
+  #faq {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1fr;
   }
 
-  .sixty{
-    width : 50%;
+  .sixty {
+    width: 50%;
   }
-
 }
 
 @media (min-width: 1280px) {
-  #left{
-    transform : translate(10%, -50%);
+  #left {
+    transform: translate(10%, -50%);
     transition: opacity 1s ease-in-out;
   }
 
-  #position{
+  #position {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-flow: column;
   }
 
-  #positions{
+  #positions {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-flow: column;
   }
-  
+
   #content {
     aspect-ratio: 1.8;
   }
@@ -453,70 +471,68 @@ input[type="number"]::-webkit-outer-spin-button {
     padding: 0 max(48px, calc(50% - 550px));
   }
 
-  #plansE{
+  #plansE {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-auto-flow: column;
   }
 
-  #foot{
+  #foot {
     grid-auto-flow: column;
-    grid-template-columns: repeat(6 , 1fr);
+    grid-template-columns: repeat(6, 1fr);
   }
 
-  #features{
+  #features {
     grid-auto-flow: column;
-    grid-template-columns: 60% 40%  ;
+    grid-template-columns: 60% 40%;
   }
 
-  #integrations{
+  #integrations {
     grid-auto-flow: column;
-    grid-template-columns:  40%  60% ;
+    grid-template-columns: 40% 60%;
   }
-  
-  #one{
+
+  #one {
     grid-auto-flow: column;
     grid-template-columns: 70% 30%;
   }
 
-  #two{
+  #two {
     grid-auto-flow: column;
     grid-template-columns: 30% 70%;
   }
 }
 
-@media(min-width: 1440px){
-  #drop{
+@media (min-width: 1440px) {
+  #drop {
     grid-template-columns: 1fr 2fr;
     grid-auto-flow: column;
   }
-
 }
 
 @keyframes swipe {
-  from{
-    transform: translateX(-30%);;
-  }to{
+  from {
+    transform: translateX(-30%);
+  }
+  to {
     transform: translateX(-50%);
   }
 }
 
-#carousel{
-  animation: swipe 101250ms linear  infinite  ;
+#carousel {
+  animation: swipe 101250ms linear infinite;
   animation-play-state: running;
 }
 
-@media(min-width: 1540px){
-  #faq{
+@media (min-width: 1540px) {
+  #faq {
     grid-auto-flow: column;
     grid-template-columns: 1fr 1.5fr;
   }
 
-.sixty{
-  width : 60%
+  .sixty {
+    width: 60%;
+  }
 }
-}
-
-
 
 @layer base {
   :root {
@@ -573,8 +589,6 @@ input[type="number"]::-webkit-outer-spin-button {
     --chart-5: 340 75% 55%;
   }
 }
-
-
 
 @layer base {
   * {

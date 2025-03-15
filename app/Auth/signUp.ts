@@ -45,7 +45,7 @@ export async function signUp(state: State = {}, formData: FormData) {
       };
     } else {
       return {
-        message: "login",
+        message: "login, Already have an account, Redirecting ...",
       };
     }
   } catch (error) {

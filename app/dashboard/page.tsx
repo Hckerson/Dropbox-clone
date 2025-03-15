@@ -37,13 +37,19 @@ export default function Page() {
   const [name, setName] = useState("");
   const [first, setFirst] = useState("");
   const [last, setLast] = useState("");
+  const [factor, setFactor]= useState(false)
+
+  const handleFactor = (response : boolean)=>{
+    setFactor(response)
+  }
+
   useEffect(() => {
     const fetchClientDetails = async () => {
       const response = await fetch("/api/details", {
-        next: { revalidate: 1 * 24 * 60 * 60  },
+        next: { revalidate: 1 * 24 * 60 * 60 },
       });
-      const data = await response.json()
-      const result = data ?? {first : 'D', last : 'B'}
+      const data = await response.json();
+      const result = data ?? { first: "D", last: "B" };
       const first = result.first;
       const last = result.last;
       setFirst(first);
@@ -184,8 +190,8 @@ export default function Page() {
           </button>
         </div>
       </section>
-      <section>
-        <FileUpload/>
+      <section className="relative">
+        <FileUpload handler={handleFactor} factor={factor} />
       </section>
     </div>
   );

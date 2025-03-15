@@ -25,6 +25,7 @@ const data = [
   { name: "Edit PDFs", about: "Unlimited", action: "Edit" },
 ];
 console.log(data)
+
 export default function DashboardLayout({
   children,
 }: {

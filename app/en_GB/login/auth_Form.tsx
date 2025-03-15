@@ -2,13 +2,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { login } from "@/app/Auth/login";
+import Link from "next/link";
 import { useActionState } from "react";
 import { useRouter } from "next/navigation";
 import { State } from "@/app/lib/definitions";
 import CircleLoader from "react-spinners/CircleLoader";
 import clsx from "clsx";
 
-export default function   AuthForm({ type }: { type: string }) {
+export default function AuthForm({ type }: { type: string }) {
   const router = useRouter();
   const initialState: State = { message: null, errors: {} };
   const [state, formAction] = useActionState(login, initialState);
@@ -238,8 +239,8 @@ export default function   AuthForm({ type }: { type: string }) {
           <button
             type="submit"
             className="w-full p-3 flex justify-center rounded-xl bg-[#0061fe] text-white"
-            onClick={()=>{
-              setLoader(true)
+            onClick={() => {
+              setLoader(true);
             }}
           >
             {loader ? (
@@ -252,6 +253,32 @@ export default function   AuthForm({ type }: { type: string }) {
         {state?.message && (
           <p className="text-xs text-red-500 ">{state.message}</p>
         )}
+        <div className="w-full ">
+          <Link href="/en_GB/register">
+            {" "}
+            <p className="inline-flex items-center text-base font-medium group  underline underline-offset-2 decoration-1 hover:decoration-white transition-colors duration-200 decoration-stone-400">
+              {"Don't have an account"}, <span className="font-semibold text-base">Register
+                </span> 
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                className="ml-2 transition-transform duration-300 group-hover:translate-x-1"
+                width="24"
+                height="24"
+                role="presentation"
+                focusable="false"
+              >
+                <path
+                  d="M5 11.75h12m-5.25-6.5 6.25 6.5-6.25 6.5"
+                  stroke="currentColor"
+                  strokeWidth="1.5"
+                  strokeMiterlimit="10"
+                  vectorEffect="non-scaling-stroke"
+                ></path>
+              </svg>
+            </p>
+          </Link>
+        </div>
       </div>
     </form>
   );
