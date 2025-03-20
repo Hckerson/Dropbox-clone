@@ -254,11 +254,11 @@ export default function DashboardLayout({
         <div
           id="sidebar"
           className={clsx(
-            "flex w-[225px] flex-col justify-between h-full overflow-y-auto px-2 box-border pt-8 pb-2 border-r-[1px] border-white border-opacity-20  transition-transform duration-700 ease-in-out",
+            "flex w-[225px] flex-col justify-between h-full overflow-y-auto px-2 box-border pt-8 pb-2  border-r-[1px] border-white border-opacity-20  transition-transform duration-700 ease-in-out",
             isOpen ? "-translate-x-full" : "translate-x-0"
           )}
         >
-          <div className="flex flex-col w-full h-full  space-y-6  text-white">
+          <div className="flex flex-col w-full h-full relative space-y-6  text-white">
             <legend className="font-semibold text-lg px-8 pb-2">Home</legend>
             <List />
             <div className="text-xs font-medium tracking-wide text-stone-200 px-7 inline-flex items-center justify-between">
@@ -357,30 +357,29 @@ export default function DashboardLayout({
                 </span>
               </div>
             </div>
-            <div className="px-7 text-base font-light text-stone-400">
+            <div className="px-7 text-base h-full  font-light text-stone-400">
               Drag important items here.
             </div>
-          </div>
-
-          <div className=" w-full text-white rounded-xl   relative">
-            <div className="  rounded-xl shadow-lg flex items-center p-2 gap-x-4 bg-[#002969]">
-              <div className="shrink-0">
-                <Ring color="#002969">
-                  <Box color="#2563eb" />
-                </Ring>
-              </div>
-              <div className="flex flex-col space-y-1">
-                <div
-                  style={{ fontSize: "11px" }}
-                  className=" text-xs text-blue-400 "
-                >
-                  Explore free features
+            <div className="box-border  text-white rounded-xl relative">
+              <div className="  rounded-xl shadow-lg flex items-center p-2 gap-x-4 bg-[#002969]">
+                <div className="shrink-0">
+                  <Ring color="#002969">
+                    <Box color="#2563eb" />
+                  </Ring>
                 </div>
-                <p style={{ fontSize: "10px" }} className="text-blue-400 ">
-                  0 bytes of 2gb
-                </p>
+                <div className="flex flex-col space-y-1">
+                  <div
+                    style={{ fontSize: "11px" }}
+                    className=" text-xs text-blue-400 "
+                  >
+                    Explore free features
+                  </div>
+                  <p style={{ fontSize: "10px" }} className="text-blue-400 ">
+                    0 bytes of 2gb
+                  </p>
+                </div>
+                <FaAngleUp className="text-blue-400" />
               </div>
-              <FaAngleUp className="text-blue-400" />
             </div>
           </div>
         </div>

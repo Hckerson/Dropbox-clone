@@ -50,7 +50,7 @@ html, body {
 }
 
 /* Firefox */
-html {
+* {
   scrollbar-width: thin;            /* makes the scrollbar thin */
   scrollbar-color: #555 #1c1c1c;    /* thumb = #555, track = #1c1c1c */
 }

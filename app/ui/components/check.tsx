@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import { PiUploadSimple } from "react-icons/pi";
 import { Label } from "@/components/ui/label";
+import CheckboxWithIcon from "./checkbox";
 import { Switch } from "@/components/ui/switch";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { Down, App, Share, Up } from "./vgs";
@@ -54,7 +55,6 @@ export default function FileUpload({
   const handleFileChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       const selectedFiles = Array.from(e.target.files) as FileWithSize[];
-      console.log(selectedFiles);
       setFiles(selectedFiles);
       uploadFiles(selectedFiles);
       handler(true);
@@ -154,8 +154,8 @@ export default function FileUpload({
         </div>
       ) : (
         <div className=" relative box-border ">
-          <div className="flex justify-between">
-            <div className="flex space-x-3">
+          <div className=" pl-8 flex justify-between">
+            <div className={clsx(" space-x-3", !factor ? "hidden" : "flex")}>
               <span
                 style={{ verticalAlign: "center" }}
                 className="inline-flex items-center text-black space-x-2 py-1 px-2 rounded-lg bg-white"
@@ -185,14 +185,16 @@ export default function FileUpload({
           </div>
 
           {files.length > 0 && (
-            <div className=" w-full">
+            <div className=" w-full pt-3">
               <table className="table-auto w-full">
-                <thead>
-                  <tr>
-                    <th className="text-start font-normal ">
-                      Name{" "}
-                      <span className="inline-flex">
-                        <Up classes="size-3" />
+                <thead className="">
+                  <tr className="">
+                    <th className="pl-10 text-start font-normal ">
+                      <span>
+                        Name{" "}
+                        <span className="inline-flex">
+                          <Up classes="size-3" />
+                        </span>
                       </span>
                     </th>
                     <th className="text-start font-normal ">Who can choose</th>
@@ -201,38 +203,67 @@ export default function FileUpload({
                 </thead>
                 <tbody className="">
                   {files.map((file, index) => {
+                    console.log(file);
+                    const last = file?.lastModified;
+                    const date = new Date(last);
+                    const year = date.getFullYear();
+                    const month = date.getMonth() + 1;
+                    const day = date.getDate();
+                    const hours = date.getHours();
+                    const minutes = date.getMinutes();
+
+                    const names = file.name.split(".")[1];
+                    const routes = {
+                      jpg: URL.createObjectURL(file),
+                      png: URL.createObjectURL(file),
+                      jpeg: URL.createObjectURL(file),
+                      mp4: "/images/mp4.jpg",
+                      mp3: "/images/mp3.webp",
+                      pdf: "/images/pdf.webp",
+                      doc: "/images/doc.png",
+                      docx: "/images/docx.png",
+                      txt: "/images/txt.png",
+                    };
+                    const sources =
+                      routes[names as keyof typeof routes] ||
+                      "/images/unknown.jpeg";
                     return (
                       <tr
                         key={index}
                         className={clsx(
-                          "max-h-[30px] border-white border-opacity-20 border-b-[1px]"
+                          "h-[39px] border-white bg-[#1a1918] group hover:bg-black  w-full border-opacity-20 py-2 border-b-[1px]",
+                          { "border-t-[1px]": index == 0 }
                         )}
                       >
-                        <td className="w-3/5 text-start flex items-center space-x-3">
-                          {" "}
-                          <div
-                            className="shrink-0 h-full w-[50px] max-h-[30px] flex items-center "
-                            style={{ aspectRatio: 16 / 9 }}
-                          >
-                            <Image
-                              ref={imageRef}
-                              id={`decide-${index}`}
-                              className="max-h-[30px] relative"
-                              alt="file preview"
-                              src={URL.createObjectURL(file)}
-                              width={750}
-                              height={500}
-                            ></Image>
+                        <td className=" text-start text-base font-light w-[70%]">
+                          <div className="flex  items-center">
+                            <div className="px-2 flex items-center w-[40px]">
+                              <CheckboxWithIcon id={file.name} />
+                            </div>
+                            <div
+                              className="shrink-0 h-full max-w-[40px] px-0   max-h-[30px] flex items-center "
+                              style={{ aspectRatio: 16 / 9 }}
+                            >
+                              <Image
+                                ref={imageRef}
+                                id={`decide-${index}`}
+                                className="max-h-[30px] relative border-white  py-[2px]  border-opacity-20 border-[1px] "
+                                alt="file preview"
+                                src={sources}
+                                width={750}
+                                height={500}
+                              ></Image>
+                            </div>
+                            <p className=" text-start text-nowrap text-[14px] font-light pl-3">
+                              {`${index}`}
+                            </p>
                           </div>
-                          <p className=" text-start text-nowrap text-[14px] font-light">
-                            {file.name}
-                          </p>
                         </td>
                         <td className=" text-start text-base font-light">
                           Only you
                         </td>
-                        <td className=" text-start text-base font-light text-nowrap">
-                          {/* {(file.size / 1024).toFixed(2)} KB */}
+                        <td className=" text-start text-base font-light lg:block hidden text-nowrap">
+                          {`${day}/${month}/${year} ${hours}:${minutes}  ${hours >= 12 ? "PM" : "AM"}`}
                         </td>
                       </tr>
                     );
