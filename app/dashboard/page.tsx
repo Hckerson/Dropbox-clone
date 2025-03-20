@@ -95,8 +95,8 @@ export default function Page() {
     fetchClientDetails();
   }, [name]);
   return (
-    <div className="text-white w-full h-full px-7 md:px-10 py-3 x flex-col space-y-4 bg-[#1a1918] relative flex">
-      <section className="w-full box-border flex space-x-2 items-center">
+    <div className="text-white w-full h-full px-7 md:px-10 py-3 x flex-col  space-y-4 bg-[#1a1918] relative flex overflow-auto">
+      <section className="w-full box-border flex space-x-2 z-10 sticky top-0  items-center">
         <SearchBar />
         <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px]  justify-center px-2 bg-stone-700 rounded-md">
           <div className="shrink-0">
@@ -229,7 +229,7 @@ export default function Page() {
           </button>
         </div>
       </section>
-      <section className="relative">
+      <section className="relative ">
         <FileUpload handler={handleFactor} factor={factor} />
       </section>
     </div>

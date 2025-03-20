@@ -48,7 +48,7 @@ export default function DashboardLayout({
         id="movement"
         className="lg:relative lg:z-0 z-30 absolute lg:translate-x-0 -translate-x-full transition-transform  box-border h-full flex bg-black"
       >
-        <div className="w-[70px] h-full border-r-[1px] border-white bg-black z-20 px-2 border-opacity-20">
+        <div className="w-[70px] h-full overflow-y-auto border-r-[1px] border-white bg-black z-20 px-2 border-opacity-20">
           <div className="flex flex-col h-full items-center justify-between py-4">
             <div className="flex flex-col items-center space-y-3 justify-center">
               <span
@@ -63,7 +63,7 @@ export default function DashboardLayout({
                   fill="white"
                   stroke="white"
                 />
-              </span> 
+              </span>
               <span className="inline-flex">
                 <svg
                   viewBox="0 0 64 64"
@@ -254,7 +254,7 @@ export default function DashboardLayout({
         <div
           id="sidebar"
           className={clsx(
-            "flex w-[225px] flex-col justify-between h-full   px-2 box-border pt-8 pb-2 border-r-[1px] border-white border-opacity-20  transition-transform duration-700 ease-in-out",
+            "flex w-[225px] flex-col justify-between h-full overflow-y-auto px-2 box-border pt-8 pb-2 border-r-[1px] border-white border-opacity-20  transition-transform duration-700 ease-in-out",
             isOpen ? "-translate-x-full" : "translate-x-0"
           )}
         >
@@ -280,7 +280,15 @@ export default function DashboardLayout({
             <div className="w-full box-border flex-col flex space-y-1">
               <div
                 className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-lg inline-flex items-center justify-between"
-                onClick={() => setIsFolderOpen([...isFolderOpen, "starred"])}
+                onClick={() => {
+                  if (isFolderOpen.includes("starred")) {
+                    setIsFolderOpen(
+                      isFolderOpen.filter((item) => item !== "starred")
+                    );
+                  } else {
+                    setIsFolderOpen([...isFolderOpen, "starred"]);
+                  }
+                }}
               >
                 <span className="inline-flex items-center space-x-1 w-full  text-stone-400">
                   {isFolderOpen.includes("starred") ? (
@@ -308,7 +316,13 @@ export default function DashboardLayout({
               <div
                 className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-lg inline-flex items-center justify-between"
                 onClick={() => {
-                  setIsFolderOpen([...isFolderOpen, "untitled"]);
+                  if (isFolderOpen.includes("untitled")) {
+                    setIsFolderOpen(
+                      isFolderOpen.filter((item) => item !== "untitled")
+                    );
+                  } else {
+                    setIsFolderOpen([...isFolderOpen, "untitled"]);
+                  }
                 }}
               >
                 <span className="inline-flex items-center space-x-1 w-full text-stone-400">
@@ -373,7 +387,7 @@ export default function DashboardLayout({
       </div>
       <div
         className={clsx(
-          "transition-transform relative duration-700 ease-in-out w-full",
+          "transition-transform relative duration-700 ease-in-out w-full ",
           isOpen ? "" : ""
         )}
       >
@@ -390,7 +404,7 @@ export default function DashboardLayout({
             stroke="white"
           />
         </span>
-        {children}
+        <div className="h-full">{children}</div>
       </div>
     </div>
   );

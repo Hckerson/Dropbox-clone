@@ -38,32 +38,42 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-@layer utilities {
-  .scrollbar::-webkit-scrollbar {
-    width: 10px;
-    height: 20px;
-  }
 
-  .scrollbar::-webkit-scrollbar-track {
-    border-radius: 20px;
-    background: #292524;
-  }
 
-  .scrollbar::-webkit-scrollbar-thumb {
-    background: #1a1918;
-    border-radius: 100vh;
-    border: 2px solid #78716c;
-  }
-
-  .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #1a1918;
-  }
+/* Apply to entire HTML document */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: #121212; /* your background color */
+  color: #fff;              /* text color, for a dark theme */   
 }
 
-.scrollbar {
-  overscroll-behavior: contain;
-  -webkit-overflow-scrolling: touch; /* For smooth scrolling on WebKit browsers */
+/* Firefox */
+html {
+  scrollbar-width: thin;            /* makes the scrollbar thin */
+  scrollbar-color: #555 #1c1c1c;    /* thumb = #555, track = #1c1c1c */
 }
+
+/* Chrome, Edge, Safari, Opera */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c1c1c;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+  border-radius: 4px;
+  border: 2px solid #1c1c1c;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #888;
+}
+
 
 /* Add this to your Tailwind CSS file or a custom CSS file */
 @layer utilities {
