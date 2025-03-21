@@ -391,7 +391,7 @@ export default function DashboardLayout({
         )}
       >
         <span
-          className="absolute top-6 lg:hidden z-10 left-1 sm:left-2 flex "
+          className="fixed top-6 lg:hidden z-10 left-1 sm:left-2 flex "
           onClick={() => {
             const element = document.getElementById("movement");
             element?.classList.toggle("-translate-x-full");

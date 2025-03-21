@@ -27,7 +27,14 @@ export default function FileUpload({
   const [files, setFiles] = useState<FileWithSize[]>([]);
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [checked, setChecked] = useState<boolean>(false);
+  const [id, setId] = useState<string[]>([])
   const imageRef = useRef<HTMLImageElement>(null);
+
+  const handleIdChange = (id: string) => {
+    setId((prev)=>{
+      return [...prev, id]
+    })
+  }
 
   // Handle drag-and-drop
   const handleDragOver = (e: DragEvent<HTMLDivElement>) => {
@@ -134,10 +141,16 @@ export default function FileUpload({
               }}
               checked={checked}
             />
-            <Label htmlFor="folder">Folder</Label>
+            <Label htmlFor="folder lg:text-base md:text-sm text-xs">
+              Folder
+            </Label>
           </div>
-          <p className="text-stone-500">Drop files here to upload</p>
-          <p className="text-gray-400 text-sm mt-2">or</p>
+          <p className="text-stone-500 lg:text-base md:text-sm text-xs">
+            Drop files here to upload
+          </p>
+          <p className="text-gray-400 text-sm mt-2 lg:text-base md:text-sm ">
+            or
+          </p>
           <input
             type="file"
             multiple={true}
@@ -155,10 +168,15 @@ export default function FileUpload({
       ) : (
         <div className=" relative box-border ">
           <div className=" pl-8 flex justify-between">
-            <div className={clsx(" space-x-3", !factor ? "hidden" : "flex")}>
+            <div
+              className={clsx(
+                "  gap-y-3",
+                !factor ? "hidden" : "flex flex-wrap"
+              )}
+            >
               <span
                 style={{ verticalAlign: "center" }}
-                className="inline-flex items-center text-black space-x-2 py-1 px-2 rounded-lg bg-white"
+                className="inline-flex lg:text-base md:text-sm text-xs items-center text-black space-x-2 py-2 px-3 rounded-lg bg-white"
               >
                 <Share />
                 <p>Share selected</p>
@@ -166,20 +184,20 @@ export default function FileUpload({
               </span>
               <span
                 style={{ verticalAlign: "center" }}
-                className="inline-flex items-center space-x-2 py-1 px-2 rounded-lg bg-stone-800 "
+                className="inline-flex lg:text-base md:text-sm text-xs mx-3 items-center space-x-2 py-2 px-3 rounded-lg bg-stone-800 "
               >
                 <App />
                 <p>Download</p>
               </span>
               <span
                 style={{ verticalAlign: "center" }}
-                className="inline-flex items-center space-x-2 py-1 px-2 rounded-lg bg-stone-800 "
+                className="inline-flex lg:text-base md:text-sm text-xs items-center space-x-2 py-2 px-3 rounded-lg bg-stone-800 "
               >
                 <DeleteOutlineIcon className="size-4" />
                 <p>Delete</p>
               </span>
             </div>
-            <div className="flex box-border relative font-bold">
+            <div className=" box-border hidden md:flex relative font-bold px-3">
               {files.length} Selected
             </div>
           </div>
@@ -188,8 +206,8 @@ export default function FileUpload({
             <div className=" w-full pt-3">
               <table className="table-auto w-full">
                 <thead className="">
-                  <tr className="">
-                    <th className="pl-10 text-start font-normal ">
+                  <tr className="group">
+                    <th className="pl-9 text-start font-normal  border-white border-opacity-30 group-hover:border-r-[1px]">
                       <span>
                         Name{" "}
                         <span className="inline-flex">
@@ -197,13 +215,16 @@ export default function FileUpload({
                         </span>
                       </span>
                     </th>
-                    <th className="text-start font-normal ">Who can choose</th>
-                    <th className="text-start font-normal ">Modify</th>
+                    <th className="text-start font-normal hidden md:table-cell  border-white border-opacity-30 group-hover:border-r-[1px]">
+                      Who can choose
+                    </th>
+                    <th className="text-start font-normal hidden xl:table-cell border-white border-opacity-30 group-hover:border-r-[1px]">
+                      Modify
+                    </th>
                   </tr>
                 </thead>
-                <tbody className="">
+                <tbody className="mr-2">
                   {files.map((file, index) => {
-                    console.log(file);
                     const last = file?.lastModified;
                     const date = new Date(last);
                     const year = date.getFullYear();
@@ -217,31 +238,31 @@ export default function FileUpload({
                       jpg: URL.createObjectURL(file),
                       png: URL.createObjectURL(file),
                       jpeg: URL.createObjectURL(file),
-                      mp4: "/images/mp4.jpg",
-                      mp3: "/images/mp3.webp",
-                      pdf: "/images/pdf.webp",
+                      mp4: "/images/mp4.png",
+                      mp3: "/images/mp3.png",
+                      pdf: "/images/pdf.png",
                       doc: "/images/doc.png",
                       docx: "/images/docx.png",
                       txt: "/images/txt.png",
                     };
                     const sources =
                       routes[names as keyof typeof routes] ||
-                      "/images/unknown.jpeg";
+                      "/images/unknown.png";
                     return (
                       <tr
                         key={index}
                         className={clsx(
-                          "h-[39px] border-white bg-[#1a1918] group hover:bg-black  w-full border-opacity-20 py-2 border-b-[1px]",
+                          "h-[39px] border-white bg-[#1a1918] group hover:bg-black  w-full border-opacity-20 py-2 border-b-[1px] border-r-[1px]",
                           { "border-t-[1px]": index == 0 }
                         )}
                       >
-                        <td className=" text-start text-base font-light w-[70%]">
+                        <td className=" text-start font-light w-[70%]">
                           <div className="flex  items-center">
-                            <div className="px-2 flex items-center w-[40px]">
-                              <CheckboxWithIcon id={file.name} />
+                            <div className="px-2 flex items-center w-[35px]">
+                              <CheckboxWithIcon id={`${index}`} handleId={handleIdChange}  />
                             </div>
                             <div
-                              className="shrink-0 h-full max-w-[40px] px-0   max-h-[30px] flex items-center "
+                              className="shrink-0 h-full max-w-[40px] px-0   max-h-[27px] flex items-center "
                               style={{ aspectRatio: 16 / 9 }}
                             >
                               <Image
@@ -254,15 +275,17 @@ export default function FileUpload({
                                 height={500}
                               ></Image>
                             </div>
-                            <p className=" text-start text-nowrap text-[14px] font-light pl-3">
-                              {`${index}`}
+                            <p className=" text-start md:text-sm text-xs text-nowrap text-[14px] font-light pl-3">
+                              {file.name.length > 30
+                                ? `${file.name.substring(0, 30)}...`
+                                : file.name}
                             </p>
                           </div>
                         </td>
-                        <td className=" text-start text-base font-light">
+                        <td className=" text-start md:text-sm text-xs font-light hidden md:table-cell">
                           Only you
                         </td>
-                        <td className=" text-start text-base font-light lg:block hidden text-nowrap">
+                        <td className=" text-start md:text-sm text-xs font-light hidden xl:table-cell text-nowrap">
                           {`${day}/${month}/${year} ${hours}:${minutes}  ${hours >= 12 ? "PM" : "AM"}`}
                         </td>
                       </tr>

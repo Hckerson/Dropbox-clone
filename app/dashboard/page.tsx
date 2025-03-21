@@ -96,9 +96,9 @@ export default function Page() {
     fetchClientDetails();
   }, [name]);
   return (
-    <div className="relative flex flex-col w-full justify-normal  h-full box-border bg-[#1a1918]" >
-      <div className="text-white w-full  px-7 md:px-10 py-3  flex-col  space-y-4 bg-[#1a1918] relative flex overflow-auto">
-        <section className="w-full box-border flex space-x-2 z-10 sticky top-0 bg-[#1a1918] items-center">
+    <div className="relative flex flex-col w-full justify-normal  h-full box-border bg-[#1a1918]">
+      <div className="text-white w-full  px-7 md:px-10 py-3  flex-col  space-y-4 bg-[#1a1918] relative flex ">
+        <section className="w-full box-border flex space-x-2 z-20 sticky top-0 bg-[#1a1918] items-center">
           <SearchBar />
           <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px]  justify-center px-2 bg-stone-700 rounded-md">
             <div className="shrink-0">
@@ -126,11 +126,7 @@ export default function Page() {
             </div>
           </div>
           <Row classes="relative space-x-1 lg:flex hidden" fill="white" />
-          {factor &&(
-            <div>
-
-            </div>
-          )}
+          {factor && <div></div>}
           <div className="hover:bg-stone-700 p-1 hidden lg:flex items-center justify-center rounded-lg">
             <TooltipProvider>
               <Tooltip>
@@ -212,34 +208,41 @@ export default function Page() {
             <p className="text-stone-400">Only you</p>
           </div>
         </section>
-        <section className="flex justify-between">
-          <div className="flex space-x-3">
-            <div className="flex items-center border border-white border-opacity-15 px-3 py-1 rounded-2xl space-x-1 bg-stone-800 hover:bg-stone-700 origin-bottom transition-all ">
-              <button>
-                <WiTime8 className="size-5" />
-              </button>
-              <p className="text-sm font-normal">Recents</p>
+        {!factor && (
+          <section className="flex justify-between">
+            <div className="flex space-x-3">
+              <div className="flex items-center border border-white border-opacity-15 px-3 py-1 rounded-2xl space-x-1 bg-stone-800 hover:bg-stone-700 origin-bottom transition-all ">
+                <button>
+                  <WiTime8 className="size-5" />
+                </button>
+                <p className="text-sm font-normal">Recents</p>
+              </div>
+              <div className="flex items-center border border-white border-opacity-15 px-3 py-1 rounded-2xl space-x-1 bg-stone-800 hover:bg-stone-700 origin-bottom transition-all ">
+                <button>
+                  <FaRegStar className="size-4" />
+                </button>
+                <p className="text-sm font-normal">Starred</p>
+              </div>
             </div>
-            <div className="flex items-center border border-white border-opacity-15 px-3 py-1 rounded-2xl space-x-1 bg-stone-800 hover:bg-stone-700 origin-bottom transition-all ">
-              <button>
-                <FaRegStar className="size-4" />
+            <div className="flex items-center space-x-2">
+              <button className="inline-flex p-2 hover:bg-stone-700 rounded-lg">
+                <FaBars className="size-4" />
               </button>
-              <p className="text-sm font-normal">Starred</p>
+              <button className="inline-flex p-[5px] hover:bg-stone-700 rounded-lg">
+                <CiGrid31 className="size-5" />
+              </button>
             </div>
-          </div>
-          <div className="flex items-center space-x-2">
-            <button className="inline-flex p-2 hover:bg-stone-700 rounded-lg">
-              <FaBars className="size-4" />
-            </button>
-            <button className="inline-flex p-[5px] hover:bg-stone-700 rounded-lg">
-              <CiGrid31 className="size-5" />
-            </button>
-          </div>
-        </section>
+          </section>
+        )}
       </div>
-      <section className={clsx("relative flex flex-col w-full box-border", !factor ? "px-7 md:px-10": "pt-4")}>
+      <section
+        className={clsx(
+          "relative flex flex-col w-full box-border",
+          !factor ? "px-7 md:px-10" : "pt-4"
+        )}
+      >
         <FileUpload handler={handleFactor} factor={factor} />
       </section>
-    </div >
+    </div>
   );
 }
