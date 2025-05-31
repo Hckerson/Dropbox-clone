@@ -13,7 +13,7 @@ export function Row({classes, fill}: {classes : string, fill : string}) {
         style={{ verticalAlign: "center" }}
         className={clsx("inline-flex  items-center justify-center  rounded-md py-2", classes)}
       >
-        <span className="hover:bg-stone-700 flex items-center justify-center rounded-lg p-[1px]">
+        <span className="hover:bg-stone-700 flex items-center justify-center rounded-[8px] text-white p-[1px]">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
@@ -37,12 +37,12 @@ export function Row({classes, fill}: {classes : string, fill : string}) {
                 </svg>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Explore more dropbox app</p>
+                <p className="text-white">Explore more dropbox app</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </span>
-        <span className="hover:bg-stone-700 flex items-center justify-center rounded-lg p-[1px]">
+        <span className="hover:bg-stone-700 flex items-center justify-center rounded-[8px] text-white p-[1px]">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
@@ -69,12 +69,12 @@ export function Row({classes, fill}: {classes : string, fill : string}) {
                 </svg>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Vid</p>
+                <p className="text-white">Vid</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </span>
-        <span className="hover:bg-stone-700 flex items-center justify-center rounded-lg p-[1px]">
+        <span className="hover:bg-stone-700 flex items-center justify-center rounded-[8px] text-white p-[1px]">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
@@ -107,12 +107,12 @@ export function Row({classes, fill}: {classes : string, fill : string}) {
                 </span>
               </TooltipTrigger>
               <TooltipContent>
-                <p>{`See what's new`}</p>
+                <p className="text-white">{`See what's new`}</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
         </span>
-        <span className="hover:bg-stone-700 flex items-center justify-center rounded-lg p-[1px]">
+        <span className="hover:bg-stone-700 flex items-center justify-center rounded-[8px] text-white p-[1px]">
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger>
@@ -135,7 +135,7 @@ export function Row({classes, fill}: {classes : string, fill : string}) {
                 </svg>
               </TooltipTrigger>
               <TooltipContent>
-                <p>Notification</p>
+                <p className="text-white">Notification</p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>

@@ -29,7 +29,7 @@ export default function FileUpload({
   const [checked, setChecked] = useState<boolean>(false);
   const [id, setId] = useState<string[]>([])
   const imageRef = useRef<HTMLImageElement>(null);
-
+  console.log("id", id);
   const handleIdChange = (id: string) => {
     setId((prev)=>{
       return [...prev, id]
@@ -72,7 +72,7 @@ export default function FileUpload({
   };
 
   function onFileSelected(event: React.ChangeEvent<HTMLInputElement>) {
-    const selectedFile = event.target.files?.[0]; // Optional chaining for files array
+    const selectedFile = event.target.files?.[0]; 
     if (!selectedFile) return;
     const reader = new FileReader();
     reader.onload = (loadEvent) => {
@@ -108,9 +108,9 @@ export default function FileUpload({
   return (
     <div
       className={clsx(
-        "w-full   border-stone-600 ",
+        "w-full   border-stone-600 text-white ",
         {
-          "p-8 mt-10 box-border relative  border-2 border-dashed":
+          "p-8 mt-10 box-border relative border-2 border-dashed":
             factor == false,
         },
         isDragging ? "bg-stone-800" : "bg-[#1a1918]"
@@ -118,7 +118,7 @@ export default function FileUpload({
     >
       {!factor ? (
         <div
-          className={` relative items-center flex flex-col rounded-lg scrollbar pb-4 overflow-y-auto  text-center py-12`}
+          className={` relative items-center flex flex-col rounded-[8px] scrollbar pb-4 overflow-y-auto  text-center py-12`}
           onDragOver={handleDragOver}
           onDragLeave={handleDragLeave}
           onDrop={(e) => {
@@ -126,7 +126,7 @@ export default function FileUpload({
           }}
         >
           <PiUploadSimple className="size-14 text-stone-500" />
-          <div className="absolute right-7 top-3 size-5">
+          <div className="absolute text-white right-7 top-3 size-5">
             <Switch
               id="folder"
               onClick={() => {
@@ -176,7 +176,7 @@ export default function FileUpload({
             >
               <span
                 style={{ verticalAlign: "center" }}
-                className="inline-flex lg:text-base md:text-sm text-xs items-center text-black space-x-2 py-2 px-3 rounded-lg bg-white"
+                className="inline-flex lg:text-base md:text-sm text-xs items-center text-black space-x-2 py-2 px-3 rounded-[8px] bg-white"
               >
                 <Share />
                 <p>Share selected</p>
@@ -184,14 +184,14 @@ export default function FileUpload({
               </span>
               <span
                 style={{ verticalAlign: "center" }}
-                className="inline-flex lg:text-base md:text-sm text-xs mx-3 items-center space-x-2 py-2 px-3 rounded-lg bg-stone-800 "
+                className="inline-flex lg:text-base md:text-sm text-xs mx-3 items-center space-x-2 py-2 px-3 rounded-[8px] bg-stone-800 "
               >
                 <App />
                 <p>Download</p>
               </span>
               <span
                 style={{ verticalAlign: "center" }}
-                className="inline-flex lg:text-base md:text-sm text-xs items-center space-x-2 py-2 px-3 rounded-lg bg-stone-800 "
+                className="inline-flex lg:text-base md:text-sm text-xs items-center space-x-2 py-2 px-3 rounded-[8px] bg-stone-800 "
               >
                 <DeleteOutlineIcon className="size-4" />
                 <p>Delete</p>

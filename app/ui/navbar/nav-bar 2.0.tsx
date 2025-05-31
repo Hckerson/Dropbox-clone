@@ -6,7 +6,7 @@ import { Replmenu } from "./buttons";
 
 export default function Navbar({ condition = true }) {
   return (
-    <nav className="bg-white relative z-50 ">
+    <nav className="bg-white text-black relative z-50 ">
       <div className="mx-auto  p-0 sm:px-5 lg:px-6">
         <div className="relative flex  items-center justify-between h-[48px] md:h-[80px]">
           <div className="flex flex-1 items-center justify-start  h-full">

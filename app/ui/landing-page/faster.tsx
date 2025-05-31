@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 export default function Faster() {
   return (
-    <div className="flex flex-col space-y-12 items-center pt-24  w-full px-6 xl:px-0  flex-grow box-border  ">
+    <div className="flex flex-col space-y-12 text-black items-center pt-24  w-full px-6 xl:px-0  flex-grow box-border  ">
       <div className="max-w-4xl box-border mx-auto flex flex-col items-center space-y-7 ">
         <div className="flex flex-col text-center items-center space-y-3 w-full">
           <div className=" flex flex-col items-center space-y-4">

@@ -279,7 +279,7 @@ export default function DashboardLayout({
             </div>
             <div className="w-full box-border flex-col flex space-y-1">
               <div
-                className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-lg inline-flex items-center justify-between"
+                className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-[8px] inline-flex items-center justify-between"
                 onClick={() => {
                   if (isFolderOpen.includes("starred")) {
                     setIsFolderOpen(
@@ -314,7 +314,7 @@ export default function DashboardLayout({
                 </span>
               </div>
               <div
-                className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-lg inline-flex items-center justify-between"
+                className="text-xs hover:bg-stone-700  group  font-semibold text-stone-200 pl-4 p-1 rounded-[8px] inline-flex items-center justify-between"
                 onClick={() => {
                   if (isFolderOpen.includes("untitled")) {
                     setIsFolderOpen(

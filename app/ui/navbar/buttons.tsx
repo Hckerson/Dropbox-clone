@@ -9,7 +9,7 @@ export function GetStarted() {
     <div>
       <Link
         href="/en_GB/plans"
-        className=" rounded-xl px-4 py-3  bg-white w-full font-semibold "
+        className=" rounded-xl px-4 py-3 text-black  bg-white w-full font-semibold "
       >
         Get Started
       </Link>

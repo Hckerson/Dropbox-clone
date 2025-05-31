@@ -44,9 +44,7 @@ input[type="number"]::-webkit-outer-spin-button {
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
-  background-color: #121212; /* your background color */
-  color: #fff;              /* text color, for a dark theme */   
+  height: 100%;           /* text color, for a dark theme */   
 }
 
 /* Firefox */
@@ -543,6 +541,7 @@ html, body {
     width: 60%;
   }
 }
+
 
 @layer base {
   :root {

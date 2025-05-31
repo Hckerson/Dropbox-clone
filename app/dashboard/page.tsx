@@ -100,7 +100,7 @@ export default function Page() {
       <div className="text-white w-full  px-7 md:px-10 py-3  flex-col  space-y-4 bg-[#1a1918] relative flex ">
         <section className="w-full box-border flex space-x-2 z-20 sticky top-0 bg-[#1a1918] items-center">
           <SearchBar />
-          <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px]  justify-center px-2 bg-stone-700 rounded-md">
+          <div className=" shadow-lg flex items-center gap-x-1 max-h-min py-[6px]  justify-center px-2 bg-stone-700 rounded-[10px]">
             <div className="shrink-0">
               <span className="">
                 <svg
@@ -127,20 +127,20 @@ export default function Page() {
           </div>
           <Row classes="relative space-x-1 lg:flex hidden" fill="white" />
           {factor && <div></div>}
-          <div className="hover:bg-stone-700 p-1 hidden lg:flex items-center justify-center rounded-lg">
+          <div className="hover:bg-stone-700 p-1 hidden lg:flex items-center justify-center rounded-[8px]">
             <TooltipProvider>
               <Tooltip>
                 <TooltipTrigger>
                   {" "}
                   <Initials
-                    classname="size-6 text-[10px] font-bold rounded-lg "
+                    classname="size-6 text-[10px] font-bold rounded-[8px] "
                     color="#fad24b"
                     bg="#684505"
                     name={name}
                   />
                 </TooltipTrigger>
                 <TooltipContent>
-                  <p>Account</p>
+                  <p className="text-white">Account</p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
@@ -150,7 +150,7 @@ export default function Page() {
               href={
                 "https://www.dropbox.com/plans?_camp=19135&_tk=link_campaign_format"
               }
-              className="bg-[#b4dc19] rounded-lg  p-2"
+              className="bg-[#b4dc19] rounded-[8px]  p-2"
             >
               {" "}
               Click to update
@@ -225,10 +225,10 @@ export default function Page() {
               </div>
             </div>
             <div className="flex items-center space-x-2">
-              <button className="inline-flex p-2 hover:bg-stone-700 rounded-lg">
+              <button className="inline-flex p-2 hover:bg-stone-700 rounded-[8px]">
                 <FaBars className="size-4" />
               </button>
-              <button className="inline-flex p-[5px] hover:bg-stone-700 rounded-lg">
+              <button className="inline-flex p-[5px] hover:bg-stone-700 rounded-[8px]">
                 <CiGrid31 className="size-5" />
               </button>
             </div>

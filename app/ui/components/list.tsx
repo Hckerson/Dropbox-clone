@@ -5,7 +5,7 @@ export default function List() {
   const [active, setActive] = useState("all");
   return (
     <ul className="flex flex-col box-border  space-y-2 px-3">
-      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-lg  cursor-pointer hover:bg-stone-800", active === "all" ? "bg-stone-800" : "")} onClick={() => setActive("all")}>
+      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-[7px]  cursor-pointer hover:bg-stone-800", active === "all" ? "bg-stone-800" : "")} onClick={() => setActive("all")}>
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -28,7 +28,7 @@ export default function List() {
           </p>
         </div>
       </li>
-      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-lg  cursor-pointer hover:bg-stone-800", active === "photos" ? "bg-stone-800" : "")} onClick={() => setActive("photos")}>
+      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-[7px]  cursor-pointer hover:bg-stone-800", active === "photos" ? "bg-stone-800" : "")} onClick={() => setActive("photos")}>
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -54,7 +54,7 @@ export default function List() {
           </p>
         </div>
       </li>
-      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-lg  cursor-pointer hover:bg-stone-800", active === "shares" ? "bg-stone-800" : "")} onClick={() => setActive("shares")}>
+      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-[7px]  cursor-pointer hover:bg-stone-800", active === "shares" ? "bg-stone-800" : "")} onClick={() => setActive("shares")}>
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -77,7 +77,7 @@ export default function List() {
           </p>
         </div>
       </li>
-      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-lg  cursor-pointer hover:bg-stone-800", active === "signature" ? "bg-stone-800" : "")} onClick={() => setActive("signature")}>
+      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-[7px]  cursor-pointer hover:bg-stone-800", active === "signature" ? "bg-stone-800" : "")} onClick={() => setActive("signature")}>
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -100,7 +100,7 @@ export default function List() {
           </p>
         </div>
       </li>
-      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-lg  cursor-pointer hover:bg-stone-800", active === "requests" ? "bg-stone-800" : "")} onClick={() => setActive("requests")}>
+      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-[7px]  cursor-pointer hover:bg-stone-800", active === "requests" ? "bg-stone-800" : "")} onClick={() => setActive("requests")}>
         <svg
           viewBox="0 0 24 24"
           fill="none"
@@ -126,7 +126,7 @@ export default function List() {
           </p>
         </div>
       </li>
-      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-lg  cursor-pointer hover:bg-stone-800", active === "deleted" ? "bg-stone-800" : "")} onClick={() => setActive("deleted")}>
+      <li className={clsx("inline-flex space-x-2 px-3 py-[5px] rounded-[7px]  cursor-pointer hover:bg-stone-800", active === "deleted" ? "bg-stone-800" : "")} onClick={() => setActive("deleted")}>
         <svg
           viewBox="0 0 24 24"
           fill="none"
